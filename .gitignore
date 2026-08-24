@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+# builds
+.next/
+.open-next/
+tsconfig.tsbuildinfo
+# local env (secrets); .env.production is committed intentionally (non-secret canonical host)
+.env
+.env.local
+.env.development
+# wrangler local state
+.wrangler/
+# logs
+*.log

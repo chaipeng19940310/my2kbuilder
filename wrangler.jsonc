@@ -1,0 +1,34 @@
+{
+  // My2KBuilder — Cloudflare Workers 一体化部署（Owner R7 决策；架构 v1 §2/§3）
+  // 由 @opennextjs/cloudflare 构建产物驱动；本文件不含任何 bindings（D1/KV/Queue/R2/DO/Secrets 全部未启用，架构 v1 §3 禁止条款：preview binding 同样视为启用）。
+  "name": "my2kbuilder",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-08-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    // 非 secret；仅可观测标识，不得驱动任何业务能力开关（契约 §5）
+    "ENVIRONMENT": "local"
+  },
+  // R11 生产环境（R10.5 APPROVED_FOR_PRODUCTION_RELEASE 授权范围：
+  // Workers 生产部署 + my2kbuilder.com custom domain 绑定）。
+  // CANONICAL_HOST 为 build-time 注入（CI/本地构建命令行 env），不进 vars。
+  "env": {
+    "production": {
+      "name": "my2kbuilder-production",
+      "workers_dev": true,
+      "vars": {
+        "ENVIRONMENT": "production"
+      },
+      "routes": [
+        { "pattern": "my2kbuilder.com", "custom_domain": true },
+        { "pattern": "www.my2kbuilder.com", "custom_domain": true }
+      ]
+    }
+  }
+  // 显式不配置：d1_databases / kv_namespaces / queues / r2_buckets / durable_objects / secrets
+  // 任何一项的启用路径 = Peng Chai 另行批准 + 回 R6 复审（架构 v1 §7）
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 96" width="560" height="96">
+  <title>My2KBuilder logo — badge token chip + wordmark</title>
+  <g fill="none">
+    <g stroke-linecap="round" stroke-width="4">
+      <line x1="48" y1="4"  x2="48" y2="11" stroke="#A3E635"/>
+      <line x1="69.6" y1="9.3" x2="66.4" y2="15.4" stroke="#FFB03A"/>
+      <line x1="86.7" y1="26.4" x2="80.6" y2="29.6" stroke="#FFB03A"/>
+      <line x1="92" y1="48" x2="85" y2="48" stroke="#FFB03A"/>
+      <line x1="86.7" y1="69.6" x2="80.6" y2="66.4" stroke="#FFB03A"/>
+      <line x1="69.6" y1="86.7" x2="66.4" y2="80.6" stroke="#A3E635"/>
+      <line x1="48" y1="92" x2="48" y2="85" stroke="#FFB03A"/>
+      <line x1="26.4" y1="86.7" x2="29.6" y2="80.6" stroke="#FFB03A"/>
+      <line x1="9.3" y1="69.6" x2="15.4" y2="66.4" stroke="#FFB03A"/>
+      <line x1="4" y1="48" x2="11" y2="48" stroke="#FFB03A"/>
+      <line x1="9.3" y1="26.4" x2="15.4" y2="29.6" stroke="#A3E635"/>
+      <line x1="26.4" y1="9.3" x2="29.6" y2="15.4" stroke="#FFB03A"/>
+    </g>
+    <polygon points="48,14 77.4,31 77.4,65 48,82 18.6,65 18.6,31"
+             fill="#16223C" stroke="#FFB03A" stroke-width="3"/>
+    <polygon points="48,22 70.5,35 70.5,61 48,74 25.5,61 25.5,35"
+             fill="none" stroke="#A3E635" stroke-width="1.6"/>
+    <polyline points="33,60 38,36 48,50 58,36 63,60"
+              fill="none" stroke="#EDF2FA" stroke-width="5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="112" y="52" font-family="Space Grotesk, Arial, sans-serif"
+        font-size="34" font-weight="700" fill="#EDF2FA" letter-spacing="0.5">My2KBuilder</text>
+  <text x="112" y="76" font-family="IBM Plex Mono, monospace"
+        font-size="13" fill="#93A1BD" letter-spacing="2.5">NBA 2K27 BUILD PLANNER</text>
+</svg>

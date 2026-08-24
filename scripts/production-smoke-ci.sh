@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# CI post-deploy smoke — runs against the workers.dev production URL after deploy.
+set -euo pipefail
+BASE="https://my2kbuilder-production.chaipeng1994.workers.dev"
+fail=0
+for pair in "/ 200" "/badge-token-planner 200" "/signature-blueprints 200" \
+  "/signature-blueprints/compare 200" "/build-card 200" "/methodology 200" \
+  "/disclaimer 200" "/privacy 200" "/terms 200" "/robots.txt 200" \
+  "/sitemap.xml 200" "/definitely-not-a-route 404"; do
+  path="${pair% *}"; want="${pair##* }"
+  code="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 "$BASE$path")"
+  if [ "$code" = "$want" ]; then echo "PASS $code $path"; else echo "FAIL got=$code want=$want $path"; fail=1; fi
+done
+# sitemap must point at canonical host
+curl -sS --max-time 30 "$BASE/sitemap.xml" | grep -q "<loc>https://my2kbuilder.com/</loc>" \
+  && echo "PASS sitemap canonical host" || { echo "FAIL sitemap canonical host"; fail=1; }
+# robots must advertise sitemap
+curl -sS --max-time 30 "$BASE/robots.txt" | grep -q "Sitemap: https://my2kbuilder.com/sitemap.xml" \
+  && echo "PASS robots sitemap line" || { echo "FAIL robots sitemap line"; fail=1; }
+exit "$fail"

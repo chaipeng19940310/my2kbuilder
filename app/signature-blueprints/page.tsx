@@ -1,0 +1,106 @@
+import type { Metadata } from "next";
+import { JsonLdScript } from "@/components/JsonLdScript";
+import { canonicalFor } from "@/lib/canonical";
+import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
+import { BlueprintsClient } from "./BlueprintsClient";
+
+// SEO freeze (seo §3): title/H1/meta for `/signature-blueprints`.
+export const metadata: Metadata = {
+  title: "NBA 2K27 Signature Blueprints — Browse & Compare 40 Builds",
+  description:
+    "Browse and filter all 40 Signature Blueprints in NBA 2K27, compare up to 3 side by side, then open one in the Badge Token Planner. Free, unofficial, no sign-up.",
+  alternates: { canonical: canonicalFor("/signature-blueprints") },
+};
+
+// FAQ freeze (copy §5.3). Data-provenance answer adapted to the current
+// fixture-only state (contract §8.1: unverified fields are labeled, never
+// presented as fact).
+const FAQS = [
+  {
+    question: "What is a Signature Blueprint?",
+    answer:
+      "A ready-made MyPLAYER template in NBA 2K27 that blends the playstyles of three players. There are 40 at launch, with more added each season.",
+  },
+  {
+    question: "Are these the same as last year's templates?",
+    answer:
+      "No. Signature Blueprints replace the Pro-Tuned and NBA templates from previous years.",
+  },
+  {
+    question: "Can I edit a blueprint?",
+    answer:
+      "Yes. Open any blueprint in the Badge Token Planner and adjust the allocation for your height and position.",
+  },
+  {
+    question: "Where does blueprint data come from?",
+    answer:
+      "Blueprint cards currently show fixture placeholder values while HQ App collection and dual review are completed. Anything unverified is labeled, never shown as fact.",
+  },
+] as const;
+
+export default function SignatureBlueprintsPage() {
+  return (
+    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+      <JsonLdScript
+        schema={[
+          // ItemList intentionally NOT emitted: gated by contract §8.1 until
+          // data freeze v0 (enforced by gatedItemListSchema in lib/schema).
+          faqPageSchema([...FAQS]),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Signature Blueprints", path: "/signature-blueprints" },
+          ]),
+        ]}
+      />
+
+      <header className="flex max-w-3xl flex-col gap-4">
+        <h1 className="font-display text-display-lg text-primary-container">
+          NBA 2K27 Signature Blueprints
+        </h1>
+        <p className="text-body-lg text-on-surface-variant">
+          Signature Blueprints are NBA 2K27&apos;s new starter templates: 40 three-player hybrid
+          builds at launch, with more added each season. Filter by position and playstyle,
+          shortlist up to three, and see exactly how their attributes and badges differ.
+        </p>
+      </header>
+
+      {/* H2 structure (copy §3.3): Browse All 40 Blueprints / Compare Up to 3 Side by Side */}
+      <section className="flex flex-col gap-6">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="font-display text-headline-md text-on-surface">Browse All 40 Blueprints</h2>
+          <span className="text-body-sm text-text-muted">Compare up to 3 side by side</span>
+        </div>
+        <BlueprintsClient />
+      </section>
+
+      {/* About blueprint data (copy §3.3, adapted to fixture state per §8.1) */}
+      <section className="flex max-w-3xl flex-col gap-3 rounded border border-border-low bg-surface-card p-6">
+        <h2 className="font-display text-headline-sm text-on-surface">About blueprint data</h2>
+        <p className="text-body-md text-on-surface-variant">
+          Blueprint cards currently show fixture placeholder values — not verified NBA 2K27 data.
+          Final fields are pending collection from the 2K HQ App, dual review, and a frozen v0.
+          Anything we haven&apos;t verified is labeled, never presented as fact, and we never name
+          the real players a blueprint blends.
+        </p>
+      </section>
+
+      {/* FAQ at page bottom (copy §3.3). Content from the copy freeze only. */}
+      <section className="flex max-w-3xl flex-col gap-4">
+        <h2 className="font-display text-headline-md text-on-surface">Signature Blueprints FAQ</h2>
+        <div className="flex flex-col gap-3">
+          {FAQS.map((f) => (
+            <details
+              key={f.question}
+              className="group rounded border border-border-low bg-surface-card p-4"
+            >
+              <summary className="cursor-pointer list-none text-label-md text-on-surface group-open:text-primary-container">
+                {f.question}
+              </summary>
+              <p className="mt-2 text-body-md text-on-surface-variant">{f.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

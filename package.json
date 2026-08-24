@@ -1,0 +1,32 @@
+{
+  "name": "my2kbuilder",
+  "version": "0.1.0",
+  "private": true,
+  "description": "My2KBuilder — unofficial NBA 2K27 build planner (MVP, no login, no payments, encoded-URL sharing, zero server storage)",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "opennext:build": "opennextjs-cloudflare build",
+    "preview": "opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare deploy"
+  },
+  "dependencies": {
+    "next": "15.5.23",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "1.20.2",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "15.5.23",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5.8.0",
+    "wrangler": "4.125.0"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "bundle": "mechanics",
+  "version": "v0",
+  "data_classification": "launch_data",
+  "gate_status": "official_confirmed",
+  "generated_at": "2026-08-24",
+  "description": "NBA 2K27 MyPLAYER Builder official mechanism facts (launch_data). Only official_confirmed records; per contract §4.1/§4.2.",
+  "records": [
+    {
+      "key": "launch_date_global",
+      "value": "2026-09-04",
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/overview",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": "NBA 2K27 global launch date."
+    },
+    {
+      "key": "early_access_start",
+      "value": "2026-08-26T09:00:00-07:00",
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/overview ; https://support.nba2k.com (HQ App FAQ)",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B/§C)",
+      "confidence": "high",
+      "notes": "Early access for Deluxe/Ultra preorders, 09:00 PT. Media outlets showing 08-28 are wrong per official pages (fact-check §C)."
+    },
+    {
+      "key": "platforms",
+      "value": ["PS5", "Xbox Series X|S", "Switch 2", "PC (Steam)"],
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/overview",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": "No PS4 / Xbox One versions."
+    },
+    {
+      "key": "cover_athletes",
+      "value": {"standard": "Victor Wembanyama", "deluxe": "Caitlin Clark", "ultra_limited": "Derrick Rose"},
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "2kratings/G2A relaying official channels, consistent with official roadmap (research/xunyuan-fact-check-v0.md §B)",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check",
+      "confidence": "medium",
+      "notes": "Relayed from official channels by media; consistent with official roadmap. Not used as a headline fact block."
+    },
+    {
+      "key": "hq_app_launch",
+      "value": {"date": "2026-08-21", "platforms": ["iOS", "Android"], "features": ["full NBA 2K27 MyPLAYER Builder", "console upload", "QR code sharing", "Crew / daily rewards", "Face Scan"]},
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://newsroom.2k.com ; https://nba.2k.com/nba-2k-hq ; App Store / Google Play listings",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": "NBA 2K HQ App launched with the complete 2K27 MyPLAYER Builder inside."
+    },
+    {
+      "key": "badge_tokens_system",
+      "value": {"total_badges": 53, "new_badges": 19, "slots": 20, "token_cost_varies_by": ["height", "position"]},
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://newsroom.2k.com (NBA 2K27 MyPLAYER Builder Introduces Female MyPLAYERs, Badge Tokens, and the All-New Synergy System) ; https://nba.2k.com/2k27/features/myplayer-builder",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": "Badge Token costs change in real time with height/position. Concrete cost numbers are gated_data — NOT in this bundle (contract §8.1 freeze gate)."
+    },
+    {
+      "key": "disciplines",
+      "value": {"count": 6, "includes_new": "Physicals"},
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://newsroom.2k.com ; https://nba.2k.com/2k27/features/myplayer-builder",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": "6 disciplines including the new Physicals discipline."
+    },
+    {
+      "key": "synergy_system",
+      "value": {"mechanics": ["Fuse", "Reaction"], "cap_break": "can push badges beyond normal caps up to Legend"},
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://newsroom.2k.com ; https://nba.2k.com/2k27/features/myplayer-builder",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": "All-new Synergy system."
+    },
+    {
+      "key": "female_myplayer",
+      "value": "Female MyPLAYERs debut in NBA 2K27",
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://newsroom.2k.com (headline announcement)",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B/§C)",
+      "confidence": "high",
+      "notes": "The 'female MyPLAYER limited to The City' claim is creator interpretation, NOT official — kept out of the fact layer (fact-check §C)."
+    },
+    {
+      "key": "signature_blueprints",
+      "value": {"count": 40, "type": "three-player hybrid templates", "replaces": ["Pro-Tuned", "NBA templates"], "cadence": "new blueprints added each season"},
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://newsroom.2k.com ; https://nba.2k.com/2k27/features/myplayer-builder",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": "Per compliance line: never name the real players blended into a blueprint (contract §4.1)."
+    },
+    {
+      "key": "takeover_rework",
+      "value": "Takeover system reworked; multiple takeovers can be active at the same time",
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "key": "rebirth_system",
+      "value": {"tiers": 4, "effect": "default Badge Token ratio unlocked per tier"},
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "key": "cap_breakers",
+      "value": "Cap Breakers return with fixes",
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "key": "dynamic_badge_loadouts",
+      "value": true,
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check (research/xunyuan-fact-check-v0.md §B)",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "key": "preseason_breakdown_event",
+      "value": "2026-08-18",
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "G2A/indy100 relaying official roadmap (research/xunyuan-fact-check-v0.md §B)",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check",
+      "confidence": "medium",
+      "notes": "Full builder reveal event date; relayed from official roadmap by media."
+    },
+    {
+      "key": "new_badges_officially_named",
+      "value": ["Pace", "Wall-Up", "Flash"],
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "timesaver.gg cross-check of official announcements (research/xunyuan-fact-check-v0.md §B)",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check",
+      "confidence": "high",
+      "notes": "Only these 3 of the 19 new badges are officially named. Circulating 'full 53-badge lists' must NOT be presented as officially confirmed (contract §4.3)."
+    },
+    {
+      "key": "official_timeline",
+      "value": [
+        {"date": "2026-08-18", "event": "Preseason Breakdown (full builder reveal)"},
+        {"date": "2026-08-21", "event": "NBA 2K HQ App launch with full 2K27 MyPLAYER Builder"},
+        {"date": "2026-08-26", "event": "Early access (Deluxe/Ultra preorders), 09:00 PT"},
+        {"date": "2026-09-04", "event": "Global launch"}
+      ],
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "composite of records above (research/xunyuan-fact-check-v0.md §B)",
+      "captured_at": "2026-08-24",
+      "verified_by": "pengzc R1 fact-check",
+      "confidence": "high",
+      "notes": "Composite timeline for the home page timeline strip."
+    }
+  ]
+}
