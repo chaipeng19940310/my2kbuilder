@@ -5,12 +5,14 @@ import { JsonLdScript } from "@/components/JsonLdScript";
 import { canonicalFor } from "@/lib/canonical";
 import { webPageSchema } from "@/lib/schema";
 
-// R10.1 finalized copy (compliance/legal-pages-final-v1.md §2.2).
-// Finalized in R10.2 per owner decision; keep this page free of provisional-language notices.
+// R10.1 finalized copy (compliance/legal-pages-final-v1.md §2.2), updated in
+// R12.5 for consent-gated analytics (compliance/analytics-disclosure-v1.md):
+// sections 3–5 now describe Plausible / GA4 / Clarity behind the consent banner.
+// The old "no analytics/tracking" wording must not remain live post-R12.5.
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself — nothing is stored on a server.",
+    "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. Analytics run only with your consent.",
   alternates: { canonical: canonicalFor("/privacy") },
 };
 
@@ -25,15 +27,15 @@ const SECTIONS = [
   },
   {
     title: "3. Analytics and Tracking",
-    body: "This MVP does not use analytics, advertising, or tracking cookies. We do not use Google Analytics, Meta Pixel, Clarity, or similar tracking services. If privacy-respecting analytics are added in the future, this policy will be updated before they are enabled.",
+    body: "With your consent, this site uses analytics to understand aggregate usage: Plausible (a privacy-focused, cookieless analytics tool served from our own installation), Google Analytics 4, and Microsoft Clarity. No analytics scripts load and no analytics data is sent until you accept in the consent banner. If you decline, no analytics scripts, cookies, or requests are used at all. When enabled, these services may process usage data such as pages visited, referral source, approximate region, and device or browser type. You can change or withdraw your choice at any time via the \"Cookie preferences\" link in the footer of every page.",
   },
   {
     title: "4. Third-Party Services",
-    body: "The site is served through Cloudflare's edge network. No personal data is sent to third parties for processing, marketing, or analytics.",
+    body: "The site is served through Cloudflare's edge network. If you accept analytics, usage data is processed by Plausible (on our self-hosted installation), Google (Google Analytics 4), and Microsoft (Microsoft Clarity) under their respective privacy policies. We do not sell personal data, and we do not use analytics data for advertising or marketing profiles.",
   },
   {
     title: "5. Cookies",
-    body: "This MVP does not use advertising or tracking cookies. Only cookies that are strictly necessary for the site to function may be used.",
+    body: "This site does not use advertising cookies. Your analytics consent choice is stored in your browser's local storage on your own device and is never sent to our servers. If you accept analytics, Google Analytics 4 and Microsoft Clarity may set their own measurement cookies; Plausible runs cookieless. If you decline, no analytics cookies are set.",
   },
   {
     title: "6. Children's Privacy",

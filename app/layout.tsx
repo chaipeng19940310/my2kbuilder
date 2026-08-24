@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { AnalyticsConsent } from "@/components/analytics/AnalyticsConsent";
 
 // Self-hosted fonts (R7B condition C-02): woff2 vendored in app/fonts,
 // served same-origin via next/font/local. Zero third-party font requests.
@@ -57,6 +58,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteNav />
         {children}
         <SiteFooter />
+        {/* R12.5: consent-gated analytics. Client-only; SSR HTML carries
+            zero analytics scripts (no consent => 0 scripts / 0 requests). */}
+        <AnalyticsConsent />
       </body>
     </html>
   );
