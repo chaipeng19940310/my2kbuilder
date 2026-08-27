@@ -284,11 +284,14 @@ export function PlannerClient() {
         {/* Left: controls */}
         <section
           aria-busy={!hydrated}
-          className="flex flex-col gap-8 rounded border border-border-low bg-surface-card p-6"
+          className="relative flex flex-col gap-8 rounded border border-border-low bg-surface-card p-6"
         >
           {!hydrated ? (
-            <p role="status" className="animate-pulse text-body-sm text-text-muted">
-              Loading interactive controls…
+            // R16.1: absolute-positioned status pill — taking it out of the
+            // flow means removing it at hydration causes zero layout shift
+            // (previously the in-flow paragraph shifted the controls ~49px).
+            <p role="status" className="absolute right-4 top-4 animate-pulse text-body-sm text-text-muted">
+              Loading controls…
             </p>
           ) : null}
           <div

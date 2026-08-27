@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   CONSENT_CHANGED_EVENT,
@@ -27,6 +27,7 @@ import {
 export function AnalyticsConsent() {
   const [mounted, setMounted] = useState(false);
   const [bannerOpen, setBannerOpen] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -53,6 +54,28 @@ export function AnalyticsConsent() {
     };
   }, []);
 
+  // R16.1: while the banner is open, keep page content reachable above it:
+  // scroll-padding-bottom steers scrollIntoView/scroll-to-bottom so targets
+  // never land under the banner, and body padding-bottom extends the scroll
+  // range by the banner height so users can always scroll content clear.
+  useEffect(() => {
+    if (!mounted || !bannerOpen) return;
+    const el = bannerRef.current;
+    if (!el) return;
+    const apply = () => {
+      const h = `${el.offsetHeight}px`;
+      document.documentElement.style.scrollPaddingBottom = h;
+      document.body.style.paddingBottom = h;
+    };
+    apply();
+    window.addEventListener("resize", apply);
+    return () => {
+      window.removeEventListener("resize", apply);
+      document.documentElement.style.scrollPaddingBottom = "";
+      document.body.style.paddingBottom = "";
+    };
+  }, [mounted, bannerOpen]);
+
   if (!mounted || !bannerOpen) return null;
 
   const choose = (value: Exclude<ConsentState, null>) => {
@@ -61,15 +84,21 @@ export function AnalyticsConsent() {
   };
 
   return (
+    // R16.1: pointer-events-none on the banner chrome so its inert regions
+    // never swallow real taps aimed at page content behind/below it; only the
+    // actual interactive elements (buttons, privacy link) receive events.
+    // Mobile layout is compact (buttons in one row, tighter padding) so the
+    // banner stays clear of above-the-fold tool controls on 390px viewports.
     <div
+      ref={bannerRef}
       role="dialog"
       aria-modal="false"
       aria-label="Analytics consent"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-border-low bg-surface-container-lowest"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-50 border-t border-border-low bg-surface-container-lowest"
     >
-      <div className="mx-auto flex w-full max-w-site flex-col gap-4 px-4 py-5 md:flex-row md:items-center md:justify-between md:gap-gutter md:px-margin-desktop">
-        <div className="flex max-w-2xl flex-col gap-2">
-          <p className="font-display text-headline-sm text-on-surface">
+      <div className="mx-auto flex w-full max-w-site flex-col gap-2 px-4 py-3 md:flex-row md:items-center md:justify-between md:gap-gutter md:px-margin-desktop md:py-5">
+        <div className="flex max-w-2xl flex-col gap-1 md:gap-2">
+          <p className="hidden font-display text-headline-sm text-on-surface md:block">
             Analytics consent
           </p>
           <p className="text-body-sm text-on-surface-variant">
@@ -80,25 +109,25 @@ export function AnalyticsConsent() {
             &quot;Cookie preferences&quot; in the footer. See our{" "}
             <Link
               href="/privacy"
-              className="underline decoration-secondary hover:text-on-surface"
+              className="pointer-events-auto underline decoration-secondary hover:text-on-surface"
             >
               Privacy Policy
             </Link>
             .
           </p>
         </div>
-        <div className="flex shrink-0 flex-col gap-2 sm:flex-row sm:items-center">
+        <div className="flex shrink-0 flex-row flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={() => choose("denied")}
-            className="rounded border border-outline px-6 py-3 text-label-md font-bold text-on-surface transition-colors duration-200 hover:bg-surface-card"
+            className="pointer-events-auto rounded border border-outline px-4 py-2 text-label-md font-bold text-on-surface transition-colors duration-200 hover:bg-surface-card md:px-6 md:py-3"
           >
             Decline
           </button>
           <button
             type="button"
             onClick={() => choose("granted")}
-            className="rounded bg-primary-container px-6 py-3 text-label-md font-bold text-on-primary transition-colors duration-200 hover:bg-surface-tint"
+            className="pointer-events-auto rounded bg-primary-container px-4 py-2 text-label-md font-bold text-on-primary transition-colors duration-200 hover:bg-surface-tint md:px-6 md:py-3"
           >
             Accept analytics
           </button>
