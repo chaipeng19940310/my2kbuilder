@@ -63,7 +63,8 @@ export function SiteFooter() {
           </div>
         </div>
         {/* R12F: SaaSTool listing badge (Owner-approved 2026-08-27, one card per small change).
-            Badge snippet embedded verbatim — href/src/rel/target/alt must not be altered;
+            R12G: Findly badge added alongside (Owner-provided code after manual submission).
+            Badge snippets embedded verbatim — href/src/rel/target/alt must not be altered;
             inline height/width kept, but sizing is unified via .directory-badges container
             CSS (Owner layout standard from BAH two-round rework). */}
         <div className="border-t border-border-low">
@@ -74,6 +75,10 @@ export function SiteFooter() {
             <a href="https://saastool.site/item/my2kbuilder" target="_blank" rel="noopener noreferrer">
               {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
               <img src="https://saastool.site/badges/saastool-light.svg" alt="Featured on SaaSTool.site" height="54px" width="auto" />
+            </a>
+            <a href="https://findly.tools/my2kbuilder?utm_source=my2kbuilder" target="_blank" rel="noopener noreferrer">
+              {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
+              <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" />
             </a>
           </div>
         </div>
