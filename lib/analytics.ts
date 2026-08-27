@@ -1,12 +1,20 @@
 /**
- * R12.5 consent-gated analytics — My2KBuilder.
+ * R12.5/R12.6 consent-gated analytics — My2KBuilder.
  *
  * Owner-approved contract (owner-review/r12.5-indexnow-analytics-approval.md,
- * attachment analytics-public-ids-v1.md):
+ * owner-review/analytics-public-ids-v2.md):
  *  - No consent  => 0 analytics scripts injected, 0 analytics requests.
  *  - After consent => load ONLY the configured providers, exactly once.
- *  - Plausible uses the owner-provided managed `pa-*.js` script URL verbatim;
- *    it MUST NOT be rewritten to a standard `/js/script.js` endpoint.
+ *  - Plausible uses the Owner 2026-08-27 standard snippet verbatim:
+ *      <script defer data-domain="my2kbuilder.com"
+ *              src="https://plausible.shipsolo.io/js/script.js"></script>
+ *    The earlier R12.5 rule ("managed pa-*.js must not be rewritten to
+ *    /js/script.js") was explicitly voided by the Owner's 2026-08-27
+ *    instruction that replaced it with this standard snippet.
+ *  - Injection note: for dynamically-inserted scripts `defer` has no effect
+ *    and `async` is the default behavior; the snippet semantics are preserved
+ *    (non-blocking load + data-domain attribute), and the script is loaded
+ *    verbatim from the owner-provided URL.
  *
  * Provider IDs are public install identifiers (non-secret). They are injected
  * at build time via next.config.ts `env` + committed `.env.production`,
@@ -22,6 +30,7 @@
 export const GA4_MEASUREMENT_ID = process.env.GA4_MEASUREMENT_ID ?? "";
 export const CLARITY_PROJECT_ID = process.env.CLARITY_PROJECT_ID ?? "";
 export const PLAUSIBLE_SCRIPT_URL = process.env.PLAUSIBLE_SCRIPT_URL ?? "";
+export const PLAUSIBLE_DATA_DOMAIN = process.env.PLAUSIBLE_DATA_DOMAIN ?? "";
 
 export type ConsentState = "granted" | "denied" | null;
 
@@ -66,12 +75,21 @@ export function hasConfiguredProviders(): boolean {
   return Boolean(GA4_MEASUREMENT_ID || CLARITY_PROJECT_ID || PLAUSIBLE_SCRIPT_URL);
 }
 
-function injectExternalScriptOnce(id: string, src: string): boolean {
+function injectExternalScriptOnce(
+  id: string,
+  src: string,
+  dataset?: Record<string, string>,
+): boolean {
   if (document.getElementById(id)) return false;
   const s = document.createElement("script");
   s.id = id;
   s.src = src;
   s.async = true;
+  if (dataset) {
+    for (const [key, value] of Object.entries(dataset)) {
+      s.dataset[key] = value;
+    }
+  }
   document.head.appendChild(s);
   return true;
 }
@@ -95,9 +113,16 @@ export function loadConfiguredAnalytics(): string[] {
   const loaded: string[] = [];
 
   if (PLAUSIBLE_SCRIPT_URL) {
-    // Owner-provided managed Plausible script (pa-*.js). Loaded verbatim —
-    // do not rewrite host or path. Self-configuring; no data-domain needed.
-    injectExternalScriptOnce("m2k-analytics-plausible", PLAUSIBLE_SCRIPT_URL);
+    // Owner 2026-08-27 standard Plausible snippet:
+    //   <script defer data-domain="my2kbuilder.com"
+    //           src="https://plausible.shipsolo.io/js/script.js"></script>
+    // Loaded verbatim with the data-domain attribute. (Dynamic insertion:
+    // defer is a no-op, async is the default — semantics preserved.)
+    injectExternalScriptOnce(
+      "m2k-analytics-plausible",
+      PLAUSIBLE_SCRIPT_URL,
+      PLAUSIBLE_DATA_DOMAIN ? { domain: PLAUSIBLE_DATA_DOMAIN } : undefined,
+    );
     loaded.push("plausible");
   }
 

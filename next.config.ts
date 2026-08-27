@@ -14,11 +14,12 @@ const nextConfig: NextConfig = {
     DATA_LAST_VERIFIED: process.env.DATA_LAST_VERIFIED ?? "2026-08-24",
     // MUST stay empty until R10.5 production approval (contract §2 rule 6).
     CANONICAL_HOST: process.env.CANONICAL_HOST ?? "",
-    // R12.5 consent-gated analytics — public install identifiers (non-secret,
+    // R12.5/R12.6 consent-gated analytics — public install identifiers (non-secret,
     // committed via .env.production). Empty disables the provider.
     GA4_MEASUREMENT_ID: process.env.GA4_MEASUREMENT_ID ?? "",
     CLARITY_PROJECT_ID: process.env.CLARITY_PROJECT_ID ?? "",
     PLAUSIBLE_SCRIPT_URL: process.env.PLAUSIBLE_SCRIPT_URL ?? "",
+    PLAUSIBLE_DATA_DOMAIN: process.env.PLAUSIBLE_DATA_DOMAIN ?? "",
   },
 };
 
