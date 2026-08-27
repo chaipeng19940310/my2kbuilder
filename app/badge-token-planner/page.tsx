@@ -68,6 +68,19 @@ export default function BadgeTokenPlannerPage() {
         </p>
       </header>
 
+      {/* R16 (H2): pre-hydration interaction bridge. On slow networks React
+          hydration lands seconds after first paint; this tiny parse-time
+          script makes the two critical first interactions (position select,
+          empty-state CTA guide) work before hydration, and hands any pending
+          position to PlannerClient via window.__m2kPendingPos. It mutates no
+          React-managed DOM (aria-pressed is only rendered by React once
+          hydrated), so hydration stays clean. */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){if(window.__m2kPlannerBoot)return;window.__m2kPlannerBoot=true;document.addEventListener("click",function(e){if(window.__m2kPlannerHydrated)return;var t=e.target;if(!t||!t.closest)return;var pos=t.closest("[data-m2k-pos]");if(pos){e.preventDefault();var all=document.querySelectorAll("[data-m2k-pos]");for(var i=0;i<all.length;i++)all[i].setAttribute("aria-pressed","false");pos.setAttribute("aria-pressed","true");window.__m2kPendingPos=pos.getAttribute("data-m2k-pos");return;}var guide=t.closest("[data-m2k-guide]");if(guide){e.preventDefault();var g=document.getElementById("planner-position-group");if(g&&g.scrollIntoView)g.scrollIntoView({behavior:"smooth",block:"start"});}},true);})();`,
+        }}
+      />
+
       {/* Tool body first (copy §3.2 design placement) */}
       <PlannerClient />
 

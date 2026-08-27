@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { FixtureBanner, SourceTag } from "@/components/SourceTag";
@@ -54,12 +54,50 @@ export function PlannerClient() {
   const router = useRouter();
   const [bundleState, setBundleState] = useState<LoadState<CostMatrixBundle>>({ status: "loading" });
 
+  // R16 (H2): SSR ships the real controls, and a parse-time inline script
+  // (see page.tsx) already answers position-select / guide-CTA clicks before
+  // hydration, recording any pending choice on window.__m2kPendingPos. Here we
+  // flag hydration for that bridge and adopt the pending choice into state.
+  // Remaining secondary controls stay disabled until hydrated so nothing
+  // presents a "clickable but dead" state.
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    const w = window as unknown as {
+      __m2kPlannerHydrated?: boolean;
+      __m2kPendingPos?: string;
+    };
+    w.__m2kPlannerHydrated = true;
+    setHydrated(true);
+    if (w.__m2kPendingPos !== undefined) {
+      const p = Number.parseInt(w.__m2kPendingPos, 10);
+      if (Number.isInteger(p) && p >= 0 && p < POSITIONS.length) setPosition(p);
+      delete w.__m2kPendingPos;
+    }
+  }, []);
+
   const [position, setPosition] = useState<number>(-1); // -1 = empty state (copy: pick a position)
   const [heightIn, setHeightIn] = useState<number>(DEFAULT_HEIGHT);
   const [priorityOrder, setPriorityOrder] = useState<number[]>([]); // discipline indexes in click order
   const [allocations, setAllocations] = useState<Array<[number, number]>>([]); // [badgeIndex, slots]
   const [blueprintRef, setBlueprintRef] = useState<number>(-1);
   const [blueprintNote, setBlueprintNote] = useState<string | null>(null);
+
+  // R16 (H1): the right-column empty state is a real CTA that scrolls back to
+  // the Position controls and pulses a highlight ring as visual guidance.
+  const posGroupRef = useRef<HTMLDivElement>(null);
+  const [guideHighlight, setGuideHighlight] = useState(false);
+
+  function guideToControls() {
+    const el = posGroupRef.current;
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    setGuideHighlight(true);
+    el.focus({ preventScroll: true });
+    window.setTimeout(() => {
+      setGuideHighlight(false);
+      el.blur();
+    }, 2400);
+  }
 
   const load = useCallback(() => {
     setBundleState({ status: "loading" });
@@ -201,37 +239,12 @@ export function PlannerClient() {
 
   /* ---------- data bundle states (contract §6.1) ---------- */
 
-  if (bundleState.status === "loading") {
-    return (
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2" aria-busy="true">
-        {[0, 1].map((i) => (
-          <div key={i} className="animate-pulse rounded border border-border-low bg-surface-card p-6">
-            <div className="mb-4 h-6 w-1/3 rounded bg-surface-container-high" />
-            <div className="mb-2 h-4 w-2/3 rounded bg-surface-container-high" />
-            <div className="h-40 w-full rounded bg-surface-container-high" />
-          </div>
-        ))}
-      </div>
-    );
-  }
-
-  if (bundleState.status === "error") {
-    return (
-      <div className="flex flex-col items-center gap-4 rounded border border-border-low bg-surface-card p-8 text-center">
-        <Icon name="warning" size={28} className="text-error" />
-        <p className="text-body-md text-on-surface-variant">
-          The badge data bundle couldn&apos;t be loaded. Check your connection and try again.
-        </p>
-        <button
-          type="button"
-          onClick={load}
-          className="rounded bg-primary-container px-6 py-3 text-label-md font-bold text-on-primary hover:bg-surface-tint"
-        >
-          Retry
-        </button>
-      </div>
-    );
-  }
+  // R16 (H2): the data bundle only gates the badge list (right column). The
+  // Position/Height/Priorities controls do not depend on the bundle and are
+  // rendered immediately (SSR) so the tool is usable the moment it hydrates,
+  // instead of the whole tool sitting behind a skeleton until the fetch lands.
+  const bundleLoading = bundleState.status === "loading";
+  const bundleError = bundleState.status === "error" ? bundleState.message : null;
 
   const emptyCatalog = catalog.length === 0;
 
@@ -269,8 +282,23 @@ export function PlannerClient() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {/* Left: controls */}
-        <section className="flex flex-col gap-8 rounded border border-border-low bg-surface-card p-6">
-          <div>
+        <section
+          aria-busy={!hydrated}
+          className="flex flex-col gap-8 rounded border border-border-low bg-surface-card p-6"
+        >
+          {!hydrated ? (
+            <p role="status" className="animate-pulse text-body-sm text-text-muted">
+              Loading interactive controls…
+            </p>
+          ) : null}
+          <div
+            id="planner-position-group"
+            ref={posGroupRef}
+            tabIndex={-1}
+            className={`scroll-mt-24 rounded-lg outline-none transition-shadow ${
+              guideHighlight ? "-m-2 p-2 ring-2 ring-primary-container" : ""
+            }`}
+          >
             <h2 className="mb-4 font-display text-headline-sm text-on-surface">Core Attributes</h2>
             <span className="mb-2 block text-label-md uppercase text-on-surface-variant">Position</span>
             <div className="flex flex-wrap gap-2">
@@ -278,8 +306,12 @@ export function PlannerClient() {
                 <button
                   key={p}
                   type="button"
+                  data-m2k-pos={i}
+                  // R16: works pre-hydration via the inline bridge; React only
+                  // manages aria-pressed after hydration so the bridge's
+                  // pre-hydration selection never trips hydration matching.
+                  aria-pressed={hydrated ? position === i : undefined}
                   onClick={() => setPosition(i)}
-                  aria-pressed={position === i}
                   className={`rounded border px-4 py-2 text-label-md font-bold transition-colors ${
                     position === i
                       ? "border-primary-container bg-primary-container text-on-primary"
@@ -298,9 +330,9 @@ export function PlannerClient() {
               <button
                 type="button"
                 aria-label="Decrease height"
-                disabled={heightIn <= HEIGHT_IN_MIN}
+                disabled={!hydrated || heightIn <= HEIGHT_IN_MIN}
                 onClick={() => setHeightIn((h) => Math.max(HEIGHT_IN_MIN, h - 1))}
-                className="rounded border border-border-low bg-surface-container-high p-2 text-on-surface-variant hover:text-on-surface disabled:opacity-40"
+                className="rounded border border-border-low bg-surface-container-high p-2 text-on-surface-variant hover:text-on-surface disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <Icon name="remove" size={18} />
               </button>
@@ -310,9 +342,9 @@ export function PlannerClient() {
               <button
                 type="button"
                 aria-label="Increase height"
-                disabled={heightIn >= HEIGHT_IN_MAX}
+                disabled={!hydrated || heightIn >= HEIGHT_IN_MAX}
                 onClick={() => setHeightIn((h) => Math.min(HEIGHT_IN_MAX, h + 1))}
-                className="rounded border border-border-low bg-surface-container-high p-2 text-on-surface-variant hover:text-on-surface disabled:opacity-40"
+                className="rounded border border-border-low bg-surface-container-high p-2 text-on-surface-variant hover:text-on-surface disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <Icon name="add" size={18} />
               </button>
@@ -332,9 +364,10 @@ export function PlannerClient() {
                   <button
                     key={name}
                     type="button"
+                    disabled={!hydrated}
                     onClick={() => togglePriority(d)}
                     aria-pressed={rank >= 0}
-                    className={`flex items-center justify-between rounded border px-3 py-2 text-label-md transition-colors ${
+                    className={`flex items-center justify-between rounded border px-3 py-2 text-label-md transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${
                       rank >= 0
                         ? "border-secondary bg-surface-container-high text-secondary"
                         : "border-border-low bg-surface-container-high text-on-surface-variant hover:text-on-surface"
@@ -402,20 +435,59 @@ export function PlannerClient() {
             <h2 className="font-display text-headline-sm text-on-surface">Badge Loadout</h2>
             <button
               type="button"
+              disabled={!hydrated}
               onClick={startOver}
-              className="flex items-center gap-1 text-label-md text-on-surface-variant hover:text-on-surface"
+              className="flex items-center gap-1 text-label-md text-on-surface-variant hover:text-on-surface disabled:cursor-not-allowed disabled:opacity-50"
             >
               <Icon name="restart_alt" size={16} />
               Start over
             </button>
           </div>
 
-          {position < 0 ? (
-            <div className="flex flex-col items-center gap-3 rounded border border-dashed border-border-low p-8 text-center">
-              <Icon name="info" size={24} className="text-on-surface-variant" />
+          {bundleError !== null ? (
+            <div className="flex flex-col items-center gap-4 rounded border border-border-low bg-surface-container-low p-8 text-center">
+              <Icon name="warning" size={28} className="text-error" />
               <p className="text-body-md text-on-surface-variant">
-                Pick a position and height to see live token costs.
+                The badge data bundle couldn&apos;t be loaded. Check your connection and try again.
               </p>
+              <button
+                type="button"
+                disabled={!hydrated}
+                onClick={load}
+                className="rounded bg-primary-container px-6 py-3 text-label-md font-bold text-on-primary hover:bg-surface-tint disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                Retry
+              </button>
+            </div>
+          ) : position < 0 ? (
+            // R16 (H1): real CTA, not a dead info card. Works pre-hydration
+            // via the inline bridge (scroll); post-hydration it also focuses
+            // and highlights the Position group.
+            <button
+              type="button"
+              data-m2k-guide="true"
+              onClick={guideToControls}
+              className="group flex flex-col items-center gap-3 rounded border border-dashed border-primary-container p-8 text-center transition-colors hover:bg-surface-container-low"
+            >
+              <Icon name="info" size={24} className="text-primary-container" />
+              <span className="text-body-md text-on-surface-variant">
+                Pick a position and height to see live token costs.
+              </span>
+              <span className="rounded bg-primary-container px-4 py-2 text-label-md font-bold text-on-primary transition-colors group-hover:bg-surface-tint">
+                Choose a position
+              </span>
+            </button>
+          ) : bundleLoading ? (
+            <div className="flex flex-col gap-2" aria-busy="true">
+              <p role="status" className="animate-pulse text-body-sm text-text-muted">
+                Loading badge data…
+              </p>
+              {[0, 1, 2].map((i) => (
+                <div
+                  key={i}
+                  className="h-16 animate-pulse rounded border border-border-low bg-surface-container-high"
+                />
+              ))}
             </div>
           ) : emptyCatalog ? (
             <div className="rounded border border-dashed border-border-low p-8 text-center text-body-md text-on-surface-variant">
@@ -490,7 +562,7 @@ export function PlannerClient() {
           <div className="mt-auto flex flex-col gap-2 border-t border-border-low pt-4">
             <button
               type="button"
-              disabled={!complete}
+              disabled={!hydrated || !complete}
               onClick={generateShareLink}
               className={`flex items-center justify-center gap-2 rounded px-6 py-3 text-label-md font-bold transition-colors ${
                 complete

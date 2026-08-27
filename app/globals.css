@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* R16: pre-hydration position selection visual. The inline bridge script in
+   app/badge-token-planner/page.tsx sets aria-pressed on [data-m2k-pos] before
+   React hydrates; this rule mirrors the selected Tailwind classes
+   (border-primary-container bg-primary-container text-on-primary) so the tap
+   shows immediate feedback without mutating React-managed class names. */
+button[data-m2k-pos][aria-pressed="true"] {
+  border-color: var(--color-primary-container);
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary);
+}
+
 /* My2KBuilder design tokens — ported from approved Stitch v6 handoff
    (design/stitch-v1bg/html tailwind-config). Tailwind v4 build-time compile;
    no Tailwind CDN anywhere in this app (R7B condition C-04). */
