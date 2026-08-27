@@ -45,6 +45,13 @@ export const metadata: Metadata = {
     template: "%s | My2KBuilder",
   },
   description: DEFAULT_DESCRIPTION,
+  // R12D: Bing Webmaster Tools site verification (public token, owner-supplied
+  // 2026-08-27). Rendered in <head> of every page via root metadata.
+  verification: {
+    other: {
+      "msvalidate.01": "9EE64B2BA012B70180975735D1030CD3",
+    },
+  },
   ...socialMeta({
     path: "/",
     title: DEFAULT_TITLE,
