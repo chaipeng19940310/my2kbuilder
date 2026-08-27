@@ -1,12 +1,16 @@
 import { ImageResponse } from "next/og";
+import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "@/lib/social";
 
 // R15: site-wide social share image (1200x630), code-generated from approved
 // brand assets (badge mark from public/assets/logo.svg) and the design-token
 // palette in app/globals.css. No external design draft.
-export const alt =
-  "My2KBuilder — NBA 2K27 build planner: Badge Token Planner, 40 Signature Blueprints and shareable build cards.";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+//
+// Plain route handler (not the opengraph-image file convention) so the image
+// URL is stable (/og-image) and every page — including nested routes that
+// override openGraph — can reference it explicitly via lib/social.ts.
+// Static by default: prerendered at build, served as a cached PNG asset.
+// (Next 15 route handlers default to dynamic — pin this one to static.)
+export const dynamic = "force-static";
 
 // Badge mark extracted from public/assets/logo.svg (graphic only, no text).
 const BADGE_MARK =
@@ -23,7 +27,7 @@ const CHIP_STYLE = {
   padding: "14px 28px",
 } as const;
 
-export default function OpengraphImage() {
+export function GET() {
   return new ImageResponse(
     (
       <div
@@ -40,6 +44,7 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse/satori renders <img>, not next/image */}
           <img src={BADGE_MARK} width={132} height={132} alt="" />
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             <div
@@ -84,6 +89,6 @@ export default function OpengraphImage() {
         </div>
       </div>
     ),
-    { ...size },
+    { width: OG_IMAGE_WIDTH, height: OG_IMAGE_HEIGHT },
   );
 }
