@@ -62,6 +62,21 @@ export function SiteFooter() {
             <CookiePreferencesButton className="text-label-md text-text-muted transition-all duration-300 hover:text-on-surface hover:underline decoration-secondary" />
           </div>
         </div>
+        {/* R12F: SaaSTool listing badge (Owner-approved 2026-08-27, one card per small change).
+            Badge snippet embedded verbatim — href/src/rel/target/alt must not be altered;
+            inline height/width kept, but sizing is unified via .directory-badges container
+            CSS (Owner layout standard from BAH two-round rework). */}
+        <div className="border-t border-border-low">
+          <div
+            className="directory-badges mx-auto flex w-full max-w-site flex-wrap items-center justify-center gap-6 px-4 py-6 md:px-margin-desktop"
+            aria-label="Directory listings"
+          >
+            <a href="https://saastool.site/item/my2kbuilder" target="_blank" rel="noopener noreferrer">
+              {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
+              <img src="https://saastool.site/badges/saastool-light.svg" alt="Featured on SaaSTool.site" height="54px" width="auto" />
+            </a>
+          </div>
+        </div>
       </footer>
     </>
   );
