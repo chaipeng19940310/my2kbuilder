@@ -4,6 +4,7 @@ import { Icon } from "@/components/Icon";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { SourceTag } from "@/components/SourceTag";
 import { canonicalFor } from "@/lib/canonical";
+import { socialMeta } from "@/lib/social";
 import { softwareApplicationSchema, websiteSchema } from "@/lib/schema";
 import { mechanicsFact, type MechanicsBundle } from "@/lib/data";
 import mechanics from "@/public/data/mechanics.v0.json";
@@ -14,6 +15,12 @@ export const metadata: Metadata = {
   description:
     "Plan NBA 2K27 MyPLAYER builds in your browser: allocate Badge Tokens, compare 40 Signature Blueprints and share a build card. Free, unofficial, no sign-up.",
   alternates: { canonical: canonicalFor("/") },
+  ...socialMeta({
+    path: "/",
+    title: "NBA 2K27 Builder — Badge Token Planner & Blueprint Compare",
+    description:
+      "Plan NBA 2K27 MyPLAYER builds in your browser: allocate Badge Tokens, compare 40 Signature Blueprints and share a build card. Free, unofficial, no sign-up.",
+  }),
 };
 
 const bundle = mechanics as MechanicsBundle;

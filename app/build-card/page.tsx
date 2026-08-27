@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/social";
 import { BuildCardClient } from "./BuildCardClient";
 
 // Functional page (seo §3 noindex group): own H1/title for UX, never indexed,
@@ -8,6 +9,12 @@ export const metadata: Metadata = {
   description:
     "Turn your NBA 2K27 Badge Token plan into a link and a clean text build card — no screenshots, no account.",
   robots: { index: false, follow: true },
+  // R15: social card for link shares; no og:url (query-driven view state).
+  ...socialMeta({
+    title: "Create a Shareable Build Card",
+    description:
+      "Turn your NBA 2K27 Badge Token plan into a link and a clean text build card — no screenshots, no account.",
+  }),
 };
 
 export default function BuildCardPage() {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { canonicalFor } from "@/lib/canonical";
+import { socialMeta } from "@/lib/social";
 import { webPageSchema } from "@/lib/schema";
 
 // R10.1 finalized copy (compliance/legal-pages-final-v1.md §2.1).
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "My2KBuilder is an independent, fan-made NBA 2K27 build planner. Not affiliated with or endorsed by 2K, Visual Concepts, Take-Two, the NBA, or any players association.",
   alternates: { canonical: canonicalFor("/disclaimer") },
+  ...socialMeta({
+    path: "/disclaimer",
+    title: "Disclaimer",
+    description:
+      "My2KBuilder is an independent, fan-made NBA 2K27 build planner. Not affiliated with or endorsed by 2K, Visual Concepts, Take-Two, the NBA, or any players association.",
+  }),
 };
 
 export default function DisclaimerPage() {

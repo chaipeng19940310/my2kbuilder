@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { canonicalFor } from "@/lib/canonical";
+import { socialMeta } from "@/lib/social";
 import { webPageSchema } from "@/lib/schema";
 
 // R10.1 finalized copy (compliance/legal-pages-final-v1.md §2.2), updated in
@@ -14,6 +15,12 @@ export const metadata: Metadata = {
   description:
     "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. Analytics run only with your consent.",
   alternates: { canonical: canonicalFor("/privacy") },
+  ...socialMeta({
+    path: "/privacy",
+    title: "Privacy Policy",
+    description:
+      "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. Analytics run only with your consent.",
+  }),
 };
 
 const SECTIONS = [

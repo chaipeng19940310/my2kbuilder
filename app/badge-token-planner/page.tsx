@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { canonicalFor } from "@/lib/canonical";
+import { socialMeta } from "@/lib/social";
 import {
   breadcrumbSchema,
   faqPageSchema,
@@ -15,6 +16,12 @@ export const metadata: Metadata = {
   description:
     "Allocate Badge Tokens across 20 slots, see how height and position change token costs, and catch conflicts before you lock a build. Free web tool, no download.",
   alternates: { canonical: canonicalFor("/badge-token-planner") },
+  ...socialMeta({
+    path: "/badge-token-planner",
+    title: "NBA 2K27 Badge Token Planner — 53 Badges, 20 Slots",
+    description:
+      "Allocate Badge Tokens across 20 slots, see how height and position change token costs, and catch conflicts before you lock a build. Free web tool, no download.",
+  }),
 };
 
 // FAQ freeze (copy §5.2). The cost-provenance FAQ stays offline until the

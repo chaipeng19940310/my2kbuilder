@@ -4,6 +4,7 @@ import { Icon } from "@/components/Icon";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { SourceTag } from "@/components/SourceTag";
 import { canonicalFor } from "@/lib/canonical";
+import { socialMeta } from "@/lib/social";
 import { DATA_LAST_VERIFIED } from "@/lib/env";
 import { aboutPageSchema, breadcrumbSchema } from "@/lib/schema";
 import {
@@ -22,6 +23,12 @@ export const metadata: Metadata = {
   description:
     "Every data point on My2KBuilder is labeled by source tier: official confirmed, cross-checked community reference, or community unverified. See what's verified and when it was last updated.",
   alternates: { canonical: canonicalFor("/methodology") },
+  ...socialMeta({
+    path: "/methodology",
+    title: "Data Methodology — How We Source NBA 2K27 Builder Data",
+    description:
+      "Every data point on My2KBuilder is labeled by source tier: official confirmed, cross-checked community reference, or community unverified. See what's verified and when it was last updated.",
+  }),
 };
 
 /**

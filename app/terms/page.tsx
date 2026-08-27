@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { canonicalFor } from "@/lib/canonical";
+import { socialMeta } from "@/lib/social";
 import { webPageSchema } from "@/lib/schema";
 
 // R10.1 finalized copy (compliance/legal-pages-final-v1.md §2.3).
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Terms of service for My2KBuilder, an unofficial fan-made NBA 2K27 build planner with no accounts, no payments, and no server-side build storage.",
   alternates: { canonical: canonicalFor("/terms") },
+  ...socialMeta({
+    path: "/terms",
+    title: "Terms of Service",
+    description:
+      "Terms of service for My2KBuilder, an unofficial fan-made NBA 2K27 build planner with no accounts, no payments, and no server-side build storage.",
+  }),
 };
 
 const SECTIONS: ReadonlyArray<{ title: string; body?: string; list?: string[] }> = [

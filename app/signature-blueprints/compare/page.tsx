@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/social";
 import { CompareClient } from "./CompareClient";
 
 // Functional page (seo §3 noindex group): own H1/title for UX, never indexed,
@@ -8,6 +9,12 @@ export const metadata: Metadata = {
   description:
     "Compare up to 3 NBA 2K27 Signature Blueprints side by side: attribute deltas and key badges against your first pick.",
   robots: { index: false, follow: true },
+  // R15: social card for link shares; no og:url (query-driven view state).
+  ...socialMeta({
+    title: "Compare Signature Blueprints",
+    description:
+      "Compare up to 3 NBA 2K27 Signature Blueprints side by side: attribute deltas and key badges against your first pick.",
+  }),
 };
 
 export default function CompareBlueprintsPage() {

@@ -4,6 +4,8 @@ import "./globals.css";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AnalyticsConsent } from "@/components/analytics/AnalyticsConsent";
+import { CANONICAL_HOST, hasCanonicalHost } from "@/lib/canonical";
+import { socialMeta } from "@/lib/social";
 
 // Self-hosted fonts (R7B condition C-02): woff2 vendored in app/fonts,
 // served same-origin via next/font/local. Zero third-party font requests.
@@ -26,13 +28,28 @@ const ibmPlexSans = localFont({
   display: "swap",
 });
 
+// R15: site-wide social share defaults. metadataBase tracks CANONICAL_HOST
+// (build-time env, approved host = my2kbuilder.com) so og:/twitter: URLs are
+// absolute in production. Pages override title/description/url via
+// lib/social.ts socialMeta() using their existing frozen copy.
+const DEFAULT_TITLE = "My2KBuilder — NBA 2K27 Builder";
+const DEFAULT_DESCRIPTION =
+  "Plan NBA 2K27 MyPLAYER builds in your browser: allocate Badge Tokens, compare 40 Signature Blueprints and share a build card. Free, unofficial, no sign-up.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    hasCanonicalHost() ? `https://${CANONICAL_HOST}` : "http://localhost:3000",
+  ),
   title: {
-    default: "My2KBuilder — NBA 2K27 Builder",
+    default: DEFAULT_TITLE,
     template: "%s | My2KBuilder",
   },
-  description:
-    "Plan NBA 2K27 MyPLAYER builds in your browser: allocate Badge Tokens, compare 40 Signature Blueprints and share a build card. Free, unofficial, no sign-up.",
+  description: DEFAULT_DESCRIPTION,
+  ...socialMeta({
+    path: "/",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+  }),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

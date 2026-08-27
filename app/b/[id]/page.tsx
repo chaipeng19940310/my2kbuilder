@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/social";
 import { SharedBuildClient } from "./SharedBuildClient";
 
 // Shared build restore (contract §2 #6) — noindex, follow, never in sitemap.
@@ -9,6 +10,13 @@ export const metadata: Metadata = {
   description:
     "A player shared this NBA 2K27 build with you. Open it in the planner to see the full allocation — or change anything and make it your own.",
   robots: { index: false, follow: true },
+  // R15: shared build links are the top social-share surface — emit OG/Twitter
+  // card but no og:url so crawlers keep the actual shared URL.
+  ...socialMeta({
+    title: "Shared NBA 2K27 Build",
+    description:
+      "A player shared this NBA 2K27 build with you. Open it in the planner to see the full allocation — or change anything and make it your own.",
+  }),
 };
 
 export default async function SharedBuildPage({ params }: { params: Promise<{ id: string }> }) {

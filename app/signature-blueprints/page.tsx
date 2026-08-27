@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { canonicalFor } from "@/lib/canonical";
+import { socialMeta } from "@/lib/social";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { BlueprintsClient } from "./BlueprintsClient";
 
@@ -10,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "Browse and filter all 40 Signature Blueprints in NBA 2K27, compare up to 3 side by side, then open one in the Badge Token Planner. Free, unofficial, no sign-up.",
   alternates: { canonical: canonicalFor("/signature-blueprints") },
+  ...socialMeta({
+    path: "/signature-blueprints",
+    title: "NBA 2K27 Signature Blueprints — Browse & Compare 40 Builds",
+    description:
+      "Browse and filter all 40 Signature Blueprints in NBA 2K27, compare up to 3 side by side, then open one in the Badge Token Planner. Free, unofficial, no sign-up.",
+  }),
 };
 
 // FAQ freeze (copy §5.3). Data-provenance answer adapted to the current
