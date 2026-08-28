@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="My2KBuilder original visual asset">
+  <defs>
+    <linearGradient id="bgGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB03A" stop-opacity="0.26"/>
+      <stop offset="0.48" stop-color="#070D1A" stop-opacity="0"/>
+      <stop offset="1" stop-color="#34D0F7" stop-opacity="0.16"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.72"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.24"/>
+    </linearGradient>
+    
+  </defs>
+  
+  <rect width="1600" height="900" fill="#070D1A"/>
+  <rect width="1600" height="900" fill="url(#bgGlow)"/>
+  <g opacity="0.18" stroke="#1E293B">
+    <path d="M0 80H1600"/><path d="M0 160H1600"/><path d="M0 240H1600"/><path d="M0 320H1600"/><path d="M0 400H1600"/><path d="M0 480H1600"/><path d="M0 560H1600"/><path d="M0 640H1600"/><path d="M0 720H1600"/><path d="M0 800H1600"/><path d="M0 880H1600"/>
+    <path d="M0 0V900"/><path d="M160 0V900"/><path d="M320 0V900"/><path d="M480 0V900"/><path d="M640 0V900"/><path d="M800 0V900"/><path d="M960 0V900"/><path d="M1120 0V900"/><path d="M1280 0V900"/><path d="M1440 0V900"/><path d="M1600 0V900"/>
+  </g>
+  <path d="M120 640c160-220 330-330 560-360" fill="none" stroke="#FFB03A" stroke-width="10" stroke-opacity="0.30"/>
+  <path d="M120 700h560M400 700V420M680 700V360" stroke="#FFB03A" stroke-opacity="0.22" stroke-width="4"/>
+  <circle cx="690" cy="330" r="64" fill="none" stroke="#FFB03A" stroke-width="6" stroke-opacity="0.45"/>
+  <g transform="translate(880,128)">
+    <rect width="560" height="640" rx="28" fill="#0E1628" stroke="#1E293B" stroke-width="2"/>
+    <text x="42" y="64" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" letter-spacing="2" fill="#94A3B8">BADGE CONSOLE</text>
+    <text x="42" y="112" font-family="DejaVu Sans, Arial, sans-serif" font-size="40" font-weight="700" fill="#D4E4FA">Build Map</text>
+    <g transform="translate(42,160)">
+      <g transform="translate(0,0)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">SHOOTING</text></g><g transform="translate(156,0)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">FINISHING</text></g><g transform="translate(312,0)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">PLAYMAKING</text></g><g transform="translate(0,136)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">DEFENSE</text></g><g transform="translate(156,136)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">REBOUNDING</text></g><g transform="translate(312,136)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">PHYSICALS</text></g>
+    </g>
+    <g transform="translate(42,470)">
+      <rect x="0" y="0" width="86" height="28" rx="6" fill="#B87333" fill-opacity="0.22" stroke="#B87333"/><text x="43" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Bronze</text><rect x="100" y="0" width="86" height="28" rx="6" fill="#C0C7D1" fill-opacity="0.22" stroke="#C0C7D1"/><text x="143" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Silver</text><rect x="200" y="0" width="86" height="28" rx="6" fill="#F6C453" fill-opacity="0.22" stroke="#F6C453"/><text x="243" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Gold</text><rect x="300" y="0" width="86" height="28" rx="6" fill="#B794F6" fill-opacity="0.22" stroke="#B794F6"/><text x="343" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Hall of Fame</text><rect x="400" y="0" width="86" height="28" rx="6" fill="#67E8F9" fill-opacity="0.22" stroke="#67E8F9"/><text x="443" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Legend</text>
+    </g>
+    <rect x="42" y="540" width="476" height="58" rx="14" fill="#070D1A" stroke="#34D0F7" stroke-opacity="0.45"/>
+    <circle cx="82" cy="569" r="16" fill="#FFB03A"/>
+    <path d="M78 561l16 8-16 8z" fill="#070D1A"/>
+    <text x="116" y="575" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="#D4E4FA">Click-to-load video facade</text>
+  </g>
+  <text x="120" y="150" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" letter-spacing="3" fill="#FFB03A">MY2KBUILDER / R12I</text>
+  <text x="120" y="230" font-family="DejaVu Sans, Arial, sans-serif" font-size="64" font-weight="700" fill="#D4E4FA">Plan builds before</text>
+  <text x="120" y="304" font-family="DejaVu Sans, Arial, sans-serif" font-size="64" font-weight="700" fill="#D4E4FA">you spend points.</text>
+  <text x="120" y="364" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="#94A3B8">Original abstract visual system — no official logos, no player likenesses.</text>
+
+</svg>

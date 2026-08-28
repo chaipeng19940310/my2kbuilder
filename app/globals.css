@@ -143,6 +143,41 @@ body {
   }
 }
 
+/* R12I visual system (design/r12i-visual-handoff-v1.md §2): badge tier chips.
+   Metallic color steps from the design pack; Legend is a planning marker only
+   (never a direct-unlock promise in copy). */
+.tier-chip {
+  display: inline-flex;
+  align-items: center;
+  min-width: 76px;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 4px 8px;
+  border: 1px solid currentColor;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.tier-bronze { color: #b87333; background: rgba(184, 115, 51, 0.16); }
+.tier-silver { color: #c0c7d1; background: rgba(192, 199, 209, 0.14); }
+.tier-gold { color: #f6c453; background: rgba(246, 196, 83, 0.15); }
+.tier-hof { color: #b794f6; background: rgba(183, 148, 246, 0.16); }
+.tier-legend { color: #67e8f9; background: rgba(103, 232, 249, 0.14); }
+
+/* R12I discipline icon wrapper (design handoff §2): 6 original discipline
+   glyphs on #0E1628 with 1px #1E293B border. */
+.discipline-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0e1628;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 6px;
+}
+
 /* R5.4.2 mobile horizontal fit (<=640px): full-width 100% auto, top-anchored,
    bottom fade into page-bg. Desktop/tab untouched. */
 @media (max-width: 640px) {

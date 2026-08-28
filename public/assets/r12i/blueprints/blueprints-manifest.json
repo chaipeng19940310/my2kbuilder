@@ -1,0 +1,367 @@
+{
+  "count": 40,
+  "source": "frontend/site-src/public/data/blueprints.v1.json",
+  "label": "community_unverified",
+  "items": [
+    {
+      "slug": "anomaly",
+      "name": "Anomaly",
+      "position": "C",
+      "best_skill": "Balanced",
+      "height": "7'4\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-anomaly.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "backcourt-bully",
+      "name": "Backcourt Bully",
+      "position": "PG",
+      "best_skill": "Shooting",
+      "height": "6'7\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-backcourt-bully.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "block-party",
+      "name": "Block Party",
+      "position": "C",
+      "best_skill": "Defense",
+      "height": "6'10\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-block-party.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "board-hunter",
+      "name": "Board Hunter",
+      "position": "SF",
+      "best_skill": "Rebounding",
+      "height": "6'9\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-board-hunter.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "bounce",
+      "name": "Bounce",
+      "position": "SG",
+      "best_skill": "Finishing",
+      "height": "6'8\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-bounce.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "boxed-up",
+      "name": "Boxed Up",
+      "position": "SG",
+      "best_skill": "Defense",
+      "height": "6'6\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-boxed-up.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "buckets",
+      "name": "Buckets",
+      "position": "SG",
+      "best_skill": "Shooting",
+      "height": "6'8\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-buckets.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "bull",
+      "name": "Bull",
+      "position": "C",
+      "best_skill": "Balanced",
+      "height": "6'9\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-bull.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "bulldozer",
+      "name": "Bulldozer",
+      "position": "SF",
+      "best_skill": "Finishing",
+      "height": "6'10\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-bulldozer.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "catalyst",
+      "name": "Catalyst",
+      "position": "PF",
+      "best_skill": "Balanced",
+      "height": "6'11\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-catalyst.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "certified-bucket",
+      "name": "Certified Bucket",
+      "position": "PG",
+      "best_skill": "Balanced",
+      "height": "6'2\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-certified-bucket.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "clamp-first-guard",
+      "name": "Clamp First Guard",
+      "position": "PG",
+      "best_skill": "Defense",
+      "height": "6'2\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-clamp-first-guard.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "clamps",
+      "name": "Clamps",
+      "position": "SF",
+      "best_skill": "Defense",
+      "height": "6'8\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-clamps.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "combo-guard",
+      "name": "Combo Guard",
+      "position": "SG",
+      "best_skill": "Balanced",
+      "height": "6'4\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-combo-guard.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "conductor",
+      "name": "Conductor",
+      "position": "PF",
+      "best_skill": "Playmaking",
+      "height": "6'8\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-conductor.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "defensive-blueprint",
+      "name": "Defensive Blueprint",
+      "position": "SF",
+      "best_skill": "Defense",
+      "height": "6'10\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-defensive-blueprint.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "dissector",
+      "name": "Dissector",
+      "position": "SG",
+      "best_skill": "Playmaking",
+      "height": "6'8\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-dissector.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "dynamic-finisher",
+      "name": "Dynamic Finisher",
+      "position": "SF",
+      "best_skill": "Finishing",
+      "height": "6'9\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-dynamic-finisher.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "dynamic-five",
+      "name": "Dynamic Five",
+      "position": "C",
+      "best_skill": "Shooting",
+      "height": "7'1\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-dynamic-five.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "eraser",
+      "name": "Eraser",
+      "position": "PF",
+      "best_skill": "Defense",
+      "height": "7'0\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-eraser.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "flight-risk",
+      "name": "Flight Risk",
+      "position": "PG",
+      "best_skill": "Finishing",
+      "height": "6'7\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-flight-risk.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "glass-dimes",
+      "name": "Glass Dimes",
+      "position": "PF",
+      "best_skill": "Rebounding",
+      "height": "7'0\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-glass-dimes.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "glass-monster",
+      "name": "Glass Monster",
+      "position": "C",
+      "best_skill": "Rebounding",
+      "height": "7'1\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-glass-monster.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "launchpad",
+      "name": "Launchpad",
+      "position": "PG",
+      "best_skill": "Finishing",
+      "height": "6'4\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-launchpad.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "offensive-engine",
+      "name": "Offensive Engine",
+      "position": "PG",
+      "best_skill": "Balanced",
+      "height": "6'2\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-offensive-engine.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "offensive-maverick",
+      "name": "Offensive Maverick",
+      "position": "PF",
+      "best_skill": "Balanced",
+      "height": "6'11\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-offensive-maverick.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "paint-beast",
+      "name": "Paint Beast",
+      "position": "C",
+      "best_skill": "Finishing",
+      "height": "6'11\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-paint-beast.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "post-work",
+      "name": "Post Work",
+      "position": "PF",
+      "best_skill": "Playmaking",
+      "height": "7'0\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-post-work.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "poster-machine",
+      "name": "Poster Machine",
+      "position": "PF",
+      "best_skill": "Finishing",
+      "height": "6'11\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-poster-machine.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "prototype",
+      "name": "Prototype",
+      "position": "SG",
+      "best_skill": "Balanced",
+      "height": "6'8\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-prototype.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "scoring-machine",
+      "name": "Scoring Machine",
+      "position": "SF",
+      "best_skill": "Shooting",
+      "height": "6'7\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-scoring-machine.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "splash",
+      "name": "Splash",
+      "position": "SG",
+      "best_skill": "Shooting",
+      "height": "6'5\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-splash.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "stretch",
+      "name": "Stretch",
+      "position": "PF",
+      "best_skill": "Shooting",
+      "height": "7'0\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-stretch.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "tactician",
+      "name": "Tactician",
+      "position": "PG",
+      "best_skill": "Playmaking",
+      "height": "6'7\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-tactician.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "three-level-virtuoso",
+      "name": "Three Level Virtuoso",
+      "position": "SF",
+      "best_skill": "Balanced",
+      "height": "6'10\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-three-level-virtuoso.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "titan",
+      "name": "Titan",
+      "position": "C",
+      "best_skill": "Finishing",
+      "height": "7'4\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-titan.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "triple-double-threat",
+      "name": "Triple Double Threat",
+      "position": "C",
+      "best_skill": "Playmaking",
+      "height": "7'1\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-triple-double-threat.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "turbo",
+      "name": "Turbo",
+      "position": "PG",
+      "best_skill": "Playmaking",
+      "height": "6'0\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-turbo.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "utility",
+      "name": "Utility",
+      "position": "SG",
+      "best_skill": "Rebounding",
+      "height": "6'6\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-utility.svg",
+      "source_label": "community_unverified"
+    },
+    {
+      "slug": "versatility",
+      "name": "Versatility",
+      "position": "SF",
+      "best_skill": "Balanced",
+      "height": "6'10\"",
+      "asset": "design/assets/r12i/blueprints/blueprint-versatility.svg",
+      "source_label": "community_unverified"
+    }
+  ]
+}

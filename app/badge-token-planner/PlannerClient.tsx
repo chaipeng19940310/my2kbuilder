@@ -1,17 +1,16 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { DataSourceBanner } from "@/components/SourceTag";
+import { DisciplineIcon } from "@/components/DisciplineIcon";
 import {
   DISCIPLINES,
   badgeCatalog,
   badgeLockedAtHeight,
-  fetchBundle,
   requirementSummary,
   type BadgeRequirementsBundle,
-  type LoadState,
 } from "@/lib/data";
 import {
   DISCIPLINE_COUNT,
@@ -39,6 +38,11 @@ import {
  * 2K, so no cost numbers are shown anywhere: the uniform label is "Token
  * costs pending — official values not published" (owner decision
  * r12i-wave1-owner-decision-2026-08-28).
+ *
+ * R12I-D: the bundle is imported at build time and passed in as a prop (no
+ * runtime fetch, no loading shell); the page also server-renders the full
+ * 53-badge roster with four-tier requirements below the tool so crawlers get
+ * real content without executing JS.
  */
 
 const DEFAULT_HEIGHT = 74;
@@ -47,9 +51,8 @@ function heightLabel(inches: number): string {
   return `${Math.floor(inches / 12)}'${inches % 12}"`;
 }
 
-export function PlannerClient() {
+export function PlannerClient({ bundle }: { bundle: BadgeRequirementsBundle }) {
   const router = useRouter();
-  const [bundleState, setBundleState] = useState<LoadState<BadgeRequirementsBundle>>({ status: "loading" });
 
   // R16 (H2): SSR ships the real controls, and a parse-time inline script
   // (see page.tsx) already answers position-select / guide-CTA clicks before
@@ -96,20 +99,6 @@ export function PlannerClient() {
     }, 2400);
   }
 
-  const load = useCallback(() => {
-    setBundleState({ status: "loading" });
-    fetchBundle<BadgeRequirementsBundle>("/data/badge-requirements.v1.json")
-      .then((data) => setBundleState({ status: "ready", data }))
-      .catch((e: unknown) =>
-        setBundleState({
-          status: "error",
-          message: e instanceof Error ? e.message : "Data bundle failed to load.",
-        }),
-      );
-  }, []);
-
-  useEffect(load, [load]);
-
   // Restore state from hash: #v=<encoded> (from build card / shared link) or
   // #bp=<blueprintIndex> (from blueprints browser "Open in Planner").
   useEffect(() => {
@@ -142,10 +131,7 @@ export function PlannerClient() {
     window.history.replaceState(null, "", window.location.pathname);
   }, []);
 
-  const catalog = useMemo(
-    () => (bundleState.status === "ready" ? badgeCatalog(bundleState.data) : []),
-    [bundleState],
-  );
+  const catalog = useMemo(() => badgeCatalog(bundle), [bundle]);
 
   const usedSlots = allocations.reduce((sum, [, s]) => sum + s, 0);
   const overBudget = usedSlots > MAX_BADGE_SLOTS;
@@ -211,14 +197,9 @@ export function PlannerClient() {
     }
   }
 
-  /* ---------- data bundle states (contract §6.1) ---------- */
-
-  // R16 (H2): the data bundle only gates the badge list (right column). The
-  // Position/Height/Priorities controls do not depend on the bundle and are
-  // rendered immediately (SSR) so the tool is usable the moment it hydrates,
-  // instead of the whole tool sitting behind a skeleton until the fetch lands.
-  const bundleLoading = bundleState.status === "loading";
-  const bundleError = bundleState.status === "error" ? bundleState.message : null;
+  /* ---------- data bundle states (contract §6.1) ----------
+     R12I-D: the bundle is a build-time prop — no runtime fetch, no loading or
+     error shell. Bundle integrity is enforced by npm run data:verify in CI. */
 
   const emptyCatalog = catalog.length === 0;
 
@@ -347,7 +328,10 @@ export function PlannerClient() {
                         : "border-border-low bg-surface-container-high text-on-surface-variant hover:text-on-surface"
                     }`}
                   >
-                    {name}
+                    <span className="flex items-center gap-2">
+                      <DisciplineIcon discipline={name} size={16} />
+                      {name}
+                    </span>
                     {rank >= 0 ? (
                       <span className="rounded bg-secondary px-1.5 py-0.5 text-code-sm font-bold text-on-secondary">
                         P{rank + 1}
@@ -407,22 +391,7 @@ export function PlannerClient() {
             </button>
           </div>
 
-          {bundleError !== null ? (
-            <div className="flex flex-col items-center gap-4 rounded border border-border-low bg-surface-container-low p-8 text-center">
-              <Icon name="warning" size={28} className="text-error" />
-              <p className="text-body-md text-on-surface-variant">
-                The badge data bundle couldn&apos;t be loaded. Check your connection and try again.
-              </p>
-              <button
-                type="button"
-                disabled={!hydrated}
-                onClick={load}
-                className="rounded bg-primary-container px-6 py-3 text-label-md font-bold text-on-primary hover:bg-surface-tint disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                Retry
-              </button>
-            </div>
-          ) : position < 0 ? (
+          {position < 0 ? (
             // R16 (H1): real CTA, not a dead info card. Works pre-hydration
             // via the inline bridge (scroll); post-hydration it also focuses
             // and highlights the Position group.
@@ -440,18 +409,6 @@ export function PlannerClient() {
                 Choose a position
               </span>
             </button>
-          ) : bundleLoading ? (
-            <div className="flex flex-col gap-2" aria-busy="true">
-              <p role="status" className="animate-pulse text-body-sm text-text-muted">
-                Loading badge data…
-              </p>
-              {[0, 1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="h-16 animate-pulse rounded border border-border-low bg-surface-container-high"
-                />
-              ))}
-            </div>
           ) : emptyCatalog ? (
             <div className="rounded border border-dashed border-border-low p-8 text-center text-body-md text-on-surface-variant">
               No badges in the data bundle.
@@ -469,6 +426,7 @@ export function PlannerClient() {
                   >
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
+                        <DisciplineIcon discipline={badge.category} size={16} />
                         <span className="text-body-md text-on-surface">{badge.name}</span>
                         <span className="rounded bg-surface-container-high px-1.5 py-0.5 text-code-sm text-on-surface-variant">
                           {badge.category}

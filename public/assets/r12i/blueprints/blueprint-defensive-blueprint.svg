@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-label="My2KBuilder original visual asset">
+  <defs>
+    <linearGradient id="bgGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB03A" stop-opacity="0.26"/>
+      <stop offset="0.48" stop-color="#070D1A" stop-opacity="0"/>
+      <stop offset="1" stop-color="#34D0F7" stop-opacity="0.16"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.72"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.24"/>
+    </linearGradient>
+    
+  </defs>
+  
+  <rect width="640" height="400" rx="24" fill="#070D1A"/>
+  <rect x="18" y="18" width="604" height="364" rx="20" fill="#0E1628" stroke="#1E293B" stroke-width="2"/>
+  <g transform="translate(42,58)">
+    <rect width="224" height="284" rx="16" fill="#122131" stroke="#1E293B"/>
+    <path d="M112 18v248M28 142h168M28 66h168M28 218h168" stroke="#1E293B"/>
+    <circle cx="112" cy="142" r="58" fill="none" stroke="#1E293B"/>
+    <path d="M58 266h108" stroke="#A3E635" stroke-width="4" stroke-opacity="0.75"/>
+    <path d="M136 94L170 112L212 82" fill="none" stroke="#A3E635" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="170" cy="112" r="13" fill="#A3E635" fill-opacity="0.25" stroke="#A3E635" stroke-width="3"/>
+    <circle cx="136" cy="94" r="5" fill="#94A3B8"/>
+    <circle cx="212" cy="82" r="5" fill="#94A3B8"/>
+    <text x="112" y="322" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" letter-spacing="1.5" fill="#94A3B8">ABSTRACT COURT MAP</text>
+  </g>
+  <text x="302" y="82" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" letter-spacing="2" fill="#94A3B8">SIGNATURE BLUEPRINT</text>
+  <text x="302" y="132" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#D4E4FA">Defensive Blueprint</text>
+  <g font-family="DejaVu Sans, Arial, sans-serif" font-size="15">
+    <rect x="302" y="162" width="86" height="30" rx="7" fill="#A3E635" fill-opacity="0.20" stroke="#A3E635"/>
+    <text x="345" y="183" text-anchor="middle" fill="#D4E4FA">SF</text>
+    <rect x="400" y="162" width="140" height="30" rx="7" fill="#122131" stroke="#1E293B"/>
+    <text x="470" y="183" text-anchor="middle" fill="#D4E4FA">Defense</text>
+    <rect x="302" y="210" width="238" height="30" rx="7" fill="#122131" stroke="#1E293B"/>
+    <text x="421" y="231" text-anchor="middle" fill="#94A3B8">Height 6&#x27;10&quot;</text>
+  </g>
+  <g transform="translate(302,270)">
+    <rect x="0" y="0" width="46" height="18" rx="4" fill="#B87333" fill-opacity="0.18" stroke="#B87333"/><rect x="54" y="0" width="46" height="18" rx="4" fill="#C0C7D1" fill-opacity="0.18" stroke="#C0C7D1"/><rect x="108" y="0" width="46" height="18" rx="4" fill="#F6C453" fill-opacity="0.18" stroke="#F6C453"/><rect x="162" y="0" width="46" height="18" rx="4" fill="#B794F6" fill-opacity="0.18" stroke="#B794F6"/><rect x="216" y="0" width="46" height="18" rx="4" fill="#67E8F9" fill-opacity="0.18" stroke="#67E8F9"/>
+  </g>
+  <rect x="302" y="314" width="238" height="34" rx="8" fill="#070D1A" stroke="#FFB03A" stroke-opacity="0.5"/>
+  <text x="421" y="336" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" letter-spacing="1.2" fill="#FFB03A">UNVERIFIED · COMMUNITY DATA</text>
+
+</svg>

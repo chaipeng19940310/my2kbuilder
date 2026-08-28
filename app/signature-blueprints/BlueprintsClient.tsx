@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
@@ -8,10 +8,8 @@ import { DataSourceBanner, SourceTag } from "@/components/SourceTag";
 import {
   blueprintList,
   blueprintUnlocks,
-  fetchBundle,
   type Blueprint,
   type BlueprintsBundle,
-  type LoadState,
 } from "@/lib/data";
 import { POSITIONS } from "@/lib/share-codec";
 
@@ -24,6 +22,11 @@ import { POSITIONS } from "@/lib/share-codec";
  * every other blueprint's name, comparisons and profile fields are
  * single-source community data and are labeled Unverified per item (owner
  * decision r12i-wave1-owner-decision-2026-08-28).
+ *
+ * R12I-D: the bundle is imported at build time and passed in as a prop, so
+ * the full 40-card grid (real names + three-player blends) is server-rendered
+ * into the HTML — crawlers see real content without executing JS. Position /
+ * search filters and compare selection stay client-side enhancements.
  *
  * Selection state travels in the URL hash (#c=...) — never in an indexable
  * URL (contract §2 rule 3). Compare itself is a noindex route.
@@ -38,32 +41,14 @@ function topAttributes(bp: Blueprint, count: number): Array<{ label: string; val
     .slice(0, count);
 }
 
-export function BlueprintsClient() {
+export function BlueprintsClient({ bundle }: { bundle: BlueprintsBundle }) {
   const router = useRouter();
-  const [bundleState, setBundleState] = useState<LoadState<BlueprintsBundle>>({ status: "loading" });
 
   const [position, setPosition] = useState<string>("");
   const [query, setQuery] = useState<string>("");
   const [selected, setSelected] = useState<number[]>([]);
 
-  const load = useCallback(() => {
-    setBundleState({ status: "loading" });
-    fetchBundle<BlueprintsBundle>("/data/blueprints.v1.json")
-      .then((data) => setBundleState({ status: "ready", data }))
-      .catch((e: unknown) =>
-        setBundleState({
-          status: "error",
-          message: e instanceof Error ? e.message : "Data bundle failed to load.",
-        }),
-      );
-  }, []);
-
-  useEffect(load, [load]);
-
-  const blueprints = useMemo(
-    () => (bundleState.status === "ready" ? blueprintList(bundleState.data) : []),
-    [bundleState],
-  );
+  const blueprints = useMemo(() => blueprintList(bundle), [bundle]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -95,39 +80,9 @@ export function BlueprintsClient() {
     }
   }
 
-  /* ---------- data bundle states (contract §6.1) ---------- */
-
-  if (bundleState.status === "loading") {
-    return (
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" aria-busy="true">
-        {[0, 1, 2, 3, 4, 5].map((i) => (
-          <div key={i} className="animate-pulse rounded border border-border-low bg-surface-card p-6">
-            <div className="mb-4 h-6 w-2/3 rounded bg-surface-container-high" />
-            <div className="mb-2 h-4 w-1/3 rounded bg-surface-container-high" />
-            <div className="h-24 w-full rounded bg-surface-container-high" />
-          </div>
-        ))}
-      </div>
-    );
-  }
-
-  if (bundleState.status === "error") {
-    return (
-      <div className="flex flex-col items-center gap-4 rounded border border-border-low bg-surface-card p-8 text-center">
-        <Icon name="warning" size={28} className="text-error" />
-        <p className="text-body-md text-on-surface-variant">
-          The blueprint data bundle couldn&apos;t be loaded. Check your connection and try again.
-        </p>
-        <button
-          type="button"
-          onClick={load}
-          className="rounded bg-primary-container px-6 py-3 text-label-md font-bold text-on-primary hover:bg-surface-tint"
-        >
-          Retry
-        </button>
-      </div>
-    );
-  }
+  /* ---------- data bundle states (contract §6.1) ----------
+     R12I-D: no runtime fetch — the bundle is a build-time prop, so the grid
+     renders on the server and there is no loading/error shell here. */
 
   return (
     <div className="flex flex-col gap-6 pb-28">
@@ -206,13 +161,24 @@ export function BlueprintsClient() {
               <li
                 key={bp.index}
                 id={`bp-${bp.slug}`}
-                className={`flex flex-col gap-4 rounded border p-6 transition-colors ${
+                className={`flex flex-col gap-4 overflow-hidden rounded border transition-colors ${
                   isSelected
                     ? "border-secondary bg-surface-container-low"
                     : "border-border-low bg-surface-card hover:border-primary-container"
                 }`}
               >
-                <div className="flex items-start justify-between gap-2">
+                {/* R12I card visual (design pack t_65009bdd): original abstract
+                    court/position/playstyle art, local static asset. */}
+                {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG asset */}
+                <img
+                  src={`/assets/r12i/blueprints/blueprint-${bp.slug}.svg`}
+                  alt={`${bp.name} blueprint visual`}
+                  width={640}
+                  height={400}
+                  loading="lazy"
+                  className="aspect-[8/5] w-full border-b border-border-low object-cover"
+                />
+                <div className="flex items-start justify-between gap-2 px-6 pt-2">
                   <div className="min-w-0">
                     <h3 className="font-display text-headline-sm text-on-surface">{bp.name}</h3>
                     <p className="mt-1 text-body-sm text-text-muted">
@@ -237,14 +203,14 @@ export function BlueprintsClient() {
                   </button>
                 </div>
 
-                <div className="flex flex-col gap-1.5">
+                <div className="flex flex-col gap-1.5 px-6">
                   <p className="text-body-sm text-on-surface-variant">
                     Blends: {bp.comparisons.join(" · ")}
                   </p>
                   {nameIsConfirmed ? <SourceTag tier="official" /> : null}
                 </div>
 
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 px-6">
                   {p?.best_skill ? (
                     <span className="rounded bg-surface-container-high px-1.5 py-0.5 text-code-sm capitalize text-on-surface-variant">
                       {p.best_skill}
@@ -252,7 +218,7 @@ export function BlueprintsClient() {
                   ) : null}
                 </div>
 
-                <ul className="flex flex-col gap-1">
+                <ul className="flex flex-col gap-1 px-6">
                   {topAttributes(bp, 3).map((a) => (
                     <li key={a.label} className="flex items-center justify-between text-body-sm">
                       <span className="text-on-surface-variant">{a.label}</span>
@@ -261,7 +227,7 @@ export function BlueprintsClient() {
                   ))}
                 </ul>
 
-                <div className="mt-auto flex flex-col gap-3 border-t border-border-low pt-3">
+                <div className="mt-auto flex flex-col gap-3 border-t border-border-low px-6 pb-6 pt-3">
                   <div className="flex flex-wrap items-center gap-2">
                     {/* Profile fields are single-source community data on every
                         card; for Bulldozer the name/blend carry the confirmed

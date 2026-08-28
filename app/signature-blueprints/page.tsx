@@ -88,7 +88,7 @@ export default function SignatureBlueprintsPage() {
           <h2 className="font-display text-headline-md text-on-surface">Browse All 40 Blueprints</h2>
           <span className="text-body-sm text-text-muted">Compare up to 3 side by side</span>
         </div>
-        <BlueprintsClient />
+        <BlueprintsClient bundle={blueprintsBundle as BlueprintsBundle} />
       </section>
 
       {/* About blueprint data (R12I-A: source annotation for the real bundle) */}

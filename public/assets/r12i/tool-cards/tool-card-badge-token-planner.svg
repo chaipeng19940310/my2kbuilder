@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="My2KBuilder original visual asset">
+  <defs>
+    <linearGradient id="bgGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB03A" stop-opacity="0.26"/>
+      <stop offset="0.48" stop-color="#070D1A" stop-opacity="0"/>
+      <stop offset="1" stop-color="#34D0F7" stop-opacity="0.16"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.72"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.24"/>
+    </linearGradient>
+    
+  </defs>
+  
+  <rect width="800" height="500" rx="28" fill="#070D1A"/>
+  <rect x="28" y="28" width="744" height="444" rx="24" fill="#0E1628" stroke="#1E293B" stroke-width="2"/>
+  <rect x="56" y="56" width="220" height="388" rx="20" fill="#FFB03A" fill-opacity="0.14" stroke="#FFB03A" stroke-opacity="0.55"/>
+  <g transform="translate(86,100) scale(1.7)"><g fill="none" stroke="#D4E4FA" stroke-width="3"><rect x="0" y="0" width="70" height="20" rx="5" stroke="#FFB03A"/><rect x="0" y="30" width="70" height="20" rx="5"/><rect x="0" y="60" width="70" height="20" rx="5"/><circle cx="88" cy="40" r="18" stroke="#A3E635"/></g></g>
+  <text x="320" y="112" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" letter-spacing="2" fill="#94A3B8">TOOL CARD</text>
+  <text x="320" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#D4E4FA">Badge Token Planner</text>
+  <text x="320" y="226" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" fill="#94A3B8">20 slots / 6 disciplines / pending costs</text>
+  <g transform="translate(320,292)">
+    <rect width="380" height="44" rx="10" fill="#122131" stroke="#1E293B"/>
+    <rect x="18" y="14" width="180" height="16" rx="8" fill="#FFB03A" fill-opacity="0.55"/>
+    <rect x="222" y="14" width="120" height="16" rx="8" fill="#94A3B8" fill-opacity="0.25"/>
+    <rect y="66" width="380" height="44" rx="10" fill="#122131" stroke="#1E293B"/>
+    <rect x="18" y="80" width="250" height="16" rx="8" fill="#A3E635" fill-opacity="0.40"/>
+  </g>
+
+</svg>

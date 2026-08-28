@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="My2KBuilder original visual asset">
+  <defs>
+    <linearGradient id="bgGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB03A" stop-opacity="0.26"/>
+      <stop offset="0.48" stop-color="#070D1A" stop-opacity="0"/>
+      <stop offset="1" stop-color="#34D0F7" stop-opacity="0.16"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.72"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.24"/>
+    </linearGradient>
+    
+  </defs>
+  
+  <rect width="160" height="160" rx="24" fill="#070D1A"/>
+  <path d="M34 56l16-28 30 22 30-22 16 28v52H34V56z" fill="#B794F6" fill-opacity="0.22" stroke="#B794F6" stroke-width="4"/>
+  <path d="M34 56l16-28 30 22 30-22 16 28v52H34V56z" fill="url(#metal)" opacity="0.34"/>
+  <path d="M34 56l16-28 30 22 30-22 16 28v52H34V56z" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="1.5"/>
+  <text x="80" y="88" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="700" fill="#D4E4FA">Hall of Fame</text>
+  <text x="80" y="112" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" letter-spacing="1.6" fill="#94A3B8">ORIGINAL TIER MARK</text>
+
+</svg>
