@@ -7,6 +7,7 @@ import { Icon } from "@/components/Icon";
 
 const NAV_LINKS = [
   { href: "/badge-token-planner", label: "Badge Planner" },
+  { href: "/badge-requirements", label: "Badge Requirements" },
   { href: "/signature-blueprints", label: "Blueprints" },
   { href: "/methodology", label: "Methodology" },
 ] as const;
