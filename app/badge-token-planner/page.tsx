@@ -146,7 +146,11 @@ export default function BadgeTokenPlannerPage() {
             <Link href="/cap-breakers" className="text-primary-container hover:underline">
               Cap Breakers guide
             </Link>{" "}
-            shows how to plan that gap backwards.
+            shows how to plan that gap backwards. And before copying a 2K26 build over, check the{" "}
+            <Link href="/2k26-to-2k27-build-pitfalls" className="text-primary-container hover:underline">
+              2K26-to-2K27 pitfalls guide
+            </Link>{" "}
+            — body penalties, animation thresholds, and season resets all changed.
           </p>
         </div>
         <div className="flex flex-col gap-3 rounded border border-border-low bg-surface-card p-6">

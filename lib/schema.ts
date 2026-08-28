@@ -120,6 +120,31 @@ export function itemListSchema(opts: {
   };
 }
 
+/**
+ * Article schema。R12J-D 避坑指南内容页（/2k26-to-2k27-build-pitfalls）起用；
+ * headline/datePublished/author 按 SEO 冻结稿口径：headline=冻结 H1，
+ * author=站点组织名（My2KBuilder），datePublished=该页 last verified 日期。
+ */
+export function articleSchema(opts: {
+  headline: string;
+  description?: string;
+  url?: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName?: string;
+}): JsonLd {
+  return {
+    "@context": BASE,
+    "@type": "Article",
+    headline: opts.headline,
+    ...(opts.description ? { description: opts.description } : {}),
+    ...(opts.url ? { url: opts.url, mainEntityOfPage: opts.url } : {}),
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified ?? opts.datePublished,
+    author: { "@type": "Organization", name: opts.authorName ?? "My2KBuilder" },
+  };
+}
+
 /** 序列化为 <script type="application/ld+json"> 内容（React 中 dangerouslySetInnerHTML 用）。 */
 export function jsonLdScript(schema: JsonLd | JsonLd[]): string {
   return JSON.stringify(schema);

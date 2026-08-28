@@ -367,7 +367,11 @@ export default function BadgeRequirementsPage() {
           <Link href="/cap-breakers" className="text-primary-container hover:underline">
             Cap Breakers guide
           </Link>
-          {" shows how to plan the gap backwards."}
+          {" shows how to plan the gap backwards. Copying a 2K26 build instead? Read the "}
+          <Link href="/2k26-to-2k27-build-pitfalls" className="text-primary-container hover:underline">
+            2K26-to-2K27 pitfalls guide
+          </Link>
+          {" first — thresholds and badge math all moved."}
         </p>
       </section>
     </main>

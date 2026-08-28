@@ -1,7 +1,8 @@
 // My2KBuilder — sitemap.xml（契约 §2 规则 4/6）。
-// - 含 11 条 index 路由（/terms 于 R10.2 加入；/badge-requirements 于 R12I-C 加入；
+// - 含 12 条 index 路由（/terms 于 R10.2 加入；/badge-requirements 于 R12I-C 加入；
 //   /takeover-requirements 于 R12J-B 加入、/signature-blueprints/by-position 于
-//   R12J-E 加入，/cap-breakers 由 R12J-C 卡随后加入，Owner 决策
+//   R12J-E 加入，/cap-breakers 于 R12J-C 加入，/2k26-to-2k27-build-pitfalls
+//   由 R12J-D 卡随后加入，Owner 决策
 //   r12j-wave2-owner-decision-2026-08-28 批准建页）；noindex 三页
 //   （/signature-blueprints/compare、/build-card、/b/[id]）永不进入。
 // - CANONICAL_HOST 为空（R10.5 前）时用本地占位 host，仅用于结构验证；
@@ -15,6 +16,7 @@ export const INDEXABLE_ROUTES = [
   "/badge-requirements",
   "/takeover-requirements",
   "/cap-breakers",
+  "/2k26-to-2k27-build-pitfalls",
   "/signature-blueprints",
   "/signature-blueprints/by-position",
   "/methodology",
