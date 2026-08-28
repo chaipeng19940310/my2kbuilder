@@ -84,22 +84,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteNav />
         {children}
         <SiteFooter />
-        {/* R12K-E (Owner 2026-08-28, buildahooper.app-style): no consent
-            banner, no gating — analytics loads directly for every visitor.
-            Owner 2026-08-27 standard self-hosted Plausible snippet, verbatim
-            (cookieless). Rendered in SSR HTML on every page. */}
+        {/* R12K (Owner 2026-08-28, buildahooper.app-style): no consent
+            banner, no gating — all three analytics providers load directly
+            for every visitor. IDs per owner-review/analytics-public-ids-v2.md
+            (2026-08-28 追记). Rendered in SSR HTML on every page. */}
+        {/* Plausible: Owner 2026-08-27 standard self-hosted snippet, verbatim
+            (cookieless). */}
         <script
           defer
           data-domain="my2kbuilder.com"
           src="https://plausible.shipsolo.io/js/script.js"
         ></script>
-        {/* R12K-E reserved slots — DO NOT install in this card:
-            TODO(owner): GA4    — paste gtag snippet once Owner provides the
-                                  M2K measurement ID (G-…); /privacy must be
-                                  updated before enabling.
-            TODO(owner): Clarity — paste Clarity bootstrap once Owner provides
-                                  the M2K project ID; /privacy must be updated
-                                  before enabling. */}
+        {/* GA4: standard gtag.js form, Measurement ID G-LDMWX00TXG. */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-LDMWX00TXG"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.dataLayer = window.dataLayer || [];" +
+              "function gtag(){dataLayer.push(arguments);}" +
+              "gtag('js', new Date());" +
+              "gtag('config', 'G-LDMWX00TXG');",
+          }}
+        />
+        {/* Microsoft Clarity: standard bootstrap, project ID y7k97rca9u. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};" +
+              't=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/y7k97rca9u";' +
+              "y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})" +
+              '(window, document, "clarity", "script", "y7k97rca9u");',
+          }}
+        />
       </body>
     </html>
   );

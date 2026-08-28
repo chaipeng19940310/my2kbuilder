@@ -7,21 +7,22 @@ import { socialMeta } from "@/lib/social";
 import { webPageSchema } from "@/lib/schema";
 
 // R10.1 finalized copy (compliance/legal-pages-final-v1.md §2.2), revised in
-// R12K-E per the Owner 2026-08-28 no-banner/no-gating directive using the
+// R12K per the Owner 2026-08-28 no-banner/no-gating directive using the
 // R12K-D legal final (compliance/legal/r12k-privacy-analytics-v1.md):
-// sections 3–5 rewritten for direct-load cookieless Plausible, new section 9
-// (privacy rights / opt-out), Last Updated 2026-08-28. /disclaimer and
-// /terms are unchanged.
+// sections 3–5 rewritten for always-on analytics, new section 9
+// (privacy rights / opt-out), Last Updated 2026-08-28. R12K-G: all three
+// providers (Plausible, GA4, Clarity) are now installed and enumerated in
+// section 3 with their opt-out links. /disclaimer and /terms are unchanged.
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. We use cookieless, privacy-respecting analytics.",
+    "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. We use Plausible, Google Analytics 4, and Microsoft Clarity to understand site usage.",
   alternates: { canonical: canonicalFor("/privacy") },
   ...socialMeta({
     path: "/privacy",
     title: "Privacy Policy",
     description:
-      "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. We use cookieless, privacy-respecting analytics.",
+      "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. We use Plausible, Google Analytics 4, and Microsoft Clarity to understand site usage.",
   }),
 };
 
@@ -37,19 +38,18 @@ const SECTIONS = [
   {
     title: "3. Analytics and Tracking",
     body: [
-      "This site uses Plausible Analytics, running on our own self-hosted installation, to understand anonymous, aggregate usage such as pages visited, referral sources, and device or browser types in broad form. Plausible does not use tracking cookies, does not collect personal information, and does not build individual user profiles. No analytics data is used for advertising or marketing profiles.",
-      "Analytics scripts load automatically when you visit the site. There is no cookie consent banner because we do not use non-essential tracking cookies.",
-      "We may add additional analytics tools, such as Google Analytics 4 or Microsoft Clarity, in the future. If added, this Privacy Policy will be updated before those tools are enabled.",
+      "This site uses three analytics services, all of which load automatically when you visit. There is no cookie consent banner and no consent gating: Plausible Analytics, running on our own self-hosted installation, for anonymous, aggregate usage such as pages visited, referral sources, and device or browser types in broad form (Plausible does not use tracking cookies, does not collect personal information, and does not build individual user profiles); Google Analytics 4 (Google), which sets cookies and collects usage data to help us understand how the site is used; and Microsoft Clarity (Microsoft), which sets cookies and collects usage and interaction data, such as anonymized session recordings and heatmaps, to help us improve the site.",
+      "No analytics data is used by us for advertising or marketing profiles. Google Analytics and Microsoft Clarity process data under their own privacy policies. You can opt out of Google Analytics with Google's browser add-on at https://tools.google.com/dlpage/gaoptout, and you can manage or opt out of Microsoft data collection at https://choice.microsoft.com.",
     ],
   },
   {
     title: "4. Third-Party Services",
-    body: "The site is served through Cloudflare's edge network. Analytics data is processed by our self-hosted Plausible installation. We do not sell personal data, and we do not use analytics data for advertising or marketing profiles.",
+    body: "The site is served through Cloudflare's edge network. Analytics data is processed by our self-hosted Plausible installation, by Google (Google Analytics 4), and by Microsoft (Microsoft Clarity). We do not sell personal data, and we do not use analytics data for advertising or marketing profiles.",
   },
   {
     title: "5. Cookies",
     body: [
-      "This site does not set advertising or tracking cookies. Because no non-essential cookies are used, we do not show a cookie consent banner.",
+      "This site does not set advertising cookies. Plausible Analytics is cookieless. Google Analytics 4 and Microsoft Clarity set first-party analytics cookies to measure site usage. Because we use these services without a consent gate, we do not show a cookie consent banner.",
       "We may use small amounts of browser storage that are strictly necessary for basic site functionality. For example, site preferences such as theme or planner UI state may be stored locally in your browser's localStorage. These values stay on your device and are not sent to our servers.",
     ],
   },
