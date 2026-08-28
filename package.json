@@ -8,6 +8,8 @@
     "build": "next build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
+    "data:generate": "node scripts/generate-tool-data.mjs",
+    "data:verify": "node scripts/verify-tool-data.mjs",
     "opennext:build": "opennextjs-cloudflare build",
     "preview": "opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare deploy"

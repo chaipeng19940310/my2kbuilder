@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { canonicalFor } from "@/lib/canonical";
 import { socialMeta } from "@/lib/social";
-import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqPageSchema, itemListSchema } from "@/lib/schema";
+import { blueprintList, type BlueprintsBundle } from "@/lib/data";
+import blueprintsBundle from "@/public/data/blueprints.v1.json";
 import { BlueprintsClient } from "./BlueprintsClient";
 
 // SEO freeze (seo §3): title/H1/meta for `/signature-blueprints`.
@@ -19,9 +21,8 @@ export const metadata: Metadata = {
   }),
 };
 
-// FAQ freeze (copy §5.3). Data-provenance answer adapted to the current
-// fixture-only state (contract §8.1: unverified fields are labeled, never
-// presented as fact).
+// FAQ freeze (copy §5.3). R12I-A: data-provenance answer updated for the real
+// production bundle — unverified fields are labeled, never presented as fact.
 const FAQS = [
   {
     question: "What is a Signature Blueprint?",
@@ -41,17 +42,27 @@ const FAQS = [
   {
     question: "Where does blueprint data come from?",
     answer:
-      "Blueprint cards currently show fixture placeholder values while HQ App collection and dual review are completed. Anything unverified is labeled, never shown as fact.",
+      "The 40-template count, the three-player blend mechanism, and Bulldozer's blend are described on 2K's builder pages. Every other blueprint's name, blend, and profile fields come from a single public community source and are labeled Unverified per item — never shown as fact.",
   },
 ] as const;
+
+// R12I-A: real blueprint names power the ItemList schema (the contract §8.1
+// gate was lifted for the real-name roster per owner decision
+// r12i-wave1-owner-decision-2026-08-28).
+const BLUEPRINTS = blueprintList(blueprintsBundle as BlueprintsBundle);
 
 export default function SignatureBlueprintsPage() {
   return (
     <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
-          // ItemList intentionally NOT emitted: gated by contract §8.1 until
-          // data freeze v0 (enforced by gatedItemListSchema in lib/schema).
+          itemListSchema({
+            name: "NBA 2K27 Signature Blueprints",
+            items: BLUEPRINTS.map((bp) => ({
+              name: bp.name,
+              path: canonicalFor(`/signature-blueprints#bp-${bp.slug}`),
+            })),
+          }),
           faqPageSchema([...FAQS]),
           breadcrumbSchema([
             { name: "Home", path: "/" },
@@ -80,14 +91,16 @@ export default function SignatureBlueprintsPage() {
         <BlueprintsClient />
       </section>
 
-      {/* About blueprint data (copy §3.3, adapted to fixture state per §8.1) */}
+      {/* About blueprint data (R12I-A: source annotation for the real bundle) */}
       <section className="flex max-w-3xl flex-col gap-3 rounded border border-border-low bg-surface-card p-6">
         <h2 className="font-display text-headline-sm text-on-surface">About blueprint data</h2>
         <p className="text-body-md text-on-surface-variant">
-          Blueprint cards currently show fixture placeholder values — not verified NBA 2K27 data.
-          Final fields are pending collection from the 2K HQ App, dual review, and a frozen v0.
-          Anything we haven&apos;t verified is labeled, never presented as fact, and we never name
-          the real players a blueprint blends.
+          Blueprint cards show the real 40-template launch roster. The template count, the
+          three-player blend mechanism, and Bulldozer&apos;s blend (LeBron James, Pascal Siakam,
+          Scottie Barnes) are described on 2K&apos;s builder pages. Every other blueprint&apos;s
+          name, player blend, and profile fields (position, height, attributes, badge unlocks) come
+          from a single public community source and are labeled Unverified per item — labeled,
+          never presented as fact.
         </p>
       </section>
 

@@ -4,13 +4,11 @@
  * 路由 → schema 映射（契约 §2 冻结）：
  *   /                        WebSite + SoftwareApplication（offers price 0 USD + isAccessibleForFree，禁 aggregateRating）
  *   /badge-token-planner     SoftwareApplication + FAQPage + BreadcrumbList
- *   /signature-blueprints    ItemList* + FAQPage + BreadcrumbList（*ItemList 冻结前不输出 → gatedItemList 守卫）
+ *   /signature-blueprints    ItemList + FAQPage + BreadcrumbList（R12I-A：真名接入后守卫解除，
+ *                            见 owner-review/r12i-wave1-owner-decision-2026-08-28）
  *   /methodology             AboutPage
  *   /disclaimer, /privacy, /terms    WebPage（/terms 于 R10.2 新增）
  *   compare / build-card / /b/[id]   无或 WebPage（noindex）
- *
- * 硬闸门（契约 §8.1）：ItemList/数据类 schema 在成本矩阵冻结前不得输出；
- * gatedItemList 在 dataFrozen !== true 时直接抛错，防止静默泄漏。
  */
 
 export interface JsonLd {
@@ -101,19 +99,14 @@ export function webPageSchema(opts: { name: string; description?: string; url?: 
 }
 
 /**
- * ItemList（契约 §8.1 冻结硬闸门守卫）。
- * dataFrozen !== true 时抛错：冻结前调用即构建期失败，不给静默输出留路径。
+ * ItemList。R12I-A：蓝图真名（blueprints.v1.json）接入后，契约 §8.1 的冻结
+ * 守卫按 Owner 决策（r12i-wave1-owner-decision-2026-08-28）解除——ItemList 只
+ * 列 40 个真实蓝图名，不含任何未发布的成本数值。
  */
-export function gatedItemListSchema(opts: {
-  dataFrozen: boolean;
+export function itemListSchema(opts: {
   name: string;
   items: Array<{ name: string; path: string }>;
 }): JsonLd {
-  if (opts.dataFrozen !== true) {
-    throw new Error(
-      "ItemList schema is FROZEN-GATED (contract §8.1): badge cost matrix / blueprint data are not collected + dual-reviewed + frozen. Do not emit ItemList before freeze v0.",
-    );
-  }
   return {
     "@context": BASE,
     "@type": "ItemList",

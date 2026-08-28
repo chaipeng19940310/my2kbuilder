@@ -3,15 +3,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
-import { FixtureBanner, SourceTag } from "@/components/SourceTag";
+import { DataSourceBanner } from "@/components/SourceTag";
 import {
   DISCIPLINES,
   badgeCatalog,
-  costPoints,
-  estimateCost,
+  badgeLockedAtHeight,
   fetchBundle,
-  type BadgeCatalogEntry,
-  type CostMatrixBundle,
+  requirementSummary,
+  type BadgeRequirementsBundle,
   type LoadState,
 } from "@/lib/data";
 import {
@@ -33,9 +32,13 @@ import {
  * badges [badgeIndex, slots] with total slots <= 20 (over-budget allowed in
  * UI so the over-budget state is reachable), blueprintRef 0..39 | -1.
  *
- * All badge names / token costs come from the gated fixture bundle and are
- * always labeled Unverified (contract §7/§8.1). The "Where the numbers come
- * from" block and cost-source FAQ stay offline until freeze v0.
+ * R12I-A: the badge list runs on the real production bundle
+ * (/data/badge-requirements.v1.json) — 53 real badge names/categories (2K's
+ * published roster) and four-tier attribute unlock requirements
+ * (cross-checked community reference). Token cost values are not published by
+ * 2K, so no cost numbers are shown anywhere: the uniform label is "Token
+ * costs pending — official values not published" (owner decision
+ * r12i-wave1-owner-decision-2026-08-28).
  */
 
 const DEFAULT_HEIGHT = 74;
@@ -44,15 +47,9 @@ function heightLabel(inches: number): string {
   return `${Math.floor(inches / 12)}'${inches % 12}"`;
 }
 
-interface ConflictHit {
-  a: BadgeCatalogEntry;
-  b: BadgeCatalogEntry;
-  note?: string;
-}
-
 export function PlannerClient() {
   const router = useRouter();
-  const [bundleState, setBundleState] = useState<LoadState<CostMatrixBundle>>({ status: "loading" });
+  const [bundleState, setBundleState] = useState<LoadState<BadgeRequirementsBundle>>({ status: "loading" });
 
   // R16 (H2): SSR ships the real controls, and a parse-time inline script
   // (see page.tsx) already answers position-select / guide-CTA clicks before
@@ -101,7 +98,7 @@ export function PlannerClient() {
 
   const load = useCallback(() => {
     setBundleState({ status: "loading" });
-    fetchBundle<CostMatrixBundle>("/data/badge-cost-matrix.v0.json")
+    fetchBundle<BadgeRequirementsBundle>("/data/badge-requirements.v1.json")
       .then((data) => setBundleState({ status: "ready", data }))
       .catch((e: unknown) =>
         setBundleState({
@@ -138,7 +135,7 @@ export function PlannerClient() {
       const idx = Number.parseInt(bp, 10);
       if (Number.isInteger(idx) && idx >= 0 && idx <= 39) {
         setBlueprintRef(idx);
-        setBlueprintNote(`Starting from blueprint #${idx + 1} (fixture template).`);
+        setBlueprintNote("Starting from a Signature Blueprint template.");
       }
     }
     // Tool state lives in the hash only — never in an indexable URL (contract §2 rule 3).
@@ -149,34 +146,11 @@ export function PlannerClient() {
     () => (bundleState.status === "ready" ? badgeCatalog(bundleState.data) : []),
     [bundleState],
   );
-  const points = useMemo(
-    () => (bundleState.status === "ready" ? costPoints(bundleState.data, catalog) : []),
-    [bundleState, catalog],
-  );
 
   const usedSlots = allocations.reduce((sum, [, s]) => sum + s, 0);
   const overBudget = usedSlots > MAX_BADGE_SLOTS;
 
-  const conflicts = useMemo<ConflictHit[]>(() => {
-    if (position < 0) return [];
-    const assigned = new Map(allocations);
-    const hits: ConflictHit[] = [];
-    for (const badge of catalog) {
-      if (!assigned.has(badge.index) || !badge.conflicts) continue;
-      for (const c of badge.conflicts) {
-        if (!assigned.has(c.withIndex)) continue;
-        if (c.minHeightIn !== undefined && heightIn < c.minHeightIn) continue;
-        const other = catalog.find((b) => b.index === c.withIndex);
-        if (other && badge.index < other.index) {
-          hits.push({ a: badge, b: other, note: c.note });
-        }
-      }
-    }
-    return hits;
-  }, [allocations, catalog, heightIn, position]);
-
-  const hasConflict = conflicts.length > 0;
-  const complete = position >= 0 && usedSlots === MAX_BADGE_SLOTS && !overBudget && !hasConflict;
+  const complete = position >= 0 && usedSlots === MAX_BADGE_SLOTS && !overBudget;
 
   function assignSlot(badgeIndex: number) {
     setAllocations((prev) => {
@@ -251,14 +225,9 @@ export function PlannerClient() {
   /* ---------- derived UI state ---------- */
 
   const statusLine = (() => {
-    if (position < 0) return { kind: "empty" as const, text: "Pick a position and height to see live token costs." };
+    if (position < 0) return { kind: "empty" as const, text: "Pick a position and height to plan your badge loadout." };
     if (overBudget)
       return { kind: "over" as const, text: "Over budget. Remove tokens or lower a badge tier to finish your plan." };
-    if (hasConflict)
-      return {
-        kind: "conflict" as const,
-        text: "This combination isn't allowed. Adjust your allocation to continue.",
-      };
     if (complete) return { kind: "complete" as const, text: "Plan complete. Generate a share link, or keep editing." };
     return { kind: "progress" as const, text: `${usedSlots} / ${MAX_BADGE_SLOTS} slots used` };
   })();
@@ -266,13 +235,12 @@ export function PlannerClient() {
   const ctaDisabledReason = (() => {
     if (complete) return null;
     if (overBudget) return "Over budget. Remove tokens or lower a badge tier to finish your plan.";
-    if (hasConflict) return "This combination isn't allowed. Adjust your allocation to continue.";
     return `Complete all ${MAX_BADGE_SLOTS} slots to generate a link`;
   })();
 
   return (
     <div className="flex flex-col gap-6">
-      <FixtureBanner />
+      <DataSourceBanner scope="badges" />
       {blueprintNote ? (
         <div className="flex items-center gap-2 rounded border border-secondary-container bg-surface-container-low p-3">
           <Icon name="info" size={18} className="text-secondary" />
@@ -352,7 +320,10 @@ export function PlannerClient() {
                 <Icon name="add" size={18} />
               </button>
             </div>
-            <p className="mt-2 text-body-sm text-text-muted">Token costs update live as you change height.</p>
+            <p className="mt-2 text-body-sm text-text-muted">
+              Some badges carry height limits — a badge row tells you when your current height
+              locks it.
+            </p>
           </div>
 
           <div>
@@ -404,9 +375,9 @@ export function PlannerClient() {
               />
             </div>
             <p
-              role={statusLine.kind === "over" || statusLine.kind === "conflict" ? "alert" : "status"}
+              role={statusLine.kind === "over" ? "alert" : "status"}
               className={`mt-3 text-body-sm ${
-                statusLine.kind === "over" || statusLine.kind === "conflict"
+                statusLine.kind === "over"
                   ? "text-error"
                   : statusLine.kind === "complete"
                     ? "text-secondary"
@@ -415,19 +386,8 @@ export function PlannerClient() {
             >
               {statusLine.text}
             </p>
-            {hasConflict ? (
-              <ul className="mt-2 flex flex-col gap-1">
-                {conflicts.map((c) => (
-                  <li key={`${c.a.index}-${c.b.index}`} className="flex items-center gap-2 text-body-sm text-error">
-                    <Icon name="warning" size={16} />
-                    {c.a.name} conflicts with {c.b.name}
-                    {c.note ? ` — ${c.note}` : ""} (fixture rule)
-                  </li>
-                ))}
-              </ul>
-            ) : null}
             <p className="mt-2 text-body-sm text-text-muted">
-              Costs shown are fixture placeholders. <SourceTag tier="unverified" />
+              Token costs pending — official values not published.
             </p>
           </div>
         </section>
@@ -474,7 +434,7 @@ export function PlannerClient() {
             >
               <Icon name="info" size={24} className="text-primary-container" />
               <span className="text-body-md text-on-surface-variant">
-                Pick a position and height to see live token costs.
+                Pick a position and height to plan your badge loadout.
               </span>
               <span className="rounded bg-primary-container px-4 py-2 text-label-md font-bold text-on-primary transition-colors group-hover:bg-surface-tint">
                 Choose a position
@@ -500,9 +460,8 @@ export function PlannerClient() {
             <ul className="flex flex-col gap-2">
               {catalog.map((badge) => {
                 const assigned = allocations.find(([b]) => b === badge.index)?.[1] ?? 0;
-                const cost = estimateCost(points, badge.index, POSITIONS[position], heightIn);
-                const minCost = estimateCost(points, badge.index, POSITIONS[position], HEIGHT_IN_MIN);
-                const costsMoreHere = cost !== null && minCost !== null && cost > minCost;
+                const req = requirementSummary(badge);
+                const locked = badgeLockedAtHeight(badge, heightIn);
                 return (
                   <li
                     key={badge.index}
@@ -512,23 +471,30 @@ export function PlannerClient() {
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="text-body-md text-on-surface">{badge.name}</span>
                         <span className="rounded bg-surface-container-high px-1.5 py-0.5 text-code-sm text-on-surface-variant">
-                          {DISCIPLINES[badge.discipline] ?? "—"}
+                          {badge.category}
                         </span>
-                        {badge.fixtureOnly ? <SourceTag tier="unverified" /> : null}
+                        {badge.is_new_2k27 ? (
+                          <span className="rounded bg-secondary px-1.5 py-0.5 text-code-sm font-bold text-on-secondary">
+                            NEW
+                          </span>
+                        ) : null}
+                        {badge.conflicts.length > 0 ? (
+                          <span
+                            className="rounded border border-outline-variant px-1.5 py-0.5 text-code-sm text-on-surface-variant"
+                            title={badge.conflicts.map((c) => c.issue).join("; ")}
+                          >
+                            Sources differ
+                          </span>
+                        ) : null}
                       </div>
                       <div className="mt-1 text-body-sm text-text-muted">
-                        {cost !== null ? (
-                          <>
-                            Fixture cost at {heightLabel(heightIn)}: {cost} tokens
-                            {costsMoreHere ? (
-                              <span className="ml-2 text-error">
-                                This badge costs more at your current height.
-                              </span>
-                            ) : null}
-                          </>
-                        ) : (
-                          "No fixture cost sampled for this position."
-                        )}
+                        Unlock: {req.attributesText} (Bronze to Hall of Fame range)
+                        {req.heightText ? ` · Height ${req.heightText}` : ""}
+                        {locked ? (
+                          <span className="ml-2 text-error">
+                            Not unlockable at {heightLabel(heightIn)}.
+                          </span>
+                        ) : null}
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -579,11 +545,11 @@ export function PlannerClient() {
             {ctaDisabledReason ? (
               <p className="text-center text-body-sm text-text-muted">{ctaDisabledReason}</p>
             ) : null}
-            {overBudget || hasConflict ? (
+            {overBudget ? (
               <button
                 type="button"
                 onClick={() => {
-                  const first = overBudget ? allocations[allocations.length - 1]?.[0] : conflicts[0]?.a.index;
+                  const first = allocations[allocations.length - 1]?.[0];
                   if (first !== undefined) removeSlot(first);
                 }}
                 className="mx-auto text-label-md text-primary-container hover:underline"

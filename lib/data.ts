@@ -1,26 +1,30 @@
 /**
  * Data layer — typed access to the same-origin JSON bundles (contract §4).
  *
- * Bundles (source of truth: backend/data/, vendored to public/data/):
- *   /data/mechanics.v0.json          launch_data  (official_confirmed facts)
- *   /data/badge-cost-matrix.v0.json  gated_data   (fixtureOnly placeholders)
- *   /data/blueprints.v0.json         gated_data   (fixtureOnly placeholders)
+ * Bundles (source of truth: public/data/, derived from public-reference.v1.json
+ * by scripts/generate-tool-data.mjs):
+ *   /data/mechanics.v0.json            launch_data  (official_confirmed facts)
+ *   /data/public-reference.v1.json     public_reference (R11D reference layer)
+ *   /data/badge-requirements.v1.json   public_reference (R12I-A production bundle:
+ *                                      53 real badges + four-tier unlock requirements)
+ *   /data/blueprints.v1.json           public_reference (R12I-A production bundle:
+ *                                      40 real Signature Blueprints)
  *
  * Record-level minimum fields (contract §4.2): key / value /
  * source_type / source_url_or_capture_ref / captured_at / verified_by /
- * confidence / notes (+ fixtureOnly on gated placeholders).
+ * confidence / notes.
  *
  * Hard rules honored here:
  *  - No silent fallback: a failed fetch surfaces an error state (§6.1);
  *    this module never substitutes mock data for a failed bundle load.
- *  - community_unverified tier never enters the fact layer; gated fixture
- *    records are always presented with an "Unverified" label in the UI.
- *  - R11D (owner approval r11d-public-ref-frontend-integration-approval):
- *    the public reference bundle is vendored to
- *    /data/public-reference.v1.json and rendered with explicit source tiers
- *    (Community reference / Unverified). hq_app_observed is NOT part of the
- *    current public version: no HQ App observed data is published anywhere
- *    on the site until manual collection + dual review + freeze v0.
+ *  - community_unverified tier never enters the fact layer; unverified fields
+ *    are always presented with an "Unverified" label in the UI.
+ *  - Token cost values are not published by 2K: no cost numbers exist in any
+ *    bundle, and the UI labels them "Token costs pending — official values not
+ *    published" (owner decision r12i-wave1-owner-decision-2026-08-28).
+ *  - hq_app_observed is NOT part of the current public version: no HQ App
+ *    observed data is published anywhere on the site until manual collection +
+ *    dual review + freeze v0.
  */
 
 /**
@@ -45,7 +49,6 @@ export interface DataRecord<V = unknown> {
   verified_by: string | null;
   confidence: string;
   notes: string;
-  fixtureOnly?: boolean;
   /* Public-reference schema fields (present on public_reference records). */
   value_type?: string;
   captured_by?: string;
@@ -84,7 +87,7 @@ export function mechanicsFact(bundle: MechanicsBundle, key: string): DataRecord 
   return bundle.records.find((r) => r.key === key);
 }
 
-/* ---------------- badge-cost-matrix.v0.json (gated fixture) ---------------- */
+/* ---------------- badge-requirements.v1.json (R12I-A production bundle) ---------------- */
 
 export const DISCIPLINES = [
   "Finishing",
@@ -96,159 +99,202 @@ export const DISCIPLINES = [
 ] as const;
 export type DisciplineName = (typeof DISCIPLINES)[number];
 
-export interface BadgeCatalogValue {
-  index: number;
+export const BADGE_TIERS = ["bronze", "silver", "gold", "hof"] as const;
+export type BadgeTier = (typeof BADGE_TIERS)[number];
+
+export const BADGE_TIER_LABEL: Record<BadgeTier, string> = {
+  bronze: "Bronze",
+  silver: "Silver",
+  gold: "Gold",
+  hof: "Hall of Fame",
+};
+
+export interface BadgeRequirementCondition {
+  attribute: string;
+  min_rating: number;
+}
+
+export interface BadgeTierRequirement {
+  conditions: BadgeRequirementCondition[];
+  logic: "AND" | "OR" | "single";
+  /** Inches, inclusive bounds. null = no height limit. */
+  height_restriction: { min?: number; max?: number } | null;
+}
+
+/** value shape of each badge.* record in badge-requirements.v1.json */
+export interface BadgeRecordValue {
+  index: number; // 0..52 — frozen; share-codec badgeIndex references it
+  slug: string;
   name: string;
-  discipline: number; // 0..5 index into DISCIPLINES
-  conflicts?: Array<{ withIndex: number; minHeightIn?: number; note?: string }>;
+  category: DisciplineName;
+  discipline_index: number; // 0..5 index into DISCIPLINES
+  is_new_2k27: boolean;
+  requirements: Record<BadgeTier, BadgeTierRequirement>;
+  field_tiers: {
+    name: SourceType;
+    category: SourceType;
+    is_new_2k27: SourceType;
+    requirements: SourceType;
+  };
+  sources: { name: string; requirements: string };
+  conflicts: Array<{ source: string; issue: string }>;
 }
 
-export interface CostRecordValue {
-  badge: string; // fixture badge name
-  badgeIndex?: number; // index into the 53-badge catalog (when provided)
-  position: string; // PG/SG/SF/PF/C
-  height_in: number;
-  token_cost: number; // fixture values are deliberately out of realistic range
-}
+export type BadgeRequirementsBundle = DataBundle<unknown>;
 
-export type CostMatrixBundle = DataBundle<CostRecordValue | BadgeCatalogValue>;
+export type BadgeCatalogEntry = BadgeRecordValue;
 
-export interface BadgeCatalogEntry extends BadgeCatalogValue {
-  fixtureOnly: boolean;
-}
-
-/** Extract the 53-entry badge catalog (records keyed fixture_badge_XX). */
-export function badgeCatalog(bundle: CostMatrixBundle): BadgeCatalogEntry[] {
+/** Extract the 53-entry real badge catalog (records keyed badge.<slug>). */
+export function badgeCatalog(bundle: BadgeRequirementsBundle): BadgeCatalogEntry[] {
   const out: BadgeCatalogEntry[] = [];
   for (const r of bundle.records) {
-    const v = r.value as Partial<BadgeCatalogValue>;
-    if (typeof v.index === "number" && typeof v.name === "string" && typeof v.discipline === "number") {
-      out.push({
-        index: v.index,
-        name: v.name,
-        discipline: v.discipline,
-        conflicts: v.conflicts,
-        fixtureOnly: r.fixtureOnly === true,
-      });
+    if (!r.key.startsWith("badge.") || r.key.startsWith("badge_token.")) continue;
+    const v = r.value as Partial<BadgeRecordValue>;
+    if (typeof v.index === "number" && typeof v.name === "string" && v.requirements) {
+      out.push(v as BadgeRecordValue);
     }
   }
   out.sort((a, b) => a.index - b.index);
   return out;
 }
 
-export interface CostPoint {
-  badgeIndex: number;
-  badgeName: string;
-  position: string;
-  heightIn: number;
-  tokenCost: number;
+function inchesLabel(inches: number): string {
+  return `${Math.floor(inches / 12)}'${inches % 12}"`;
 }
 
-/** Extract cost sample points (badge x position x height). */
-export function costPoints(bundle: CostMatrixBundle, catalog: BadgeCatalogEntry[]): CostPoint[] {
-  const indexByName = new Map(catalog.map((b) => [b.name, b.index]));
-  const pts: CostPoint[] = [];
-  for (const r of bundle.records) {
-    const v = r.value as Partial<CostRecordValue>;
-    if (typeof v.token_cost === "number" && typeof v.position === "string" && typeof v.height_in === "number") {
-      const badgeIndex =
-        typeof v.badgeIndex === "number" ? v.badgeIndex : indexByName.get(v.badge ?? "") ?? -1;
-      if (badgeIndex >= 0) {
-        pts.push({
-          badgeIndex,
-          badgeName: v.badge ?? "",
-          position: v.position,
-          heightIn: v.height_in,
-          tokenCost: v.token_cost,
-        });
-      }
-    }
+/** "≤ 6'4\"" / "≥ 6'3\"" for a height restriction, null when unrestricted. */
+export function heightRestrictionLabel(hr: BadgeTierRequirement["height_restriction"]): string | null {
+  if (!hr) return null;
+  if (hr.max !== undefined && hr.min !== undefined) {
+    return `${inchesLabel(hr.min)}–${inchesLabel(hr.max)} only`;
   }
-  return pts;
+  if (hr.max !== undefined) return `≤ ${inchesLabel(hr.max)}`;
+  if (hr.min !== undefined) return `≥ ${inchesLabel(hr.min)}`;
+  return null;
 }
 
 /**
- * Estimate the (fixture) token cost of a badge at a position/height by
- * linear interpolation across the sampled height points for that
- * badge+position. Fixture-only display value — always labeled Unverified.
+ * Compact, truthful summary of a badge's four-tier requirements for list rows.
+ * Per attribute, shows the min–max rating range across the tiers where that
+ * attribute appears (e.g. "Mid-Range Shot 65–99"); the connective reflects the
+ * logic ("or" for OR, "and" for AND). Height limits appended separately.
  */
-export function estimateCost(
-  points: CostPoint[],
-  badgeIndex: number,
-  position: string,
-  heightIn: number,
-): number | null {
-  const pts = points
-    .filter((p) => p.badgeIndex === badgeIndex && p.position === position)
-    .sort((a, b) => a.heightIn - b.heightIn);
-  if (pts.length === 0) return null;
-  if (heightIn <= pts[0].heightIn) return pts[0].tokenCost;
-  const last = pts[pts.length - 1];
-  if (heightIn >= last.heightIn) return last.tokenCost;
-  for (let i = 0; i < pts.length - 1; i++) {
-    const a = pts[i];
-    const b = pts[i + 1];
-    if (heightIn >= a.heightIn && heightIn <= b.heightIn) {
-      const t = (heightIn - a.heightIn) / (b.heightIn - a.heightIn);
-      return Math.round(a.tokenCost + t * (b.tokenCost - a.tokenCost));
+export function requirementSummary(badge: BadgeCatalogEntry): {
+  attributesText: string;
+  logic: "AND" | "OR" | "single";
+  heightText: string | null;
+} {
+  const tiers = badge.requirements;
+  const logic = tiers.bronze.logic;
+  const connective = logic === "AND" ? " and " : logic === "OR" ? " or " : "";
+  const names: string[] = [];
+  for (const t of BADGE_TIERS) {
+    for (const c of tiers[t].conditions) {
+      if (!names.includes(c.attribute)) names.push(c.attribute);
     }
   }
-  return last.tokenCost;
+  const parts = names.map((name) => {
+    const ratings = BADGE_TIERS.flatMap((t) =>
+      tiers[t].conditions.filter((c) => c.attribute === name).map((c) => c.min_rating),
+    );
+    const lo = Math.min(...ratings);
+    const hi = Math.max(...ratings);
+    return lo === hi ? `${name} ${lo}` : `${name} ${lo}–${hi}`;
+  });
+  const heightText = heightRestrictionLabel(tiers.bronze.height_restriction);
+  return { attributesText: parts.join(connective), logic, heightText };
 }
 
-/* ---------------- blueprints.v0.json (gated fixture) ---------------- */
+/** True when the badge cannot be unlocked at the given height (any tier). */
+export function badgeLockedAtHeight(badge: BadgeCatalogEntry, heightIn: number): boolean {
+  return BADGE_TIERS.every((t) => {
+    const hr = badge.requirements[t].height_restriction;
+    if (!hr) return false;
+    if (hr.max !== undefined && heightIn > hr.max) return true;
+    if (hr.min !== undefined && heightIn < hr.min) return true;
+    return false;
+  });
+}
 
-export interface BlueprintValue {
+/* ---------------- blueprints.v1.json (R12I-A production bundle) ---------------- */
+
+export interface BlueprintProfile {
   name: string;
-  summary?: string;
-  position?: string; // PG/SG/SF/PF/C
-  height_in?: number;
-  weight_lb?: number;
-  playstyle?: {
-    scoring?: "inside" | "mid-range" | "3pt";
-    playmaking?: "passer" | "ball-handler";
-    defense?: "perimeter" | "interior";
-  };
-  attributes?: {
-    threePointShot: number;
-    midRange: number;
-    drivingDunk: number;
-    ballHandle: number;
-    speedWithBall: number;
-    perimeterDefense: number;
-    block: number;
-    offensiveRebound: number;
-  };
-  keyBadges?: number[]; // badge catalog indexes
-  disciplines?: string[];
-  suggested_slots?: number;
+  position: string; // PG/SG/SF/PF/C
+  position_label?: string;
+  best_skill?: string;
+  height?: string; // display string, e.g. 6'10"
+  weight_lb?: number | null;
+  wingspan?: string;
+  potential_overall?: number | null;
+  comparisons_2k?: string[];
+  attributes_start?: Record<string, number | null>;
+  attributes_cap?: Record<string, number | null>;
+  badge_unlocks_at_start?: Record<string, Array<{ badge: string; tier: string }>>;
 }
 
-export type BlueprintsBundle = DataBundle<BlueprintValue>;
-
-export interface Blueprint extends BlueprintValue {
-  index: number; // 0..39 — matches share-codec blueprintRef
-  fixtureOnly: boolean;
+/** value shape of each blueprint.<slug> record in blueprints.v1.json */
+export interface BlueprintRecordValue {
+  index: number; // 0..39 — frozen; share-codec blueprintRef references it
+  slug: string;
+  name: string;
+  comparisons: string[]; // three-player blend
+  profile: BlueprintProfile | null;
+  field_tiers: { name: SourceType; comparisons: SourceType; profile: SourceType };
+  sources: { name: string; profile: string };
 }
+
+export type BlueprintsBundle = DataBundle<unknown>;
+
+export type Blueprint = BlueprintRecordValue;
 
 export function blueprintList(bundle: BlueprintsBundle): Blueprint[] {
-  return bundle.records.map((r, i) => ({
-    index: i,
-    fixtureOnly: r.fixtureOnly === true,
-    ...r.value,
-  }));
+  const out: Blueprint[] = [];
+  for (const r of bundle.records) {
+    if (!r.key.startsWith("blueprint.")) continue;
+    const v = r.value as Partial<BlueprintRecordValue>;
+    if (typeof v.index === "number" && typeof v.name === "string") {
+      out.push(v as BlueprintRecordValue);
+    }
+  }
+  out.sort((a, b) => a.index - b.index);
+  return out;
 }
 
-export const BLUEPRINT_ATTRIBUTES = [
-  ["threePointShot", "Three-Point Shot"],
-  ["midRange", "Mid-Range"],
-  ["drivingDunk", "Driving Dunk"],
-  ["ballHandle", "Ball Handle"],
-  ["speedWithBall", "Speed with Ball"],
-  ["perimeterDefense", "Perimeter Defense"],
-  ["block", "Block"],
-  ["offensiveRebound", "Offensive Rebound"],
+/**
+ * Attribute rows for blueprint cards / comparison table — real NBA 2K27
+ * attribute names as stored in profile.attributes_start.
+ */
+export const BLUEPRINT_COMPARE_ATTRIBUTES = [
+  "Three-Point Shot",
+  "Mid-Range Shot",
+  "Driving Dunk",
+  "Ball Handle",
+  "Speed With Ball",
+  "Perimeter Defense",
+  "Block",
+  "Offensive Rebound",
 ] as const;
+
+/** Badge unlocks at start, flattened with discipline + tier. */
+export function blueprintUnlocks(bp: Blueprint): Array<{ badge: string; tier: string; discipline: string }> {
+  const out: Array<{ badge: string; tier: string; discipline: string }> = [];
+  const groups = bp.profile?.badge_unlocks_at_start ?? {};
+  for (const [discipline, list] of Object.entries(groups)) {
+    for (const e of list) out.push({ badge: e.badge, tier: e.tier, discipline });
+  }
+  return out;
+}
+
+const UNLOCK_TIER_RANK: Record<string, number> = { "Hall of Fame": 4, HoF: 4, Gold: 3, Silver: 2, Bronze: 1 };
+
+/** Highest-tier unlocks first (for card/compare display). */
+export function topUnlocks(bp: Blueprint, count: number): Array<{ badge: string; tier: string }> {
+  return blueprintUnlocks(bp)
+    .sort((a, b) => (UNLOCK_TIER_RANK[b.tier] ?? 0) - (UNLOCK_TIER_RANK[a.tier] ?? 0))
+    .slice(0, count)
+    .map(({ badge, tier }) => ({ badge, tier }));
+}
 
 /* ---------------- public-reference.v1.json (R11D public reference layer) ---------------- */
 

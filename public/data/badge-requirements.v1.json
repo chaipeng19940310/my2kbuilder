@@ -1,0 +1,4484 @@
+{
+  "bundle": "badge-requirements",
+  "version": "v1",
+  "data_classification": "public_reference",
+  "gate_status": "public_reference_integrated_r12i",
+  "generated_at": "2026-08-28",
+  "description": "Production badge bundle derived 1:1 from public-reference.v1.json (R12I-A). 53 real badges with official names/categories and cross-checked four-tier unlock requirements. Token cost values are not published by 2K: this bundle carries no cost numbers (gap statement preserved in badge_token.cost.matrix_status).",
+  "derived_from": {
+    "bundle": "public-reference",
+    "version": "v1",
+    "source_sha256": "a31611beee887c4aced51bc8f570285565a5360e9112074b6d50a5f19ca062ab",
+    "records": 490
+  },
+  "records": [
+    {
+      "key": "meta.roster",
+      "value": {
+        "total": 53,
+        "new": 19
+      },
+      "value_type": "object",
+      "source_type": "official_confirmed",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://newsroom.2k.com/news/nbar-2k27-myplayer-builder-introduces-female-myplayers-badge-tokens-and-the-all-new-synergy-system",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "captured_by": "pengbdev",
+      "verified_by": null,
+      "confidence": "high",
+      "conflict_with": [],
+      "notes": "O2 publishes the full 53-badge roster with [NEW] markers; this supersedes C6/C7 reveal-era claim that only 3 new badges were named."
+    },
+    {
+      "key": "meta.requirement_crosscheck",
+      "value": {
+        "badges": 53,
+        "tier_cells": 212,
+        "cells_matched": 212,
+        "cells_mismatched": 0,
+        "mismatch_rate": 0
+      },
+      "value_type": "object",
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "captured_by": "pengbdev",
+      "verified_by": null,
+      "confidence": "medium",
+      "conflict_with": [],
+      "notes": "C1 x C4 full-table programmatic diff summary; details in bundle summary conflict table."
+    },
+    {
+      "key": "badge_token.cost.matrix_status",
+      "value": null,
+      "value_type": "object",
+      "source_type": "community_unverified",
+      "source_url_or_capture_ref": "research/public-data-collection-template-v1.md section 2 asset E",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "captured_by": "pengbdev",
+      "verified_by": null,
+      "confidence": "low",
+      "conflict_with": [],
+      "notes": "GAP STATEMENT: no public source publishes the Badge Token cost matrix (position x height x discipline x badge x tier). C1/C2 are badge unlock requirements, not token costs. All badge_token.cost.* values are null by design; filling them from community rumor tables is forbidden. Matrix must wait for HQ App manual collection (requires Peng Chai approval) before any frozen upgrade."
+    },
+    {
+      "key": "badge_token.cost.pricing_mechanism_note",
+      "value": "Badges carry token costs that vary with height, position and build size; the Builder recalculates cost live, so a loadout is a budget of tokens rather than a fixed sheet.",
+      "value_type": "string",
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://timesaver.gg/blog/nba-2k27-myplayer-builder-badge-tokens ; official mechanism: https://nba.2k.com/2k27/features/myplayer-builder/",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "captured_by": "pengbdev",
+      "verified_by": null,
+      "confidence": "medium",
+      "conflict_with": [],
+      "notes": "C7 (timesaver.gg) editorial restates the official O2 mechanism. COMMERCIAL-SOURCE CAVEAT: timesaver.gg sells boosting/services; used here only as a cross-echo of official text, never as a source of numeric values. Do not link its service pages."
+    },
+    {
+      "key": "badge.aerial-wizard",
+      "value": {
+        "index": 0,
+        "slug": "aerial-wizard",
+        "name": "Aerial Wizard",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Driving Dunk",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Standing Dunk",
+                "min_rating": 60
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Driving Dunk",
+                "min_rating": 70
+              },
+              {
+                "attribute": "Standing Dunk",
+                "min_rating": 70
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Driving Dunk",
+                "min_rating": 80
+              },
+              {
+                "attribute": "Standing Dunk",
+                "min_rating": 80
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Driving Dunk",
+                "min_rating": 94
+              },
+              {
+                "attribute": "Standing Dunk",
+                "min_rating": 93
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.float-game",
+      "value": {
+        "index": 1,
+        "slug": "float-game",
+        "name": "Float Game",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 65
+              },
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 65
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 80
+              },
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 85
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 90
+              },
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 93
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 96
+              },
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 95
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.ghost-stepper",
+      "value": {
+        "index": 2,
+        "slug": "ghost-stepper",
+        "name": "Ghost Stepper",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 55
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 55
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 77
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 77
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 86
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 86
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 94
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 94
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.hook-specialist",
+      "value": {
+        "index": 3,
+        "slug": "hook-specialist",
+        "name": "Hook Specialist",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 55
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 75
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 65
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 87
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 80
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 94
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 90
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.layup-mixmaster",
+      "value": {
+        "index": 4,
+        "slug": "layup-mixmaster",
+        "name": "Layup Mixmaster",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 70
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 83
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 90
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 99
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.paint-prodigy",
+      "value": {
+        "index": 5,
+        "slug": "paint-prodigy",
+        "name": "Paint Prodigy",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 60
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 85
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 90
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Close Shot",
+                "min_rating": 96
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 75
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.physical-finisher",
+      "value": {
+        "index": 6,
+        "slug": "physical-finisher",
+        "name": "Physical Finisher",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 60
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 80
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 70
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 90
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 80
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Driving Layup",
+                "min_rating": 96
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 90
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.post-powerhouse",
+      "value": {
+        "index": 7,
+        "slug": "post-powerhouse",
+        "name": "Post Powerhouse",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Post Control",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 65
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Post Control",
+                "min_rating": 75
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 79
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Post Control",
+                "min_rating": 85
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 86
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Post Control",
+                "min_rating": 95
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 95
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.post-spin-catalyst",
+      "value": {
+        "index": 8,
+        "slug": "post-spin-catalyst",
+        "name": "Post Spin Catalyst",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Post Control",
+                "min_rating": 65
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 73
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Post Control",
+                "min_rating": 83
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 73
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Post Control",
+                "min_rating": 91
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 73
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Post Control",
+                "min_rating": 99
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 73
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.posterizer",
+      "value": {
+        "index": 9,
+        "slug": "posterizer",
+        "name": "Posterizer",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Driving Dunk",
+                "min_rating": 73
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 65
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Driving Dunk",
+                "min_rating": 87
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 75
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Driving Dunk",
+                "min_rating": 93
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 80
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Driving Dunk",
+                "min_rating": 99
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 90
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.rise-up",
+      "value": {
+        "index": 10,
+        "slug": "rise-up",
+        "name": "Rise Up",
+        "category": "Finishing",
+        "discipline_index": 0,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Standing Dunk",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 55
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Standing Dunk",
+                "min_rating": 81
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 62
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Standing Dunk",
+                "min_rating": 90
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 66
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Standing Dunk",
+                "min_rating": 99
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 70
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.arc-cadence",
+      "value": {
+        "index": 11,
+        "slug": "arc-cadence",
+        "name": "Arc Cadence",
+        "category": "Shooting",
+        "discipline_index": 1,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 70
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 86
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 91
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 98
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.deadeye",
+      "value": {
+        "index": 12,
+        "slug": "deadeye",
+        "name": "Deadeye",
+        "category": "Shooting",
+        "discipline_index": 1,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 65
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 65
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 85
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 85
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 92
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 92
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 99
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 99
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.limitless-range",
+      "value": {
+        "index": 13,
+        "slug": "limitless-range",
+        "name": "Limitless Range",
+        "category": "Shooting",
+        "discipline_index": 1,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 83
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 89
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 93
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 99
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.mini-marksman",
+      "value": {
+        "index": 14,
+        "slug": "mini-marksman",
+        "name": "Mini Marksman",
+        "category": "Shooting",
+        "discipline_index": 1,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 60
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": {
+              "max": 76
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 79
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 79
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": {
+              "max": 76
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 94
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 94
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": {
+              "max": 76
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 99
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 99
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": {
+              "max": 76
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.post-fade-phenom",
+      "value": {
+        "index": 15,
+        "slug": "post-fade-phenom",
+        "name": "Post Fade Phenom",
+        "category": "Shooting",
+        "discipline_index": 1,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 55
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 71
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 74
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 84
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 84
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 91
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 93
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.quick-trigger",
+      "value": {
+        "index": 16,
+        "slug": "quick-trigger",
+        "name": "Quick Trigger",
+        "category": "Shooting",
+        "discipline_index": 1,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 80
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 80
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 88
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 88
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 95
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 95
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 99
+              },
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 99
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.set-and-fire",
+      "value": {
+        "index": 17,
+        "slug": "set-and-fire",
+        "name": "Set and Fire",
+        "category": "Shooting",
+        "discipline_index": 1,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 60
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 78
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 89
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Three-Point Shot",
+                "min_rating": 97
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.smooth-operator",
+      "value": {
+        "index": 18,
+        "slug": "smooth-operator",
+        "name": "Smooth Operator",
+        "category": "Shooting",
+        "discipline_index": 1,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 70
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 87
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 93
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 99
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": [
+          {
+            "source": "C4:https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+            "issue": "height C1=None vs C4={'max': \"6'11\"}"
+          }
+        ]
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values. Source conflict on record: height C1=None vs C4={'max': \"6'11\"}"
+    },
+    {
+      "key": "badge.static-middy",
+      "value": {
+        "index": 19,
+        "slug": "static-middy",
+        "name": "Static Middy",
+        "category": "Shooting",
+        "discipline_index": 1,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 55
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 75
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 85
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Mid-Range Shot",
+                "min_rating": 95
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.ankle-assassin",
+      "value": {
+        "index": 20,
+        "slug": "ankle-assassin",
+        "name": "Ankle Assassin",
+        "category": "Playmaking",
+        "discipline_index": 2,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 75
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 82
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 86
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 82
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 93
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 82
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 96
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 82
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.bail-out",
+      "value": {
+        "index": 21,
+        "slug": "bail-out",
+        "name": "Bail Out",
+        "category": "Playmaking",
+        "discipline_index": 2,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 85
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 93
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 96
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 99
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.break-starter",
+      "value": {
+        "index": 22,
+        "slug": "break-starter",
+        "name": "Break Starter",
+        "category": "Playmaking",
+        "discipline_index": 2,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 65
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 77
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 89
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 97
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.dimer",
+      "value": {
+        "index": 23,
+        "slug": "dimer",
+        "name": "Dimer",
+        "category": "Playmaking",
+        "discipline_index": 2,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 50
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 70
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 86
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 95
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.handles-for-days",
+      "value": {
+        "index": 24,
+        "slug": "handles-for-days",
+        "name": "Handles for Days",
+        "category": "Playmaking",
+        "discipline_index": 2,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 71
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 81
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 90
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 95
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.lightning-launch",
+      "value": {
+        "index": 25,
+        "slug": "lightning-launch",
+        "name": "Lightning Launch",
+        "category": "Playmaking",
+        "discipline_index": 2,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Speed With Ball",
+                "min_rating": 68
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Speed With Ball",
+                "min_rating": 75
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Speed With Ball",
+                "min_rating": 86
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Speed With Ball",
+                "min_rating": 91
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.pace",
+      "value": {
+        "index": 26,
+        "slug": "pace",
+        "name": "Pace",
+        "category": "Playmaking",
+        "discipline_index": 2,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Speed With Ball",
+                "min_rating": 70
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 82
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Speed With Ball",
+                "min_rating": 80
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 82
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Speed With Ball",
+                "min_rating": 88
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 82
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Speed With Ball",
+                "min_rating": 93
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 82
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.strong-handle",
+      "value": {
+        "index": 27,
+        "slug": "strong-handle",
+        "name": "Strong Handle",
+        "category": "Playmaking",
+        "discipline_index": 2,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 75
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 67
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 82
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 73
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 89
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 78
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 95
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 83
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.unpluckable",
+      "value": {
+        "index": 28,
+        "slug": "unpluckable",
+        "name": "Unpluckable",
+        "category": "Playmaking",
+        "discipline_index": 2,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 65
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 65
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 80
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 86
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 92
+              },
+              {
+                "attribute": "Post Control",
+                "min_rating": 96
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Ball Handle",
+                "min_rating": 97
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.versatile-visionary",
+      "value": {
+        "index": 29,
+        "slug": "versatile-visionary",
+        "name": "Versatile Visionary",
+        "category": "Playmaking",
+        "discipline_index": 2,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 65
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 80
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 90
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Pass Accuracy",
+                "min_rating": 99
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.ankle-braces",
+      "value": {
+        "index": 30,
+        "slug": "ankle-braces",
+        "name": "Ankle Braces",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 65
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 60
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 82
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 86
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 89
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 93
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 92
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 95
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.challenger",
+      "value": {
+        "index": 31,
+        "slug": "challenger",
+        "name": "Challenger",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 71
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 82
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 92
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 98
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 83
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.glove",
+      "value": {
+        "index": 32,
+        "slug": "glove",
+        "name": "Glove",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Steal",
+                "min_rating": 70
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Steal",
+                "min_rating": 83
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Steal",
+                "min_rating": 93
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Steal",
+                "min_rating": 99
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "max": 84
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.high-flying-denier",
+      "value": {
+        "index": 33,
+        "slug": "high-flying-denier",
+        "name": "High-Flying Denier",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Block",
+                "min_rating": 68
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 60
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Block",
+                "min_rating": 78
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 74
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Block",
+                "min_rating": 88
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 80
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Block",
+                "min_rating": 92
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 83
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.immovable-enforcer",
+      "value": {
+        "index": 34,
+        "slug": "immovable-enforcer",
+        "name": "Immovable Enforcer",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 62
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 71
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 72
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 82
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 84
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 85
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 91
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 92
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.interceptor",
+      "value": {
+        "index": 35,
+        "slug": "interceptor",
+        "name": "Interceptor",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Steal",
+                "min_rating": 60
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Steal",
+                "min_rating": 77
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Steal",
+                "min_rating": 90
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Steal",
+                "min_rating": 97
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.off-ball-pest",
+      "value": {
+        "index": 36,
+        "slug": "off-ball-pest",
+        "name": "Off-Ball Pest",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 55
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 76
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 68
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 85
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 80
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 93
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 89
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.paint-patroller",
+      "value": {
+        "index": 37,
+        "slug": "paint-patroller",
+        "name": "Paint Patroller",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Block",
+                "min_rating": 70
+              },
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 60
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Block",
+                "min_rating": 84
+              },
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 71
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Block",
+                "min_rating": 93
+              },
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 77
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Block",
+                "min_rating": 99
+              },
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 84
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.pick-dodger",
+      "value": {
+        "index": 38,
+        "slug": "pick-dodger",
+        "name": "Pick Dodger",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 71
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 73
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 82
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 81
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 83
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 82
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 88
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 90
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 82
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 91
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 97
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 82
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.post-lockdown",
+      "value": {
+        "index": 39,
+        "slug": "post-lockdown",
+        "name": "Post Lockdown",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 65
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 65
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 82
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 74
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 88
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 80
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 93
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 88
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.seatbelt",
+      "value": {
+        "index": 40,
+        "slug": "seatbelt",
+        "name": "Seatbelt",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 70
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 75
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 77
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 85
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 80
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 91
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 86
+              },
+              {
+                "attribute": "Perimeter Defense",
+                "min_rating": 99
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.wall-up",
+      "value": {
+        "index": 41,
+        "slug": "wall-up",
+        "name": "Wall Up",
+        "category": "Defense",
+        "discipline_index": 3,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 80
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 75
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 85
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 80
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 95
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 90
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Interior Defense",
+                "min_rating": 99
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 92
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 77
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.boxout-boss",
+      "value": {
+        "index": 42,
+        "slug": "boxout-boss",
+        "name": "Boxout Boss",
+        "category": "Rebounding",
+        "discipline_index": 4,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 65
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 60
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 75
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 76
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 90
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 88
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 98
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 94
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.breaker",
+      "value": {
+        "index": 43,
+        "slug": "breaker",
+        "name": "Breaker",
+        "category": "Rebounding",
+        "discipline_index": 4,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 65
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 70
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 82
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 79
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 92
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 90
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 98
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 96
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "min": 75
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.crasher",
+      "value": {
+        "index": 44,
+        "slug": "crasher",
+        "name": "Crasher",
+        "category": "Rebounding",
+        "discipline_index": 4,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 60
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 80
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 65
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 93
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 67
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 99
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 70
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.possession-closer",
+      "value": {
+        "index": 45,
+        "slug": "possession-closer",
+        "name": "Possession Closer",
+        "category": "Rebounding",
+        "discipline_index": 4,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 67
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 60
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 87
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 65
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 95
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 67
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 99
+              },
+              {
+                "attribute": "Vertical",
+                "min_rating": 70
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.sync-snatcher",
+      "value": {
+        "index": 46,
+        "slug": "sync-snatcher",
+        "name": "Sync Snatcher",
+        "category": "Rebounding",
+        "discipline_index": 4,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 55
+              },
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 55
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 70
+              },
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 70
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 82
+              },
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 82
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Defensive Rebound",
+                "min_rating": 90
+              },
+              {
+                "attribute": "Offensive Rebound",
+                "min_rating": 90
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.brick-wall",
+      "value": {
+        "index": 47,
+        "slug": "brick-wall",
+        "name": "Brick Wall",
+        "category": "Physicals",
+        "discipline_index": 5,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Strength",
+                "min_rating": 75
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Strength",
+                "min_rating": 83
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Strength",
+                "min_rating": 95
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 77
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Strength",
+                "min_rating": 99
+              }
+            ],
+            "logic": "single",
+            "height_restriction": {
+              "min": 77
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.bruiser",
+      "value": {
+        "index": 48,
+        "slug": "bruiser",
+        "name": "Bruiser",
+        "category": "Physicals",
+        "discipline_index": 5,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Strength",
+                "min_rating": 71
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Strength",
+                "min_rating": 84
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Strength",
+                "min_rating": 93
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Strength",
+                "min_rating": 99
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.flash",
+      "value": {
+        "index": 49,
+        "slug": "flash",
+        "name": "Flash",
+        "category": "Physicals",
+        "discipline_index": 5,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Speed",
+                "min_rating": 70
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 78
+              },
+              {
+                "attribute": "Speed",
+                "min_rating": 82
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 81
+              },
+              {
+                "attribute": "Speed",
+                "min_rating": 87
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 91
+              },
+              {
+                "attribute": "Speed",
+                "min_rating": 95
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.pogo-stick",
+      "value": {
+        "index": 50,
+        "slug": "pogo-stick",
+        "name": "Pogo Stick",
+        "category": "Physicals",
+        "discipline_index": 5,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Vertical",
+                "min_rating": 63
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Vertical",
+                "min_rating": 70
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Vertical",
+                "min_rating": 80
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Vertical",
+                "min_rating": 90
+              }
+            ],
+            "logic": "single",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.slippery-off-ball",
+      "value": {
+        "index": 51,
+        "slug": "slippery-off-ball",
+        "name": "Slippery Off-Ball",
+        "category": "Physicals",
+        "discipline_index": 5,
+        "is_new_2k27": false,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 57
+              },
+              {
+                "attribute": "Speed",
+                "min_rating": 57
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 65
+              },
+              {
+                "attribute": "Speed",
+                "min_rating": 73
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 77
+              },
+              {
+                "attribute": "Speed",
+                "min_rating": 85
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 90
+              },
+              {
+                "attribute": "Speed",
+                "min_rating": 94
+              }
+            ],
+            "logic": "AND",
+            "height_restriction": {
+              "max": 81
+            }
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    },
+    {
+      "key": "badge.work-horse",
+      "value": {
+        "index": 52,
+        "slug": "work-horse",
+        "name": "Work Horse",
+        "category": "Physicals",
+        "discipline_index": 5,
+        "is_new_2k27": true,
+        "requirements": {
+          "bronze": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 60
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 60
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "silver": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 75
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 75
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "gold": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 85
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 85
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          },
+          "hof": {
+            "conditions": [
+              {
+                "attribute": "Agility",
+                "min_rating": 95
+              },
+              {
+                "attribute": "Strength",
+                "min_rating": 95
+              }
+            ],
+            "logic": "OR",
+            "height_restriction": null
+          }
+        },
+        "field_tiers": {
+          "name": "official_confirmed",
+          "category": "official_confirmed",
+          "is_new_2k27": "official_confirmed",
+          "requirements": "cross_checked"
+        },
+        "sources": {
+          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
+          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
+        },
+        "conflicts": []
+      },
+      "source_type": "cross_checked",
+      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+      "captured_at": "2026-08-24T17:20:00Z",
+      "verified_by": null,
+      "confidence": "medium",
+      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+    }
+  ]
+}

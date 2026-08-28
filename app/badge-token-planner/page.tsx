@@ -24,13 +24,14 @@ export const metadata: Metadata = {
   }),
 };
 
-// FAQ freeze (copy §5.2). The cost-provenance FAQ stays offline until the
-// cost matrix freeze v0 ships (contract §8.1 hard gate).
+// FAQ freeze (copy §5.2). R12I-A: cost-provenance answer updated for the real
+// production bundle — 2K has not published the cost table, so the planner
+// labels costs as pending and shows real unlock requirements instead.
 const FAQS = [
   {
     question: "Why do token costs change when I change height?",
     answer:
-      "That's how NBA 2K27 works: badge token costs vary by height and position. The planner mirrors that so you can see the trade-offs before spending in-game.",
+      "That's how NBA 2K27 works: badge token costs vary by height and position, a mechanic described on 2K's builder pages. The exact cost table has not been published, so the planner labels costs as pending and instead shows each badge's real attribute unlock requirements.",
   },
   {
     question: "Can I save my plan?",
@@ -93,19 +94,18 @@ export default function BadgeTokenPlannerPage() {
             Finishing, Shooting, Playmaking, Defense, Rebounding, and the new Physicals. Pick a
             position, set your height, rank the disciplines you care about, then assign slots
             badge by badge. The budget bar tracks every slot you spend, and the planner warns you
-            the moment an allocation goes over budget or breaks a badge combination rule — before
-            you lock anything in-game.
+            the moment an allocation goes over budget — before you lock anything in-game.
           </p>
         </div>
         <div className="flex flex-col gap-3 rounded border border-border-low bg-surface-card p-6">
           <h2 className="font-display text-headline-sm text-on-surface">Why Token Costs Move</h2>
           <p className="text-body-md text-on-surface-variant">
             Token costs in NBA 2K27 are not flat: the same badge can cost more or less depending on
-            your height and position. That is an officially confirmed mechanic, and the planner
-            mirrors it — change your height and every badge&apos;s cost updates live, so the
-            trade-offs are visible while you plan instead of after you spend. Values shown right
-            now are labeled fixture placeholders while our HQ App collection and dual review
-            finish; the mechanic itself is real.
+            your height and position — a mechanic described on 2K&apos;s builder pages. The exact
+            cost table has not been published, so this planner shows no cost numbers: token costs
+            pending — official values not published. What you can plan with today is real: the
+            53-badge roster from 2K&apos;s published list, plus every badge&apos;s attribute unlock
+            requirements cross-checked across two public community tables.
           </p>
         </div>
         <div className="flex flex-col gap-3 rounded border border-border-low bg-surface-card p-6">

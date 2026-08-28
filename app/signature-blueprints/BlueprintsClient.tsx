@@ -4,10 +4,10 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
-import { FixtureBanner, SourceTag } from "@/components/SourceTag";
+import { DataSourceBanner, SourceTag } from "@/components/SourceTag";
 import {
-  BLUEPRINT_ATTRIBUTES,
   blueprintList,
+  blueprintUnlocks,
   fetchBundle,
   type Blueprint,
   type BlueprintsBundle,
@@ -18,53 +18,24 @@ import { POSITIONS } from "@/lib/share-codec";
 /**
  * Signature Blueprints browser (contract §2 #3, §6.2 state set).
  *
- * All blueprint fields come from the gated fixture bundle (blueprints.v0.json)
- * and are always labeled Unverified — never presented as fact (contract §7).
- * No ItemList schema is emitted before freeze v0 (§8.1, enforced in lib/schema).
+ * R12I-A: cards run on the real production bundle (/data/blueprints.v1.json).
+ * The 40-template count, the three-player blend mechanism and Bulldozer's
+ * blend are described on 2K's published builder pages (official_confirmed);
+ * every other blueprint's name, comparisons and profile fields are
+ * single-source community data and are labeled Unverified per item (owner
+ * decision r12i-wave1-owner-decision-2026-08-28).
  *
  * Selection state travels in the URL hash (#c=...) — never in an indexable
  * URL (contract §2 rule 3). Compare itself is a noindex route.
  */
 
-const SCORING_OPTS = [
-  { value: "", label: "Scoring (Any)" },
-  { value: "inside", label: "Inside" },
-  { value: "mid-range", label: "Mid-Range" },
-  { value: "3pt", label: "3PT" },
-] as const;
-const PLAYMAKING_OPTS = [
-  { value: "", label: "Playmaking (Any)" },
-  { value: "passer", label: "Passer" },
-  { value: "ball-handler", label: "Ball Handler" },
-] as const;
-const DEFENSE_OPTS = [
-  { value: "", label: "Defense (Any)" },
-  { value: "perimeter", label: "Perimeter" },
-  { value: "interior", label: "Interior" },
-] as const;
-
-function heightLabel(inches: number): string {
-  return `${Math.floor(inches / 12)}'${inches % 12}"`;
-}
-
-function topAttributes(bp: Blueprint, count: number): Array<{ key: string; label: string; value: number }> {
-  const attrs = bp.attributes;
-  if (!attrs) return [];
-  return BLUEPRINT_ATTRIBUTES.map(([key, label]) => ({
-    key,
-    label,
-    value: attrs[key as keyof typeof attrs] ?? 0,
-  }))
+function topAttributes(bp: Blueprint, count: number): Array<{ label: string; value: number }> {
+  const attrs = bp.profile?.attributes_start ?? {};
+  return Object.entries(attrs)
+    .filter((e): e is [string, number] => typeof e[1] === "number")
+    .map(([label, value]) => ({ label, value }))
     .sort((a, b) => b.value - a.value)
     .slice(0, count);
-}
-
-function playstyleTags(bp: Blueprint): string[] {
-  const tags: string[] = [];
-  if (bp.playstyle?.scoring) tags.push(bp.playstyle.scoring === "3pt" ? "3PT" : bp.playstyle.scoring);
-  if (bp.playstyle?.playmaking) tags.push(bp.playstyle.playmaking);
-  if (bp.playstyle?.defense) tags.push(bp.playstyle.defense);
-  return tags;
 }
 
 export function BlueprintsClient() {
@@ -72,15 +43,12 @@ export function BlueprintsClient() {
   const [bundleState, setBundleState] = useState<LoadState<BlueprintsBundle>>({ status: "loading" });
 
   const [position, setPosition] = useState<string>("");
-  const [scoring, setScoring] = useState<string>("");
-  const [playmaking, setPlaymaking] = useState<string>("");
-  const [defense, setDefense] = useState<string>("");
   const [query, setQuery] = useState<string>("");
   const [selected, setSelected] = useState<number[]>([]);
 
   const load = useCallback(() => {
     setBundleState({ status: "loading" });
-    fetchBundle<BlueprintsBundle>("/data/blueprints.v0.json")
+    fetchBundle<BlueprintsBundle>("/data/blueprints.v1.json")
       .then((data) => setBundleState({ status: "ready", data }))
       .catch((e: unknown) =>
         setBundleState({
@@ -100,22 +68,16 @@ export function BlueprintsClient() {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return blueprints.filter((bp) => {
-      if (position && bp.position !== position) return false;
-      if (scoring && bp.playstyle?.scoring !== scoring) return false;
-      if (playmaking && bp.playstyle?.playmaking !== playmaking) return false;
-      if (defense && bp.playstyle?.defense !== defense) return false;
-      if (q && !(bp.name ?? "").toLowerCase().includes(q)) return false;
+      if (position && bp.profile?.position !== position) return false;
+      if (q && !bp.name.toLowerCase().includes(q)) return false;
       return true;
     });
-  }, [blueprints, position, scoring, playmaking, defense, query]);
+  }, [blueprints, position, query]);
 
-  const hasActiveFilter = Boolean(position || scoring || playmaking || defense || query.trim());
+  const hasActiveFilter = Boolean(position || query.trim());
 
   function clearFilters() {
     setPosition("");
-    setScoring("");
-    setPlaymaking("");
-    setDefense("");
     setQuery("");
   }
 
@@ -167,14 +129,11 @@ export function BlueprintsClient() {
     );
   }
 
-  const selectBase =
-    "rounded border border-border-low bg-surface-container-high px-3 py-2 text-label-md text-on-surface-variant focus:border-primary-container focus:outline-none";
-
   return (
     <div className="flex flex-col gap-6 pb-28">
-      <FixtureBanner />
+      <DataSourceBanner scope="blueprints" />
 
-      {/* Filters (copy §3.3 microcopy: Filter by position / playstyle / Clear filters) */}
+      {/* Filters (copy §3.3 microcopy: Filter by position / Clear filters) */}
       <section
         aria-label="Blueprint filters"
         className="flex flex-col gap-4 rounded border border-border-low bg-surface-card p-4"
@@ -198,31 +157,13 @@ export function BlueprintsClient() {
               </button>
             ))}
           </div>
-        </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="text-label-md uppercase text-on-surface-variant">Filter by playstyle</span>
-          <select value={scoring} onChange={(e) => setScoring(e.target.value)} className={selectBase} aria-label="Filter by scoring playstyle">
-            {SCORING_OPTS.map((o) => (
-              <option key={o.value} value={o.value}>{o.label}</option>
-            ))}
-          </select>
-          <select value={playmaking} onChange={(e) => setPlaymaking(e.target.value)} className={selectBase} aria-label="Filter by playmaking style">
-            {PLAYMAKING_OPTS.map((o) => (
-              <option key={o.value} value={o.value}>{o.label}</option>
-            ))}
-          </select>
-          <select value={defense} onChange={(e) => setDefense(e.target.value)} className={selectBase} aria-label="Filter by defense style">
-            {DEFENSE_OPTS.map((o) => (
-              <option key={o.value} value={o.value}>{o.label}</option>
-            ))}
-          </select>
           <div className="flex items-center gap-2 rounded border border-border-low bg-surface-container-high px-3 py-2">
             <Icon name="search" size={16} className="text-on-surface-variant" />
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search name — e.g. 3-and-D…"
+              placeholder="Search name — e.g. Bulldozer…"
               aria-label="Search blueprints by name"
               className="w-44 bg-transparent text-label-md text-on-surface placeholder:text-text-muted focus:outline-none"
             />
@@ -258,9 +199,13 @@ export function BlueprintsClient() {
         <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((bp) => {
             const isSelected = selected.includes(bp.index);
+            const p = bp.profile;
+            const nameIsConfirmed = bp.field_tiers.name === "official_confirmed";
+            const unlockCount = blueprintUnlocks(bp).length;
             return (
               <li
                 key={bp.index}
+                id={`bp-${bp.slug}`}
                 className={`flex flex-col gap-4 rounded border p-6 transition-colors ${
                   isSelected
                     ? "border-secondary bg-surface-container-low"
@@ -271,9 +216,9 @@ export function BlueprintsClient() {
                   <div className="min-w-0">
                     <h3 className="font-display text-headline-sm text-on-surface">{bp.name}</h3>
                     <p className="mt-1 text-body-sm text-text-muted">
-                      {bp.position ?? "—"}
-                      {bp.height_in ? ` · ${heightLabel(bp.height_in)}` : ""}
-                      {bp.weight_lb ? ` · ${bp.weight_lb} lbs` : ""}
+                      {p?.position ?? "—"}
+                      {p?.height ? ` · ${p.height}` : ""}
+                      {p?.weight_lb ? ` · ${p.weight_lb} lbs` : ""}
                     </p>
                   </div>
                   <button
@@ -292,20 +237,24 @@ export function BlueprintsClient() {
                   </button>
                 </div>
 
+                <div className="flex flex-col gap-1.5">
+                  <p className="text-body-sm text-on-surface-variant">
+                    Blends: {bp.comparisons.join(" · ")}
+                  </p>
+                  {nameIsConfirmed ? <SourceTag tier="official" /> : null}
+                </div>
+
                 <div className="flex flex-wrap gap-1.5">
-                  {playstyleTags(bp).map((t) => (
-                    <span
-                      key={t}
-                      className="rounded bg-surface-container-high px-1.5 py-0.5 text-code-sm capitalize text-on-surface-variant"
-                    >
-                      {t}
+                  {p?.best_skill ? (
+                    <span className="rounded bg-surface-container-high px-1.5 py-0.5 text-code-sm capitalize text-on-surface-variant">
+                      {p.best_skill}
                     </span>
-                  ))}
+                  ) : null}
                 </div>
 
                 <ul className="flex flex-col gap-1">
                   {topAttributes(bp, 3).map((a) => (
-                    <li key={a.key} className="flex items-center justify-between text-body-sm">
+                    <li key={a.label} className="flex items-center justify-between text-body-sm">
                       <span className="text-on-surface-variant">{a.label}</span>
                       <span className="text-primary-container">{a.value}</span>
                     </li>
@@ -314,9 +263,12 @@ export function BlueprintsClient() {
 
                 <div className="mt-auto flex flex-col gap-3 border-t border-border-low pt-3">
                   <div className="flex flex-wrap items-center gap-2">
+                    {/* Profile fields are single-source community data on every
+                        card; for Bulldozer the name/blend carry the confirmed
+                        tag above and this tag covers the profile only. */}
                     <SourceTag tier="unverified" />
                     <span className="text-body-sm text-text-muted">
-                      {bp.keyBadges?.length ?? 0} key badges
+                      {unlockCount} badge unlocks at start
                     </span>
                   </div>
                   <Link

@@ -3,15 +3,15 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
-import { FixtureBanner, SourceTag } from "@/components/SourceTag";
+import { DataSourceBanner, SourceTag } from "@/components/SourceTag";
 import {
-  BLUEPRINT_ATTRIBUTES,
-  badgeCatalog,
+  BLUEPRINT_COMPARE_ATTRIBUTES,
   blueprintList,
+  blueprintUnlocks,
   fetchBundle,
+  topUnlocks,
   type Blueprint,
   type BlueprintsBundle,
-  type CostMatrixBundle,
   type LoadState,
 } from "@/lib/data";
 
@@ -21,15 +21,26 @@ import {
  * Selection arrives in the URL hash (#c=0,3,5) from the blueprints browser —
  * tool state never lives in an indexable URL (contract §2 rule 3).
  * Differences are measured against the first selected blueprint (baseline).
- * All values are gated fixture data, always labeled Unverified (§7).
+ * R12I-A: values come from the real production bundle (blueprints.v1.json);
+ * per-blueprint profile fields are single-source community data, always
+ * labeled Unverified.
  * PRD D3: this page has NO share CTA — sharing starts only from a Build Card.
  */
 
-type BundlesState = LoadState<{ blueprints: Blueprint[]; badgeNames: Map<number, string> }>;
+type BundlesState = LoadState<{ blueprints: Blueprint[] }>;
 
-function heightLabel(inches: number): string {
-  return `${Math.floor(inches / 12)}'${inches % 12}"`;
+function textRow(label: string, render: (bp: Blueprint) => string) {
+  return { label, render };
 }
+
+const TEXT_ROWS = [
+  textRow("Position", (bp) => bp.profile?.position ?? "—"),
+  textRow("Height", (bp) => bp.profile?.height ?? "—"),
+  textRow("Weight", (bp) => (bp.profile?.weight_lb ? `${bp.profile.weight_lb} lbs` : "—")),
+  textRow("Wingspan", (bp) => bp.profile?.wingspan ?? "—"),
+  textRow("Best skill", (bp) => bp.profile?.best_skill ?? "—"),
+  textRow("Three-player blend", (bp) => bp.comparisons.join(" · ")),
+];
 
 export function CompareClient() {
   const [state, setState] = useState<BundlesState>({ status: "loading" });
@@ -54,14 +65,9 @@ export function CompareClient() {
 
   const load = useCallback(() => {
     setState({ status: "loading" });
-    Promise.all([
-      fetchBundle<BlueprintsBundle>("/data/blueprints.v0.json"),
-      fetchBundle<CostMatrixBundle>("/data/badge-cost-matrix.v0.json"),
-    ])
-      .then(([bpBundle, costBundle]) => {
-        const names = new Map<number, string>();
-        for (const b of badgeCatalog(costBundle)) names.set(b.index, b.name);
-        setState({ status: "ready", data: { blueprints: blueprintList(bpBundle), badgeNames: names } });
+    fetchBundle<BlueprintsBundle>("/data/blueprints.v1.json")
+      .then((bpBundle) => {
+        setState({ status: "ready", data: { blueprints: blueprintList(bpBundle) } });
       })
       .catch((e: unknown) =>
         setState({
@@ -144,14 +150,14 @@ export function CompareClient() {
   }
 
   const baseline = picked[0];
-  const baseAttrs = baseline.attributes;
+  const baseAttrs = baseline.profile?.attributes_start ?? {};
 
   return (
     <div className="flex flex-col gap-6">
-      <FixtureBanner />
+      <DataSourceBanner scope="blueprints" />
       <p className="text-body-md text-on-surface-variant">
         Comparing {picked.length} blueprints. Differences are measured against the first blueprint
-        you selected.
+        you selected. Starting attributes shown.
       </p>
 
       {/* Real <table> (contract §4.3); small screens scroll horizontally. */}
@@ -172,9 +178,9 @@ export function CompareClient() {
                     ) : null}
                     <span className="font-display text-headline-sm text-on-surface">{bp.name}</span>
                     <span className="text-body-sm text-text-muted">
-                      {bp.position ?? "—"}
-                      {bp.height_in ? ` · ${heightLabel(bp.height_in)}` : ""}
-                      {bp.weight_lb ? ` · ${bp.weight_lb} lbs` : ""}
+                      {bp.profile?.position ?? "—"}
+                      {bp.profile?.height ? ` · ${bp.profile.height}` : ""}
+                      {bp.profile?.weight_lb ? ` · ${bp.profile.weight_lb} lbs` : ""}
                     </span>
                     <Link
                       href={`/badge-token-planner#bp=${bp.index}`}
@@ -188,13 +194,25 @@ export function CompareClient() {
             </tr>
           </thead>
           <tbody>
-            {BLUEPRINT_ATTRIBUTES.map(([key, label]) => {
-              const baseVal = baseAttrs?.[key as keyof NonNullable<typeof baseAttrs>] ?? 0;
+            {TEXT_ROWS.map((row) => (
+              <tr key={row.label} className="border-b border-border-low">
+                <th className="p-4 align-top text-body-md font-normal text-on-surface-variant">
+                  {row.label}
+                </th>
+                {picked.map((bp) => (
+                  <td key={bp.index} className="p-4 align-top text-body-md text-on-surface">
+                    {row.render(bp)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+            {BLUEPRINT_COMPARE_ATTRIBUTES.map((label) => {
+              const baseVal = baseAttrs[label] ?? 0;
               return (
-                <tr key={key} className="border-b border-border-low last:border-0">
+                <tr key={label} className="border-b border-border-low last:border-0">
                   <th className="p-4 text-body-md font-normal text-on-surface-variant">{label}</th>
                   {picked.map((bp, i) => {
-                    const v = bp.attributes?.[key as keyof NonNullable<typeof bp.attributes>] ?? 0;
+                    const v = bp.profile?.attributes_start?.[label] ?? 0;
                     const delta = v - baseVal;
                     return (
                       <td key={bp.index} className="p-4">
@@ -217,19 +235,25 @@ export function CompareClient() {
             })}
             <tr>
               <th className="p-4 align-top text-body-md font-normal text-on-surface-variant">
-                Key Badges
+                Badge unlocks at start
               </th>
-              {picked.map((bp) => (
-                <td key={bp.index} className="p-4">
-                  <ul className="flex flex-col gap-1">
-                    {(bp.keyBadges ?? []).map((bi) => (
-                      <li key={bi} className="text-body-sm text-on-surface">
-                        {state.data.badgeNames.get(bi) ?? `Badge #${bi}`}
-                      </li>
-                    ))}
-                  </ul>
-                </td>
-              ))}
+              {picked.map((bp) => {
+                const total = blueprintUnlocks(bp).length;
+                const top = topUnlocks(bp, 4);
+                return (
+                  <td key={bp.index} className="p-4">
+                    <ul className="flex flex-col gap-1">
+                      {top.map((u) => (
+                        <li key={u.badge} className="text-body-sm text-on-surface">
+                          {u.badge}{" "}
+                          <span className="text-code-sm text-on-surface-variant">({u.tier})</span>
+                        </li>
+                      ))}
+                      <li className="text-body-sm text-text-muted">{total} total</li>
+                    </ul>
+                  </td>
+                );
+              })}
             </tr>
           </tbody>
         </table>
@@ -238,7 +262,7 @@ export function CompareClient() {
       <div className="flex flex-wrap items-center gap-3">
         <SourceTag tier="unverified" />
         <span className="text-body-sm text-text-muted">
-          Fixture attribute and badge values — placeholders pending freeze v0.
+          Blueprint profile fields are single-source community data.
         </span>
       </div>
 

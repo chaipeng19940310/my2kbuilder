@@ -3,12 +3,14 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
-import { FixtureBanner, SourceTag } from "@/components/SourceTag";
+import { DataSourceBanner, SourceTag } from "@/components/SourceTag";
 import {
-  DISCIPLINES,
   badgeCatalog,
+  blueprintList,
+  DISCIPLINES,
   fetchBundle,
-  type CostMatrixBundle,
+  type BadgeRequirementsBundle,
+  type BlueprintsBundle,
 } from "@/lib/data";
 import {
   MAX_BADGE_SLOTS,
@@ -42,6 +44,7 @@ export function BuildCardClient() {
   const [phase, setPhase] = useState<Phase>({ kind: "empty" });
   const [shareUrl, setShareUrl] = useState<string>("");
   const [badgeNames, setBadgeNames] = useState<Map<number, string>>(new Map());
+  const [blueprintNames, setBlueprintNames] = useState<Map<number, string>>(new Map());
   const [copied, setCopied] = useState(false);
   const [copyFailed, setCopyFailed] = useState(false);
 
@@ -56,14 +59,22 @@ export function BuildCardClient() {
     }
     setPhase({ kind: "ready", id: encoded, state: res.state });
     setShareUrl(`${window.location.origin}/b/${encoded}`);
-    // Badge names come from the same-origin catalog bundle (fixture labels apply).
-    fetchBundle<CostMatrixBundle>("/data/badge-cost-matrix.v0.json")
+    // Badge names come from the same-origin production badge bundle (R12I-A:
+    // real roster from 2K's published list).
+    fetchBundle<BadgeRequirementsBundle>("/data/badge-requirements.v1.json")
       .then((b) => {
         const names = new Map<number, string>();
         for (const entry of badgeCatalog(b)) names.set(entry.index, entry.name);
         setBadgeNames(names);
       })
       .catch(() => setBadgeNames(new Map()));
+    fetchBundle<BlueprintsBundle>("/data/blueprints.v1.json")
+      .then((b) => {
+        const names = new Map<number, string>();
+        for (const bp of blueprintList(b)) names.set(bp.index, bp.name);
+        setBlueprintNames(names);
+      })
+      .catch(() => setBlueprintNames(new Map()));
   }, []);
 
   const copyLink = useCallback(async () => {
@@ -138,7 +149,7 @@ export function BuildCardClient() {
             <p className="mt-1 text-body-sm text-text-muted">
               {usedSlots}/{MAX_BADGE_SLOTS} slots allocated
               {state.blueprintRef !== undefined && state.blueprintRef >= 0
-                ? ` · Started from blueprint #${state.blueprintRef + 1} (fixture template)`
+                ? ` · Started from blueprint ${blueprintNames.get(state.blueprintRef) ?? `#${state.blueprintRef + 1}`}`
                 : ""}
             </p>
           </div>
@@ -185,7 +196,7 @@ export function BuildCardClient() {
             </ul>
           )}
           <div className="mt-3">
-            <SourceTag tier="unverified" />
+            <SourceTag tier="official" />
           </div>
         </div>
 
@@ -196,7 +207,7 @@ export function BuildCardClient() {
 
       {/* Share panel */}
       <section className="flex flex-col gap-5">
-        <FixtureBanner />
+        <DataSourceBanner scope="badges" />
         <div className="flex flex-col gap-4 rounded border border-border-low bg-surface-card p-6">
           <h2 className="font-display text-headline-sm text-on-surface">Share Link</h2>
           <p className="text-body-sm text-on-surface-variant">

@@ -5,10 +5,12 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { SourceTag } from "@/components/SourceTag";
 import {
-  DISCIPLINES,
   badgeCatalog,
+  blueprintList,
+  DISCIPLINES,
   fetchBundle,
-  type CostMatrixBundle,
+  type BadgeRequirementsBundle,
+  type BlueprintsBundle,
 } from "@/lib/data";
 import {
   MAX_BADGE_SLOTS,
@@ -60,6 +62,7 @@ const FAILURE_COPY: Record<DecodeErrorKind, { title: string; body: string }> = {
 export function SharedBuildClient({ id }: { id: string }) {
   const [phase, setPhase] = useState<Phase | null>(null);
   const [badgeNames, setBadgeNames] = useState<Map<number, string>>(new Map());
+  const [blueprintNames, setBlueprintNames] = useState<Map<number, string>>(new Map());
 
   useEffect(() => {
     const res = decode(id);
@@ -68,13 +71,21 @@ export function SharedBuildClient({ id }: { id: string }) {
       return;
     }
     setPhase({ kind: "ready", state: res.state });
-    fetchBundle<CostMatrixBundle>("/data/badge-cost-matrix.v0.json")
+    // R12I-A: names resolve from the real production bundles.
+    fetchBundle<BadgeRequirementsBundle>("/data/badge-requirements.v1.json")
       .then((b) => {
         const names = new Map<number, string>();
         for (const entry of badgeCatalog(b)) names.set(entry.index, entry.name);
         setBadgeNames(names);
       })
       .catch(() => setBadgeNames(new Map()));
+    fetchBundle<BlueprintsBundle>("/data/blueprints.v1.json")
+      .then((b) => {
+        const names = new Map<number, string>();
+        for (const bp of blueprintList(b)) names.set(bp.index, bp.name);
+        setBlueprintNames(names);
+      })
+      .catch(() => setBlueprintNames(new Map()));
   }, [id]);
 
   // Hydration placeholder — the shell renders immediately (contract §6.1).
@@ -125,7 +136,7 @@ export function SharedBuildClient({ id }: { id: string }) {
           <h2 className="mt-1 font-display text-headline-md text-primary-container">
             {POSITIONS[state.position]} · {heightLabel(state.heightIn)}
             {state.blueprintRef !== undefined && state.blueprintRef >= 0
-              ? ` · Blueprint #${state.blueprintRef + 1}`
+              ? ` · Blueprint ${blueprintNames.get(state.blueprintRef) ?? `#${state.blueprintRef + 1}`}`
               : ""}
           </h2>
           <p className="mt-1 flex flex-wrap items-center gap-2 text-body-sm text-text-muted">
@@ -133,7 +144,7 @@ export function SharedBuildClient({ id }: { id: string }) {
               <Icon name="memory" size={14} />
               {usedSlots}/{MAX_BADGE_SLOTS} slots allocated
             </span>
-            <SourceTag tier="unverified" />
+            <SourceTag tier="official" />
           </p>
         </div>
 
