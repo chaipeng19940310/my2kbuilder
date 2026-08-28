@@ -11,6 +11,8 @@
  *   compare / build-card / /b/[id]   无或 WebPage（noindex）
  */
 
+import { canonicalFor } from "./canonical";
+
 export interface JsonLd {
   "@context": "https://schema.org";
   "@type": string;
@@ -73,7 +75,9 @@ export function breadcrumbSchema(items: Array<{ name: string; path: string }>): 
       "@type": "ListItem",
       position: i + 1,
       name: it.name,
-      item: it.path,
+      // R12K-A：item 必须绝对 URL（GSC 结构化数据规范；相对路径触发非严重问题）。
+      // 复用 canonical 同款闸门：CANONICAL_HOST 未批准时 canonicalFor 返回相对路径。
+      item: canonicalFor(it.path),
     })),
   };
 }
