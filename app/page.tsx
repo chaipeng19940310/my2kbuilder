@@ -187,16 +187,23 @@ export default function HomePage() {
             Browse Signature Blueprints
           </Link>
         </div>
-        {/* R12I hero visual (design pack t_65009bdd): original dark-first
-            console artwork, local static asset. */}
-        {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG asset */}
-        <img
-          src="/assets/r12i/hero/hero-home-visual.svg"
-          alt="My2KBuilder planning console artwork — badge slots, blueprint cards, and a share link"
-          width={1600}
-          height={900}
-          className="mt-6 w-full max-w-4xl rounded border border-border-low"
-        />
+        {/* R12I hero visual (design pack t_65009bdd): dark-first
+            console artwork, local static asset. Whole image links to the
+            Badge Token Planner so the console mock is a real entry point. */}
+        <Link
+          href="/badge-token-planner"
+          aria-label="Open the Badge Token Planner"
+          className="group mt-6 block w-full max-w-4xl rounded border border-border-low transition-colors duration-200 hover:border-primary-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-container"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG asset */}
+          <img
+            src="/assets/r12i/hero/hero-home-visual.svg"
+            alt="My2KBuilder planning console artwork — badge slots, blueprint cards, and a share link"
+            width={1600}
+            height={900}
+            className="w-full rounded transition-opacity duration-200 group-hover:opacity-90"
+          />
+        </Link>
       </section>
 
       {/* Tool entry grid */}
