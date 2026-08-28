@@ -49,7 +49,7 @@ const TOOL_CARDS = [
     body: "Turn any plan into a link and a clean text build card. Paste it in Discord, Reddit, or a video description — no screenshots, no account.",
     cta: "Create a card",
     href: "/build-card",
-    image: null,
+    image: "/assets/r12i/tool-cards/tool-card-build-card.svg",
   },
 ] as const;
 
@@ -176,13 +176,13 @@ export default function HomePage() {
         <div className="mt-4 flex flex-col gap-4 sm:flex-row">
           <Link
             href="/badge-token-planner"
-            className="rounded bg-primary-container px-6 py-3 text-label-md font-bold text-on-primary transition-colors duration-200 hover:bg-surface-tint"
+            className="rounded bg-primary-container px-8 py-4 text-body-md font-bold text-on-primary transition-colors duration-200 hover:bg-surface-tint focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-container"
           >
             Open Badge Token Planner
           </Link>
           <Link
             href="/signature-blueprints"
-            className="rounded border border-outline px-6 py-3 text-label-md font-bold text-on-surface transition-colors duration-200 hover:bg-surface-card"
+            className="rounded border-2 border-primary-container px-8 py-4 text-body-md font-bold text-primary-container transition-colors duration-200 hover:bg-primary-container hover:text-on-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-container"
           >
             Browse Signature Blueprints
           </Link>
@@ -215,15 +215,22 @@ export default function HomePage() {
           >
             {c.image ? (
               // R12I tool-card visual (design pack t_65009bdd), local static SVG.
-              /* eslint-disable-next-line @next/next/no-img-element -- local static SVG asset */
-              <img
-                src={c.image}
-                alt={`${c.title} illustration`}
-                width={800}
-                height={500}
-                loading="lazy"
-                className="aspect-[8/5] w-full border-b border-border-low object-cover"
-              />
+              // Whole image is a link to the same target as the card CTA.
+              <Link
+                href={c.href}
+                aria-label={`${c.cta} — ${c.title}`}
+                className="block transition-opacity duration-200 hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary-container"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG asset */}
+                <img
+                  src={c.image}
+                  alt={`${c.title} illustration`}
+                  width={800}
+                  height={500}
+                  loading="lazy"
+                  className="aspect-[8/5] w-full border-b border-border-low object-cover"
+                />
+              </Link>
             ) : null}
             <div className="flex flex-col gap-4 p-6 pt-2">
               <div className="flex h-12 w-12 items-center justify-center rounded border border-border-low bg-surface-container-high text-primary-container transition-colors duration-200 group-hover:bg-primary-container group-hover:text-on-primary">
@@ -233,9 +240,9 @@ export default function HomePage() {
               <p className="flex-grow text-body-md text-on-surface-variant">{c.body}</p>
               <Link
                 href={c.href}
-                className="flex items-center gap-1 text-label-md text-primary-container group-hover:underline"
+                className="inline-flex w-fit items-center gap-2 rounded bg-primary-container px-6 py-3 text-body-md font-bold text-on-primary transition-colors duration-200 hover:bg-surface-tint focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-container"
               >
-                {c.cta} <Icon name="arrow_forward" size={16} />
+                {c.cta} <Icon name="arrow_forward" size={18} />
               </Link>
             </div>
           </div>
@@ -257,12 +264,19 @@ export default function HomePage() {
             <Link
               key={g.href}
               href={g.href}
-              className="group rounded border border-border-low bg-surface p-4 transition-colors duration-200 hover:border-primary-container"
+              className="group flex items-center justify-between gap-4 rounded border border-border-low bg-surface p-5 transition-colors duration-200 hover:border-primary-container hover:bg-surface-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-container"
             >
-              <span className="mb-2 block text-label-md text-on-surface group-hover:text-primary-container">
-                {g.title}
+              <span>
+                <span className="mb-2 block text-body-md font-bold text-on-surface group-hover:text-primary-container">
+                  {g.title}
+                </span>
+                <span className="text-body-sm text-on-surface-variant">{g.body}</span>
               </span>
-              <span className="text-body-sm text-on-surface-variant">{g.body}</span>
+              <Icon
+                name="arrow_forward"
+                size={22}
+                className="shrink-0 text-on-surface-variant transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary-container"
+              />
             </Link>
           ))}
         </div>

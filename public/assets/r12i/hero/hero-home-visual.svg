@@ -27,13 +27,40 @@
     <text x="42" y="64" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" letter-spacing="2" fill="#94A3B8">BADGE CONSOLE</text>
     <text x="42" y="112" font-family="DejaVu Sans, Arial, sans-serif" font-size="40" font-weight="700" fill="#D4E4FA">Build Map</text>
     <g transform="translate(42,160)">
-      <g transform="translate(0,0)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">SHOOTING</text></g><g transform="translate(156,0)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">FINISHING</text></g><g transform="translate(312,0)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">PLAYMAKING</text></g><g transform="translate(0,136)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">DEFENSE</text></g><g transform="translate(156,136)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">REBOUNDING</text></g><g transform="translate(312,136)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">PHYSICALS</text></g>
+      <g transform="translate(0,0)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><g transform="translate(39.6,12) scale(0.55)" fill="none" stroke="#D4E4FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 58c8-18 22-28 42-30" stroke="#FFB03A"/>
+        <path d="M24 62h24"/>
+        <path d="M52 62v-14h18v14"/>
+        <circle cx="68" cy="28" r="8" stroke="#A3E635"/>
+        <path d="M28 70c12-4 28-4 40 0" stroke="#34D0F7" opacity="0.85"/></g><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">SHOOTING</text></g><g transform="translate(156,0)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><g transform="translate(39.6,12) scale(0.55)" fill="none" stroke="#D4E4FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M28 28h40" stroke="#FFB03A"/>
+        <path d="M34 28v12h28V28"/>
+        <path d="M48 42v18" stroke="#A3E635"/>
+        <path d="M38 54l10 10 10-10" stroke="#A3E635"/>
+        <circle cx="48" cy="70" r="6" stroke="#34D0F7"/></g><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">FINISHING</text></g><g transform="translate(312,0)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><g transform="translate(39.6,12) scale(0.55)" fill="none" stroke="#D4E4FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="28" cy="34" r="7" stroke="#FFB03A"/>
+        <circle cx="68" cy="30" r="7" stroke="#A3E635"/>
+        <circle cx="48" cy="66" r="7" stroke="#34D0F7"/>
+        <path d="M34 38l24 22"/>
+        <path d="M62 36L52 60"/>
+        <path d="M35 31h26" stroke="#94A3B8"/></g><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">PLAYMAKING</text></g><g transform="translate(0,136)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><g transform="translate(39.6,12) scale(0.55)" fill="none" stroke="#D4E4FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M48 22l24 10v18c0 16-10 25-24 30-14-5-24-14-24-30V32l24-10z" stroke="#FFB03A"/>
+        <path d="M36 56h24" stroke="#A3E635"/>
+        <path d="M40 48l8 8 16-18" stroke="#34D0F7"/></g><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">DEFENSE</text></g><g transform="translate(156,136)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><g transform="translate(39.6,12) scale(0.55)" fill="none" stroke="#D4E4FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M26 62h28v14H26z" stroke="#FFB03A"/>
+        <path d="M62 34h12v42H62z" stroke="#94A3B8"/>
+        <circle cx="44" cy="30" r="9" stroke="#A3E635"/>
+        <path d="M44 46v10" stroke="#34D0F7"/>
+        <path d="M36 52l8 8 8-8" stroke="#34D0F7"/></g><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">REBOUNDING</text></g><g transform="translate(312,136)"><rect width="132" height="112" rx="16" fill="#122131" stroke="#1E293B"/><g transform="translate(39.6,12) scale(0.55)" fill="none" stroke="#D4E4FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M52 20L34 50h12l-6 26 24-36H50l8-20z" stroke="#FFB03A"/>
+        <path d="M24 70c10 8 38 8 48 0" stroke="#A3E635"/>
+        <path d="M30 62h8M58 62h8" stroke="#34D0F7"/></g><text x="66" y="96" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#94A3B8">PHYSICALS</text></g>
     </g>
     <g transform="translate(42,470)">
       <rect x="0" y="0" width="86" height="28" rx="6" fill="#B87333" fill-opacity="0.22" stroke="#B87333"/><text x="43" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Bronze</text><rect x="100" y="0" width="86" height="28" rx="6" fill="#C0C7D1" fill-opacity="0.22" stroke="#C0C7D1"/><text x="143" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Silver</text><rect x="200" y="0" width="86" height="28" rx="6" fill="#F6C453" fill-opacity="0.22" stroke="#F6C453"/><text x="243" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Gold</text><rect x="300" y="0" width="86" height="28" rx="6" fill="#B794F6" fill-opacity="0.22" stroke="#B794F6"/><text x="343" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Hall of Fame</text><rect x="400" y="0" width="86" height="28" rx="6" fill="#67E8F9" fill-opacity="0.22" stroke="#67E8F9"/><text x="443" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Legend</text>
     </g>
-    <rect x="42" y="540" width="476" height="58" rx="14" fill="#FFB03A"/>
-    <text x="280" y="577" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#070D1A">Start planning →</text>
+    <rect x="42" y="532" width="476" height="76" rx="16" fill="#FFB03A"/>
+    <text x="280" y="580" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" fill="#070D1A">Start planning →</text>
   </g>
   <text x="120" y="150" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" letter-spacing="3" fill="#FFB03A">MY2KBUILDER</text>
   <text x="120" y="230" font-family="DejaVu Sans, Arial, sans-serif" font-size="64" font-weight="700" fill="#D4E4FA">Plan builds before</text>
