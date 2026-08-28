@@ -21,13 +21,13 @@ import publicRef from "@/public/data/public-reference.v1.json";
 export const metadata: Metadata = {
   title: "Data Methodology — How We Source NBA 2K27 Builder Data",
   description:
-    "Every data point on My2KBuilder is labeled by source tier: official confirmed, cross-checked community reference, or community unverified. See what's verified and when it was last updated.",
+    "My2KBuilder labels each field by source tier: official confirmed, cross-checked community reference, or community unverified. See what's verified and when.",
   alternates: { canonical: canonicalFor("/methodology") },
   ...socialMeta({
     path: "/methodology",
     title: "Data Methodology — How We Source NBA 2K27 Builder Data",
     description:
-      "Every data point on My2KBuilder is labeled by source tier: official confirmed, cross-checked community reference, or community unverified. See what's verified and when it was last updated.",
+      "My2KBuilder labels each field by source tier: official confirmed, cross-checked community reference, or community unverified. See what's verified and when.",
   }),
 };
 

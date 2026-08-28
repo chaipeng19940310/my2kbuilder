@@ -11,13 +11,13 @@ import { BlueprintsClient } from "./BlueprintsClient";
 export const metadata: Metadata = {
   title: "NBA 2K27 Signature Blueprints — Browse & Compare 40 Builds",
   description:
-    "Browse and filter all 40 Signature Blueprints in NBA 2K27, compare up to 3 side by side, then open one in the Badge Token Planner. Free, unofficial, no sign-up.",
+    "Browse all 40 Signature Blueprints in NBA 2K27, compare up to 3 side by side, then open one in the Badge Token Planner. Free, unofficial, no sign-up.",
   alternates: { canonical: canonicalFor("/signature-blueprints") },
   ...socialMeta({
     path: "/signature-blueprints",
     title: "NBA 2K27 Signature Blueprints — Browse & Compare 40 Builds",
     description:
-      "Browse and filter all 40 Signature Blueprints in NBA 2K27, compare up to 3 side by side, then open one in the Badge Token Planner. Free, unofficial, no sign-up.",
+      "Browse all 40 Signature Blueprints in NBA 2K27, compare up to 3 side by side, then open one in the Badge Token Planner. Free, unofficial, no sign-up.",
   }),
 };
 
@@ -86,7 +86,12 @@ export default function SignatureBlueprintsPage() {
       <section className="flex flex-col gap-6">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h2 className="font-display text-headline-md text-on-surface">Browse All 40 Blueprints</h2>
-          <span className="text-body-sm text-text-muted">Compare up to 3 side by side</span>
+          <span className="text-body-sm text-text-muted">
+            Compare up to 3 side by side ·{" "}
+            <Link href="/signature-blueprints/by-position" className="text-primary-container hover:underline">
+              Browse by position
+            </Link>
+          </span>
         </div>
         <BlueprintsClient bundle={blueprintsBundle as BlueprintsBundle} />
       </section>

@@ -27,13 +27,13 @@ import { PlannerClient } from "./PlannerClient";
 export const metadata: Metadata = {
   title: "NBA 2K27 Badge Token Planner — 53 Badges, 20 Slots",
   description:
-    "Allocate Badge Tokens across 20 slots, see how height and position change token costs, and catch conflicts before you lock a build. Free web tool, no download.",
+    "Allocate Badge Tokens across 20 slots, see how height and position change token costs, and catch conflicts before you lock a build. Free tool, no download.",
   alternates: { canonical: canonicalFor("/badge-token-planner") },
   ...socialMeta({
     path: "/badge-token-planner",
     title: "NBA 2K27 Badge Token Planner — 53 Badges, 20 Slots",
     description:
-      "Allocate Badge Tokens across 20 slots, see how height and position change token costs, and catch conflicts before you lock a build. Free web tool, no download.",
+      "Allocate Badge Tokens across 20 slots, see how height and position change token costs, and catch conflicts before you lock a build. Free tool, no download.",
   }),
 };
 

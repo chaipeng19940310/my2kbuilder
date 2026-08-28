@@ -32,6 +32,12 @@ const ibmPlexSans = localFont({
 // (build-time env, approved host = my2kbuilder.com) so og:/twitter: URLs are
 // absolute in production. Pages override title/description/url via
 // lib/social.ts socialMeta() using their existing frozen copy.
+// R12J-F: no brand suffix template — SEO §3 frozen titles are ≤60 chars
+// verbatim and the 15-char " | My2KBuilder" suffix pushed 4 pages past the
+// 60-char SERP budget. Brand presence stays via og:site_name, og:image, the
+// nav logo, and this default title (404 / untitled pages). og:title and
+// twitter:title reuse the same frozen string via socialMeta, so <title> and
+// social titles stay identical site-wide.
 const DEFAULT_TITLE = "My2KBuilder — NBA 2K27 Builder";
 const DEFAULT_DESCRIPTION =
   "Plan NBA 2K27 MyPLAYER builds in your browser: allocate Badge Tokens, compare 40 Signature Blueprints and share a build card. Free, unofficial, no sign-up.";
@@ -40,10 +46,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     hasCanonicalHost() ? `https://${CANONICAL_HOST}` : "http://localhost:3000",
   ),
-  title: {
-    default: DEFAULT_TITLE,
-    template: "%s | My2KBuilder",
-  },
+  title: DEFAULT_TITLE,
   description: DEFAULT_DESCRIPTION,
   // R12D: Bing Webmaster Tools site verification (public token, owner-supplied
   // 2026-08-27). Rendered in <head> of every page via root metadata.
