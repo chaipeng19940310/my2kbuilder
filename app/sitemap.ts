@@ -14,6 +14,7 @@ export const INDEXABLE_ROUTES = [
   "/badge-token-planner",
   "/badge-requirements",
   "/takeover-requirements",
+  "/cap-breakers",
   "/signature-blueprints",
   "/signature-blueprints/by-position",
   "/methodology",

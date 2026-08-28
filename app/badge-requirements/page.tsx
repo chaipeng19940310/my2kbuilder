@@ -359,11 +359,15 @@ export default function BadgeRequirementsPage() {
           <Link href="/badge-token-planner" className="text-primary-container hover:underline">
             Badge Token Planner
           </Link>
-          {" and map your build — and check the "}
+          {" and map your build — check the "}
           <Link href="/takeover-requirements" className="text-primary-container hover:underline">
             Takeover Requirements
           </Link>
-          {" table before locking your attribute targets."}
+          {" table before locking your attribute targets, and when a threshold sits above your creation cap, the "}
+          <Link href="/cap-breakers" className="text-primary-container hover:underline">
+            Cap Breakers guide
+          </Link>
+          {" shows how to plan the gap backwards."}
         </p>
       </section>
     </main>

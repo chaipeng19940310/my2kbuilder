@@ -141,7 +141,12 @@ export default function BadgeTokenPlannerPage() {
             <Link href="/takeover-requirements" className="text-primary-container hover:underline">
               Takeover unlock threshold
             </Link>{" "}
-            with its source label.
+            with its source label. And when a target threshold sits
+            above your build&apos;s creation cap, the{" "}
+            <Link href="/cap-breakers" className="text-primary-container hover:underline">
+              Cap Breakers guide
+            </Link>{" "}
+            shows how to plan that gap backwards.
           </p>
         </div>
         <div className="flex flex-col gap-3 rounded border border-border-low bg-surface-card p-6">
