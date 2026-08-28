@@ -18,10 +18,11 @@ import blueprintsBundle from "@/public/data/blueprints.v1.json";
 
 // SEO freeze (copy/r12j-wave2-copy-v1.md §4): title/H1/meta for
 // `/signature-blueprints/by-position`. Banned words (official/best/guaranteed)
-// never appear in page copy. Title incl. suffix = 55 chars (<=60).
-const PAGE_TITLE = "NBA 2K27 Signature Blueprints by Position | My2KBuilder";
+// never appear in page copy. R12J-I P2: title keeps the freeze text with no
+// brand suffix (41 chars), meta trimmed to 152 chars (<=155).
+const PAGE_TITLE = "NBA 2K27 Signature Blueprints by Position";
 const PAGE_DESCRIPTION =
-  "Browse NBA 2K27's 40 Signature Blueprints by position and playstyle. Single-source profiles are labeled Unverified; we don't rank blueprints — the pick is yours.";
+  "Browse 40 NBA 2K27 Signature Blueprints by position and playstyle. Single-source profiles are labeled Unverified; we do not rank blueprints — your pick.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

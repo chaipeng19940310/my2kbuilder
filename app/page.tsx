@@ -53,6 +53,29 @@ const TOOL_CARDS = [
   },
 ] as const;
 
+const GUIDE_CARDS = [
+  {
+    title: "Takeover Requirements",
+    body: "All 24 Takeover abilities with attribute unlock thresholds and per-row source labels.",
+    href: "/takeover-requirements",
+  },
+  {
+    title: "Cap Breakers",
+    body: "Plan cap breakers backwards from badge thresholds with 99 OVR previews and Build Specialization.",
+    href: "/cap-breakers",
+  },
+  {
+    title: "2K26 Build Pitfalls",
+    body: "Check body-type penalties, animation thresholds, and seasonal resets before copying a 2K26 build.",
+    href: "/2k26-to-2k27-build-pitfalls",
+  },
+  {
+    title: "Blueprints by Position",
+    body: "Browse all 40 Signature Blueprints grouped by position and playstyle.",
+    href: "/signature-blueprints/by-position",
+  },
+] as const;
+
 // R12I wave-1 homepage FAQ (copy/r12i-wave1-copy-v1.md §2, frozen — 4 Q/A only).
 const FAQS = [
   {
@@ -210,6 +233,32 @@ export default function HomePage() {
             </div>
           </div>
         ))}
+      </section>
+
+      {/* Build guides — R12J-I: collect the wave-2 reference pages on the
+          homepage as well as in the main nav Guides group. */}
+      <section className="flex flex-col gap-6 rounded border border-border-low bg-surface-card p-6 md:p-8">
+        <div className="flex max-w-3xl flex-col gap-2">
+          <h2 className="font-display text-headline-md text-on-surface">Build Guides</h2>
+          <p className="text-body-md text-on-surface-variant">
+            Quick references for Takeovers, cap breakers, 2K26 copy-over traps, and blueprints by
+            position.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {GUIDE_CARDS.map((g) => (
+            <Link
+              key={g.href}
+              href={g.href}
+              className="group rounded border border-border-low bg-surface p-4 transition-colors duration-200 hover:border-primary-container"
+            >
+              <span className="mb-2 block text-label-md text-on-surface group-hover:text-primary-container">
+                {g.title}
+              </span>
+              <span className="text-body-sm text-on-surface-variant">{g.body}</span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* What's new — official_confirmed facts only (contract §9, PRD D8) */}
