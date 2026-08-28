@@ -359,7 +359,11 @@ export default function BadgeRequirementsPage() {
           <Link href="/badge-token-planner" className="text-primary-container hover:underline">
             Badge Token Planner
           </Link>
-          {" and map your build."}
+          {" and map your build — and check the "}
+          <Link href="/takeover-requirements" className="text-primary-container hover:underline">
+            Takeover Requirements
+          </Link>
+          {" table before locking your attribute targets."}
         </p>
       </section>
     </main>

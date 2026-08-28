@@ -137,7 +137,11 @@ export default function BadgeTokenPlannerPage() {
             <Link href="/badge-requirements" className="text-primary-container hover:underline">
               attribute unlock requirements
             </Link>{" "}
-            cross-checked across two public community tables.
+            cross-checked across two public community tables, and every{" "}
+            <Link href="/takeover-requirements" className="text-primary-container hover:underline">
+              Takeover unlock threshold
+            </Link>{" "}
+            with its source label.
           </p>
         </div>
         <div className="flex flex-col gap-3 rounded border border-border-low bg-surface-card p-6">

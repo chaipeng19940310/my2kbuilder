@@ -44,7 +44,7 @@ export function SourceTag({
  * a self-deprecating disclaimer. Token cost values remain unpublished by 2K,
  * so the mandated pending label is shown verbatim.
  */
-export function DataSourceBanner({ scope }: { scope: "badges" | "blueprints" }) {
+export function DataSourceBanner({ scope }: { scope: "badges" | "blueprints" | "takeovers" }) {
   return (
     <div className="flex items-start gap-2 rounded border border-secondary-container bg-surface-container-low p-3">
       <Icon name="info" size={18} className="mt-0.5 shrink-0 text-secondary" />
@@ -53,6 +53,13 @@ export function DataSourceBanner({ scope }: { scope: "badges" | "blueprints" }) 
           Badge names and categories come from 2K&apos;s published roster. Unlock requirements are a
           community reference cross-checked across two public tables. Token costs pending — official
           values not published.{" "}
+          <span className="text-text-muted">See Methodology for source tiers.</span>
+        </p>
+      ) : scope === "takeovers" ? (
+        <p className="text-body-sm text-on-surface-variant">
+          The 24-ability roster and the 5 default Takeovers are cross-checked between a public
+          reference table and 2K-published counts. Per-ability thresholds are single-source and
+          labeled Unverified on each row; anything not published is shown as pending with no value.{" "}
           <span className="text-text-muted">See Methodology for source tiers.</span>
         </p>
       ) : (
