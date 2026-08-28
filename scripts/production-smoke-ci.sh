@@ -4,7 +4,7 @@ set -euo pipefail
 BASE="https://my2kbuilder-production.chaipeng1994.workers.dev"
 fail=0
 for pair in "/ 200" "/badge-token-planner 200" "/badge-requirements 200" "/signature-blueprints 200" \
-  "/signature-blueprints/compare 200" "/build-card 200" "/methodology 200" \
+  "/signature-blueprints/by-position 200" "/signature-blueprints/compare 200" "/build-card 200" "/methodology 200" \
   "/disclaimer 200" "/privacy 200" "/terms 200" "/robots.txt 200" \
   "/sitemap.xml 200" "/definitely-not-a-route 404"; do
   path="${pair% *}"; want="${pair##* }"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { canonicalFor } from "@/lib/canonical";
 import { socialMeta } from "@/lib/social";
@@ -86,7 +87,13 @@ export default function SignatureBlueprintsPage() {
       <section className="flex flex-col gap-6">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h2 className="font-display text-headline-md text-on-surface">Browse All 40 Blueprints</h2>
-          <span className="text-body-sm text-text-muted">Compare up to 3 side by side</span>
+          {/* R12J-E mutual link: guided by-position view */}
+          <span className="text-body-sm text-text-muted">
+            Compare up to 3 side by side ·{" "}
+            <Link href="/signature-blueprints/by-position" className="text-primary-container hover:underline">
+              Browse by position
+            </Link>
+          </span>
         </div>
         <BlueprintsClient bundle={blueprintsBundle as BlueprintsBundle} />
       </section>

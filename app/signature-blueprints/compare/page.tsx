@@ -34,6 +34,14 @@ export default function CompareBlueprintsPage() {
         <p className="text-body-lg text-on-surface-variant">
           Analyzing attribute deltas across selected builds.
         </p>
+        {/* R12J-E mutual link: guided by-position view */}
+        <p className="text-body-sm text-text-muted">
+          Prefer a guided view?{" "}
+          <a href="/signature-blueprints/by-position" className="text-primary-container hover:underline">
+            Browse blueprints by position
+          </a>
+          .
+        </p>
       </header>
 
       <CompareClient />
