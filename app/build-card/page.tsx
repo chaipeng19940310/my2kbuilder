@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { socialMeta } from "@/lib/social";
+import { ContentPanel } from "@/components/ContentPanel";
 import { BuildCardClient } from "./BuildCardClient";
 
 // Functional page (seo §3 noindex group): own H1/title for UX, never indexed,
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
 export default function BuildCardPage() {
   return (
     <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-8 px-4 py-12 md:px-margin-desktop">
+      {/* R12K-J: unified dark panel lifts the content off the background
+          image with a clear frame boundary (Owner pain point). */}
+      <ContentPanel>
       <header className="flex max-w-3xl flex-col gap-4">
         <h1 className="font-display text-display-lg text-primary-container">
           Create a Shareable Build Card
@@ -46,6 +50,7 @@ export default function BuildCardPage() {
       </header>
 
       <BuildCardClient />
+      </ContentPanel>
     </main>
   );
 }

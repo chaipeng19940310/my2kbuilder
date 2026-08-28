@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
+import { ContentPanel } from "@/components/ContentPanel";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { canonicalFor } from "@/lib/canonical";
 import { socialMeta } from "@/lib/social";
@@ -77,6 +78,8 @@ export default function TermsPage() {
     <main className="relative z-10 mx-auto flex w-full max-w-3xl flex-grow flex-col gap-8 px-4 py-12 md:px-margin-desktop">
       <JsonLdScript schema={webPageSchema({ name: "Terms of Service" })} />
 
+      {/* R12K-J: unified dark panel (site card spec) around all content. */}
+      <ContentPanel>
       <header className="flex flex-col gap-3">
         <h1 className="font-display text-display-lg text-primary-container">Terms of Service</h1>
         <p className="text-body-sm text-text-muted">Last Updated: August 24, 2026</p>
@@ -110,6 +113,7 @@ export default function TermsPage() {
           Back to Planner
         </Link>
       </div>
+      </ContentPanel>
     </main>
   );
 }
