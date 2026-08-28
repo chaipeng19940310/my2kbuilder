@@ -6,20 +6,22 @@ import { canonicalFor } from "@/lib/canonical";
 import { socialMeta } from "@/lib/social";
 import { webPageSchema } from "@/lib/schema";
 
-// R10.1 finalized copy (compliance/legal-pages-final-v1.md §2.2), updated in
-// R12.5 for consent-gated analytics (compliance/analytics-disclosure-v1.md):
-// sections 3–5 now describe Plausible / GA4 / Clarity behind the consent banner.
-// The old "no analytics/tracking" wording must not remain live post-R12.5.
+// R10.1 finalized copy (compliance/legal-pages-final-v1.md §2.2), revised in
+// R12K-E per the Owner 2026-08-28 no-banner/no-gating directive using the
+// R12K-D legal final (compliance/legal/r12k-privacy-analytics-v1.md):
+// sections 3–5 rewritten for direct-load cookieless Plausible, new section 9
+// (privacy rights / opt-out), Last Updated 2026-08-28. /disclaimer and
+// /terms are unchanged.
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. Analytics run only with your consent.",
+    "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. We use cookieless, privacy-respecting analytics.",
   alternates: { canonical: canonicalFor("/privacy") },
   ...socialMeta({
     path: "/privacy",
     title: "Privacy Policy",
     description:
-      "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. Analytics run only with your consent.",
+      "My2KBuilder has no accounts, no email sign-ups, and no payments. Build share links encode the build in the URL itself. We use cookieless, privacy-respecting analytics.",
   }),
 };
 
@@ -34,15 +36,22 @@ const SECTIONS = [
   },
   {
     title: "3. Analytics and Tracking",
-    body: "With your consent, this site uses analytics to understand aggregate usage: Plausible (a privacy-focused, cookieless analytics tool served from our own installation), Google Analytics 4, and Microsoft Clarity. No analytics scripts load and no analytics data is sent until you accept in the consent banner. If you decline, no analytics scripts, cookies, or requests are used at all. When enabled, these services may process usage data such as pages visited, referral source, approximate region, and device or browser type. You can change or withdraw your choice at any time via the \"Cookie preferences\" link in the footer of every page.",
+    body: [
+      "This site uses Plausible Analytics, running on our own self-hosted installation, to understand anonymous, aggregate usage such as pages visited, referral sources, and device or browser types in broad form. Plausible does not use tracking cookies, does not collect personal information, and does not build individual user profiles. No analytics data is used for advertising or marketing profiles.",
+      "Analytics scripts load automatically when you visit the site. There is no cookie consent banner because we do not use non-essential tracking cookies.",
+      "We may add additional analytics tools, such as Google Analytics 4 or Microsoft Clarity, in the future. If added, this Privacy Policy will be updated before those tools are enabled.",
+    ],
   },
   {
     title: "4. Third-Party Services",
-    body: "The site is served through Cloudflare's edge network. If you accept analytics, usage data is processed by Plausible (on our self-hosted installation), Google (Google Analytics 4), and Microsoft (Microsoft Clarity) under their respective privacy policies. We do not sell personal data, and we do not use analytics data for advertising or marketing profiles.",
+    body: "The site is served through Cloudflare's edge network. Analytics data is processed by our self-hosted Plausible installation. We do not sell personal data, and we do not use analytics data for advertising or marketing profiles.",
   },
   {
     title: "5. Cookies",
-    body: "This site does not use advertising cookies. Your analytics consent choice is stored in your browser's local storage on your own device and is never sent to our servers. If you accept analytics, Google Analytics 4 and Microsoft Clarity may set their own measurement cookies; Plausible runs cookieless. If you decline, no analytics cookies are set.",
+    body: [
+      "This site does not set advertising or tracking cookies. Because no non-essential cookies are used, we do not show a cookie consent banner.",
+      "We may use small amounts of browser storage that are strictly necessary for basic site functionality. For example, site preferences such as theme or planner UI state may be stored locally in your browser's localStorage. These values stay on your device and are not sent to our servers.",
+    ],
   },
   {
     title: "6. Children's Privacy",
@@ -56,6 +65,10 @@ const SECTIONS = [
     title: "8. Contact",
     body: "For privacy questions or to exercise any data rights, contact: contact@my2kbuilder.com.",
   },
+  {
+    title: "9. Your Privacy Rights / Opt-Out",
+    body: "Because we do not collect personal information, most individual data rights requests do not apply to information we hold. If you are a California resident and wish to opt out of any future sale or sharing of personal information, or if you have any privacy-related request, contact: contact@my2kbuilder.com.",
+  },
 ] as const;
 
 export default function PrivacyPage() {
@@ -65,17 +78,27 @@ export default function PrivacyPage() {
 
       <header className="flex flex-col gap-3">
         <h1 className="font-display text-display-lg text-primary-container">Privacy Policy</h1>
-        <p className="text-body-sm text-text-muted">Last Updated: August 24, 2026</p>
+        <p className="text-body-sm text-text-muted">Last Updated: August 28, 2026</p>
       </header>
 
       <div className="flex flex-col gap-6">
         {SECTIONS.map((s) => (
           <section key={s.title} className="flex flex-col gap-3">
             <h2 className="font-display text-headline-md text-on-surface">{s.title}</h2>
-            <p className="text-body-md text-on-surface-variant">{s.body}</p>
+            {typeof s.body === "string" ? (
+              <p className="text-body-md text-on-surface-variant">{s.body}</p>
+            ) : (
+              s.body.map((p) => (
+                <p key={p.slice(0, 48)} className="text-body-md text-on-surface-variant">
+                  {p}
+                </p>
+              ))
+            )}
           </section>
         ))}
       </div>
+
+      <p className="text-body-sm text-text-muted">Last Updated: August 28, 2026</p>
 
       <div>
         <Link

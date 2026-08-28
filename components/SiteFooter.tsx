@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { DATA_LAST_VERIFIED } from "@/lib/env";
-import { CookiePreferencesButton } from "@/components/analytics/CookiePreferencesButton";
 
 /**
  * Site-wide footer + pre-footer trust strip.
@@ -58,8 +57,6 @@ export function SiteFooter() {
             >
               Terms
             </Link>
-            {/* R12.5: re-open the analytics consent banner (change/withdraw). */}
-            <CookiePreferencesButton className="text-label-md text-text-muted transition-all duration-300 hover:text-on-surface hover:underline decoration-secondary" />
           </div>
         </div>
         {/* R12F: SaaSTool listing badge (Owner-approved 2026-08-27, one card per small change).

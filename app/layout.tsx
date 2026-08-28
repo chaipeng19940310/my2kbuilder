@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AnalyticsConsent } from "@/components/analytics/AnalyticsConsent";
 import { CANONICAL_HOST, hasCanonicalHost } from "@/lib/canonical";
 import { socialMeta } from "@/lib/social";
 
@@ -85,9 +84,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteNav />
         {children}
         <SiteFooter />
-        {/* R12.5: consent-gated analytics. Client-only; SSR HTML carries
-            zero analytics scripts (no consent => 0 scripts / 0 requests). */}
-        <AnalyticsConsent />
+        {/* R12K-E (Owner 2026-08-28, buildahooper.app-style): no consent
+            banner, no gating — analytics loads directly for every visitor.
+            Owner 2026-08-27 standard self-hosted Plausible snippet, verbatim
+            (cookieless). Rendered in SSR HTML on every page. */}
+        <script
+          defer
+          data-domain="my2kbuilder.com"
+          src="https://plausible.shipsolo.io/js/script.js"
+        ></script>
+        {/* R12K-E reserved slots — DO NOT install in this card:
+            TODO(owner): GA4    — paste gtag snippet once Owner provides the
+                                  M2K measurement ID (G-…); /privacy must be
+                                  updated before enabling.
+            TODO(owner): Clarity — paste Clarity bootstrap once Owner provides
+                                  the M2K project ID; /privacy must be updated
+                                  before enabling. */}
       </body>
     </html>
   );
