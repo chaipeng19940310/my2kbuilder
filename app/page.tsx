@@ -106,12 +106,12 @@ const VIDEOS = [
   {
     videoId: "MSZre4MBSBA",
     title: "2K Builder Courtside Report",
-    thumbnail: "/assets/r12i/video/video-facade-courtside-report.svg",
+    thumbnail: "/assets/video/courtside-report.jpg",
   },
   {
     videoId: "vQ2jNNbh1TU",
     title: "NBA 2K27 Gameplay Trailer",
-    thumbnail: "/assets/r12i/video/video-facade-official-trailer.svg",
+    thumbnail: "/assets/video/official-trailer.jpg",
   },
 ] as const;
 

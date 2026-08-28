@@ -304,7 +304,7 @@ export default function CapBreakersPage() {
         <VideoFacade
           videoId="MSZre4MBSBA"
           title="2K Builder Courtside Report"
-          thumbnail="/assets/r12i/video/video-facade-courtside-report.svg"
+          thumbnail="/assets/video/courtside-report.jpg"
         />
         <p className="text-body-sm text-text-muted">
           {

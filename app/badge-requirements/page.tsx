@@ -320,7 +320,7 @@ export default function BadgeRequirementsPage() {
 
       {/* 2K Builder Courtside Report — click-to-load YouTube facade per design
           handoff §5 (shared VideoFacade component from R12I-D): initial HTML is
-          a local SVG thumbnail + play button only; the youtube-nocookie iframe
+          a self-hosted real cover image + play button only; the youtube-nocookie iframe
           is created after a click. No third-party request fires before that. */}
       <section className="flex max-w-3xl flex-col gap-4">
         <h2 className="font-display text-headline-md text-on-surface">
@@ -329,7 +329,7 @@ export default function BadgeRequirementsPage() {
         <VideoFacade
           videoId="MSZre4MBSBA"
           title="2K Builder Courtside Report"
-          thumbnail="/assets/r12i/video/video-facade-courtside-report.svg"
+          thumbnail="/assets/video/courtside-report.jpg"
         />
         <p className="text-body-sm text-text-muted">
           {

@@ -313,7 +313,7 @@ export default function BlueprintsByPositionPage() {
       </section>
 
       {/* 2K Builder Courtside Report — click-to-load YouTube facade per design
-          handoff §5 (approved video; initial HTML is a local SVG thumbnail +
+          handoff §5 (approved video; initial HTML is a self-hosted real cover image +
           play button only, no third-party request before click). */}
       <section className="flex max-w-3xl flex-col gap-4">
         <h2 className="font-display text-headline-md text-on-surface">
@@ -322,7 +322,7 @@ export default function BlueprintsByPositionPage() {
         <VideoFacade
           videoId="MSZre4MBSBA"
           title="2K Builder Courtside Report"
-          thumbnail="/assets/r12i/video/video-facade-courtside-report.svg"
+          thumbnail="/assets/video/courtside-report.jpg"
         />
         <p className="text-body-sm text-text-muted">
           {

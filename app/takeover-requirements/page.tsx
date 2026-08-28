@@ -276,7 +276,7 @@ export default function TakeoverRequirementsPage() {
       </section>
 
       {/* 2K Builder Courtside Report — click-to-load YouTube facade per design
-          handoff §5: initial HTML is a local SVG thumbnail + play button only;
+          handoff §5: initial HTML is a self-hosted real cover image + play button only;
           the youtube-nocookie iframe is created after a click. */}
       <section className="flex max-w-3xl flex-col gap-4">
         <h2 className="font-display text-headline-md text-on-surface">
@@ -285,7 +285,7 @@ export default function TakeoverRequirementsPage() {
         <VideoFacade
           videoId="MSZre4MBSBA"
           title="2K Builder Courtside Report"
-          thumbnail="/assets/r12i/video/video-facade-courtside-report.svg"
+          thumbnail="/assets/video/courtside-report.jpg"
         />
         <p className="text-body-sm text-text-muted">
           {

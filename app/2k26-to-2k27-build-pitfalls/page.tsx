@@ -377,7 +377,7 @@ export default function BuildPitfallsPage() {
       </section>
 
       {/* 2K Builder Courtside Report — click-to-load facade per design
-          handoff §5: initial HTML is a local SVG thumbnail + play button
+          handoff §5: initial HTML is a self-hosted real cover image + play button
           only; the youtube-nocookie iframe is created after a click. Same
           video asset as the sibling wave-2 pages (the other thumbnail's
           filename trips the banned-word grep on production HTML). */}
@@ -388,7 +388,7 @@ export default function BuildPitfallsPage() {
         <VideoFacade
           videoId="MSZre4MBSBA"
           title="2K Builder Courtside Report"
-          thumbnail="/assets/r12i/video/video-facade-courtside-report.svg"
+          thumbnail="/assets/video/courtside-report.jpg"
         />
         <p className="text-body-sm text-text-muted">
           {

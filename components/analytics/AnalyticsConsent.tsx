@@ -87,21 +87,23 @@ export function AnalyticsConsent() {
     // R16.1: pointer-events-none on the banner chrome so its inert regions
     // never swallow real taps aimed at page content behind/below it; only the
     // actual interactive elements (buttons, privacy link) receive events.
-    // Mobile layout is compact (buttons in one row, tighter padding) so the
-    // banner stays clear of above-the-fold tool controls on 390px viewports.
+    // R12K-C (Owner 2026-08-28): banner shrinks to ~0.8x of its previous
+    // scale (padding / font-size / max-width all scaled together, a 20%
+    // reduction — not halved) and is centered horizontally as a floating
+    // panel on both desktop and mobile. Consent logic unchanged.
     <div
       ref={bannerRef}
       role="dialog"
       aria-modal="false"
       aria-label="Analytics consent"
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-50 border-t border-border-low bg-surface-container-lowest"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-center px-3 pb-3 md:px-6 md:pb-4"
     >
-      <div className="mx-auto flex w-full max-w-site flex-col gap-2 px-4 py-3 md:flex-row md:items-center md:justify-between md:gap-gutter md:px-margin-desktop md:py-5">
-        <div className="flex max-w-2xl flex-col gap-1 md:gap-2">
-          <p className="hidden font-display text-headline-sm text-on-surface md:block">
+      <div className="flex w-full max-w-[1152px] flex-col gap-1.5 rounded-lg border border-border-low bg-surface-container-lowest px-3 py-2.5 shadow-lg shadow-black/40 md:flex-row md:items-center md:justify-between md:gap-3 md:px-6 md:py-4">
+        <div className="flex max-w-[538px] flex-col gap-1 md:gap-1.5">
+          <p className="hidden font-display text-base font-semibold text-on-surface md:block">
             Analytics consent
           </p>
-          <p className="text-body-sm text-on-surface-variant">
+          <p className="text-[10px] leading-[1.4] text-on-surface-variant">
             With your permission, we use Plausible, Google Analytics 4, and
             Microsoft Clarity to understand aggregate site usage. No analytics
             scripts load and nothing is sent before you choose. Declining keeps
@@ -116,18 +118,18 @@ export function AnalyticsConsent() {
             .
           </p>
         </div>
-        <div className="flex shrink-0 flex-row flex-wrap items-center gap-2">
+        <div className="flex shrink-0 flex-row flex-wrap items-center gap-1.5">
           <button
             type="button"
             onClick={() => choose("denied")}
-            className="pointer-events-auto rounded border border-outline px-4 py-2 text-label-md font-bold text-on-surface transition-colors duration-200 hover:bg-surface-card md:px-6 md:py-3"
+            className="pointer-events-auto rounded border border-outline px-3 py-1.5 text-[10px] font-bold tracking-[0.05em] text-on-surface transition-colors duration-200 hover:bg-surface-card md:px-5 md:py-2.5"
           >
             Decline
           </button>
           <button
             type="button"
             onClick={() => choose("granted")}
-            className="pointer-events-auto rounded bg-primary-container px-4 py-2 text-label-md font-bold text-on-primary transition-colors duration-200 hover:bg-surface-tint md:px-6 md:py-3"
+            className="pointer-events-auto rounded bg-primary-container px-3 py-1.5 text-[10px] font-bold tracking-[0.05em] text-on-primary transition-colors duration-200 hover:bg-surface-tint md:px-5 md:py-2.5"
           >
             Accept analytics
           </button>
