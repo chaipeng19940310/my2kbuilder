@@ -9,6 +9,7 @@ import { socialMeta } from "@/lib/social";
 import { faqPageSchema, softwareApplicationSchema, websiteSchema } from "@/lib/schema";
 import { mechanicsFact, type MechanicsBundle } from "@/lib/data";
 import mechanics from "@/public/data/mechanics.v0.json";
+import "./r18-home.css";
 
 // SEO freeze (seo §3): title/H1/meta for `/`.
 export const metadata: Metadata = {
@@ -196,52 +197,52 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section aria-label="Builder inventory" className="mx-auto grid w-full max-w-4xl grid-cols-3 gap-3 md:gap-6">
+        <section aria-label="Builder inventory" className="r18-stats">
           {[
             ["53", "Badges"],
             ["40", "Signature Blueprints"],
             ["20", "Badge Slots"],
           ].map(([number, label]) => (
-            <div key={label} className="flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-border-low bg-surface-container p-3 md:gap-2 md:p-6">
-              <span className="font-display text-3xl font-bold text-primary-container md:text-5xl">{number}</span>
-              <span className="text-center text-[10px] font-semibold uppercase tracking-widest text-text-muted md:text-sm">{label}</span>
+            <div key={label}>
+              <strong>{number}</strong>
+              <span>{label}</span>
             </div>
           ))}
         </section>
       </div>
 
-      <section aria-label="Signature Blueprints preview strip" className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <section aria-label="Signature Blueprints preview strip" className="r18-blueprints">
         {BLUEPRINT_PREVIEWS.map(([name, image]) => (
           // eslint-disable-next-line @next/next/no-img-element -- local static SVG asset
-          <img key={name} src={image} alt={`Signature Blueprint: ${name}`} width={800} height={500} loading="lazy" className="aspect-[8/5] w-full rounded-xl border border-border-low object-cover transition-colors hover:border-primary-container" />
+          <img key={name} src={image} alt={`Signature Blueprint: ${name}`} width={800} height={500} loading="lazy" />
         ))}
       </section>
 
-      <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="r18-tools">
         {TOOL_CARDS.map((card) => (
-          <Link key={card.href} href={card.href} className="group flex h-full flex-col overflow-hidden rounded-xl border border-border-low bg-surface-card transition-colors hover:border-primary-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-container">
+          <Link key={card.href} href={card.href} className="r18-tool">
             {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG asset */}
-            <img src={card.image} alt={card.imageAlt} width={800} height={500} loading="lazy" className="aspect-[8/5] w-full border-b border-border-low object-cover" />
-            <div className="flex flex-grow flex-col p-6">
-              <h2 className="mb-3 font-display text-headline-sm text-on-surface transition-colors group-hover:text-primary-container">{card.title}</h2>
-              <p className="mb-6 flex-grow text-body-md text-text-muted">{card.body}</p>
-              <span className="inline-flex w-fit items-center gap-1 text-body-sm font-bold uppercase tracking-wide text-primary-container">
+            <img src={card.image} alt={card.imageAlt} width={800} height={500} loading="lazy" className="r18-band" />
+            <div className="r18-tool-copy">
+              <h2>{card.title}</h2>
+              <p>{card.body}</p>
+              <span>
                 {card.cta} <Icon name="arrow_forward" size={16} className="transition-transform group-hover:translate-x-1" />
               </span>
             </div>
           </Link>
         ))}
-        <Link href="/takeover-requirements" className="group flex h-full flex-col overflow-hidden rounded-xl border border-border-low bg-surface-card transition-colors hover:border-primary-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-container">
-          <div className="grid aspect-[8/5] w-full grid-cols-3 place-content-center place-items-center gap-3 border-b border-border-low bg-surface-container-lowest p-6">
+        <Link href="/takeover-requirements" className="r18-tool">
+          <div className="r18-icons">
             {["shooting", "finishing", "playmaking", "defense", "rebounding", "physicals"].map((icon) => (
               // eslint-disable-next-line @next/next/no-img-element -- local static SVG asset
-              <img key={icon} src={`/assets/r12i/icons/icon-${icon}.svg`} alt="" width={48} height={48} loading="lazy" className="h-12 w-12" />
+              <img key={icon} src={`/assets/r12i/icons/icon-${icon}.svg`} alt="" width={48} height={48} loading="lazy" />
             ))}
           </div>
-          <div className="flex flex-grow flex-col p-6">
-            <h2 className="mb-3 font-display text-headline-sm text-on-surface transition-colors group-hover:text-primary-container">Build Guides</h2>
-            <p className="mb-6 flex-grow text-body-md text-text-muted">Quick references for Takeovers, cap breakers, 2K26 copy-over traps, and blueprints by position.</p>
-            <span className="inline-flex w-fit items-center gap-1 text-body-sm font-bold uppercase tracking-wide text-primary-container">Start reading <Icon name="arrow_forward" size={16} className="transition-transform group-hover:translate-x-1" /></span>
+          <div className="r18-tool-copy">
+            <h2>Build Guides</h2>
+            <p>Quick references for Takeovers, cap breakers, 2K26 copy-over traps, and blueprints by position.</p>
+            <span>Start reading <Icon name="arrow_forward" size={16} /></span>
           </div>
         </Link>
       </section>
@@ -249,12 +250,12 @@ export default function HomePage() {
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-24">
         <section className="flex flex-col gap-6">
           <h2 className="font-display text-headline-md text-on-surface">Build Guides</h2>
-          <div className="flex flex-col divide-y divide-border-low overflow-hidden rounded-xl border border-border-low bg-surface-card">
+          <div className="r18-guide-list">
             {GUIDE_CARDS.map((guide) => (
-              <Link key={guide.href} href={guide.href} className="group flex items-center justify-between gap-4 p-5 transition-colors hover:bg-surface-container-low focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary-container">
+              <Link key={guide.href} href={guide.href}>
                 <span>
-                  <span className="block font-display text-lg font-bold text-on-surface transition-colors group-hover:text-primary-container">{guide.title}</span>
-                  <span className="mt-1 block text-body-sm text-text-muted">{guide.body}</span>
+                  <strong>{guide.title}</strong>
+                  <small>{guide.body}</small>
                 </span>
                 <Icon name="chevron_right" size={22} className="shrink-0 text-text-muted transition-colors group-hover:text-primary-container" />
               </Link>
@@ -267,18 +268,18 @@ export default function HomePage() {
             <h2 className="font-display text-headline-md text-on-surface">What&apos;s new in NBA 2K27 builds</h2>
             <SourceTag tier="official" />
           </div>
-          <ul className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <ul className="r18-whatsnew">
             {whatsNew.map((item, index) => (
-              <li key={item.title} className="flex gap-3">
+              <li key={item.title}>
                 {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG asset */}
-                <img src={`/assets/r12i/icons/icon-${WHATS_NEW_ICONS[index]}.svg`} alt="" width={32} height={32} loading="lazy" className="mt-0.5 h-8 w-8 shrink-0 rounded-md" />
+                <img src={`/assets/r12i/icons/icon-${WHATS_NEW_ICONS[index]}.svg`} alt="" width={32} height={32} loading="lazy" />
                 <div>
-                  <h3 className="font-display font-bold text-on-surface">{item.title}</h3>
-                  <p className="mt-1 text-body-sm text-text-muted">
+                  <h3>{item.title}</h3>
+                  <p>
                     {item.body}
                     {item.href ? (
                       <>
-                        {" "}<Link href={item.href} className="text-primary-container hover:underline">{item.href === "/badge-token-planner" ? "Plan badge tokens" : "Browse blueprints"}</Link>
+                        {" "}<Link href={item.href}>{item.href === "/badge-token-planner" ? "Plan badge tokens" : "Browse blueprints"}</Link>
                       </>
                     ) : null}
                   </p>
@@ -342,13 +343,13 @@ export default function HomePage() {
 
       <section className="mx-auto flex w-full max-w-3xl flex-col gap-8">
         <h2 className="text-center font-display text-headline-lg text-on-surface">FAQ</h2>
-        <div className="flex flex-col gap-4">
+        <div className="r18-faq">
           {FAQS.map((faq) => (
-            <details key={faq.question} className="group overflow-hidden rounded-lg border border-border-low bg-surface-card">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 font-display text-lg font-bold text-on-surface transition-colors hover:text-primary-container group-open:text-primary-container">
+            <details key={faq.question}>
+              <summary>
                 {faq.question}<Icon name="expand_more" size={22} className="shrink-0 text-primary-container transition-transform group-open:rotate-180" />
               </summary>
-              <p className="border-t border-border-low px-6 pb-6 pt-4 text-body-md text-text-muted">{faq.answer}</p>
+              <p>{faq.answer}</p>
             </details>
           ))}
         </div>
