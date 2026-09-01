@@ -224,10 +224,10 @@ export default function HomePage() {
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element -- owner-approved local screenshot */}
           <img
-            src="/assets/owner-screenshot-2k27-signature-blueprints-builder-v1.jpg"
+            src="/assets/owner-screenshot-2k27-signature-blueprints-builder-v2-official-1920x1080.jpg"
             alt="NBA 2K27 Signature Blueprints builder screen showing the Launchpad point guard build"
-            width={1280}
-            height={716}
+            width={1920}
+            height={1080}
             loading="lazy"
           />
         </div>
