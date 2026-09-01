@@ -12,6 +12,7 @@ const PRIMARY_LINKS = [
 ] as const;
 
 const GUIDE_LINKS = [
+  { href: "/launch-day-build-guide", label: "Launch Day Build Guide" },
   { href: "/takeover-requirements", label: "Takeover Requirements" },
   { href: "/cap-breakers", label: "Cap Breakers" },
   { href: "/2k26-to-2k27-build-pitfalls", label: "2K26 Build Pitfalls" },

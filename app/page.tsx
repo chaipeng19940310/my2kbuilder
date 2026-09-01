@@ -308,6 +308,15 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+          <Link href="/badge-token-planner" className="r21-planner-cta">
+            <span>
+              <strong>Plan your badges before you spend tokens</strong>
+              <span>Open the Badge Token Planner</span>
+            </span>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none">
+              <path d="M5 12h13m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
           <p className="border-t border-border-low pt-4 text-body-sm text-text-muted">
             Sources: official 2K announcements. Dates, source tiers, and update log →{" "}
             <Link href="/methodology" className="text-primary-container hover:underline">See our Methodology</Link>

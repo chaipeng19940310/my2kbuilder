@@ -11,11 +11,8 @@
 .r18-blueprints img { width:100%; aspect-ratio:8/5; object-fit:cover; border:1px solid #1e293b; border-radius:.75rem; transition:border-color .2s; }
 .r18-blueprints img:hover { border-color:#ffb03a; }
 .r19-blueprint-showcase { display:flex; flex-direction:column; gap:1rem; margin:0; }
-.r19-blueprint-showcase>div { position:relative; padding:.5rem; border:1px solid #1e293b; border-radius:.75rem; background:#070d1a; }
-.r19-blueprint-showcase>div::before,.r19-blueprint-showcase>div::after { position:absolute; right:-1px; left:-1px; height:1rem; content:""; pointer-events:none; }
-.r19-blueprint-showcase>div::before { top:-1px; background:linear-gradient(#ffb03a,#ffb03a) left top/1rem 2px no-repeat,linear-gradient(#ffb03a,#ffb03a) left top/2px 1rem no-repeat,linear-gradient(#ffb03a,#ffb03a) right top/1rem 2px no-repeat,linear-gradient(#ffb03a,#ffb03a) right top/2px 1rem no-repeat; }
-.r19-blueprint-showcase>div::after { bottom:-1px; background:linear-gradient(#ffb03a,#ffb03a) left bottom/1rem 2px no-repeat,linear-gradient(#ffb03a,#ffb03a) left bottom/2px 1rem no-repeat,linear-gradient(#ffb03a,#ffb03a) right bottom/1rem 2px no-repeat,linear-gradient(#ffb03a,#ffb03a) right bottom/2px 1rem no-repeat; }
-.r19-blueprint-showcase img { display:block; width:100%; height:auto; border-radius:.5rem; object-fit:cover; }
+.r19-blueprint-showcase>div { position:relative; padding:0; border:1px solid #1e293b; border-radius:.75rem; background:#070d1a; }
+.r19-blueprint-showcase img { display:block; width:100%; height:auto; border-radius:calc(.75rem - 1px); object-fit:cover; }
 .r19-blueprint-showcase figcaption { text-align:center; color:#94a3b8; font-size:12px; font-style:italic; line-height:1.4; }
 .r18-tools { display:grid; grid-template-columns:1fr; gap:1.5rem; }
 .r18-tool { display:flex; height:100%; flex-direction:column; overflow:hidden; border:1px solid #1e293b; border-radius:.75rem; background:#0e1628; transition:border-color .2s; }
@@ -30,7 +27,7 @@
 .r18-tool-copy p { flex-grow:1; margin-bottom:1.5rem; color:#94a3b8; font-size:14px; line-height:1.5; }
 .r18-tool-copy span { display:inline-flex; width:max-content; align-items:center; gap:.25rem; color:#ffb03a; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
 .r18-guide-list { display:flex; flex-direction:column; overflow:hidden; border:1px solid #1e293b; border-radius:.75rem; background:#0e1628; }
-.r18-guide-list>a { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.25rem; border-bottom:1px solid #1e293b; transition:background .2s; }
+.r18-guide-list>a { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; border-bottom:1px solid #1e293b; transition:background .2s; }
 .r18-guide-list>a:last-child { border-bottom:0; }
 .r18-guide-list>a:hover { background:#0d1c2d; }
 .r18-guide-list strong { display:block; color:#d4e4fa; font:700 18px "Space Grotesk",sans-serif; }
@@ -41,6 +38,12 @@
 .r18-whatsnew h3 { color:#d4e4fa; font:700 16px "Space Grotesk",sans-serif; }
 .r18-whatsnew p { margin-top:.25rem; color:#94a3b8; font-size:12px; line-height:1.4; }
 .r18-whatsnew a { color:#ffb03a; }
+.r21-planner-cta { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; border:1px solid #1e293b; border-radius:.75rem; background:#122131; color:#d4e4fa; transition:border-color .2s,background .2s; }
+.r21-planner-cta:hover { border-color:#ffb03a; background:#0d1c2d; }
+.r21-planner-cta strong { display:block; font:700 16px/1.35 "Space Grotesk",sans-serif; }
+.r21-planner-cta span { display:block; margin-top:.25rem; color:#94a3b8; font-size:12px; line-height:1.4; }
+.r21-planner-cta svg { flex:none; color:#ffb03a; transition:transform .2s; }
+.r21-planner-cta:hover svg { transform:translateX(.25rem); }
 .r18-faq { display:flex; flex-direction:column; gap:1rem; }
 .r18-faq details { overflow:hidden; border:1px solid #1e293b; border-radius:.5rem; background:#0e1628; }
 .r18-faq summary { display:flex; cursor:pointer; list-style:none; align-items:center; justify-content:space-between; gap:1rem; padding:1.5rem; color:#d4e4fa; font:700 18px "Space Grotesk",sans-serif; transition:color .2s; }
