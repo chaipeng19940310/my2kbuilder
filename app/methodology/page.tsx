@@ -113,7 +113,7 @@ export default function MethodologyPage() {
   const nullCostRecords = badgeTokenCost.filter((r) => r.value === null).length;
 
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-methodology relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
           aboutPageSchema({

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./r18-inner.css";
 
 /* R16: pre-hydration position selection visual. The inline bridge script in
    app/badge-token-planner/page.tsx sets aria-pressed on [data-m2k-pos] before

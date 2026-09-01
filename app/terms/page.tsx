@@ -75,7 +75,7 @@ const SECTIONS: ReadonlyArray<{ title: string; body?: string; list?: string[] }>
 
 export default function TermsPage() {
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-3xl flex-grow flex-col gap-8 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-legal relative z-10 mx-auto flex w-full max-w-3xl flex-grow flex-col gap-8 px-4 py-12 md:px-margin-desktop">
       <JsonLdScript schema={webPageSchema({ name: "Terms of Service" })} />
 
       {/* R12K-J: unified dark panel (site card spec) around all content. */}

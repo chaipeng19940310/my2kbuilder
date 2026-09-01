@@ -121,19 +121,19 @@ function BadgeRow({ badge }: { badge: BadgeCatalogEntry }) {
           ) : null}
         </span>
       </th>
-      <td className="p-3">
+      <td data-label="Category" className="p-3">
         <span className="flex items-center gap-2 text-body-sm text-on-surface-variant">
           <DisciplineIcon discipline={badge.category} size={20} />
           {badge.category}
         </span>
       </td>
       {BADGE_TIERS.map((t) => (
-        <td key={t} className="p-3 align-top">
+        <td key={t} data-label={BADGE_TIER_LABEL[t]} className="p-3 align-top">
           <TierCell req={badge.requirements[t]} />
         </td>
       ))}
-      <td className="p-3 align-top text-body-sm text-on-surface-variant">{height ?? "None"}</td>
-      <td className="p-3 align-top">
+      <td data-label="Height limit" className="p-3 align-top text-body-sm text-on-surface-variant">{height ?? "None"}</td>
+      <td data-label="Source" className="p-3 align-top">
         <span className="rounded border border-secondary-container px-1.5 py-0.5 text-code-sm text-secondary">
           {badge.field_tiers.requirements}
         </span>
@@ -144,7 +144,7 @@ function BadgeRow({ badge }: { badge: BadgeCatalogEntry }) {
 
 export default function BadgeRequirementsPage() {
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-table relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
           webPageSchema({

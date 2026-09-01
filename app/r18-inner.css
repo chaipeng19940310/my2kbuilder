@@ -1,0 +1,49 @@
+/* R18 inner-page redesign. Route-scoped classes leave homepage/planner untouched. */
+.r18-page { background: #070d1a; position: relative; z-index: 10; }
+.r18-table thead .tier-chip { min-width: 92px; padding: 6px 10px; border-radius: 8px; font-size: 12px; box-shadow: inset 0 0 0 1px currentColor; }
+.r18-table thead th { vertical-align: bottom; }
+.r18-table tbody tr { transition: background-color .15s ease; }
+.r18-table tbody tr:hover { background: rgba(18, 33, 49, .55); }
+.r18-table [data-m2k-discipline] > h2 { scroll-margin-top: 96px; }
+.r18-cards li, .r18-bypos li { transition: border-color .15s ease, transform .15s ease; }
+.r18-cards li:hover, .r18-bypos li:hover { transform: translateY(-2px); }
+.r18-cards img, .r18-bypos img { background: #0a1220; }
+.r18-guide-page > section { background: #0e1628; border: 1px solid #1e293b; border-radius: 12px; padding: 24px; max-width: none !important; scroll-margin-top: 96px; }
+.r18-guide-page > header { max-width: none !important; }
+.r18-toc { display: none; }
+.r18-methodology > section { scroll-margin-top: 96px; }
+.r18-methodology .tier-chip, .r18-methodology [class*="text-code-sm"] { font-variant-numeric: tabular-nums; }
+.r18-legal { max-width: 720px !important; }
+.r18-legal p { line-height: 1.75; }
+.r18-legal section { scroll-margin-top: 96px; }
+.r18-legal section h2 { margin-top: 8px; padding-top: 28px; border-top: 1px solid #1e293b; }
+.r18-legal section:first-of-type h2 { border-top: 0; padding-top: 0; }
+.r18-legal a { text-decoration: none; }
+.r18-legal a:hover { text-decoration: underline; }
+.r18-legal ul li::marker { color: #ffb03a; }
+@media (min-width: 1024px) {
+  .r18-guide-page { display: grid; grid-template-columns: minmax(0, 720px) 280px; justify-content: center; align-items: start; column-gap: 32px; }
+  .r18-guide-page > :not(.r18-toc) { grid-column: 1; }
+  .r18-toc { display: block; grid-column: 2; grid-row: 1 / span 100; }
+  .r18-toc-card { position: sticky; top: 96px; padding: 20px; border: 1px solid #1e293b; border-radius: 12px; background: #122131; }
+  .r18-toc-title { margin: 0 0 12px; color: #64748b; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+  .r18-toc-link { display: block; padding: 8px 0 8px 14px; border-left: 2px solid #1e293b; color: #94a3b8; font-size: 13px; line-height: 1.4; }
+  .r18-toc-link:hover { color: #e8eef7; }
+  .r18-toc-active { border-left-color: #ffb03a; color: #ffb03a; }
+}
+@media (max-width: 640px) {
+  .r18-table table, .r18-table thead, .r18-table tbody, .r18-table tr, .r18-table td, .r18-table th[scope="row"] { display: block; }
+  .r18-table table { min-width: 0 !important; }
+  .r18-table thead { position: absolute; left: -9999px; }
+  .r18-table .overflow-x-auto { overflow-x: visible; border: 0; background: transparent; }
+  .r18-table tbody tr { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; margin-bottom: 12px; padding: 14px 16px; border: 1px solid #1e293b; border-radius: 12px; background: #0e1628; }
+  .r18-table th[scope="row"] { position: static !important; grid-column: 1 / -1; margin-bottom: 10px; padding: 0 0 10px !important; border-bottom: 1px solid #1e293b; background: transparent !important; font-size: 16px; }
+  .r18-table td { padding: 6px 0 !important; }
+  .r18-table td::before { content: attr(data-label); display: block; margin-bottom: 4px; color: #64748b; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .r18-table td[data-label="Bronze"]::before { color: #b87333; }
+  .r18-table td[data-label="Silver"]::before { color: #c0c7d1; }
+  .r18-table td[data-label="Gold"]::before { color: #f6c453; }
+  .r18-table td[data-label="Hall of Fame"]::before { color: #b794f6; }
+  .r18-table td[data-label="Category"], .r18-table td[data-label="Height limit"], .r18-table td[data-label="Source"] { grid-column: 1 / -1; }
+  .r18-table [role="group"][aria-label="Filter badges by discipline"] { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
+}

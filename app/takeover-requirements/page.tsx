@@ -8,6 +8,7 @@ import { socialMeta } from "@/lib/social";
 import { breadcrumbSchema, faqPageSchema, webPageSchema } from "@/lib/schema";
 import { takeoverCatalog, TAKEOVER_DISCIPLINES, type TakeoverEntry } from "@/lib/takeovers";
 import { DataSourceBanner } from "@/components/SourceTag";
+import { GuideToc } from "@/components/GuideToc";
 
 // SEO freeze (copy/r12j-wave2-copy-v1.md §1; title per R12J-F rule: freeze
 // text, no brand suffix, <=60 chars — this one is 43; meta trimmed to <=155
@@ -141,7 +142,7 @@ function TakeoverRow({ entry }: { entry: TakeoverEntry }) {
 
 export default function TakeoverRequirementsPage() {
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-guide-page relative z-10 mx-auto w-full max-w-site flex-grow gap-12 px-4 py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
           webPageSchema({
@@ -156,6 +157,12 @@ export default function TakeoverRequirementsPage() {
           ]),
         ]}
       />
+      <GuideToc items={[
+        { href: "#source-labels", label: "Source Labels" },
+        { href: "#requirements", label: "Requirements" },
+        { href: "#takeover-video", label: "Builder Video" },
+        { href: "#takeover-faq", label: "FAQ" },
+      ]} />
 
       <header className="flex max-w-3xl flex-col gap-4">
         <h1 className="font-display text-display-lg text-primary-container">
@@ -190,7 +197,7 @@ export default function TakeoverRequirementsPage() {
 
       {/* Source label legend (copy §1, verbatim bullets) — placed above the
           table per the copy design placement. */}
-      <section className="flex max-w-3xl flex-col gap-4 rounded border border-border-low bg-surface-card p-6">
+      <section id="source-labels" className="flex max-w-3xl flex-col gap-4 rounded border border-border-low bg-surface-card p-6">
         <h2 className="font-display text-headline-sm text-on-surface">Source Labels</h2>
         <ul className="flex list-disc flex-col gap-2 pl-5 text-body-md text-on-surface-variant">
           <li>
@@ -205,7 +212,7 @@ export default function TakeoverRequirementsPage() {
         </ul>
       </section>
 
-      <section className="flex flex-col gap-4">
+      <section id="requirements" className="flex flex-col gap-4">
         {/* Above-table helper (copy §1, verbatim; planner link = bidirectional
             interlink with /badge-token-planner). */}
         <p className="max-w-3xl text-body-md text-on-surface-variant">
@@ -278,7 +285,7 @@ export default function TakeoverRequirementsPage() {
       {/* 2K Builder Courtside Report — click-to-load YouTube facade per design
           handoff §5: initial HTML is a self-hosted real cover image + play button only;
           the youtube-nocookie iframe is created after a click. */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="takeover-video" className="flex max-w-3xl flex-col gap-4">
         <h2 className="font-display text-headline-md text-on-surface">
           Watch the 2K Builder Courtside Report
         </h2>
@@ -295,7 +302,7 @@ export default function TakeoverRequirementsPage() {
       </section>
 
       {/* FAQ at page bottom (copy §1 design placement; 4 freeze entries). */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="takeover-faq" className="flex max-w-3xl flex-col gap-4">
         <h2 className="font-display text-headline-md text-on-surface">Takeover Requirements FAQ</h2>
         <div className="flex flex-col gap-3">
           {FAQS.map((f) => (

@@ -5,6 +5,7 @@ import { VideoFacade } from "@/components/VideoFacade";
 import { canonicalFor } from "@/lib/canonical";
 import { socialMeta } from "@/lib/social";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
+import { GuideToc } from "@/components/GuideToc";
 
 // R12J-D pitfall-guide article page. Copy freeze: copy/r12j-wave2-copy-v1.md §3
 // (rendered verbatim; the Chinese parenthetical notes in that file are pipeline
@@ -98,7 +99,7 @@ function SectionHeading({ icon, alt, children }: { icon?: string; alt?: string; 
 
 export default function BuildPitfallsPage() {
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-guide-page relative z-10 mx-auto w-full max-w-site flex-grow gap-12 px-4 py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
           articleSchema({
@@ -114,6 +115,14 @@ export default function BuildPitfallsPage() {
           ]),
         ]}
       />
+      <GuideToc items={[
+        { href: "#body-penalties", label: "Body Penalties" },
+        { href: "#animation-thresholds", label: "Animation Thresholds" },
+        { href: "#badge-math", label: "Badge Math" },
+        { href: "#season-resets", label: "Season Resets" },
+        { href: "#safer-build", label: "A Safer Build" },
+        { href: "#pitfalls-faq", label: "FAQ" },
+      ]} />
 
       <header className="flex max-w-3xl flex-col gap-4">
         <h1 className="font-display text-display-lg text-primary-container">{PAGE_H1}</h1>
@@ -143,7 +152,7 @@ export default function BuildPitfallsPage() {
       </header>
 
       {/* §1 Body penalties (copy §3, verbatim + source chips). */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="body-penalties" className="flex max-w-3xl flex-col gap-4">
         <SectionHeading icon="/assets/r12i/icons/icon-defense.svg" alt="Defense discipline icon">
           Body Penalties Were Reworked
         </SectionHeading>
@@ -194,7 +203,7 @@ export default function BuildPitfallsPage() {
       </section>
 
       {/* §2 Animation thresholds (copy §3, verbatim + source chips). */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="animation-thresholds" className="flex max-w-3xl flex-col gap-4">
         <SectionHeading icon="/assets/r12i/icons/icon-shooting.svg" alt="Shooting discipline icon">
           The Old &quot;85 Threshold&quot; Era Is Over
         </SectionHeading>
@@ -220,7 +229,7 @@ export default function BuildPitfallsPage() {
       </section>
 
       {/* §3 Badge math (copy §3, verbatim + source chips + tier visuals). */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="badge-math" className="flex max-w-3xl flex-col gap-4">
         <SectionHeading icon="/assets/r12i/tiers/tier-gold.svg" alt="Gold tier mark">
           The Badge Math Changed Under Your Feet
         </SectionHeading>
@@ -268,7 +277,7 @@ export default function BuildPitfallsPage() {
       </section>
 
       {/* §4 Season resets (copy §3, verbatim + source chips). */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="season-resets" className="flex max-w-3xl flex-col gap-4">
         <SectionHeading icon="/assets/r12i/icons/icon-physicals.svg" alt="Physicals discipline icon">
           Seasons Reset More Than You Think
         </SectionHeading>
@@ -301,7 +310,7 @@ export default function BuildPitfallsPage() {
 
       {/* §5 Planning order (copy §3, verbatim; steps as cards; interlinks to
           /badge-requirements and the planner per the card's 互链 requirement). */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="safer-build" className="flex max-w-3xl flex-col gap-4">
         <SectionHeading>A Safer Way to Build in 2K27</SectionHeading>
         <p className="text-body-md text-on-surface-variant">
           Putting it together, the 2K27 planning order looks like this:
@@ -425,7 +434,7 @@ export default function BuildPitfallsPage() {
       </section>
 
       {/* FAQ at page bottom (copy §3; 4 freeze entries, verbatim). */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="pitfalls-faq" className="flex max-w-3xl flex-col gap-4">
         <h2 className="font-display text-headline-md text-on-surface">2K26-to-2K27 Pitfalls FAQ</h2>
         <div className="flex flex-col gap-3">
           {FAQS.map((f) => (

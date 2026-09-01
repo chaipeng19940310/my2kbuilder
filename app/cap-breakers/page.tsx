@@ -17,6 +17,7 @@ import {
   type BadgeRequirementsBundle,
 } from "@/lib/data";
 import badgeRequirementsBundle from "@/public/data/badge-requirements.v1.json";
+import { GuideToc } from "@/components/GuideToc";
 
 // SEO freeze (copy/r12j-wave2-copy-v1.md §2; title kept without the layout
 // suffix — "%s | My2KBuilder" renders 54 chars total, within the R12J-F
@@ -96,7 +97,7 @@ const SPECIALIZATION_TRACKS: Array<{ name: string; isNew: boolean }> = DISCIPLIN
 
 export default function CapBreakersPage() {
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-guide-page relative z-10 mx-auto w-full max-w-site flex-grow gap-12 px-4 py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
           webPageSchema({
@@ -111,6 +112,13 @@ export default function CapBreakersPage() {
           ]),
         ]}
       />
+      <GuideToc items={[
+        { href: "#how-cap-breakers-work", label: "How They Work" },
+        { href: "#build-specialization", label: "Build Specialization" },
+        { href: "#plan-backwards", label: "Plan Backwards" },
+        { href: "#cap-breakers-video", label: "Builder Video" },
+        { href: "#cap-breakers-faq", label: "FAQ" },
+      ]} />
 
       <header className="flex max-w-3xl flex-col gap-4">
         <h1 className="font-display text-display-lg text-primary-container">
@@ -126,7 +134,7 @@ export default function CapBreakersPage() {
 
       {/* H2 #1 (copy §2, verbatim) + mechanics flow strip (visual reuse of the
           R12I-G tier-chip design language; no pure-text sections). */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="how-cap-breakers-work" className="flex max-w-3xl flex-col gap-4">
         <h2 className="font-display text-headline-md text-on-surface">How Cap Breakers Work</h2>
         <p className="text-body-md text-on-surface-variant">
           {
@@ -159,7 +167,7 @@ export default function CapBreakersPage() {
 
       {/* H2 #2 (copy §2, verbatim) + six-track icon grid (R12I-G discipline
           icons, design handoff §2). */}
-      <section className="flex flex-col gap-4">
+      <section id="build-specialization" className="flex flex-col gap-4">
         <h2 className="font-display text-headline-md text-on-surface">Build Specialization</h2>
         <p className="max-w-3xl text-body-md text-on-surface-variant">
           {
@@ -186,7 +194,7 @@ export default function CapBreakersPage() {
 
       {/* H2 #3 (copy §2, verbatim steps) + worked examples + interactive gap
           calculator. Tier strip visual from the R12I-G pack (design handoff §1). */}
-      <section className="flex flex-col gap-6">
+      <section id="plan-backwards" className="flex flex-col gap-6">
         <div className="flex max-w-3xl flex-col gap-4">
           <h2 className="font-display text-headline-md text-on-surface">
             Plan Backwards from Thresholds
@@ -297,7 +305,7 @@ export default function CapBreakersPage() {
 
       {/* 2K Builder Courtside Report — click-to-load facade per design handoff
           §5 (Owner re-confirmed 2026-08-28: embed the builder video here). */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="cap-breakers-video" className="flex max-w-3xl flex-col gap-4">
         <h2 className="font-display text-headline-md text-on-surface">
           Watch the 2K Builder Courtside Report
         </h2>
@@ -314,7 +322,7 @@ export default function CapBreakersPage() {
       </section>
 
       {/* FAQ at page bottom (copy §2 design placement; 5 freeze entries). */}
-      <section className="flex max-w-3xl flex-col gap-4">
+      <section id="cap-breakers-faq" className="flex max-w-3xl flex-col gap-4">
         <h2 className="font-display text-headline-md text-on-surface">Cap Breakers FAQ</h2>
         <div className="flex flex-col gap-3">
           {FAQS.map((f) => (
