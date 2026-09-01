@@ -199,3 +199,44 @@ body {
       scroll;
   }
 }
+
+/* R18 planner wizard: crawler-visible steps, compact interactive rows and SSR roster. */
+.planner-wizard .wizard-step { display: block; }
+.planner-wizard[data-step] .wizard-step { display: none; }
+.planner-wizard[data-step="1"] .wizard-step[data-wizard-step="1"],
+.planner-wizard[data-step="2"] .wizard-step[data-wizard-step="2"],
+.planner-wizard[data-step="3"] .wizard-step[data-wizard-step="3"],
+.planner-wizard[data-step="4"] .wizard-step[data-wizard-step="4"],
+.planner-wizard[data-step="5"] .wizard-step[data-wizard-step="5"] { display: block; }
+.badge-list { max-height: 800px; overflow: auto; padding: 8px; }
+.badge-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; padding: 12px; border: 1px solid #1e293b; border-radius: 8px; background: #0e1628; }
+.badge-row[data-assigned="true"] { border-color: rgba(255,176,58,.3); background: #0d1c2d; }
+.badge-row[data-locked="true"] { opacity: .58; background: #051424; }
+.badge-icon { display: flex; width: 40px; height: 40px; flex: none; align-items: center; justify-content: center; border: 1px solid #1e293b; border-radius: 9999px; background: #0d1c2d; }
+.badge-copy { min-width: 0; flex: 1; }
+.badge-name { color: #d4e4fa; font-family: "Space Grotesk", sans-serif; font-size: 16px; font-weight: 700; }
+.badge-new, .badge-category, .badge-none { display: inline-block; margin-left: 6px; padding: 3px 6px; border-radius: 4px; font-size: 10px; line-height: 1; }
+.badge-new { color: #213600; background: #9ddf2e; font-weight: 700; }
+.badge-category, .badge-none { color: #94a3b8; background: #1c2b3c; text-transform: uppercase; }
+.badge-req { margin-top: 5px; color: #94a3b8; font-size: 12px; }
+.badge-locked { margin-top: 4px; color: #f87171; font-size: 12px; }
+.badge-actions { display: flex; flex: none; align-items: center; gap: 10px; }
+.badge-stepper { display: flex; align-items: center; padding: 4px; border: 1px solid #1e293b; border-radius: 9999px; background: #070d1a; }
+.badge-stepper button { width: 32px; height: 32px; border-radius: 9999px; color: #94a3b8; }
+.badge-stepper button:hover:not(:disabled) { color: #d4e4fa; background: #1c2b3c; }
+.badge-stepper button:disabled { cursor: not-allowed; opacity: .35; }
+.badge-count { width: 32px; text-align: center; color: #ffb03a; font: 700 12px monospace; }
+.roster-group { display: flex; flex-direction: column; gap: 12px; }
+.roster-title { display: flex; align-items: center; gap: 12px; color: #d4e4fa; font: 600 20px/1.3 "Space Grotesk", sans-serif; }
+.roster-count { color: #94a3b8; font: 400 12px/1.4 "IBM Plex Sans", sans-serif; }
+.roster-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.roster-card { display: flex; flex-direction: column; gap: 12px; padding: 16px; border: 1px solid #1e293b; border-radius: 4px; background: #0e1628; }
+.roster-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: #d4e4fa; font-size: 14px; }
+.roster-new { padding: 3px 6px; border-radius: 4px; color: #213600; background: #9ddf2e; font: 700 12px/1 monospace; }
+.roster-meta { color: #94a3b8; font-size: 12px; }
+.roster-conflict { padding: 3px 6px; border: 1px solid #524535; border-radius: 4px; color: #d7c3af; font: 500 12px/1 monospace; }
+.roster-tiers { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; }
+.roster-tier { min-width: 0; justify-content: flex-start; white-space: normal; line-height: 1.4; letter-spacing: 0; text-align: left; }
+@media (max-width: 1023px) { .roster-list { grid-template-columns: 1fr; } }
+@media (max-width: 767px) { .roster-tiers { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 640px) { .badge-row { align-items: flex-start; flex-wrap: wrap; } .badge-actions { width: 100%; justify-content: flex-end; } }

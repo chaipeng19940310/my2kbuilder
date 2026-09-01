@@ -71,7 +71,7 @@ function tierRequirementText(req: BadgeTierRequirement): string {
 
 export default function BadgeTokenPlannerPage() {
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 bg-page-bg px-4 py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
           softwareApplicationSchema({
@@ -97,19 +97,6 @@ export default function BadgeTokenPlannerPage() {
           position. Build your allocation here first, then spend with confidence in-game.
         </p>
       </header>
-
-      {/* R16 (H2): pre-hydration interaction bridge. On slow networks React
-          hydration lands seconds after first paint; this tiny parse-time
-          script makes the two critical first interactions (position select,
-          empty-state CTA guide) work before hydration, and hands any pending
-          position to PlannerClient via window.__m2kPendingPos. It mutates no
-          React-managed DOM (aria-pressed is only rendered by React once
-          hydrated), so hydration stays clean. */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(function(){if(window.__m2kPlannerBoot)return;window.__m2kPlannerBoot=true;document.addEventListener("click",function(e){if(window.__m2kPlannerHydrated)return;var t=e.target;if(!t||!t.closest)return;var pos=t.closest("[data-m2k-pos]");if(pos){e.preventDefault();var all=document.querySelectorAll("[data-m2k-pos]");for(var i=0;i<all.length;i++)all[i].setAttribute("aria-pressed","false");pos.setAttribute("aria-pressed","true");window.__m2kPendingPos=pos.getAttribute("data-m2k-pos");return;}var guide=t.closest("[data-m2k-guide]");if(guide){e.preventDefault();var g=document.getElementById("planner-position-group");if(g&&g.scrollIntoView)g.scrollIntoView({behavior:"smooth",block:"start"});}},true);})();`,
-        }}
-      />
 
       {/* Tool body first (copy §3.2 design placement) */}
       <PlannerClient bundle={badgeRequirementsBundle as BadgeRequirementsBundle} />
@@ -195,48 +182,42 @@ export default function BadgeTokenPlannerPage() {
           const badges = CATALOG.filter((b) => b.category === discipline);
           if (badges.length === 0) return null;
           return (
-            <div key={discipline} className="flex flex-col gap-3">
-              <h3 className="flex items-center gap-3 font-display text-headline-sm text-on-surface">
+            <div key={discipline} className="roster-group">
+              <h3 className="roster-title">
                 <DisciplineIcon discipline={discipline} size={24} />
                 {discipline}
-                <span className="text-body-sm font-normal text-text-muted">
+                <span className="roster-count">
                   {badges.length} badges
                 </span>
               </h3>
-              <ul className="grid grid-cols-1 gap-3 lg:grid-cols-2">
+              <ul className="roster-list">
                 {badges.map((badge) => {
                   const heightText = heightRestrictionLabel(
                     badge.requirements.bronze.height_restriction,
                   );
                   return (
-                    <li
-                      key={badge.index}
-                      className="flex flex-col gap-3 rounded border border-border-low bg-surface-card p-4"
-                    >
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-body-md text-on-surface">{badge.name}</span>
+                    <li key={badge.index} className="roster-card">
+                      <div className="roster-head">
+                        <span>{badge.name}</span>
                         {badge.is_new_2k27 ? (
-                          <span className="rounded bg-secondary px-1.5 py-0.5 text-code-sm font-bold text-on-secondary">
+                          <span className="roster-new">
                             NEW
                           </span>
                         ) : null}
                         {heightText ? (
-                          <span className="text-body-sm text-text-muted">Height {heightText}</span>
+                          <span className="roster-meta">Height {heightText}</span>
                         ) : null}
                         {badge.conflicts.length > 0 ? (
-                          <span className="rounded border border-outline-variant px-1.5 py-0.5 text-code-sm text-on-surface-variant">
+                          <span className="roster-conflict">
                             Sources differ
                           </span>
                         ) : null}
                       </div>
-                      <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
+                      <div className="roster-tiers">
                         {BADGE_TIERS.map((tier) => (
-                          <div key={tier} className="flex flex-col items-start gap-1.5">
-                            <span className={TIER_CHIP_CLASS[tier]}>{BADGE_TIER_LABEL[tier]}</span>
-                            <span className="text-body-sm text-on-surface-variant">
-                              {tierRequirementText(badge.requirements[tier])}
-                            </span>
-                          </div>
+                          <span key={tier} className={`${TIER_CHIP_CLASS[tier]} roster-tier`}>
+                            {BADGE_TIER_LABEL[tier]}: {tierRequirementText(badge.requirements[tier])}
+                          </span>
                         ))}
                       </div>
                     </li>
