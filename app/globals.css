@@ -95,16 +95,6 @@ body {
   color: #d4e4fa;
 }
 
-/* Approved background layer (contract §8.6 / design v6):
-   desktop + tab: cover / fixed / center with rgba(7,13,26) 50/30/55 overlay
-   (the overlay div lives in app/layout.tsx). */
-body {
-  background-image: url("/assets/owner-background-v1.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-}
-
 /* R12F directory badge frames (Owner layout standard, ported from the BAH
    approved version after two rework rounds): desktop and mobile frames are
    defined separately; sizes are unified via container CSS with !important to
@@ -177,28 +167,6 @@ body {
   border: 1px solid #1e293b;
   border-radius: 8px;
   padding: 6px;
-}
-
-/* R5.4.2 mobile horizontal fit (<=640px): full-width 100% auto, top-anchored,
-   bottom fade into page-bg. Desktop/tab untouched. */
-@media (max-width: 640px) {
-  body {
-    background-image:
-      linear-gradient(to bottom, rgba(7, 13, 26, 0) 55%, rgba(7, 13, 26, 1) 96%),
-      url("/assets/owner-background-v1.jpg");
-    background-size:
-      100% 75vw,
-      100% auto;
-    background-position:
-      center top,
-      center top;
-    background-repeat:
-      no-repeat,
-      no-repeat;
-    background-attachment:
-      scroll,
-      scroll;
-  }
 }
 
 /* R18 planner wizard: crawler-visible steps, compact interactive rows and SSR roster. */

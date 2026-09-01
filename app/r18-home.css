@@ -1,11 +1,22 @@
 /* R18 homepage-only presentation. Copy and content remain in app/page.tsx. */
 .r18-stats { display:grid; width:100%; max-width:56rem; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; margin-inline:auto; }
-.r18-stats>div { display:flex; min-width:0; flex-direction:column; align-items:center; justify-content:center; gap:.25rem; padding:.75rem; border:1px solid #1e293b; border-radius:.75rem; background:#122131; }
-.r18-stats strong { font-family:"Space Grotesk",sans-serif; font-size:1.875rem; line-height:2.25rem; color:#ffb03a; }
+.r18-stats>div { --stat-accent:#ffb03a; position:relative; display:flex; min-width:0; flex-direction:column; align-items:center; justify-content:center; gap:.25rem; overflow:hidden; padding:.75rem; border:1px solid #1e293b; border-radius:.75rem; background:#122131; }
+.r18-stats>div::before { position:absolute; inset:0 0 auto; height:4px; background:var(--stat-accent); content:""; }
+.r18-stats>div[data-tone="violet"] { --stat-accent:#a78bfa; }
+.r18-stats>div[data-tone="cyan"] { --stat-accent:#2dd4bf; }
+.r18-stats img { width:2rem; height:2rem; margin-bottom:.25rem; }
+.r18-stats strong { font-family:"Space Grotesk",sans-serif; font-size:1.875rem; line-height:2.25rem; color:var(--stat-accent); }
 .r18-stats span { text-align:center; font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:#94a3b8; }
 .r18-blueprints { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
 .r18-blueprints img { width:100%; aspect-ratio:8/5; object-fit:cover; border:1px solid #1e293b; border-radius:.75rem; transition:border-color .2s; }
 .r18-blueprints img:hover { border-color:#ffb03a; }
+.r19-blueprint-showcase { display:flex; flex-direction:column; gap:1rem; }
+.r19-blueprint-showcase>div { position:relative; padding:.5rem; border:1px solid #1e293b; border-radius:.75rem; background:#070d1a; }
+.r19-blueprint-showcase>div::before,.r19-blueprint-showcase>div::after { position:absolute; width:1rem; height:1rem; content:""; pointer-events:none; }
+.r19-blueprint-showcase>div::before { top:-1px; right:-1px; border-top:2px solid #ffb03a; border-right:2px solid #ffb03a; border-radius:0 .75rem 0 0; }
+.r19-blueprint-showcase>div::after { bottom:-1px; left:-1px; border-bottom:2px solid #ffb03a; border-left:2px solid #ffb03a; border-radius:0 0 0 .75rem; }
+.r19-blueprint-showcase img { display:block; width:100%; height:auto; border-radius:.5rem; object-fit:cover; }
+.r19-blueprint-showcase figcaption { text-align:center; color:#94a3b8; font-size:12px; font-style:italic; line-height:1.4; }
 .r18-tools { display:grid; grid-template-columns:1fr; gap:1.5rem; }
 .r18-tool { display:flex; height:100%; flex-direction:column; overflow:hidden; border:1px solid #1e293b; border-radius:.75rem; background:#0e1628; transition:border-color .2s; }
 .r18-tool:hover { border-color:#ffb03a; }
@@ -42,6 +53,7 @@
 @media (min-width:768px) {
   .r18-stats { gap:1.5rem; }
   .r18-stats>div { gap:.5rem; padding:1.5rem; }
+  .r18-stats img { width:4rem; height:4rem; margin-bottom:.5rem; }
   .r18-stats strong { font-size:3rem; line-height:1; }
   .r18-stats span { font-size:14px; }
 }

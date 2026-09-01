@@ -199,11 +199,13 @@ export default function HomePage() {
 
         <section aria-label="Builder inventory" className="r18-stats">
           {[
-            ["53", "Badges"],
-            ["40", "Signature Blueprints"],
-            ["20", "Badge Slots"],
-          ].map(([number, label]) => (
-            <div key={label}>
+            { number: "53", label: "Badges", tone: "amber", icon: "/assets/r19/stat-badges.svg" },
+            { number: "40", label: "Signature Blueprints", tone: "violet", icon: "/assets/r19/stat-blueprints.svg" },
+            { number: "20", label: "Badge Slots", tone: "cyan", icon: "/assets/r19/stat-slots.svg" },
+          ].map(({ number, label, tone, icon }) => (
+            <div key={label} data-tone={tone}>
+              {/* eslint-disable-next-line @next/next/no-img-element -- original local SVG asset */}
+              <img src={icon} alt="" width={64} height={64} aria-hidden="true" />
               <strong>{number}</strong>
               <span>{label}</span>
             </div>
@@ -217,6 +219,20 @@ export default function HomePage() {
           <img key={name} src={image} alt={`Signature Blueprint: ${name}`} width={800} height={500} loading="lazy" />
         ))}
       </section>
+
+      <figure className="r19-blueprint-showcase">
+        <div>
+          {/* eslint-disable-next-line @next/next/no-img-element -- owner-approved local screenshot */}
+          <img
+            src="/assets/owner-screenshot-2k27-signature-blueprints-builder-v1.jpg"
+            alt="NBA 2K27 Signature Blueprints builder screen showing the Launchpad point guard build"
+            width={1280}
+            height={716}
+            loading="lazy"
+          />
+        </div>
+        <figcaption>The real NBA 2K27 Blueprints screen — plan your build here first.</figcaption>
+      </figure>
 
       <section className="r18-tools">
         {TOOL_CARDS.map((card) => (

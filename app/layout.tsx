@@ -72,15 +72,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           ["--font-body" as string]: "var(--font-ibm-plex-sans), Arial, sans-serif",
         }}
       >
-        {/* Approved readability overlay: rgba(7,13,26) top .5 / mid .3 / bottom .55
-            (contract §8.6, unchanged from design v6). */}
-        <div
-          className="pointer-events-none fixed inset-0 z-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(7, 13, 26, 0.5) 0%, rgba(7, 13, 26, 0.3) 50%, rgba(7, 13, 26, 0.55) 100%)",
-          }}
-        />
         <SiteNav />
         {children}
         <SiteFooter />
