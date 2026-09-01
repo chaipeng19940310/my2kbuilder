@@ -4,6 +4,18 @@
 .r18-table thead th { vertical-align: bottom; }
 .r18-table tbody tr { transition: background-color .15s ease; }
 .r18-table tbody tr:hover { background: rgba(18, 33, 49, .55); }
+.r18-r { @apply border-b border-border-low last:border-0; }
+.r18-n { @apply sticky left-0 bg-surface-card p-3 text-left text-body-md font-semibold text-on-surface; }
+.r18-i { @apply flex items-center gap-2; }
+.r18-c { @apply flex flex-col gap-1; }
+.r18-v { @apply text-body-sm text-on-surface; }
+.r18-op { @apply mr-1 rounded border border-outline-variant px-1 text-[10px] font-semibold tracking-wide text-text-muted; }
+.r18-new { @apply rounded border border-secondary-container px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-secondary; }
+.r18-cat { @apply flex items-center gap-2 text-body-sm text-on-surface-variant; }
+.r18-p { @apply p-3; }
+.r18-t { @apply p-3 align-top; }
+.r18-h { @apply p-3 align-top text-body-sm text-on-surface-variant; }
+.r18-src { @apply rounded border border-secondary-container px-1.5 py-0.5 text-code-sm text-secondary; }
 .r18-table [data-m2k-discipline] > h2 { scroll-margin-top: 96px; }
 .r18-cards li, .r18-bypos li { transition: border-color .15s ease, transform .15s ease; }
 .r18-cards li:hover, .r18-bypos li:hover { transform: translateY(-2px); }

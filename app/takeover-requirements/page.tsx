@@ -93,11 +93,11 @@ function RequirementCell({ entry }: { entry: TakeoverEntry }) {
   }
   const { logic, conditions } = entry.unlock;
   return (
-    <div className="flex flex-col gap-1">
+    <div className="r18-c">
       {conditions.map((c, i) => (
-        <span key={c.attribute} className="text-body-sm text-on-surface">
+        <span key={c.attribute} className="r18-v">
           {i > 0 && logic !== "single" ? (
-            <span className="mr-1 rounded border border-outline-variant px-1 text-[10px] font-semibold tracking-wide text-text-muted">
+            <span className="r18-op">
               {logic}
             </span>
           ) : null}
@@ -110,30 +110,30 @@ function RequirementCell({ entry }: { entry: TakeoverEntry }) {
 
 function TakeoverRow({ entry }: { entry: TakeoverEntry }) {
   return (
-    <tr className="border-b border-border-low last:border-0">
+    <tr className="r18-r">
       <th
         scope="row"
-        className="sticky left-0 bg-surface-card p-3 text-left text-body-md font-semibold text-on-surface"
+        className="r18-n"
       >
-        <span className="flex items-center gap-2">
+        <span className="r18-i">
           {entry.name}
           {entry.kind === "default" ? (
-            <span className="rounded border border-secondary-container px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-secondary">
+            <span className="r18-new">
               DEFAULT
             </span>
           ) : null}
         </span>
       </th>
-      <td className="p-3">
-        <span className="flex items-center gap-2 text-body-sm text-on-surface-variant">
+      <td className="r18-p">
+        <span className="r18-cat">
           <DisciplineIcon discipline={entry.discipline} size={20} />
           {entry.discipline}
         </span>
       </td>
-      <td className="p-3 align-top">
+      <td className="r18-t">
         <RequirementCell entry={entry} />
       </td>
-      <td className="p-3 align-top">
+      <td className="r18-t">
         <SourceChip sourceType={entry.sourceType} />
       </td>
     </tr>

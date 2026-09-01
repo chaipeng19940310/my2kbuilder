@@ -89,11 +89,11 @@ const TIER_CHIP_CLASS: Record<BadgeTier, string> = {
 /** One tier cell: attribute + minimum rating lines joined by the AND/OR logic. */
 function TierCell({ req }: { req: BadgeTierRequirement }) {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="r18-c">
       {req.conditions.map((c, i) => (
-        <span key={c.attribute} className="text-body-sm text-on-surface">
+        <span key={c.attribute} className="r18-v">
           {i > 0 && req.logic !== "single" ? (
-            <span className="mr-1 rounded border border-outline-variant px-1 text-[10px] font-semibold tracking-wide text-text-muted">
+            <span className="r18-op">
               {req.logic}
             </span>
           ) : null}
@@ -107,34 +107,34 @@ function TierCell({ req }: { req: BadgeTierRequirement }) {
 function BadgeRow({ badge }: { badge: BadgeCatalogEntry }) {
   const height = heightRestrictionLabel(badge.requirements.bronze.height_restriction);
   return (
-    <tr className="border-b border-border-low last:border-0">
+    <tr className="r18-r">
       <th
         scope="row"
-        className="sticky left-0 bg-surface-card p-3 text-left text-body-md font-semibold text-on-surface"
+        className="r18-n"
       >
-        <span className="flex items-center gap-2">
+        <span className="r18-i">
           {badge.name}
           {badge.is_new_2k27 ? (
-            <span className="rounded border border-secondary-container px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-secondary">
+            <span className="r18-new">
               NEW
             </span>
           ) : null}
         </span>
       </th>
-      <td data-label="Category" className="p-3">
-        <span className="flex items-center gap-2 text-body-sm text-on-surface-variant">
+      <td data-label="Category" className="r18-p">
+        <span className="r18-cat">
           <DisciplineIcon discipline={badge.category} size={20} />
           {badge.category}
         </span>
       </td>
       {BADGE_TIERS.map((t) => (
-        <td key={t} data-label={BADGE_TIER_LABEL[t]} className="p-3 align-top">
+        <td key={t} data-label={BADGE_TIER_LABEL[t]} className="r18-t">
           <TierCell req={badge.requirements[t]} />
         </td>
       ))}
-      <td data-label="Height limit" className="p-3 align-top text-body-sm text-on-surface-variant">{height ?? "None"}</td>
-      <td data-label="Source" className="p-3 align-top">
-        <span className="rounded border border-secondary-container px-1.5 py-0.5 text-code-sm text-secondary">
+      <td data-label="Height limit" className="r18-h">{height ?? "None"}</td>
+      <td data-label="Source" className="r18-t">
+        <span className="r18-src">
           {badge.field_tiers.requirements}
         </span>
       </td>
