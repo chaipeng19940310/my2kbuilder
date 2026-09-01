@@ -159,7 +159,7 @@ export default function BlueprintsByPositionPage() {
   });
 
   return (
-    <main className="r18-page r18-bypos relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-bypos r18-shell">
       <JsonLdScript
         schema={[
           // ItemList: real blueprint roster, guard lifted per owner decision

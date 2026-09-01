@@ -54,7 +54,7 @@ const BLUEPRINTS = blueprintList(blueprintsBundle as BlueprintsBundle);
 
 export default function SignatureBlueprintsPage() {
   return (
-    <main className="r18-page r18-cards relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-cards r18-shell">
       <JsonLdScript
         schema={[
           itemListSchema({
