@@ -56,6 +56,11 @@ const TOOL_CARDS = [
 
 const GUIDE_CARDS = [
   {
+    title: "Launch Day Build Guide",
+    body: "Run a five-step launch checklist, set the first job at every position, and budget 53 badges across 20 slots.",
+    href: "/launch-day-build-guide",
+  },
+  {
     title: "Takeover Requirements",
     body: "All 24 Takeover abilities with attribute unlock thresholds and per-row source labels.",
     href: "/takeover-requirements",

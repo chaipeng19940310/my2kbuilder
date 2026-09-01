@@ -1,5 +1,5 @@
 // My2KBuilder — sitemap.xml（契约 §2 规则 4/6）。
-// - 含 12 条 index 路由（/terms 于 R10.2 加入；/badge-requirements 于 R12I-C 加入；
+// - 含 13 条 index 路由（/terms 于 R10.2 加入；/badge-requirements 于 R12I-C 加入；
 //   /takeover-requirements 于 R12J-B 加入、/signature-blueprints/by-position 于
 //   R12J-E 加入，/cap-breakers 于 R12J-C 加入，/2k26-to-2k27-build-pitfalls
 //   由 R12J-D 卡随后加入，Owner 决策
@@ -17,6 +17,7 @@ export const INDEXABLE_ROUTES = [
   "/takeover-requirements",
   "/cap-breakers",
   "/2k26-to-2k27-build-pitfalls",
+  "/launch-day-build-guide",
   "/signature-blueprints",
   "/signature-blueprints/by-position",
   "/methodology",
