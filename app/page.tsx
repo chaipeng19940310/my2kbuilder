@@ -154,7 +154,7 @@ export default function HomePage() {
   ];
 
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-20 bg-page-bg px-4 py-12 md:gap-24 md:px-margin-desktop md:py-16">
+    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-20 bg-page-bg px-4 pb-12 pt-6 md:gap-24 md:px-margin-desktop md:pb-16 md:pt-8">
       <JsonLdScript
         schema={[
           websiteSchema({
@@ -173,7 +173,7 @@ export default function HomePage() {
       />
 
       <div className="flex flex-col gap-12 md:gap-16">
-        <section className="mx-auto flex max-w-4xl flex-col items-center gap-8 pt-4 text-center md:pt-8">
+        <section className="mx-auto flex max-w-4xl flex-col items-center gap-8 text-center">
           <h1 className="max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight text-on-surface md:text-6xl">
             NBA 2K27 Builder for Badge Tokens &amp; Blueprints
           </h1>
