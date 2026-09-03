@@ -62,6 +62,7 @@ export function SiteFooter() {
         {/* R12F: SaaSTool listing badge (Owner-approved 2026-08-27, one card per small change).
             R12G: Findly badge added alongside (Owner-provided code after manual submission).
             R23.2: FirstLook light badge and AiTop10 text backlink slot added.
+            R23.4: PostYourStartup light badge appended after slug assignment.
             Badge snippets embedded verbatim — href/src/rel/target/alt must not be altered;
             inline height/width kept, but sizing is unified via .directory-badges container
             CSS (Owner layout standard from BAH two-round rework). */}
@@ -106,6 +107,10 @@ function DirectoryBadgeSet({ ariaHidden = false }: { ariaHidden?: boolean }) {
         <img src="https://firstlook.tools/badge/badge_light.svg" alt="Featured on First Look" width="200" height="54" />
       </a>
       <a href="https://aitop10.tools/" target="_blank">AiTop10 Tools</a>
+      <a href="https://postyourstartup.co/startup/my2kbuilder-1?ref=badge" target="_blank">
+        {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
+        <img src="https://postyourstartup.co/api/badge/my2kbuilder-1?theme=light" alt="Featured on PostYourStartup" width="212" height="55" />
+      </a>
     </div>
   );
 }

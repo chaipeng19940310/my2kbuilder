@@ -97,9 +97,8 @@ body {
 
 /* R23 directory badge marquee: two identical, fixed-width sets make one
    seamless loop. Badge snippets keep their provider attributes; this container
-   owns the approved 42px slot / 34px image sizing and prevents compression. The
-   desktop viewport equals one set (5 × 210px slots + 5 × 12px rhythm), so the
-   next set always covers the frame while the first translates out. */
+   owns the approved 42px slot / 34px image sizing and prevents compression.
+   Matching set lengths keep the -50% translation seamless as slots are added. */
 .directory-badges-marquee {
   max-width: 1142px;
 }
