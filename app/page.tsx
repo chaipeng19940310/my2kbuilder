@@ -174,10 +174,6 @@ export default function HomePage() {
 
       <div className="flex flex-col gap-12 md:gap-16">
         <section className="mx-auto flex max-w-4xl flex-col items-center gap-8 pt-4 text-center md:pt-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border-low bg-surface-card px-3 py-1 text-code-sm uppercase tracking-widest text-text-muted">
-            <Icon name="bolt" size={14} className="text-primary-container" />
-            Web-first · No download · No sign-up
-          </span>
           <h1 className="max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight text-on-surface md:text-6xl">
             NBA 2K27 Builder for Badge Tokens &amp; Blueprints
           </h1>
@@ -342,32 +338,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-12 rounded-xl border border-border-low bg-surface-card p-6 md:p-12">
-        <h2 className="text-center font-display text-headline-md text-on-surface">Release Timeline</h2>
-        <div className="relative mx-auto w-full max-w-3xl px-4">
-          <div className="absolute left-0 right-0 top-1/2 z-0 hidden h-0.5 -translate-y-1/2 bg-border-low md:block" />
-          <div className="absolute left-0 top-1/2 z-0 hidden h-0.5 w-[72%] -translate-y-1/2 bg-primary-container/80 md:block" />
-          <div className="absolute bottom-0 left-8 top-0 z-0 block w-0.5 bg-border-low md:hidden" />
-          <div className="relative z-10 flex flex-col justify-between gap-8 md:flex-row md:gap-0">
+      <section className="rounded-xl border border-border-low bg-surface-card p-4 md:px-8 md:py-6">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center justify-center gap-3 md:justify-start">
+            <h2 className="font-display text-lg font-bold text-on-surface">Release Timeline</h2>
+            <SourceTag tier="official" />
+          </div>
+          <div className="grid gap-2 sm:grid-cols-3 md:min-w-[600px]">
             {[
               { date: "Aug 21", label: "2K HQ App Live", complete: true },
               { date: "Aug 26", label: "Early Access", complete: true },
               { date: "Sep 4, 2026", label: "Global Launch", complete: false },
             ].map((event) => (
-              <div key={event.date} className="flex items-center gap-4 pl-4 text-left md:flex-col md:gap-3 md:pl-0 md:text-center">
-                <div className={`shrink-0 rounded-full ${event.complete ? "h-4 w-4 border-4 border-surface-card bg-secondary shadow-[0_0_0_1px_#1e293b]" : "h-5 w-5 bg-primary-container shadow-[0_0_15px_rgba(255,176,58,0.8)] md:animate-pulse"}`} />
-                <div>
-                  <div className={`mb-1 text-body-sm font-bold uppercase tracking-wider ${event.complete ? "text-text-muted" : "text-primary-container"}`}>{event.date}</div>
-                  <div className={`font-display ${event.complete ? "font-semibold text-on-surface" : "text-lg font-bold text-on-surface"}`}>{event.label}</div>
+              <div key={event.date} className="flex items-center gap-3 rounded-lg border border-border-low bg-page-bg px-3 py-2 text-left">
+                <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${event.complete ? "bg-secondary" : "bg-primary-container shadow-[0_0_10px_rgba(255,176,58,0.65)]"}`} />
+                <div className="min-w-0">
+                  <div className={`text-[11px] font-bold uppercase tracking-wider ${event.complete ? "text-text-muted" : "text-primary-container"}`}>{event.date}</div>
+                  <div className="truncate text-sm font-semibold text-on-surface">{event.label}</div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <p className="mx-auto max-w-2xl text-center text-body-sm text-text-muted">
+        <p className="mt-4 text-center text-body-sm leading-relaxed text-text-muted md:text-left">
           NBA 2K27 launches {String(mechanicsFact(bundle, "launch_date_global")?.value ?? "2026-09-04")}.
           Early access opens August 26. The official 2K HQ App — with the full in-game builder — has
-          been live since August 21. <SourceTag tier="official" />
+          been live since August 21.
         </p>
       </section>
 
