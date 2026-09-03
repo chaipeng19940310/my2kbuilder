@@ -66,29 +66,40 @@ export function SiteFooter() {
             CSS (Owner layout standard from BAH two-round rework). */}
         <div className="border-t border-border-low">
           <div
-            className="directory-badges mx-auto flex w-full max-w-site flex-wrap items-center justify-center gap-6 px-4 py-6 md:px-margin-desktop"
+            className="directory-badges-marquee mx-auto w-full max-w-site overflow-hidden px-4 py-6 md:px-margin-desktop"
             aria-label="Directory listings"
           >
-            <a href="https://saastool.site/item/my2kbuilder" target="_blank" rel="noopener noreferrer">
-              {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
-              <img src="https://saastool.site/badges/saastool-light.svg" alt="Featured on SaaSTool.site" height="54px" width="auto" />
-            </a>
-            <a href="https://findly.tools/my2kbuilder?utm_source=my2kbuilder" target="_blank" rel="noopener noreferrer">
-              {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
-              <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" />
-            </a>
-            {/* Launchpadly — My2KBuilder (light) — R12H, verbatim from
-                postlaunch/directory-badge-codes-v0.md §4 (Owner-approved mount
-                2026-08-28); inline img style converted to a JSX style object,
-                everything else (href/rel/target/alt/src/width/height/data-*)
-                unchanged. */}
-            <a href="https://launchpadly.co/startup/my2kbuilder?ref=badge" target="_blank" rel="noopener noreferrer" data-launchpadly-badge="my2kbuilder" data-launchpadly-badge-variant="light">
-              {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
-              <img src="https://launchpadly.co/embed/badges/startup/my2kbuilder.svg?variant=light" alt="Launchpadly Startup Directory" width="220" height="48" style={{ display: "block", border: 0 }} />
-            </a>
+            <div className="directory-badges-track flex w-max flex-nowrap">
+              <DirectoryBadgeSet />
+              <DirectoryBadgeSet ariaHidden />
+            </div>
           </div>
         </div>
       </footer>
     </>
+  );
+}
+
+function DirectoryBadgeSet({ ariaHidden = false }: { ariaHidden?: boolean }) {
+  return (
+    <div className="directory-badges" aria-hidden={ariaHidden || undefined}>
+      <a href="https://saastool.site/item/my2kbuilder" target="_blank" rel="noopener noreferrer">
+        {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
+        <img src="https://saastool.site/badges/saastool-light.svg" alt="Featured on SaaSTool.site" height="54px" width="auto" />
+      </a>
+      <a href="https://findly.tools/my2kbuilder?utm_source=my2kbuilder" target="_blank" rel="noopener noreferrer">
+        {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
+        <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" />
+      </a>
+      {/* Launchpadly — My2KBuilder (light) — R12H, verbatim from
+          postlaunch/directory-badge-codes-v0.md §4 (Owner-approved mount
+          2026-08-28); inline img style converted to a JSX style object,
+          everything else (href/rel/target/alt/src/width/height/data-*)
+          unchanged. */}
+      <a href="https://launchpadly.co/startup/my2kbuilder?ref=badge" target="_blank" rel="noopener noreferrer" data-launchpadly-badge="my2kbuilder" data-launchpadly-badge-variant="light">
+        {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
+        <img src="https://launchpadly.co/embed/badges/startup/my2kbuilder.svg?variant=light" alt="Launchpadly Startup Directory" width="220" height="48" style={{ display: "block", border: 0 }} />
+      </a>
+    </div>
   );
 }

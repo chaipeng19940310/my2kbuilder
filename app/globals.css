@@ -95,42 +95,62 @@ body {
   color: #d4e4fa;
 }
 
-/* R12F directory badge frames (Owner layout standard, ported from the BAH
-   approved version after two rework rounds): desktop and mobile frames are
-   defined separately; sizes are unified via container CSS with !important to
-   override the badge img's inline width/height/style; object-fit:contain
-   preserves aspect ratio. Mobile (<=640px): one row, no wrap, flex:1 1 0
-   equal slots, 44px frame height, img max-height 30px, gap .5rem. */
+/* R23 directory badge marquee: two identical, fixed-width sets make one
+   seamless loop. Badge snippets keep their provider attributes; this container
+   owns the 44px slot / 30px image sizing and prevents compression. The desktop
+   viewport equals one set (3 × 210px slots + 3 × 8px rhythm) so the next set
+   always covers the frame while the first translates out. */
+.directory-badges-marquee {
+  max-width: 686px;
+}
+@media (min-width: 768px) {
+  .directory-badges-marquee {
+    max-width: 718px;
+  }
+}
+.directory-badges-track {
+  animation: directory-badges-scroll 18s linear infinite;
+  will-change: transform;
+}
+.directory-badges {
+  display: flex;
+  flex: none;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  padding-right: 0.5rem;
+}
 .directory-badges a {
   display: inline-flex;
+  flex: 0 0 210px;
   align-items: center;
   justify-content: center;
   width: 210px;
-  height: 56px;
+  height: 44px;
+  border: 1px solid transparent;
   box-sizing: border-box;
+  opacity: 0.82;
+  transition: border-color 150ms ease, opacity 150ms ease;
+}
+.directory-badges a:hover {
+  border-color: #1e293b;
+  opacity: 1;
 }
 .directory-badges a img {
   width: auto !important;
   height: auto !important;
   max-width: 196px !important;
-  max-height: 48px !important;
+  max-height: 30px !important;
   object-fit: contain;
 }
-@media (max-width: 640px) {
-  .directory-badges {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 0.5rem;
+@keyframes directory-badges-scroll {
+  to {
+    transform: translateX(-50%);
   }
-  .directory-badges a {
-    flex: 1 1 0;
-    width: auto;
-    min-width: 0;
-    height: 44px;
-  }
-  .directory-badges a img {
-    max-width: calc(100% - 8px) !important;
-    max-height: 30px !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .directory-badges-track {
+    animation: none;
+    transform: none;
   }
 }
 
