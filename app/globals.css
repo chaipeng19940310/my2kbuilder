@@ -97,15 +97,15 @@ body {
 
 /* R23 directory badge marquee: two identical, fixed-width sets make one
    seamless loop. Badge snippets keep their provider attributes; this container
-   owns the 44px slot / 30px image sizing and prevents compression. The desktop
-   viewport equals one set (3 × 210px slots + 3 × 8px rhythm) so the next set
-   always covers the frame while the first translates out. */
+   owns the approved 42px slot / 34px image sizing and prevents compression. The
+   desktop viewport equals one set (3 × 210px slots + 3 × 12px rhythm), so the
+   next set always covers the frame while the first translates out. */
 .directory-badges-marquee {
-  max-width: 686px;
+  max-width: 698px;
 }
 @media (min-width: 768px) {
   .directory-badges-marquee {
-    max-width: 718px;
+    max-width: 730px;
   }
 }
 .directory-badges-track {
@@ -116,8 +116,8 @@ body {
   display: flex;
   flex: none;
   flex-wrap: nowrap;
-  gap: 0.5rem;
-  padding-right: 0.5rem;
+  gap: 0.75rem;
+  padding-right: 0.75rem;
 }
 .directory-badges a {
   display: inline-flex;
@@ -125,7 +125,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 210px;
-  height: 44px;
+  height: 42px;
   border: 1px solid transparent;
   box-sizing: border-box;
   opacity: 0.82;
@@ -139,7 +139,7 @@ body {
   width: auto !important;
   height: auto !important;
   max-width: 196px !important;
-  max-height: 30px !important;
+  max-height: 34px !important;
   object-fit: contain;
 }
 @keyframes directory-badges-scroll {
