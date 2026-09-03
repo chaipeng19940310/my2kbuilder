@@ -98,14 +98,14 @@ body {
 /* R23 directory badge marquee: two identical, fixed-width sets make one
    seamless loop. Badge snippets keep their provider attributes; this container
    owns the approved 42px slot / 34px image sizing and prevents compression. The
-   desktop viewport equals one set (3 × 210px slots + 3 × 12px rhythm), so the
+   desktop viewport equals one set (5 × 210px slots + 5 × 12px rhythm), so the
    next set always covers the frame while the first translates out. */
 .directory-badges-marquee {
-  max-width: 698px;
+  max-width: 1142px;
 }
 @media (min-width: 768px) {
   .directory-badges-marquee {
-    max-width: 730px;
+    max-width: 1174px;
   }
 }
 .directory-badges-track {
@@ -129,10 +129,18 @@ body {
   border: 1px solid transparent;
   box-sizing: border-box;
   opacity: 0.82;
+  color: #94a3b8;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  white-space: nowrap;
   transition: border-color 150ms ease, opacity 150ms ease;
 }
 .directory-badges a:hover {
   border-color: #1e293b;
+  color: #d4e4fa;
   opacity: 1;
 }
 .directory-badges a img {
