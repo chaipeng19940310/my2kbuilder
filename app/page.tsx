@@ -92,7 +92,7 @@ const FAQS = [
   {
     question: "Where does the tool data come from?",
     answer:
-      "Mechanics and badge or blueprint names come from 2K-published material. Badge requirement cells are cross-checked against two public reference tables, unconfirmed fields are labeled, and token costs stay pending until collection is complete.",
+      "Mechanics and badge or blueprint names come from 2K-published material. Badge requirement cells are cross-checked against two public reference tables, unconfirmed fields are labeled, and token costs are single-source reference-build values labeled Unverified.",
   },
   {
     question: "Is it free?",

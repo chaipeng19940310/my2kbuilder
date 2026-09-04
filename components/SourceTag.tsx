@@ -51,8 +51,9 @@ export function DataSourceBanner({ scope }: { scope: "badges" | "blueprints" | "
       {scope === "badges" ? (
         <p className="text-body-sm text-on-surface-variant">
           Badge names and categories come from 2K&apos;s published roster. Unlock requirements are a
-          community reference cross-checked across two public tables. Token costs pending — official
-          values not published.{" "}
+          community reference cross-checked across two public tables. Token costs are single-source
+          community reference-build values labeled Unverified — actual costs vary with height,
+          position and build size; the in-game Builder is authoritative.{" "}
           <span className="text-text-muted">See Methodology for source tiers.</span>
         </p>
       ) : scope === "takeovers" ? (

@@ -1,0 +1,881 @@
+{
+ "bundle": "badge-token-costs",
+ "version": "v1",
+ "data_classification": "public_reference",
+ "gate_status": "single_source_unverified_owner_approved_2026-09-04",
+ "generated_at": "2026-09-04",
+ "description": "NBA 2K27 badge token costs, 53 badges x 4 tiers. Single-source community reference-build values (Owner-approved provisional publication 2026-09-04); labeled community_unverified everywhere; site copy must state costs vary by height/position/build size and the in-game Builder is authoritative. Source name intentionally omitted from site-visible surfaces per Owner instruction; provenance archived in workspace research/token-costs/ (SHA256SUMS).",
+ "records": [
+  {
+   "key": "meta.basis",
+   "value": "Reference-build token costs (single public community table, captured 2026-09-04). Actual in-game costs vary with height, position and build size; the in-game Builder is authoritative.",
+   "value_type": "string",
+   "source_type": "community_unverified",
+   "confidence": "low"
+  },
+  {
+   "key": "meta.coverage",
+   "value": {
+    "badges": 53,
+    "tiers": [
+     "bronze",
+     "silver",
+     "gold",
+     "hof"
+    ],
+    "legend": "not purchasable with tokens in 2K27"
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low"
+  },
+  {
+   "key": "badge.aerial-wizard.token_cost",
+   "value": {
+    "slug": "aerial-wizard",
+    "name": "Aerial Wizard",
+    "category": "Finishing",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.float-game.token_cost",
+   "value": {
+    "slug": "float-game",
+    "name": "Float Game",
+    "category": "Finishing",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.ghost-stepper.token_cost",
+   "value": {
+    "slug": "ghost-stepper",
+    "name": "Ghost Stepper",
+    "category": "Finishing",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.hook-specialist.token_cost",
+   "value": {
+    "slug": "hook-specialist",
+    "name": "Hook Specialist",
+    "category": "Finishing",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.layup-mixmaster.token_cost",
+   "value": {
+    "slug": "layup-mixmaster",
+    "name": "Layup Mixmaster",
+    "category": "Finishing",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.paint-prodigy.token_cost",
+   "value": {
+    "slug": "paint-prodigy",
+    "name": "Paint Prodigy",
+    "category": "Finishing",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.physical-finisher.token_cost",
+   "value": {
+    "slug": "physical-finisher",
+    "name": "Physical Finisher",
+    "category": "Finishing",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.post-powerhouse.token_cost",
+   "value": {
+    "slug": "post-powerhouse",
+    "name": "Post Powerhouse",
+    "category": "Finishing",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.post-spin-catalyst.token_cost",
+   "value": {
+    "slug": "post-spin-catalyst",
+    "name": "Post Spin Catalyst",
+    "category": "Finishing",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.posterizer.token_cost",
+   "value": {
+    "slug": "posterizer",
+    "name": "Posterizer",
+    "category": "Finishing",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.rise-up.token_cost",
+   "value": {
+    "slug": "rise-up",
+    "name": "Rise Up",
+    "category": "Finishing",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.arc-cadence.token_cost",
+   "value": {
+    "slug": "arc-cadence",
+    "name": "Arc Cadence",
+    "category": "Shooting",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.deadeye.token_cost",
+   "value": {
+    "slug": "deadeye",
+    "name": "Deadeye",
+    "category": "Shooting",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.limitless-range.token_cost",
+   "value": {
+    "slug": "limitless-range",
+    "name": "Limitless Range",
+    "category": "Shooting",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.mini-marksman.token_cost",
+   "value": {
+    "slug": "mini-marksman",
+    "name": "Mini Marksman",
+    "category": "Shooting",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.post-fade-phenom.token_cost",
+   "value": {
+    "slug": "post-fade-phenom",
+    "name": "Post Fade Phenom",
+    "category": "Shooting",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.quick-trigger.token_cost",
+   "value": {
+    "slug": "quick-trigger",
+    "name": "Quick Trigger",
+    "category": "Shooting",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.set-and-fire.token_cost",
+   "value": {
+    "slug": "set-and-fire",
+    "name": "Set and Fire",
+    "category": "Shooting",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.smooth-operator.token_cost",
+   "value": {
+    "slug": "smooth-operator",
+    "name": "Smooth Operator",
+    "category": "Shooting",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.static-middy.token_cost",
+   "value": {
+    "slug": "static-middy",
+    "name": "Static Middy",
+    "category": "Shooting",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.ankle-assassin.token_cost",
+   "value": {
+    "slug": "ankle-assassin",
+    "name": "Ankle Assassin",
+    "category": "Playmaking",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.bail-out.token_cost",
+   "value": {
+    "slug": "bail-out",
+    "name": "Bail Out",
+    "category": "Playmaking",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.break-starter.token_cost",
+   "value": {
+    "slug": "break-starter",
+    "name": "Break Starter",
+    "category": "Playmaking",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.dimer.token_cost",
+   "value": {
+    "slug": "dimer",
+    "name": "Dimer",
+    "category": "Playmaking",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.handles-for-days.token_cost",
+   "value": {
+    "slug": "handles-for-days",
+    "name": "Handles for Days",
+    "category": "Playmaking",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.lightning-launch.token_cost",
+   "value": {
+    "slug": "lightning-launch",
+    "name": "Lightning Launch",
+    "category": "Playmaking",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.pace.token_cost",
+   "value": {
+    "slug": "pace",
+    "name": "Pace",
+    "category": "Playmaking",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.strong-handle.token_cost",
+   "value": {
+    "slug": "strong-handle",
+    "name": "Strong Handle",
+    "category": "Playmaking",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.unpluckable.token_cost",
+   "value": {
+    "slug": "unpluckable",
+    "name": "Unpluckable",
+    "category": "Playmaking",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.versatile-visionary.token_cost",
+   "value": {
+    "slug": "versatile-visionary",
+    "name": "Versatile Visionary",
+    "category": "Playmaking",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.ankle-braces.token_cost",
+   "value": {
+    "slug": "ankle-braces",
+    "name": "Ankle Braces",
+    "category": "Defense",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.challenger.token_cost",
+   "value": {
+    "slug": "challenger",
+    "name": "Challenger",
+    "category": "Defense",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.glove.token_cost",
+   "value": {
+    "slug": "glove",
+    "name": "Glove",
+    "category": "Defense",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.high-flying-denier.token_cost",
+   "value": {
+    "slug": "high-flying-denier",
+    "name": "High-Flying Denier",
+    "category": "Defense",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.immovable-enforcer.token_cost",
+   "value": {
+    "slug": "immovable-enforcer",
+    "name": "Immovable Enforcer",
+    "category": "Defense",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.interceptor.token_cost",
+   "value": {
+    "slug": "interceptor",
+    "name": "Interceptor",
+    "category": "Defense",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.off-ball-pest.token_cost",
+   "value": {
+    "slug": "off-ball-pest",
+    "name": "Off-Ball Pest",
+    "category": "Defense",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.paint-patroller.token_cost",
+   "value": {
+    "slug": "paint-patroller",
+    "name": "Paint Patroller",
+    "category": "Defense",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.pick-dodger.token_cost",
+   "value": {
+    "slug": "pick-dodger",
+    "name": "Pick Dodger",
+    "category": "Defense",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.post-lockdown.token_cost",
+   "value": {
+    "slug": "post-lockdown",
+    "name": "Post Lockdown",
+    "category": "Defense",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.seatbelt.token_cost",
+   "value": {
+    "slug": "seatbelt",
+    "name": "Seatbelt",
+    "category": "Defense",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.wall-up.token_cost",
+   "value": {
+    "slug": "wall-up",
+    "name": "Wall Up",
+    "category": "Defense",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.boxout-boss.token_cost",
+   "value": {
+    "slug": "boxout-boss",
+    "name": "Boxout Boss",
+    "category": "Rebounding",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.breaker.token_cost",
+   "value": {
+    "slug": "breaker",
+    "name": "Breaker",
+    "category": "Rebounding",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.crasher.token_cost",
+   "value": {
+    "slug": "crasher",
+    "name": "Crasher",
+    "category": "Rebounding",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.possession-closer.token_cost",
+   "value": {
+    "slug": "possession-closer",
+    "name": "Possession Closer",
+    "category": "Rebounding",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.sync-snatcher.token_cost",
+   "value": {
+    "slug": "sync-snatcher",
+    "name": "Sync Snatcher",
+    "category": "Rebounding",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.brick-wall.token_cost",
+   "value": {
+    "slug": "brick-wall",
+    "name": "Brick Wall",
+    "category": "Physicals",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.bruiser.token_cost",
+   "value": {
+    "slug": "bruiser",
+    "name": "Bruiser",
+    "category": "Physicals",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.flash.token_cost",
+   "value": {
+    "slug": "flash",
+    "name": "Flash",
+    "category": "Physicals",
+    "bronze": 3,
+    "silver": 5,
+    "gold": 6,
+    "hof": 7
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.pogo-stick.token_cost",
+   "value": {
+    "slug": "pogo-stick",
+    "name": "Pogo Stick",
+    "category": "Physicals",
+    "bronze": 1,
+    "silver": 3,
+    "gold": 4,
+    "hof": 5
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.slippery-off-ball.token_cost",
+   "value": {
+    "slug": "slippery-off-ball",
+    "name": "Slippery Off-Ball",
+    "category": "Physicals",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  },
+  {
+   "key": "badge.work-horse.token_cost",
+   "value": {
+    "slug": "work-horse",
+    "name": "Work Horse",
+    "category": "Physicals",
+    "bronze": 2,
+    "silver": 4,
+    "gold": 5,
+    "hof": 6
+   },
+   "value_type": "object",
+   "source_type": "community_unverified",
+   "confidence": "low",
+   "notes": "Single-source community reference-build value; not official; varies by build."
+  }
+ ]
+}

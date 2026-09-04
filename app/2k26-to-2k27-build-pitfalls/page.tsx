@@ -262,7 +262,7 @@ export default function BuildPitfallsPage() {
           }
           <PublishedChip />
           {
-            " Token costs vary by height and position, and 2K has not published a full cost table; on this site, token costs stay pending until collection is complete."
+            " Token costs vary by height and position; on this site, the planner shows single-source reference-build cost values labeled Unverified — confirm your build's exact costs in-game."
           }
         </p>
         <p className="text-body-md text-on-surface-variant">
@@ -358,7 +358,7 @@ export default function BuildPitfallsPage() {
             <p className="text-body-md text-on-surface-variant">
               <strong className="text-on-surface">Count tokens before spending.</strong>
               {
-                " Attribute requirements unlock inventory; tokens equip badges. Costs vary by build, and the full cost table is pending — leave margin. The "
+                " Attribute requirements unlock inventory; tokens equip badges. Costs vary by build — the planner's cost values are single-source reference-build numbers labeled Unverified, so leave margin. The "
               }
               <Link href="/badge-token-planner" className="text-primary-container hover:underline">
                 Badge Token Planner

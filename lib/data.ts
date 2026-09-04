@@ -144,6 +144,42 @@ export type BadgeRequirementsBundle = DataBundle<unknown>;
 
 export type BadgeCatalogEntry = BadgeRecordValue;
 
+/** value shape of each badge.<slug>.token_cost record in badge-token-costs.v1.json */
+export interface BadgeTokenCostValue {
+  slug: string;
+  name: string;
+  category: DisciplineName;
+  bronze: number;
+  silver: number;
+  gold: number;
+  hof: number;
+}
+
+export type TokenCostBundle = DataBundle<unknown>;
+
+/**
+ * Extract the 53-entry token cost map (slug -> per-tier costs) from the
+ * badge-token-costs bundle. Single-source community reference-build values —
+ * every consumer must render them with the unverified/reference-build label.
+ */
+export function tokenCostMap(bundle: TokenCostBundle): Map<string, BadgeTokenCostValue> {
+  const out = new Map<string, BadgeTokenCostValue>();
+  for (const r of bundle.records) {
+    if (!r.key.startsWith("badge.") || !r.key.endsWith(".token_cost")) continue;
+    const v = r.value as Partial<BadgeTokenCostValue>;
+    if (typeof v.slug === "string" && typeof v.bronze === "number") {
+      out.set(v.slug, v as BadgeTokenCostValue);
+    }
+  }
+  return out;
+}
+
+/** Cost of running a badge at a given assigned tier (1..4 -> bronze..hof). */
+export function tokenCostAtTier(cost: BadgeTokenCostValue, assignedSlots: number): number {
+  const tier = Math.min(Math.max(assignedSlots, 1), 4);
+  return [cost.bronze, cost.silver, cost.gold, cost.hof][tier - 1];
+}
+
 /** Extract the 53-entry real badge catalog (records keyed badge.<slug>). */
 export function badgeCatalog(bundle: BadgeRequirementsBundle): BadgeCatalogEntry[] {
   const out: BadgeCatalogEntry[] = [];

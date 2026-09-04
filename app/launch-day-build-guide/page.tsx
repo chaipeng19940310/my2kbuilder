@@ -37,9 +37,9 @@ const FAQS = [
       "Yes. 2K confirms that Badge Token costs vary by height and position and that the builder recalculates them live as you adjust your build. The same badge can price differently on two different bodies, so a badge loadout is a token budget, not a fixed sheet.",
   },
   {
-    question: "Why doesn't this guide list actual token cost numbers?",
+    question: "Where do the token cost numbers in the planner come from?",
     answer:
-      "Token costs pending — 2K has not published a full cost table, and no public source carries the complete cost matrix. Instead of printing unverified numbers, we built the badge token planner so you can test-fit your allocation at your exact height and position. Costs will be added to the tool once collection is complete.",
+      "The planner shows single-source community reference-build values labeled Unverified. Actual costs vary with your height, position and build size — use them as a planning baseline and confirm the exact numbers in the in-game Builder before spending.",
   },
   {
     question: "Is My2KBuilder the official 2K planner?",
@@ -212,8 +212,8 @@ export default function LaunchDayBuildGuidePage() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="font-display text-headline-sm text-on-surface">Why there are no token cost numbers in this guide</h3>
-          <p className="text-body-md text-on-surface-variant">You may have noticed this guide quotes no prices. That is a decision, not an omission. Token costs pending — 2K has not published a full cost table, and no public source carries the complete position-by-height cost matrix. Rather than print community-rumored numbers that may be wrong for your build, we show no numbers at all — and we built the planner so you can test-fit your own allocation instead of trusting someone else&apos;s table. When collection completes, the numbers land in the tool first, and this guide gets updated to match.</p>
+          <h3 className="font-display text-headline-sm text-on-surface">About the token cost numbers</h3>
+          <p className="text-body-md text-on-surface-variant">A note on prices: token costs vary with your height, position and build size, so no single table fits every build. The planner shows single-source community reference-build values labeled Unverified — a baseline for planning, with the in-game Builder as the final word. Test-fit your own allocation there instead of trusting someone else&apos;s table.</p>
         </div>
       </section>
 
@@ -250,7 +250,7 @@ export default function LaunchDayBuildGuidePage() {
               <summary className="cursor-pointer list-none text-label-md text-on-surface group-open:text-primary-container">{faq.question}</summary>
               <p className="mt-2 text-body-md text-on-surface-variant">
                 {index === 3 ? (
-                  <>Token costs pending — 2K has not published a full cost table, and no public source carries the complete cost matrix. Instead of printing unverified numbers, we built the <Link href="/badge-token-planner" className={linkClass}>badge token planner</Link> so you can test-fit your allocation at your exact height and position. Costs will be added to the tool once collection is complete.</>
+                  <>Token costs vary by height, position and build size — the <Link href="/badge-token-planner" className={linkClass}>badge token planner</Link> shows single-source reference-build values labeled Unverified so you can test-fit your allocation; confirm exact costs in the in-game Builder.</>
                 ) : faq.answer}
               </p>
             </details>

@@ -62,7 +62,7 @@ const TIERS = [
 
 const DONT_PUBLISH = [
   "Rumors, leaks, and community predictions presented as fact.",
-  "Badge token cost numbers before collection, dual review, and a frozen v0 — the public reference layer ships the cost matrix as a skeleton with null values and a gap statement, never as invented numbers.",
+  "The full position-by-height badge token cost matrix — only single-source reference-build values are published (labeled Unverified); invented or extrapolated numbers never.",
   "HQ App observed data of any kind — that tier is disabled until manual collection, dual review, and freeze are complete.",
   "Paid or proprietary data copied from community sites.",
 ] as const;
@@ -250,10 +250,11 @@ export default function MethodologyPage() {
             <h3 className="font-display text-headline-sm text-on-surface">Badge Token cost matrix</h3>
             <TierChips list={badgeTokenCost} />
             <p className="text-body-sm text-on-surface-variant">
-              Gap statement: no public source publishes the full token cost matrix, so this layer
-              ships a skeleton only — {nullCostRecords} of {badgeTokenCost.length} records are
-              deliberately null and the rest describe the sampling grid and the official pricing
-              mechanic, not costs. No numeric token costs are published anywhere on this site.{" "}
+              Published now: a single-source community reference-build cost table (53 badges × 4
+              tiers), labeled Unverified in the planner. Still not published anywhere: the full
+              position-by-height cost matrix — this layer keeps its skeleton records (
+              {nullCostRecords} of {badgeTokenCost.length} null) describing the sampling grid and
+              the official pricing mechanic, and the in-game Builder remains authoritative.{" "}
               <SourceTag tier="unverified" />
             </p>
           </div>

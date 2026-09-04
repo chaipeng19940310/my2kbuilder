@@ -61,9 +61,9 @@ const FAQS = [
       "No. Legend is not a direct unlock tier in the builder. Meet the Hall of Fame requirement first, then use Synergy boosts to push the badge beyond its normal tier path.",
   },
   {
-    question: "Why are there no token cost numbers?",
+    question: "Where do the token cost numbers come from?",
     answer:
-      "Token costs pending — 2K has not published a full cost table. Collection is still in progress, so the site shows no token cost numbers and no estimates.",
+      "Token costs are single-source community reference-build values labeled Unverified — actual costs vary with height, position and build size, so confirm in the in-game Builder.",
   },
   {
     question: "Will these requirements ever change?",
@@ -229,7 +229,7 @@ export default function BadgeRequirementsPage() {
         </p>
         <p className="text-body-sm text-text-muted">
           {
-            "If two sources disagree, the row is flagged and the value is not guessed. Token cost cells stay pending until collection is complete."
+            "If two sources disagree, the row is flagged and the value is not guessed. Token cost values are single-source community reference-build numbers, labeled Unverified."
           }
         </p>
       </section>

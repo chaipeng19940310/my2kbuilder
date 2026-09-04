@@ -16,35 +16,37 @@ import {
   DISCIPLINES,
   badgeCatalog,
   heightRestrictionLabel,
+  tokenCostMap,
   type BadgeRequirementsBundle,
   type BadgeTier,
   type BadgeTierRequirement,
+  type TokenCostBundle,
 } from "@/lib/data";
 import badgeRequirementsBundle from "@/public/data/badge-requirements.v1.json";
+import tokenCostsBundle from "@/public/data/badge-token-costs.v1.json";
 import { PlannerClient } from "./PlannerClient";
 
 // SEO freeze (seo §3): title/H1/meta for `/badge-token-planner`.
 export const metadata: Metadata = {
   title: "NBA 2K27 Badge Token Planner — 53 Badges, 20 Slots",
   description:
-    "Allocate Badge Tokens across 20 slots, see how height and position change token costs, and catch conflicts before you lock a build. Free tool, no download.",
+    "Allocate Badge Tokens across 20 slots with reference token costs (single-source, unverified) and real unlock requirements. Free tool, no download.",
   alternates: { canonical: canonicalFor("/badge-token-planner") },
   ...socialMeta({
     path: "/badge-token-planner",
     title: "NBA 2K27 Badge Token Planner — 53 Badges, 20 Slots",
     description:
-      "Allocate Badge Tokens across 20 slots, see how height and position change token costs, and catch conflicts before you lock a build. Free tool, no download.",
+      "Allocate Badge Tokens across 20 slots with reference token costs (single-source, unverified) and real unlock requirements. Free tool, no download.",
   }),
 };
 
-// FAQ freeze (copy §5.2). R12I-A: cost-provenance answer updated for the real
-// production bundle — 2K has not published the cost table, so the planner
-// labels costs as pending and shows real unlock requirements instead.
+// FAQ freeze (copy §5.2). 2026-09-04 (Owner decision): single-source community
+// reference-build token costs are now published with the Unverified label.
 const FAQS = [
   {
     question: "Why do token costs change when I change height?",
     answer:
-      "That's how NBA 2K27 works: badge token costs vary by height and position, a mechanic described on 2K's builder pages. The exact cost table has not been published, so the planner labels costs as pending and instead shows each badge's real attribute unlock requirements.",
+      "That's how NBA 2K27 works: badge token costs vary by height and position, a mechanic described on 2K's builder pages. The costs shown in this planner are single-source community reference-build values labeled Unverified — treat them as a baseline and confirm the exact cost of your build in the in-game Builder.",
   },
   {
     question: "Can I save my plan?",
@@ -56,6 +58,7 @@ const FAQS = [
 // R12I-D: build-time catalog for the server-rendered roster below — the full
 // 53-badge list with four-tier requirements must be crawlable without JS.
 const CATALOG = badgeCatalog(badgeRequirementsBundle as BadgeRequirementsBundle);
+const COSTS = tokenCostMap(tokenCostsBundle as TokenCostBundle);
 
 const TIER_CHIP_CLASS: Record<BadgeTier, string> = {
   bronze: "tier-chip tier-bronze",
@@ -77,7 +80,7 @@ export default function BadgeTokenPlannerPage() {
           softwareApplicationSchema({
             name: "NBA 2K27 Badge Token Planner",
             description:
-              "Allocate Badge Tokens across 20 slots, see how height and position change token costs, and catch conflicts before you lock a build.",
+              "Allocate Badge Tokens across 20 slots with reference token costs (single-source, unverified) and real unlock requirements.",
             applicationCategory: "WebApplication",
           }),
           faqPageSchema([...FAQS]),
@@ -99,7 +102,7 @@ export default function BadgeTokenPlannerPage() {
       </header>
 
       {/* Tool body first (copy §3.2 design placement) */}
-      <PlannerClient bundle={badgeRequirementsBundle as BadgeRequirementsBundle} />
+      <PlannerClient bundle={badgeRequirementsBundle as BadgeRequirementsBundle} costs={tokenCostsBundle as TokenCostBundle} />
 
       {/* Owner-authorized 2K screenshot below the tool (tool keeps first
           placement per copy §3.2; local static asset, no third-party request). */}
@@ -136,9 +139,10 @@ export default function BadgeTokenPlannerPage() {
           <h2 className="font-display text-headline-sm text-on-surface">Why Token Costs Move</h2>
           <p className="text-body-md text-on-surface-variant">
             Token costs in NBA 2K27 are not flat: the same badge can cost more or less depending on
-            your height and position — a mechanic described on 2K&apos;s builder pages. The exact
-            cost table has not been published, so this planner shows no cost numbers: token costs
-            pending — official values not published. What you can plan with today is real: the
+            your height and position — a mechanic described on 2K&apos;s builder pages. The costs
+            shown here are single-source community reference-build values labeled Unverified: a
+            baseline for planning, not your build&apos;s exact price — the in-game Builder is
+            authoritative. Alongside them you get the real data: the
             53-badge roster from 2K&apos;s published list, plus every badge&apos;s{" "}
             <Link href="/badge-requirements" className="text-primary-container hover:underline">
               attribute unlock requirements
@@ -193,7 +197,7 @@ export default function BadgeTokenPlannerPage() {
           <div className="flex flex-wrap items-center gap-2">
             <SourceTag tier="cross" />
             <span className="text-body-sm text-text-muted">
-              Token costs pending — official values not published.
+              Token costs: single-source reference-build values — Unverified.
             </span>
           </div>
         </div>
@@ -239,6 +243,11 @@ export default function BadgeTokenPlannerPage() {
                           </span>
                         ))}
                       </div>
+                      {COSTS.get(badge.slug) ? (
+                        <p className="mt-2 text-body-sm text-text-muted">
+                          Token cost B/S/G/H: {COSTS.get(badge.slug)!.bronze}/{COSTS.get(badge.slug)!.silver}/{COSTS.get(badge.slug)!.gold}/{COSTS.get(badge.slug)!.hof} — reference build, unverified
+                        </p>
+                      ) : null}
                     </li>
                   );
                 })}

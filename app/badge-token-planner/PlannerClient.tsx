@@ -10,7 +10,10 @@ import {
   badgeCatalog,
   badgeLockedAtHeight,
   requirementSummary,
+  tokenCostAtTier,
+  tokenCostMap,
   type BadgeRequirementsBundle,
+  type TokenCostBundle,
 } from "@/lib/data";
 import {
   DISCIPLINE_COUNT,
@@ -39,7 +42,7 @@ function heightLabel(inches: number): string {
   return `${Math.floor(inches / 12)}'${inches % 12}\"`;
 }
 
-export function PlannerClient({ bundle }: { bundle: BadgeRequirementsBundle }) {
+export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBundle; costs: TokenCostBundle }) {
   const router = useRouter();
   const [hydrated, setHydrated] = useState(false);
   const [step, setStep] = useState(1);
@@ -84,7 +87,15 @@ export function PlannerClient({ bundle }: { bundle: BadgeRequirementsBundle }) {
   }, []);
 
   const catalog = useMemo(() => badgeCatalog(bundle), [bundle]);
+  const costBySlug = useMemo(() => tokenCostMap(costs), [costs]);
   const usedSlots = allocations.reduce((sum, [, slots]) => sum + slots, 0);
+  // Reference-build token estimate for the current allocation (single-source,
+  // unverified — displayed with the reference label, never as official).
+  const estimatedTokens = allocations.reduce((sum, [index, slots]) => {
+    const badge = catalog.find((item) => item.index === index);
+    const cost = badge ? costBySlug.get(badge.slug) : undefined;
+    return cost ? sum + tokenCostAtTier(cost, slots) : sum;
+  }, 0);
   const overBudget = usedSlots > MAX_BADGE_SLOTS;
   const complete = position >= 0 && usedSlots === MAX_BADGE_SLOTS && !overBudget;
   const lockedBadges = catalog.filter((badge) => badgeLockedAtHeight(badge, heightIn));
@@ -277,7 +288,11 @@ export function PlannerClient({ bundle }: { bundle: BadgeRequirementsBundle }) {
                 {Array.from({ length: MAX_BADGE_SLOTS }, (_, index) => <span key={index} className={`h-6 min-w-0 flex-1 rounded-sm ${index < Math.min(usedSlots, MAX_BADGE_SLOTS) ? (overBudget ? "bg-error" : "bg-primary-container") : "bg-surface-container-high"}`} />)}
               </div>
               <p role={overBudget ? "alert" : "status"} className={`mt-4 text-body-sm ${overBudget ? "text-error" : complete ? "text-secondary" : "text-on-surface-variant"}`}>{statusLine}</p>
-              <p className="mt-4 flex items-start gap-2 rounded-lg border border-border-low bg-surface-container-low p-3 text-body-sm text-text-muted"><Icon name="info" size={16} className="mt-0.5 shrink-0" />Token costs pending — official values not published.</p>
+              <p className="mt-4 text-body-sm text-on-surface-variant">
+                Estimated token spend: <strong className="text-on-surface">{estimatedTokens}</strong> tokens
+                <span className="text-text-muted"> (reference build)</span>
+              </p>
+              <p className="mt-4 flex items-start gap-2 rounded-lg border border-border-low bg-surface-container-low p-3 text-body-sm text-text-muted"><Icon name="info" size={16} className="mt-0.5 shrink-0" />Token costs shown are single-source community reference-build values — Unverified. Actual costs vary with height, position and build size; confirm in the in-game Builder.</p>
             </div>
           </aside>
           <div className="overflow-hidden rounded-xl border border-border-low bg-surface-card lg:col-span-8">
@@ -288,6 +303,7 @@ export function PlannerClient({ bundle }: { bundle: BadgeRequirementsBundle }) {
                   const assigned = allocations.find(([index]) => index === badge.index)?.[1] ?? 0;
                   const locked = badgeLockedAtHeight(badge, heightIn);
                   const req = requirementSummary(badge);
+                  const cost = costBySlug.get(badge.slug);
                   const tierIndex = Math.min(assigned, 4) - 1;
                   return (
                     <li key={badge.index} className="badge-row" data-locked={locked} data-assigned={assigned > 0}>
@@ -295,6 +311,7 @@ export function PlannerClient({ bundle }: { bundle: BadgeRequirementsBundle }) {
                       <div className="badge-copy">
                         <div><span className="badge-name">{badge.name}</span>{badge.is_new_2k27 ? <span className="badge-new">NEW</span> : null}<span className="badge-category">{badge.category}</span></div>
                         <p className="badge-req">Unlock: {req.attributesText}{req.heightText ? ` · Height ${req.heightText}` : ""}</p>
+                        {cost ? <p className="badge-req">Tokens B/S/G/H: {cost.bronze}/{cost.silver}/{cost.gold}/{cost.hof} <span className="text-text-muted">(reference build, unverified)</span></p> : null}
                         {locked ? <p className="badge-locked">Not unlockable at {heightLabel(heightIn)}.</p> : null}
                       </div>
                       <div className="badge-actions">
