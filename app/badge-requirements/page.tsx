@@ -183,6 +183,25 @@ export default function BadgeRequirementsPage() {
         </p>
       </header>
 
+      {/* Owner-authorized 2K builder screenshot at page head (same pattern as
+          /takeover-requirements; local static asset, no third-party request). */}
+      <figure className="flex max-w-4xl flex-col gap-2">
+        {/* eslint-disable-next-line @next/next/no-img-element -- local static asset */}
+        <img
+          src="/assets/keyart/nba2k27-badge-tokens-1920x1080.jpg"
+          alt="NBA 2K27 Badge Tokens in the MyPLAYER Builder"
+          width={1920}
+          height={1080}
+          loading="lazy"
+          className="h-auto w-full rounded border border-border-low"
+        />
+        <figcaption className="text-body-sm text-text-muted">
+          {
+            "NBA 2K27 Badge Tokens (2K). My2KBuilder is an independent, fan-made planning tool and is not affiliated with 2K."
+          }
+        </figcaption>
+      </figure>
+
       {/* How to read this table (copy §1: logic labels, source labels, Legend
           note, conflict/gap state) + tier color blocks from the design pack. */}
       <section className="flex max-w-3xl flex-col gap-4 rounded border border-border-low bg-surface-card p-6">

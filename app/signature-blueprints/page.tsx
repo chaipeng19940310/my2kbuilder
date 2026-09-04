@@ -83,6 +83,25 @@ export default function SignatureBlueprintsPage() {
         </p>
       </header>
 
+      {/* Owner-authorized 2K screenshot at page head (same pattern as
+          /takeover-requirements; local static asset, no third-party request). */}
+      <figure className="flex max-w-4xl flex-col gap-2">
+        {/* eslint-disable-next-line @next/next/no-img-element -- local static asset */}
+        <img
+          src="/assets/keyart/nba2k27-signature-blueprints-1920x1080.jpg"
+          alt="NBA 2K27 Signature Blueprints in the MyPLAYER Builder"
+          width={1920}
+          height={1080}
+          loading="lazy"
+          className="h-auto w-full rounded border border-border-low"
+        />
+        <figcaption className="text-body-sm text-text-muted">
+          {
+            "NBA 2K27 Signature Blueprints (2K). My2KBuilder is an independent, fan-made planning tool and is not affiliated with 2K."
+          }
+        </figcaption>
+      </figure>
+
       {/* H2 structure (copy §3.3): Browse All 40 Blueprints / Compare Up to 3 Side by Side */}
       <section className="flex flex-col gap-6">
         <div className="flex flex-wrap items-baseline justify-between gap-2">

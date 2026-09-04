@@ -348,7 +348,7 @@ export default function HomePage() {
             {[
               { date: "Aug 21", label: "2K HQ App Live", complete: true },
               { date: "Aug 26", label: "Early Access", complete: true },
-              { date: "Sep 4, 2026", label: "Global Launch", complete: false },
+              { date: "Sep 4, 2026", label: "Global Launch", complete: true },
             ].map((event) => (
               <div key={event.date} className="flex items-center gap-3 rounded-lg border border-border-low bg-page-bg px-3 py-2 text-left">
                 <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${event.complete ? "bg-secondary" : "bg-primary-container shadow-[0_0_10px_rgba(255,176,58,0.65)]"}`} />
@@ -361,8 +361,8 @@ export default function HomePage() {
           </div>
         </div>
         <p className="mt-4 text-center text-body-sm leading-relaxed text-text-muted md:text-left">
-          NBA 2K27 launches {String(mechanicsFact(bundle, "launch_date_global")?.value ?? "2026-09-04")}.
-          Early access opens August 26. The official 2K HQ App — with the full in-game builder — has
+          NBA 2K27 is out now worldwide — global launch {String(mechanicsFact(bundle, "launch_date_global")?.value ?? "2026-09-04")}.
+          Early access opened August 26. The official 2K HQ App — with the full in-game builder — has
           been live since August 21.
         </p>
       </section>

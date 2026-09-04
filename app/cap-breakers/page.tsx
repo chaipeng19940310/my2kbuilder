@@ -132,6 +132,25 @@ export default function CapBreakersPage() {
         </p>
       </header>
 
+      {/* Owner-authorized 2K builder screenshot at page head (same pattern as
+          /takeover-requirements; local static asset, no third-party request). */}
+      <figure className="flex max-w-4xl flex-col gap-2">
+        {/* eslint-disable-next-line @next/next/no-img-element -- local static asset */}
+        <img
+          src="/assets/keyart/nba2k27-builder-menu-1920x1080.jpg"
+          alt="NBA 2K27 MyPLAYER Builder menu"
+          width={1920}
+          height={1080}
+          loading="lazy"
+          className="h-auto w-full rounded border border-border-low"
+        />
+        <figcaption className="text-body-sm text-text-muted">
+          {
+            "NBA 2K27 MyPLAYER Builder (2K). My2KBuilder is an independent, fan-made planning tool and is not affiliated with 2K."
+          }
+        </figcaption>
+      </figure>
+
       {/* H2 #1 (copy §2, verbatim) + mechanics flow strip (visual reuse of the
           R12I-G tier-chip design language; no pure-text sections). */}
       <section id="how-cap-breakers-work" className="flex max-w-3xl flex-col gap-4">

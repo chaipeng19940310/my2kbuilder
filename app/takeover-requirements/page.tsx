@@ -35,7 +35,7 @@ const FAQS = [
   {
     question: "How do Takeovers work in NBA 2K27?",
     answer:
-      "There are 24 Takeover abilities. Five are active from the start; the other 19 unlock when your attributes meet their requirements. More than one Takeover can be active at the same time once unlocked.",
+      "There are 24 Takeover abilities. Five are active from the start; the other 19 are unlockable — 18 of them when your attributes meet their requirements, plus Hydration Hero, which has no attribute gate and can be assigned to any slot. More than one Takeover can be active at the same time once unlocked.",
   },
   {
     question: "What does each requirement row mean?",
@@ -50,7 +50,7 @@ const FAQS = [
   {
     question: "Will these requirements change after launch?",
     answer:
-      "They can. Patches are a normal part of the 2K cycle. Every table on this site carries a last-verified date, and a full re-check is scheduled after launch — treat any threshold as a planning reference and confirm in-game before spending points.",
+      "They can. Patches are a normal part of the 2K cycle. We re-checked this table against 2K's launch-day official pages on September 4, 2026 — the 24-ability roster still matches; thresholds remain single-source and labeled Unverified. Treat any threshold as a planning reference and confirm in-game before spending points.",
   },
 ] as const;
 
@@ -87,7 +87,9 @@ function RequirementCell({ entry }: { entry: TakeoverEntry }) {
   if (entry.unlock.kind === "always_available") {
     return (
       <span className="text-body-sm text-on-surface-variant">
-        Active from the start{entry.kind === "universal" ? " — assignable to any slot" : ""}
+        {entry.kind === "universal"
+          ? "No attribute requirement — assignable to any slot"
+          : "Active from the start"}
       </span>
     );
   }
@@ -277,7 +279,7 @@ export default function TakeoverRequirementsPage() {
         {/* Below-table note (copy §1, verbatim; Last verified follows the table). */}
         <p className="max-w-3xl text-body-sm text-text-muted">
           {
-            "Last verified: 2026-08-28. Thresholds can move with game updates — confirm in-game before you commit attribute points."
+            "Last verified: 2026-09-04. Thresholds can move with game updates — confirm in-game before you commit attribute points."
           }
         </p>
       </section>

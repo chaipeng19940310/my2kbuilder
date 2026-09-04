@@ -101,6 +101,25 @@ export default function BadgeTokenPlannerPage() {
       {/* Tool body first (copy §3.2 design placement) */}
       <PlannerClient bundle={badgeRequirementsBundle as BadgeRequirementsBundle} />
 
+      {/* Owner-authorized 2K screenshot below the tool (tool keeps first
+          placement per copy §3.2; local static asset, no third-party request). */}
+      <figure className="flex max-w-4xl flex-col gap-2">
+        {/* eslint-disable-next-line @next/next/no-img-element -- local static asset */}
+        <img
+          src="/assets/keyart/nba2k27-badge-loadouts-1920x1080.jpg"
+          alt="NBA 2K27 Badge Loadouts in the MyPLAYER Builder"
+          width={1920}
+          height={1080}
+          loading="lazy"
+          className="h-auto w-full rounded border border-border-low"
+        />
+        <figcaption className="text-body-sm text-text-muted">
+          {
+            "NBA 2K27 Badge Loadouts (2K). My2KBuilder is an independent, fan-made planning tool and is not affiliated with 2K."
+          }
+        </figcaption>
+      </figure>
+
       {/* Explanatory sections below the tool (copy §3.2 H2 structure) */}
       <section className="grid grid-cols-1 gap-6 md:grid-cols-3">
         <div className="flex flex-col gap-3 rounded border border-border-low bg-surface-card p-6">

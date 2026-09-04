@@ -337,7 +337,7 @@ export default function BlueprintsByPositionPage() {
         <h2 className="font-display text-headline-sm text-on-surface">About Blueprint Data</h2>
         <p className="text-body-md text-on-surface-variant">
           {
-            "The count — 40 blueprints at launch, with more added each season — comes from 2K-published material. Detailed per-blueprint profiles are still being verified: 39 of the 40 currently come from a single public reference and are labeled Unverified; one profile matches 2K-published material. Unverified fields are shown with their label, never as settled fact, and a full re-check is scheduled after launch. Last verified: 2026-08-28."
+            "The count — 40 blueprints at launch, with more added each season — comes from 2K-published material and was re-confirmed against 2K's live launch-day pages on 2026-09-04. Detailed per-blueprint profiles are still being verified: 39 of the 40 currently come from a single public reference and are labeled Unverified; one profile matches 2K-published material. Unverified fields are shown with their label, never as settled fact. Last verified: 2026-09-04."
           }
         </p>
       </section>
