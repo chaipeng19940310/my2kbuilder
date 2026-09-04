@@ -37,7 +37,7 @@ const GENERATED_AT = "2026-08-28";
 const DISCIPLINES = ["Finishing", "Shooting", "Playmaking", "Defense", "Rebounding", "Physicals"];
 const TIERS = ["bronze", "silver", "gold", "hof"];
 
-const ref = JSON.parse(readFileSync(join(dataDir, "public-reference.v1.json"), "utf8"));
+const ref = JSON.parse(readFileSync(join(here, "..", "reference", "public-reference.v1.json"), "utf8"));
 const byKey = new Map(ref.records.map((r) => [r.key, r]));
 
 function must(key) {
@@ -160,7 +160,7 @@ const badgeBundle = {
     { ...costStatus, key: "badge_token.cost.matrix_status" },
     { ...costMechanism, key: "badge_token.cost.pricing_mechanism_note" },
     ...badgeRecords,
-  ],
+  ].map(scrub),
 };
 
 /* ---------------- blueprints ---------------- */
@@ -228,6 +228,24 @@ const blueprintRecords = blueprints.map((b) => ({
 const countLaunch = must("blueprint.count_launch");
 const positionCoverage = must("blueprint.position_coverage");
 
+// Owner 2026-09-04: public production bundles carry no source naming — no
+// source URLs, no source-map fields, no capture notes (provenance stays in
+// reference/public-reference.v1.json and workspace evidence). source_type is
+// kept: the UI renders source-tier chips from it.
+function scrub(rec) {
+  const { source_url_or_capture_ref: _url, captured_by: _by, notes: _notes, ...rest } = rec;
+  const value = rest.value;
+  if (value && typeof value === "object") {
+    const { sources: _sources, ...vRest } = value;
+    // conflict flags keep the issue text but never a named/linked source
+    if (Array.isArray(vRest.conflicts)) {
+      vRest.conflicts = vRest.conflicts.map((c) => ({ ...c, source: "community reference" }));
+    }
+    return { ...rest, value: vRest };
+  }
+  return rest;
+}
+
 const blueprintBundle = {
   bundle: "blueprints",
   version: "v1",
@@ -250,12 +268,11 @@ const blueprintBundle = {
     { ...countLaunch, key: "meta.count_launch" },
     { ...positionCoverage, key: "meta.position_coverage" },
     ...blueprintRecords,
-  ],
+  ].map(scrub),
 };
 
 writeFileSync(join(dataDir, "badge-requirements.v1.json"), JSON.stringify(badgeBundle, null, 2) + "\n");
 writeFileSync(join(dataDir, "blueprints.v1.json"), JSON.stringify(blueprintBundle, null, 2) + "\n");
-
 console.log(`badge-requirements.v1.json: ${badgeRecords.length} badges + 4 meta records`);
 console.log(`blueprints.v1.json: ${blueprintRecords.length} blueprints + 2 meta records`);
 console.log(

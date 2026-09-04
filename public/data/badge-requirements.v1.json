@@ -20,13 +20,10 @@
       },
       "value_type": "object",
       "source_type": "official_confirmed",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://newsroom.2k.com/news/nbar-2k27-myplayer-builder-introduces-female-myplayers-badge-tokens-and-the-all-new-synergy-system",
       "captured_at": "2026-08-24T17:20:00Z",
-      "captured_by": "pengbdev",
       "verified_by": null,
       "confidence": "high",
-      "conflict_with": [],
-      "notes": "O2 publishes the full 53-badge roster with [NEW] markers; this supersedes C6/C7 reveal-era claim that only 3 new badges were named."
+      "conflict_with": []
     },
     {
       "key": "meta.requirement_crosscheck",
@@ -39,39 +36,30 @@
       },
       "value_type": "object",
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
-      "captured_by": "pengbdev",
       "verified_by": null,
       "confidence": "medium",
-      "conflict_with": [],
-      "notes": "C1 x C4 full-table programmatic diff summary; details in bundle summary conflict table."
+      "conflict_with": []
     },
     {
       "key": "badge_token.cost.matrix_status",
       "value": null,
       "value_type": "object",
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "research/public-data-collection-template-v1.md section 2 asset E",
       "captured_at": "2026-08-24T17:20:00Z",
-      "captured_by": "pengbdev",
       "verified_by": null,
       "confidence": "low",
-      "conflict_with": [],
-      "notes": "GAP STATEMENT: no public source publishes the Badge Token cost matrix (position x height x discipline x badge x tier). C1/C2 are badge unlock requirements, not token costs. All badge_token.cost.* values are null by design; filling them from community rumor tables is forbidden. Matrix must wait for HQ App manual collection (requires Peng Chai approval) before any frozen upgrade."
+      "conflict_with": []
     },
     {
       "key": "badge_token.cost.pricing_mechanism_note",
       "value": "Badges carry token costs that vary with height, position and build size; the Builder recalculates cost live, so a loadout is a budget of tokens rather than a fixed sheet.",
       "value_type": "string",
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://timesaver.gg/blog/nba-2k27-myplayer-builder-badge-tokens ; official mechanism: https://nba.2k.com/2k27/features/myplayer-builder/",
       "captured_at": "2026-08-24T17:20:00Z",
-      "captured_by": "pengbdev",
       "verified_by": null,
       "confidence": "medium",
-      "conflict_with": [],
-      "notes": "C7 (timesaver.gg) editorial restates the official O2 mechanism. COMMERCIAL-SOURCE CAVEAT: timesaver.gg sells boosting/services; used here only as a cross-echo of official text, never as a source of numeric values. Do not link its service pages."
+      "conflict_with": []
     },
     {
       "key": "badge.aerial-wizard",
@@ -146,18 +134,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.float-game",
@@ -232,18 +214,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.ghost-stepper",
@@ -318,18 +294,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.hook-specialist",
@@ -404,18 +374,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.layup-mixmaster",
@@ -482,18 +446,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.paint-prodigy",
@@ -560,18 +518,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.physical-finisher",
@@ -646,18 +598,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.post-powerhouse",
@@ -740,18 +686,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.post-spin-catalyst",
@@ -818,18 +758,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.posterizer",
@@ -904,18 +838,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.rise-up",
@@ -998,18 +926,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.arc-cadence",
@@ -1076,18 +998,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.deadeye",
@@ -1162,18 +1078,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.limitless-range",
@@ -1232,18 +1142,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.mini-marksman",
@@ -1326,18 +1230,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.post-fade-phenom",
@@ -1412,18 +1310,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.quick-trigger",
@@ -1498,18 +1390,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.set-and-fire",
@@ -1568,18 +1454,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.smooth-operator",
@@ -1638,23 +1518,17 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": [
           {
-            "source": "C4:https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
+            "source": "community reference",
             "issue": "height C1=None vs C4={'max': \"6'11\"}"
           }
         ]
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values. Source conflict on record: height C1=None vs C4={'max': \"6'11\"}"
+      "confidence": "medium"
     },
     {
       "key": "badge.static-middy",
@@ -1713,18 +1587,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.ankle-assassin",
@@ -1791,18 +1659,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.bail-out",
@@ -1861,18 +1723,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.break-starter",
@@ -1931,18 +1787,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.dimer",
@@ -2001,18 +1851,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.handles-for-days",
@@ -2079,18 +1923,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.lightning-launch",
@@ -2157,18 +1995,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.pace",
@@ -2235,18 +2067,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.strong-handle",
@@ -2329,18 +2155,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.unpluckable",
@@ -2411,18 +2231,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.versatile-visionary",
@@ -2481,18 +2295,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.ankle-braces",
@@ -2575,18 +2383,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.challenger",
@@ -2653,18 +2455,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.glove",
@@ -2731,18 +2527,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.high-flying-denier",
@@ -2825,18 +2615,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.immovable-enforcer",
@@ -2911,18 +2695,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.interceptor",
@@ -2981,18 +2759,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.off-ball-pest",
@@ -3067,18 +2839,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.paint-patroller",
@@ -3161,18 +2927,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.pick-dodger",
@@ -3255,18 +3015,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.post-lockdown",
@@ -3349,18 +3103,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.seatbelt",
@@ -3443,18 +3191,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.wall-up",
@@ -3537,18 +3279,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.boxout-boss",
@@ -3631,18 +3367,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.breaker",
@@ -3725,18 +3455,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.crasher",
@@ -3811,18 +3535,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.possession-closer",
@@ -3897,18 +3615,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.sync-snatcher",
@@ -3983,18 +3695,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.brick-wall",
@@ -4061,18 +3767,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.bruiser",
@@ -4131,18 +3831,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.flash",
@@ -4217,18 +3911,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.pogo-stick",
@@ -4287,18 +3975,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.slippery-off-ball",
@@ -4381,18 +4063,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     },
     {
       "key": "badge.work-horse",
@@ -4467,18 +4143,12 @@
           "is_new_2k27": "official_confirmed",
           "requirements": "cross_checked"
         },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "requirements": "https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements"
-        },
         "conflicts": []
       },
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/badge-requirements ; https://www.sportsgamersonline.com/games/basketball/nba-2k27-badge-requirements",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "medium",
-      "notes": "Name/category/new-flag from 2K's published MyPLAYER Builder roster (official_confirmed). Four-tier unlock requirements are a community reference cross-checked across NBA2KLab and SportsGamersOnline (212/212 cells matched); not official values."
+      "confidence": "medium"
     }
   ]
 }

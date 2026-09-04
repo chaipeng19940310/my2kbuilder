@@ -27,7 +27,7 @@ const dataDir = join(here, "..", "public", "data");
 const DISCIPLINES = ["Finishing", "Shooting", "Playmaking", "Defense", "Rebounding", "Physicals"];
 const TIERS = ["bronze", "silver", "gold", "hof"];
 
-const ref = JSON.parse(readFileSync(join(dataDir, "public-reference.v1.json"), "utf8"));
+const ref = JSON.parse(readFileSync(join(here, "..", "reference", "public-reference.v1.json"), "utf8"));
 const badges = JSON.parse(readFileSync(join(dataDir, "badge-requirements.v1.json"), "utf8"));
 const blueprints = JSON.parse(readFileSync(join(dataDir, "blueprints.v1.json"), "utf8"));
 

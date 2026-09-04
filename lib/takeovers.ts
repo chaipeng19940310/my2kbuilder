@@ -9,7 +9,7 @@
  * fully server-side — no runtime fetch.
  */
 
-import publicReference from "@/public/data/public-reference.v1.json";
+import publicReference from "@/reference/public-reference.v1.json";
 
 export interface TakeoverUnlockCondition {
   attribute: string;

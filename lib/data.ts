@@ -44,11 +44,12 @@ export interface DataRecord<V = unknown> {
   key: string;
   value: V;
   source_type: SourceType;
-  source_url_or_capture_ref: string;
+  /** Audit fields — optional: public production bundles ship scrubbed (Owner 2026-09-04). */
+  source_url_or_capture_ref?: string;
   captured_at: string;
-  verified_by: string | null;
+  verified_by?: string | null;
   confidence: string;
-  notes: string;
+  notes?: string;
   /* Public-reference schema fields (present on public_reference records). */
   value_type?: string;
   captured_by?: string;
@@ -143,6 +144,39 @@ export interface BadgeRecordValue {
 export type BadgeRequirementsBundle = DataBundle<unknown>;
 
 export type BadgeCatalogEntry = BadgeRecordValue;
+
+/**
+ * Strip audit/provenance fields (source URLs, capture notes, conflicts) from a
+ * bundle before handing it to a client component (Owner 2026-09-04: no source
+ * naming anywhere on the site, page source included). Server-side rendering can
+ * keep using the full bundle.
+ */
+export function stripProvenance<T>(bundle: DataBundle<T>): DataBundle<T> {
+  return {
+    ...bundle,
+    records: bundle.records.map((r) => {
+      const value = r.value;
+      const cleanValue =
+        value && typeof value === "object"
+          ? (Object.fromEntries(
+              Object.entries(value as Record<string, unknown>).filter(
+                ([field]) => field !== "sources" && field !== "conflicts",
+              ),
+            ) as T)
+          : value;
+      return {
+        key: r.key,
+        value: cleanValue,
+        source_type: r.source_type,
+        source_url_or_capture_ref: "",
+        captured_at: r.captured_at,
+        verified_by: null,
+        confidence: r.confidence,
+        notes: "",
+      };
+    }),
+  };
+}
 
 /** value shape of each badge.<slug>.token_cost record in badge-token-costs.v1.json */
 export interface BadgeTokenCostValue {

@@ -4,7 +4,7 @@ import { JsonLdScript } from "@/components/JsonLdScript";
 import { canonicalFor } from "@/lib/canonical";
 import { socialMeta } from "@/lib/social";
 import { breadcrumbSchema, faqPageSchema, itemListSchema } from "@/lib/schema";
-import { blueprintList, type BlueprintsBundle } from "@/lib/data";
+import { blueprintList, stripProvenance, type BlueprintsBundle } from "@/lib/data";
 import blueprintsBundle from "@/public/data/blueprints.v1.json";
 import { BlueprintsClient } from "./BlueprintsClient";
 
@@ -114,7 +114,7 @@ export default function SignatureBlueprintsPage() {
             </Link>
           </span>
         </div>
-        <BlueprintsClient bundle={blueprintsBundle as BlueprintsBundle} />
+        <BlueprintsClient bundle={stripProvenance(blueprintsBundle as BlueprintsBundle)} />
       </section>
 
       {/* About blueprint data (R12I-A: source annotation for the real bundle) */}

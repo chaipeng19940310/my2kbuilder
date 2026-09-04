@@ -14,7 +14,7 @@ import {
   type PublicReferenceBundle,
   type SourceType,
 } from "@/lib/data";
-import publicRef from "@/public/data/public-reference.v1.json";
+import publicRef from "@/reference/public-reference.v1.json";
 
 // SEO freeze (seo §3): title/H1/meta for `/methodology`.
 // R11D P2-2: description names only the tiers of the current public version.

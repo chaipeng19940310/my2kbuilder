@@ -17,13 +17,10 @@
       "value": 40,
       "value_type": "int",
       "source_type": "official_confirmed",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://newsroom.2k.com/news/nbar-2k27-myplayer-builder-introduces-female-myplayers-badge-tokens-and-the-all-new-synergy-system",
       "captured_at": "2026-08-24T17:20:00Z",
-      "captured_by": "pengbdev",
       "verified_by": null,
       "confidence": "high",
-      "conflict_with": [],
-      "notes": "Official count of launch Signature Blueprints; C2 page also lists exactly 40."
+      "conflict_with": []
     },
     {
       "key": "meta.position_coverage",
@@ -36,13 +33,10 @@
       },
       "value_type": "object",
       "source_type": "cross_checked",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints",
       "captured_at": "2026-08-24T17:20:00Z",
-      "captured_by": "pengbdev",
       "verified_by": null,
       "confidence": "low",
-      "conflict_with": [],
-      "notes": "C2 positionCoverage declares 8 per position (PG/SG/SF/PF/C), confirmed flag true. Single source for per-position split; aggregate 40 matches official count."
+      "conflict_with": []
     },
     {
       "key": "blueprint.anomaly",
@@ -270,18 +264,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.backcourt-bully",
@@ -523,18 +511,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.block-party",
@@ -770,18 +752,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.board-hunter",
@@ -1045,18 +1021,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.bounce",
@@ -1296,18 +1266,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.boxed-up",
@@ -1551,18 +1515,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.buckets",
@@ -1814,18 +1772,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.bull",
@@ -2085,18 +2037,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.bulldozer",
@@ -2364,18 +2310,12 @@
           "name": "official_confirmed",
           "comparisons": "official_confirmed",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://nba.2k.com/2k27/features/myplayer-builder/",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "official_confirmed",
-      "source_url_or_capture_ref": "https://nba.2k.com/2k27/features/myplayer-builder/ ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "high",
-      "notes": "Name and three-player comparisons are named on 2K's published builder page; profile fields (position/height/attributes/badge unlocks) are single-source community data, labeled Unverified."
+      "confidence": "high"
     },
     {
       "key": "blueprint.catalyst",
@@ -2635,18 +2575,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.certified-bucket",
@@ -2864,18 +2798,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.clamp-first-guard",
@@ -3099,18 +3027,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.clamps",
@@ -3330,18 +3252,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.combo-guard",
@@ -3575,18 +3491,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.conductor",
@@ -3866,18 +3776,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.defensive-blueprint",
@@ -4125,18 +4029,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.dissector",
@@ -4400,18 +4298,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.dynamic-finisher",
@@ -4667,18 +4559,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.dynamic-five",
@@ -4914,18 +4800,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.eraser",
@@ -5149,18 +5029,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.flight-risk",
@@ -5394,18 +5268,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.glass-dimes",
@@ -5633,18 +5501,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.glass-monster",
@@ -5868,18 +5730,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.launchpad",
@@ -6101,18 +5957,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.offensive-engine",
@@ -6330,18 +6180,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.offensive-maverick",
@@ -6609,18 +6453,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.paint-beast",
@@ -6838,18 +6676,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.post-work",
@@ -7097,18 +6929,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.poster-machine",
@@ -7360,18 +7186,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.prototype",
@@ -7611,18 +7431,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.scoring-machine",
@@ -7874,18 +7688,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.splash",
@@ -8103,18 +7911,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.stretch",
@@ -8354,18 +8156,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.tactician",
@@ -8587,18 +8383,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.three-level-virtuoso",
@@ -8858,18 +8648,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.titan",
@@ -9081,18 +8865,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.triple-double-threat",
@@ -9332,18 +9110,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.turbo",
@@ -9565,18 +9337,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.utility",
@@ -9868,18 +9634,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     },
     {
       "key": "blueprint.versatility",
@@ -10143,18 +9903,12 @@
           "name": "community_unverified",
           "comparisons": "community_unverified",
           "profile": "community_unverified"
-        },
-        "sources": {
-          "name": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
-          "profile": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json"
         }
       },
       "source_type": "community_unverified",
-      "source_url_or_capture_ref": "https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json ; https://www.nba2klab.com/signature-blueprints ; capture: /root/.hermes/workspace/opc/my2kbuilder/research/evidence/r11b/C2-signature-blueprints-raw-2026-08-24.json",
       "captured_at": "2026-08-24T17:20:00Z",
       "verified_by": null,
-      "confidence": "low",
-      "notes": "Name, comparisons and profile fields are single-source community data (NBA2KLab), labeled Unverified; only the 40-count and the three-player blend mechanism are confirmed on 2K's published builder page."
+      "confidence": "low"
     }
   ]
 }

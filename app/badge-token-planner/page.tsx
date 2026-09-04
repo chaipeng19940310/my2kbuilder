@@ -16,6 +16,7 @@ import {
   DISCIPLINES,
   badgeCatalog,
   heightRestrictionLabel,
+  stripProvenance,
   tokenCostMap,
   type BadgeRequirementsBundle,
   type BadgeTier,
@@ -60,6 +61,12 @@ const FAQS = [
 const CATALOG = badgeCatalog(badgeRequirementsBundle as BadgeRequirementsBundle);
 const COSTS = tokenCostMap(tokenCostsBundle as TokenCostBundle);
 
+// Client-bound copy with audit/provenance fields stripped (Owner 2026-09-04:
+// no source naming anywhere on the site, page source included). The server
+// roster above uses the full bundle; the interactive planner only needs
+// key/value/source_type per record.
+const CLIENT_BUNDLE = stripProvenance(badgeRequirementsBundle as BadgeRequirementsBundle);
+
 const TIER_CHIP_CLASS: Record<BadgeTier, string> = {
   bronze: "tier-chip tier-bronze",
   silver: "tier-chip tier-silver",
@@ -102,7 +109,7 @@ export default function BadgeTokenPlannerPage() {
       </header>
 
       {/* Tool body first (copy §3.2 design placement) */}
-      <PlannerClient bundle={badgeRequirementsBundle as BadgeRequirementsBundle} costs={tokenCostsBundle as TokenCostBundle} />
+      <PlannerClient bundle={CLIENT_BUNDLE} costs={tokenCostsBundle as TokenCostBundle} />
 
       {/* Owner-authorized 2K screenshot below the tool (tool keeps first
           placement per copy §3.2; local static asset, no third-party request). */}
