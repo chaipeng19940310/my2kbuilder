@@ -7,8 +7,6 @@ import { VideoFacade } from "@/components/VideoFacade";
 import { canonicalFor } from "@/lib/canonical";
 import { socialMeta } from "@/lib/social";
 import { faqPageSchema, softwareApplicationSchema, websiteSchema } from "@/lib/schema";
-import { mechanicsFact, type MechanicsBundle } from "@/lib/data";
-import mechanics from "@/public/data/mechanics.v0.json";
 import "./r18-home.css";
 
 // SEO freeze (seo §3): title/H1/meta for `/`.
@@ -24,8 +22,6 @@ export const metadata: Metadata = {
       "Plan NBA 2K27 MyPLAYER builds in your browser: allocate Badge Tokens, compare 40 Signature Blueprints and share a build card. Free, unofficial, no sign-up.",
   }),
 };
-
-const bundle = mechanics as MechanicsBundle;
 
 const TOOL_CARDS = [
   {
@@ -336,35 +332,6 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </section>
-
-      <section className="rounded-xl border border-border-low bg-surface-card p-4 md:px-8 md:py-6">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center justify-center gap-3 md:justify-start">
-            <h2 className="font-display text-lg font-bold text-on-surface">Release Timeline</h2>
-            <SourceTag tier="official" />
-          </div>
-          <div className="grid gap-2 sm:grid-cols-3 md:min-w-[600px]">
-            {[
-              { date: "Aug 21", label: "2K HQ App Live", complete: true },
-              { date: "Aug 26", label: "Early Access", complete: true },
-              { date: "Sep 4, 2026", label: "Global Launch", complete: true },
-            ].map((event) => (
-              <div key={event.date} className="flex items-center gap-3 rounded-lg border border-border-low bg-page-bg px-3 py-2 text-left">
-                <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${event.complete ? "bg-secondary" : "bg-primary-container shadow-[0_0_10px_rgba(255,176,58,0.65)]"}`} />
-                <div className="min-w-0">
-                  <div className={`text-[11px] font-bold uppercase tracking-wider ${event.complete ? "text-text-muted" : "text-primary-container"}`}>{event.date}</div>
-                  <div className="truncate text-sm font-semibold text-on-surface">{event.label}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <p className="mt-4 text-center text-body-sm leading-relaxed text-text-muted md:text-left">
-          NBA 2K27 is out now worldwide — global launch {String(mechanicsFact(bundle, "launch_date_global")?.value ?? "2026-09-04")}.
-          Early access opened August 26. The official 2K HQ App — with the full in-game builder — has
-          been live since August 21.
-        </p>
       </section>
 
       <section className="mx-auto flex w-full max-w-3xl flex-col gap-8">
