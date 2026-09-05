@@ -1,0 +1,217 @@
+R24.3 verification log
+
+=== data:verify ===
+
+> my2kbuilder@0.1.0 data:verify
+> node scripts/verify-tool-data.mjs
+
+badge requirement cells: 212/212 matched (expect 212/212)
+blueprints: 40 records, names+comparisons+profiles verified against reference layer
+
+All checks passed.
+
+=== typecheck ===
+
+> my2kbuilder@0.1.0 typecheck
+> tsc --noEmit
+
+
+=== lint ===
+
+> my2kbuilder@0.1.0 lint
+> eslint .
+
+
+/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/app/badge-token-planner/PlannerClient.tsx
+  315:52  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/app/build-card/BuildCardClient.tsx
+  156:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/app/layout.tsx
+  90:9  warning  Prefer `next/script` component when using the inline script for Google Analytics. See: https://nextjs.org/docs/messages/next-script-for-ga  @next/next/next-script-for-ga
+
+/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/components/SiteNav.tsx
+  40:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/scripts/generate-tool-data.mjs
+  236:38  warning  '_url' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  236:57  warning  '_by' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  236:69  warning  '_notes' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  239:22  warning  '_sources' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 8 problems (0 errors, 8 warnings)
+
+
+=== next build ===
+
+> my2kbuilder@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.23
+   - Environments: .env.production
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 2.3s
+   Linting and checking validity of types ...
+
+./app/badge-token-planner/PlannerClient.tsx
+315:52  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/build-card/BuildCardClient.tsx
+156:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/layout.tsx
+90:9  Warning: Prefer `next/script` component when using the inline script for Google Analytics. See: https://nextjs.org/docs/messages/next-script-for-ga  @next/next/next-script-for-ga
+
+./components/SiteNav.tsx
+40:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/23) ...
+   Generating static pages (5/23)
+   Generating static pages (11/23)
+   Generating static pages (17/23)
+ ✓ Generating static pages (23/23)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    1.04 kB         107 kB
+├ ○ /_not-found                            133 B         103 kB
+├ ○ /2k26-to-2k27-build-pitfalls         1.04 kB         107 kB
+├ ○ /apple-icon.png                          0 B            0 B
+├ ƒ /b/[id]                              3.19 kB         114 kB
+├ ○ /badge-requirements                  1.04 kB         107 kB
+├ ○ /badge-token-planner                 6.46 kB         118 kB
+├ ○ /build-card                          3.68 kB         115 kB
+├ ○ /cap-breakers                         3.6 kB         110 kB
+├ ○ /disclaimer                            174 B         106 kB
+├ ○ /icon.ico                                0 B            0 B
+├ ○ /launch-day-build-guide                174 B         106 kB
+├ ○ /methodology                           174 B         106 kB
+├ ○ /og-image                              133 B         103 kB
+├ ○ /privacy                               174 B         106 kB
+├ ○ /robots.txt                            133 B         103 kB
+├ ○ /signature-blueprints                3.81 kB         115 kB
+├ ○ /signature-blueprints/by-position    1.04 kB         107 kB
+├ ○ /signature-blueprints/compare        2.44 kB         114 kB
+├ ○ /sitemap.xml                           133 B         103 kB
+├ ○ /takeover-requirements               1.04 kB         107 kB
+└ ○ /terms                                 174 B         106 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/255-87552e6e05b8e3aa.js       46.4 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          1.94 kB
+
+
+ƒ Middleware                             34.3 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+=== OpenNext Cloudflare build ===
+
+> my2kbuilder@0.1.0 opennext:build
+> opennextjs-cloudflare build
+
+
+┌─────────────────────────────┐
+│ OpenNext — Cloudflare build │
+└─────────────────────────────┘
+
+App directory: /root/.hermes/workspace/opc/my2kbuilder/frontend/site-src
+Next.js version : 15.5.23
+@opennextjs/cloudflare version: 1.20.2
+@opennextjs/aws version: 4.1.0
+workerd compatibility_date: 2026-08-01
+
+┌─────────────────────────────────┐
+│ OpenNext — Building Next.js app │
+└─────────────────────────────────┘
+
+
+> my2kbuilder@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.23
+   - Environments: .env.production
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 2.2s
+   Linting and checking validity of types ...
+
+./app/badge-token-planner/PlannerClient.tsx
+315:52  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/build-card/BuildCardClient.tsx
+156:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/layout.tsx
+90:9  Warning: Prefer `next/script` component when using the inline script for Google Analytics. See: https://nextjs.org/docs/messages/next-script-for-ga  @next/next/next-script-for-ga
+
+./components/SiteNav.tsx
+40:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/23) ...
+   Generating static pages (5/23)
+   Generating static pages (11/23)
+   Generating static pages (17/23)
+ ✓ Generating static pages (23/23)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    1.04 kB         107 kB
+├ ○ /_not-found                            133 B         103 kB
+├ ○ /2k26-to-2k27-build-pitfalls         1.04 kB         107 kB
+├ ○ /apple-icon.png                          0 B            0 B
+├ ƒ /b/[id]                              3.19 kB         114 kB
+├ ○ /badge-requirements                  1.04 kB         107 kB
+├ ○ /badge-token-planner                 6.46 kB         118 kB
+├ ○ /build-card                          3.68 kB         115 kB
+├ ○ /cap-breakers                         3.6 kB         110 kB
+├ ○ /disclaimer                            174 B         106 kB
+├ ○ /icon.ico                                0 B            0 B
+├ ○ /launch-day-build-guide                174 B         106 kB
+├ ○ /methodology                           174 B         106 kB
+├ ○ /og-image                              133 B         103 kB
+├ ○ /privacy                               174 B         106 kB
+├ ○ /robots.txt                            133 B         103 kB
+├ ○ /signature-blueprints                3.81 kB         115 kB
+├ ○ /signature-blueprints/by-position    1.04 kB         107 kB
+├ ○ /signature-blueprints/compare        2.44 kB         114 kB
+├ ○ /sitemap.xml                           133 B         103 kB
+├ ○ /takeover-requirements               1.04 kB         107 kB
+└ ○ /terms                                 174 B         106 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/255-87552e6e05b8e3aa.js       46.4 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          1.94 kB
+
+
+ƒ Middleware                             34.3 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+┌──────────────────────────────┐
+│ OpenNext — Generating bundle │
+└──────────────────────────────┘
+
+Bundling middleware function...
+Bundling static assets...
+Bundling cache assets...
+Building server function: default...
+Applying code patches: 2.774s
+# copyPackageTemplateFiles
+[35m⚙️ Bundling the OpenNext server...
+[0m
+[35mWorker saved in `.open-next/worker.js` 🚀
+[0m
+OpenNext build complete.

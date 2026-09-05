@@ -27,7 +27,7 @@ import {
 } from "@/lib/share-codec";
 
 const DEFAULT_HEIGHT = 74;
-const STEP_LABELS = ["Choose a position", "Height", "Priorities", "Badge Loadout", "Summary"] as const;
+const STEP_LABELS = ["Choose a position", "Priorities", "Badge Loadout", "Summary"] as const;
 const POSITION_DETAILS = [
   { name: "Point Guard", note: "Ball handler, playmaking first" },
   { name: "Shooting Guard", note: "Primary scorer, perimeter threat" },
@@ -73,14 +73,14 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
         );
         setAllocations(res.state.badges);
         setBlueprintRef(res.state.blueprintRef ?? -1);
-        setStep(4);
+        setStep(3);
       }
     } else if (bp !== null) {
       const idx = Number.parseInt(bp, 10);
       if (Number.isInteger(idx) && idx >= 0 && idx <= 39) {
         setBlueprintRef(idx);
         setBlueprintNote("Starting from a Signature Blueprint template.");
-        setStep(4);
+        setStep(3);
       }
     }
     window.history.replaceState(null, "", window.location.pathname);
@@ -170,7 +170,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
       : complete
         ? "Plan complete. Generate a share link, or keep editing."
         : `${usedSlots} / ${MAX_BADGE_SLOTS} slots used`;
-  const nextDisabled = !hydrated || (step === 1 && position < 0) || (step === 4 && !complete);
+  const nextDisabled = !hydrated || (step === 1 && position < 0) || (step === 3 && !complete);
 
   return (
     <div
@@ -188,7 +188,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
 
       <div className="border-y border-border-low py-4">
         <div className="mb-2 flex items-center justify-between text-label-md">
-          <span className="font-bold uppercase tracking-wider text-on-surface-variant">Step {step} of 5</span>
+          <span className="font-bold uppercase tracking-wider text-on-surface-variant">Step {step} of 4</span>
           <span className="font-bold text-primary-container">{STEP_LABELS[step - 1]}</span>
         </div>
         <div className="flex gap-2" aria-hidden="true">
@@ -217,12 +217,17 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
                 disabled={!hydrated}
                 aria-pressed={selected}
                 onClick={() => setPosition(index)}
-                className={`relative min-h-60 rounded-xl bg-surface-card p-6 text-center transition-all disabled:cursor-wait ${selected ? "border-2 border-primary-container shadow-[0_0_15px_rgba(255,176,58,0.15)]" : "border border-border-low hover:border-on-surface-variant hover:bg-surface-container-low"}`}
+                className={`relative flex min-h-60 flex-col items-center justify-center rounded-xl bg-surface-card p-5 text-center transition-all disabled:cursor-wait ${selected ? "border-2 border-primary-container shadow-[0_0_15px_rgba(255,176,58,0.15)]" : "border border-border-low hover:border-on-surface-variant hover:bg-surface-container-low"}`}
               >
                 {selected ? <span className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary-container text-on-primary"><Icon name="check" size={16} fill /></span> : null}
-                <span className={`mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-border-low bg-surface-container-low ${selected ? "text-primary-container" : "text-on-surface-variant"}`}>
-                  <DisciplineIcon discipline={DISCIPLINES[index]} size={36} />
-                </span>
+                {/* eslint-disable-next-line @next/next/no-img-element -- local position artwork */}
+                <img
+                  src={`/assets/r12i/positions/pos-${abbr.toLowerCase()}.svg`}
+                  alt=""
+                  width={112}
+                  height={112}
+                  className="mb-4 h-28 w-28 shrink-0"
+                />
                 <span className={`block font-display text-headline-md font-black ${selected ? "text-on-surface" : "text-on-surface-variant"}`}>{abbr}</span>
                 <span className={`mt-1 block text-label-md font-bold uppercase tracking-widest ${selected ? "text-primary-container" : "text-on-surface-variant"}`}>{details.name}</span>
                 <span className="mt-2 block text-body-sm text-text-muted">{details.note}</span>
@@ -230,35 +235,35 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
             );
           })}
         </div>
-      </section>
-
-      <section className="wizard-step py-8 md:py-14" data-wizard-step="2" aria-labelledby="wizard-height-title">
-        <div className="mx-auto max-w-4xl">
-          <div className="mb-10 text-center">
+        <div className="mx-auto mt-8 max-w-4xl">
+          <div className="mb-6 text-center">
             <h2 id="wizard-height-title" className="font-display text-display-lg font-bold text-on-surface">Height</h2>
             <p className="mt-3 text-body-lg text-on-surface-variant">Some badges carry height limits — a badge row tells you when your current height locks it.</p>
           </div>
-          <div className="rounded-xl border border-border-low bg-surface-card p-6 md:p-10">
-            <div className="mb-8 flex items-center justify-center gap-6">
+          <div className="rounded-xl border border-border-low bg-surface-card p-6 md:p-8">
+            <div className="mb-6 flex items-center justify-center gap-4 md:gap-6">
               <button type="button" aria-label="Decrease height" disabled={!hydrated || heightIn <= HEIGHT_IN_MIN} onClick={() => setHeightIn((height) => Math.max(HEIGHT_IN_MIN, height - 1))} className="flex h-12 w-12 items-center justify-center rounded-full border border-border-low bg-surface-container-high text-on-surface-variant hover:text-on-surface disabled:opacity-40"><Icon name="remove" size={22} /></button>
               <output className="min-w-40 text-center font-display text-display-lg font-black text-primary-container">{heightLabel(heightIn)}</output>
               <button type="button" aria-label="Increase height" disabled={!hydrated || heightIn >= HEIGHT_IN_MAX} onClick={() => setHeightIn((height) => Math.min(HEIGHT_IN_MAX, height + 1))} className="flex h-12 w-12 items-center justify-center rounded-full border border-border-low bg-surface-container-high text-on-surface-variant hover:text-on-surface disabled:opacity-40"><Icon name="add" size={22} /></button>
             </div>
             <input aria-label="Height in inches" type="range" min={HEIGHT_IN_MIN} max={HEIGHT_IN_MAX} value={heightIn} disabled={!hydrated} onChange={(event) => setHeightIn(Number(event.target.value))} className="h-2 w-full cursor-pointer accent-primary-container disabled:cursor-wait" />
             <div className="mt-2 flex justify-between text-body-sm text-text-muted"><span>{heightLabel(HEIGHT_IN_MIN)}</span><span>{heightLabel(HEIGHT_IN_MAX)}</span></div>
-          </div>
-          <div className="mt-6 rounded-xl border border-border-low bg-surface-card p-6">
-            <h3 className="font-display text-headline-sm font-bold text-on-surface">Locked at {heightLabel(heightIn)}</h3>
+            <div className="mt-3 flex items-start gap-2 text-body-sm text-text-muted" aria-live="polite">
+              <Icon name={lockedBadges.length > 0 ? "warning" : "info"} size={16} className={`mt-0.5 shrink-0 ${lockedBadges.length > 0 ? "text-error" : ""}`} />
+              <div>
+                <h3 className="font-bold text-on-surface-variant">Locked at {heightLabel(heightIn)}</h3>
             {lockedBadges.length > 0 ? (
-              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                {lockedBadges.map((badge) => <li key={badge.index} className="flex items-center gap-2 rounded-lg bg-surface-container-low px-3 py-2 text-body-sm text-on-surface-variant"><Icon name="warning" size={16} className="text-error" /><span>{badge.name}</span><span className="ml-auto text-error">Locked at {heightLabel(heightIn)}</span></li>)}
+              <ul className="mt-1 flex flex-wrap gap-x-2 gap-y-1">
+                {lockedBadges.map((badge) => <li key={badge.index} className="text-error">{badge.name}</li>)}
               </ul>
-            ) : <p className="mt-3 text-body-sm text-text-muted">No badges are locked at this height.</p>}
+            ) : <p className="mt-1">No badges are locked at this height.</p>}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="wizard-step py-8 md:py-14" data-wizard-step="3" aria-labelledby="wizard-priority-title">
+      <section className="wizard-step py-8 md:py-14" data-wizard-step="2" aria-labelledby="wizard-priority-title">
         <div className="mb-10 text-center">
           <h2 id="wizard-priority-title" className="font-display text-display-lg font-bold text-on-surface">Priorities</h2>
           <p className="mt-3 text-body-lg text-on-surface-variant">Tier allocation — select disciplines in priority order</p>
@@ -277,7 +282,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
         </div>
       </section>
 
-      <section className="wizard-step py-6" data-wizard-step="4" aria-labelledby="wizard-loadout-title">
+      <section className="wizard-step py-6" data-wizard-step="3" aria-labelledby="wizard-loadout-title">
         <h2 id="wizard-loadout-title" className="mb-8 font-display text-display-lg font-bold text-on-surface">Badge Loadout</h2>
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
           <aside className="lg:col-span-4">
@@ -327,7 +332,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
         </div>
       </section>
 
-      <section className="wizard-step py-8 md:py-14" data-wizard-step="5" aria-labelledby="wizard-summary-title">
+      <section className="wizard-step py-8 md:py-14" data-wizard-step="4" aria-labelledby="wizard-summary-title">
         <div className="mx-auto max-w-4xl">
           <div className="mb-8 text-center"><h2 id="wizard-summary-title" className="font-display text-display-lg font-bold text-on-surface">Summary</h2><p className="mt-3 text-body-lg text-on-surface-variant">A finished plan turns into a single link.</p></div>
           <div className="rounded-xl border border-border-low bg-surface-card p-6 md:p-8">
@@ -336,7 +341,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
             <div className="flex flex-wrap gap-2">{allocations.length > 0 ? allocations.map(([index, slots]) => { const badge = catalog.find((item) => item.index === index); const tierIndex = Math.min(slots, 4) - 1; return badge ? <span key={index} className={`tier-chip ${TIER_CLASSES[tierIndex]}`}>{badge.name} · {TIER_NAMES[tierIndex]}</span> : null; }) : <span className="text-body-md text-text-muted">Complete all 20 slots to generate a link</span>}</div>
             <button type="button" disabled={!hydrated || !complete} onClick={generateShareLink} className="mt-8 flex w-full items-center justify-center gap-2 rounded-lg bg-primary-container px-6 py-4 text-label-md font-bold text-on-primary hover:bg-surface-tint disabled:cursor-not-allowed disabled:bg-surface-container-high disabled:text-text-muted"><Icon name="share" size={18} />Generate Share Link</button>
             {!complete ? <p className="mt-3 text-center text-body-sm text-text-muted">Complete all 20 slots to generate a link</p> : null}
-            <button type="button" disabled={!overBudget} onClick={() => setStep(4)} className={`mx-auto mt-3 text-label-md text-primary-container hover:underline ${overBudget ? "block" : "invisible block"}`}>Adjust Allocation</button>
+            <button type="button" disabled={!overBudget} onClick={() => setStep(3)} className={`mx-auto mt-3 text-label-md text-primary-container hover:underline ${overBudget ? "block" : "invisible block"}`}>Adjust Allocation</button>
           </div>
         </div>
       </section>
@@ -345,7 +350,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
         <button type="button" disabled={!hydrated} onClick={startOver} className="flex items-center gap-2 text-label-md font-bold uppercase text-on-surface-variant hover:text-on-surface disabled:opacity-50"><Icon name="restart_alt" size={18} /><span className="hidden sm:inline">Start over</span></button>
         <div className="flex items-center gap-3">
           <button type="button" disabled={!hydrated || step === 1} onClick={() => setStep((current) => Math.max(1, current - 1))} className="flex items-center gap-2 rounded-lg px-4 py-2 text-label-md font-bold uppercase text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface disabled:cursor-not-allowed disabled:opacity-35"><Icon name="arrow_back" size={18} /><span className="hidden sm:inline">Back</span></button>
-          {step < 5 ? <button type="button" disabled={nextDisabled} onClick={() => setStep((current) => Math.min(5, current + 1))} className="flex items-center gap-2 rounded-lg bg-primary-container px-6 py-3 text-label-md font-bold uppercase text-on-primary hover:bg-surface-tint disabled:cursor-not-allowed disabled:bg-surface-container-high disabled:text-text-muted"><span>Next</span><Icon name="arrow_forward" size={18} /></button> : null}
+          {step < 4 ? <button type="button" disabled={nextDisabled} onClick={() => setStep((current) => Math.min(4, current + 1))} className="flex items-center gap-2 rounded-lg bg-primary-container px-6 py-3 text-label-md font-bold uppercase text-on-primary hover:bg-surface-tint disabled:cursor-not-allowed disabled:bg-surface-container-high disabled:text-text-muted"><span>Next</span><Icon name="arrow_forward" size={18} /></button> : null}
         </div>
       </nav>
     </div>

@@ -113,7 +113,7 @@ export default function BadgeTokenPlannerPage() {
 
       {/* Owner-authorized 2K screenshot below the tool (tool keeps first
           placement per copy §3.2; local static asset, no third-party request). */}
-      <figure className="flex max-w-4xl flex-col gap-2">
+      <figure className="mx-auto flex w-full max-w-4xl flex-col gap-2">
         {/* eslint-disable-next-line @next/next/no-img-element -- local static asset */}
         <img
           src="/assets/keyart/nba2k27-badge-loadouts-1920x1080.jpg"
@@ -123,7 +123,7 @@ export default function BadgeTokenPlannerPage() {
           loading="lazy"
           className="h-auto w-full rounded border border-border-low"
         />
-        <figcaption className="text-body-sm text-text-muted">
+        <figcaption className="text-center text-body-sm text-text-muted">
           {
             "NBA 2K27 Badge Loadouts (2K). My2KBuilder is an independent, fan-made planning tool and is not affiliated with 2K."
           }

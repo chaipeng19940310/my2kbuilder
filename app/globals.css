@@ -202,8 +202,7 @@ body {
 .planner-wizard[data-step="1"] .wizard-step[data-wizard-step="1"],
 .planner-wizard[data-step="2"] .wizard-step[data-wizard-step="2"],
 .planner-wizard[data-step="3"] .wizard-step[data-wizard-step="3"],
-.planner-wizard[data-step="4"] .wizard-step[data-wizard-step="4"],
-.planner-wizard[data-step="5"] .wizard-step[data-wizard-step="5"] { display: block; }
+.planner-wizard[data-step="4"] .wizard-step[data-wizard-step="4"] { display: block; }
 .badge-list { max-height: 800px; overflow: auto; padding: 8px; }
 .badge-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; padding: 12px; border: 1px solid #1e293b; border-radius: 8px; background: #0e1628; }
 .badge-row[data-assigned="true"] { border-color: rgba(255,176,58,.3); background: #0d1c2d; }

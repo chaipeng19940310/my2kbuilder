@@ -161,73 +161,68 @@ export function BlueprintsClient({ bundle }: { bundle: BlueprintsBundle }) {
               <li
                 key={bp.index}
                 id={`bp-${bp.slug}`}
-                className={`flex flex-col gap-4 overflow-hidden rounded border transition-colors ${
+                className={`flex flex-col overflow-hidden rounded-xl border transition-colors ${
                   isSelected
-                    ? "border-secondary bg-surface-container-low"
+                    ? "border-2 border-secondary bg-surface-container-low shadow-[0_0_15px_rgba(157,223,46,0.15)]"
                     : "border-border-low bg-surface-card hover:border-primary-container"
                 }`}
               >
-                {/* R12I card visual (design pack t_65009bdd): original abstract
-                    court/position/playstyle art, local static asset. */}
-                {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG asset */}
-                <img
-                  src={`/assets/r12i/blueprints/blueprint-${bp.slug}.svg`}
-                  alt={`${bp.name} blueprint visual`}
-                  width={640}
-                  height={400}
-                  loading="lazy"
-                  className="aspect-[8/5] w-full border-b border-border-low object-cover"
-                />
-                <div className="flex items-start justify-between gap-2 px-6 pt-2">
-                  <div className="min-w-0">
-                    <h3 className="font-display text-headline-sm text-on-surface">{bp.name}</h3>
-                    <p className="mt-1 text-body-sm text-text-muted">
-                      {p?.position ?? "—"}
-                      {p?.height ? ` · ${p.height}` : ""}
-                      {p?.weight_lb ? ` · ${p.weight_lb} lbs` : ""}
-                    </p>
+                <div className="flex flex-grow flex-col p-5">
+                  <div className="mb-3 flex items-start justify-between gap-2">
+                    <div className="flex min-w-0 flex-wrap items-center gap-3">
+                      <span className="rounded bg-primary-container/10 px-2.5 py-1 font-display text-code-sm font-bold uppercase text-primary-container">
+                        {p?.position ?? "—"}
+                      </span>
+                      <span className="text-body-sm text-on-surface-variant">
+                        {p?.height ?? "—"}
+                        {p?.weight_lb ? ` · ${p.weight_lb} lbs` : ""}
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => toggleSelect(bp.index)}
+                      aria-pressed={isSelected}
+                      aria-label={`Select ${bp.name} for comparison`}
+                      disabled={!isSelected && selected.length >= 3}
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded border transition-colors ${
+                        isSelected
+                          ? "border-secondary bg-secondary text-on-secondary"
+                          : "border-border-low bg-surface-container-high text-on-surface-variant hover:border-secondary hover:text-secondary disabled:opacity-40"
+                      }`}
+                    >
+                      <Icon name={isSelected ? "check" : "add"} size={18} />
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => toggleSelect(bp.index)}
-                    aria-pressed={isSelected}
-                    aria-label={`Select ${bp.name} for comparison`}
-                    disabled={!isSelected && selected.length >= 3}
-                    className={`shrink-0 rounded border p-2 transition-colors ${
-                      isSelected
-                        ? "border-secondary bg-secondary text-on-secondary"
-                        : "border-border-low bg-surface-container-high text-on-surface-variant hover:border-secondary hover:text-secondary disabled:opacity-40"
-                    }`}
-                  >
-                    <Icon name={isSelected ? "check" : "add"} size={18} />
-                  </button>
-                </div>
-
-                <div className="flex flex-col gap-1.5 px-6">
+                  <h3 className="font-display text-headline-md font-bold text-on-surface">{bp.name}</h3>
                   <p className="text-body-sm text-on-surface-variant">
                     Blends: {bp.comparisons.join(" · ")}
                   </p>
                   {nameIsConfirmed ? <SourceTag tier="official" /> : null}
-                </div>
 
-                <div className="flex flex-wrap gap-1.5 px-6">
+                <div className="my-4 flex flex-wrap gap-1.5">
                   {p?.best_skill ? (
-                    <span className="rounded bg-surface-container-high px-1.5 py-0.5 text-code-sm capitalize text-on-surface-variant">
+                    <span className="rounded border border-border-low bg-surface-container-high px-2 py-0.5 text-code-sm capitalize text-on-surface-variant">
                       {p.best_skill}
                     </span>
                   ) : null}
                 </div>
 
-                <ul className="flex flex-col gap-1 px-6">
+                <ul className="mt-auto flex flex-col gap-3">
                   {topAttributes(bp, 3).map((a) => (
-                    <li key={a.label} className="flex items-center justify-between text-body-sm">
-                      <span className="text-on-surface-variant">{a.label}</span>
-                      <span className="text-primary-container">{a.value}</span>
+                    <li key={a.label} className="text-body-sm">
+                      <div className="mb-1 flex items-center justify-between">
+                        <span className="text-text-muted">{a.label}</span>
+                        <span className="font-bold text-primary-container">{a.value}</span>
+                      </div>
+                      <span className="block h-1.5 overflow-hidden rounded-full border border-border-low bg-surface-container-high">
+                        <span className="block h-full rounded-full bg-primary-container" style={{ width: `${a.value}%` }} />
+                      </span>
                     </li>
                   ))}
                 </ul>
+                </div>
 
-                <div className="mt-auto flex flex-col gap-3 border-t border-border-low px-6 pb-6 pt-3">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border-low bg-surface-container-high px-5 py-4">
                   <div className="flex flex-wrap items-center gap-2">
                     {/* Profile fields are single-source community data on every
                         card; for Bulldozer the name/blend carry the confirmed
@@ -239,7 +234,7 @@ export function BlueprintsClient({ bundle }: { bundle: BlueprintsBundle }) {
                   </div>
                   <Link
                     href={`/badge-token-planner#bp=${bp.index}`}
-                    className="flex items-center gap-1 text-label-md text-primary-container hover:underline"
+                    className="flex items-center gap-1 text-code-sm font-bold uppercase text-primary-container hover:text-secondary"
                   >
                     Open in Planner <Icon name="arrow_forward" size={16} />
                   </Link>
