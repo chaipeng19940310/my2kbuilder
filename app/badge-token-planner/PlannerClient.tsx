@@ -206,7 +206,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
           <h2 id="wizard-position-title" className="font-display text-display-lg font-bold text-on-surface">Choose a position</h2>
           <p className="mt-3 text-body-lg text-on-surface-variant">Pick a position and height to plan your badge loadout.</p>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-5 md:gap-3 md:overflow-visible md:px-0 md:pb-0">
           {POSITIONS.map((abbr, index) => {
             const selected = position === index;
             const details = POSITION_DETAILS[index];
@@ -217,20 +217,22 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
                 disabled={!hydrated}
                 aria-pressed={selected}
                 onClick={() => setPosition(index)}
-                className={`relative flex min-h-60 flex-col items-center justify-center rounded-xl bg-surface-card p-5 text-center transition-all disabled:cursor-wait ${selected ? "border-2 border-primary-container shadow-[0_0_15px_rgba(255,176,58,0.15)]" : "border border-border-low hover:border-on-surface-variant hover:bg-surface-container-low"}`}
+                className={`relative flex h-[140px] w-[calc((100vw-68px)/3)] min-w-[104px] max-w-[120px] shrink-0 snap-start flex-col items-center justify-center gap-2 rounded-xl bg-surface-card px-3 text-center transition-all active:scale-[0.98] disabled:cursor-wait md:h-[104px] md:w-auto md:min-w-0 md:max-w-none md:flex-row md:justify-start md:gap-2 md:p-3 md:text-left ${selected ? "border-2 border-primary-container bg-surface-container-low shadow-[0_0_15px_rgba(255,176,58,0.15)]" : "border border-border-low hover:border-on-surface-variant hover:bg-surface-container-low"}`}
               >
-                {selected ? <span className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary-container text-on-primary"><Icon name="check" size={16} fill /></span> : null}
+                {selected ? <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary-container text-on-primary"><Icon name="check" size={14} fill /></span> : null}
                 {/* eslint-disable-next-line @next/next/no-img-element -- local position artwork */}
                 <img
                   src={`/assets/r12i/positions/pos-${abbr.toLowerCase()}.svg`}
                   alt=""
-                  width={112}
-                  height={112}
-                  className="mb-4 h-28 w-28 shrink-0"
+                  width={64}
+                  height={64}
+                  className="h-16 w-16 shrink-0"
                 />
-                <span className={`block font-display text-headline-md font-black ${selected ? "text-on-surface" : "text-on-surface-variant"}`}>{abbr}</span>
-                <span className={`mt-1 block text-label-md font-bold uppercase tracking-widest ${selected ? "text-primary-container" : "text-on-surface-variant"}`}>{details.name}</span>
-                <span className="mt-2 block text-body-sm text-text-muted">{details.note}</span>
+                <span className="min-w-0">
+                  <span className={`block font-display text-headline-sm font-black leading-none ${selected ? "text-on-surface" : "text-on-surface-variant"}`}>{abbr}</span>
+                  <span className={`mt-1 block text-[10px] font-bold uppercase leading-tight tracking-wider md:pr-4 ${selected ? "text-primary-container" : "text-on-surface-variant"}`}>{details.name}</span>
+                  <span className="sr-only md:mt-1 md:block md:truncate md:text-[10px] md:leading-tight md:text-text-muted">{details.note}</span>
+                </span>
               </button>
             );
           })}
