@@ -1,31 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="My2KBuilder artwork">
-  <defs>
-    <linearGradient id="bgGlow" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#FFB03A" stop-opacity="0.26"/>
-      <stop offset="0.48" stop-color="#070D1A" stop-opacity="0"/>
-      <stop offset="1" stop-color="#34D0F7" stop-opacity="0.16"/>
-    </linearGradient>
-  </defs>
-  <rect width="96" height="96" rx="18" fill="#0E1628" stroke="#1E293B"/>
-  <rect width="96" height="96" rx="18" fill="url(#bgGlow)"/>
-  <rect x="8" y="8" width="80" height="80" rx="14" fill="none" stroke="#FFB03A" stroke-opacity="0.16"/>
-  <g fill="none" stroke="#D4E4FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-    <!-- ground -->
-    <path d="M18 72h60" opacity="0.45"/>
-    <!-- rim protector: both arms straight up contesting -->
-    <circle cx="44" cy="24" r="6"/>
-    <path d="M44 30v20"/>
-    <path d="M44 34l-9-20"/>
-    <path d="M44 34l11-19"/>
-    <path d="M44 50l-8 12-3 10"/>
-    <path d="M44 50l9 11 4 11"/>
-    <!-- contested ball above -->
-    <circle cx="63" cy="11" r="4.5" stroke="#FFB03A"/>
-    <!-- rim + net at right -->
-    <path d="M72 30h14" stroke="#FFB03A"/>
-    <path d="M74 30l2 9M84 30l-2 9M76 39h8" opacity="0.7"/>
-    <!-- contest emphasis arc -->
-    <path d="M55 12c4-3 9-4 14-3" stroke="#A3E635" stroke-dasharray="3 4" opacity="0.9"/>
-  </g>
-  <text x="48" y="86" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="8" letter-spacing="1.2" fill="#94A3B8">CENTER</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="CENTER icon, jersey crest badge style">
+<path d="M20 12 H76 V44 C76 62 64 74 48 84 C32 74 20 62 20 44 Z" fill="#0E1628" stroke="#FB7185" stroke-width="4" stroke-linejoin="round"/><path d="M26 18 H70 V43 C70 58 61 68 48 77 C35 68 26 58 26 43 Z" fill="none" stroke="#FB7185" stroke-width="1.5" opacity="0.4"/><text x="48" y="54" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" font-size="34" letter-spacing="1" fill="#F1F5F9">C</text><circle cx="46" cy="64" r="4.5" fill="none" stroke="#FB7185" stroke-width="2.5"/><circle cx="56" cy="61" r="2" fill="#FB7185"/>
 </svg>
