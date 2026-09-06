@@ -63,7 +63,8 @@ export function SiteFooter() {
             R12G: Findly badge added alongside (Owner-provided code after manual submission).
             R23.2: FirstLook light badge and AiTop10 text backlink slot added.
             R23.4: PostYourStartup light badge appended after slug assignment.
-            Badge snippets embedded verbatim — href/src/rel/target/alt must not be altered;
+            R23.7: Submito light badge appended before the Owner's manual submission.
+            Badge snippets embedded verbatim — href/src/rel/target/title/alt must not be altered;
             inline height/width kept, but sizing is unified via .directory-badges container
             CSS (Owner layout standard from BAH two-round rework). */}
         <div className="border-t border-border-low">
@@ -111,6 +112,8 @@ function DirectoryBadgeSet({ ariaHidden = false }: { ariaHidden?: boolean }) {
         {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
         <img src="https://postyourstartup.co/api/badge/my2kbuilder-1?theme=light" alt="Featured on PostYourStartup" width="212" height="55" />
       </a>
+      {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
+      <a href="https://submito.net" target="_blank" rel="noopener noreferrer" title="Listed on Submito"><img src="https://submito.net/badge/listed-light.svg" alt="Listed on Submito"/></a>
     </div>
   );
 }
