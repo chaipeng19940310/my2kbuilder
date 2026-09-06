@@ -6,7 +6,7 @@
       844
     ],
     "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-mobile-first-fold/planner-mobile-390x844.png",
-    "location": "http://127.0.0.1:3100/badge-token-planner",
+    "location": "https://my2kbuilder.com/badge-token-planner",
     "main": {
       "top": 73,
       "bottom": 15007,
@@ -110,7 +110,7 @@
       844
     ],
     "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-mobile-first-fold/blueprints-mobile-390x844.png",
-    "location": "http://127.0.0.1:3100/signature-blueprints",
+    "location": "https://my2kbuilder.com/signature-blueprints",
     "main": {
       "top": 73,
       "bottom": 17740,
@@ -175,7 +175,7 @@
       1000
     ],
     "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-mobile-first-fold/planner-desktop-1440x1000.png",
-    "location": "http://127.0.0.1:3100/badge-token-planner",
+    "location": "https://my2kbuilder.com/badge-token-planner",
     "main": {
       "top": 65,
       "bottom": 7869,
@@ -279,7 +279,7 @@
       1000
     ],
     "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-mobile-first-fold/blueprints-desktop-1440x1000.png",
-    "location": "http://127.0.0.1:3100/signature-blueprints",
+    "location": "https://my2kbuilder.com/signature-blueprints",
     "main": {
       "top": 65,
       "bottom": 6783,
