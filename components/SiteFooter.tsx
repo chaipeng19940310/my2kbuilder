@@ -64,6 +64,7 @@ export function SiteFooter() {
             R23.2: FirstLook light badge and AiTop10 text backlink slot added.
             R23.4: PostYourStartup light badge appended after slug assignment.
             R25: Submito official dark badge embed supersedes the R23.7 preflight snippet.
+            R25.1: TinyShelf personalized badge appended before free dofollow verification.
             Badge snippets embedded verbatim — href/src/rel/target/title/alt must not be altered;
             inline height/width kept, but sizing is unified via .directory-badges container
             CSS (Owner layout standard from BAH two-round rework). */}
@@ -114,6 +115,12 @@ function DirectoryBadgeSet({ ariaHidden = false }: { ariaHidden?: boolean }) {
       </a>
       {/* eslint-disable-next-line @next/next/no-img-element -- third-party badge embed, code provided as-is */}
       <a href='https://submito.net' target='_blank' title='Listed on Submito'><img src='https://submito.net/badge/listed-dark.svg' alt='Listed on Submito' /></a>
+      {/* eslint-disable @next/next/no-img-element -- third-party badge embed, code provided as-is */}
+      <a href="https://www.tinyshelf.co/?ref=my2kbuilder.com" title="Featured on tinyshelf">
+        <img src="https://www.tinyshelf.co/badge/tinyshelf-badge-light-5ca4026a.svg"
+             alt="Featured on tinyshelf" width="216" height="64"/>
+      </a>
+      {/* eslint-enable @next/next/no-img-element */}
     </div>
   );
 }
