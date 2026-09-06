@@ -1,19 +1,11 @@
 [
   {
     "path": "/badge-token-planner",
-    "location": "http://127.0.0.1:3012/badge-token-planner",
+    "location": "https://my2kbuilder.com/badge-token-planner?verify=e1f622b",
     "viewport": [
       390,
       844
     ],
-    "main": {
-      "top": 73,
-      "bottom": 14732.703125,
-      "left": 0,
-      "right": 390,
-      "width": 390,
-      "height": 14659.703125
-    },
     "h1": {
       "top": 97,
       "bottom": 173.78125,
@@ -156,31 +148,23 @@
       }
     ],
     "introCount": 1,
-    "interaction": {
-      "positionSelected": "true",
-      "after": "6'1\"",
-      "before": "6'2\"",
-      "heightChanged": true
-    },
     "scrollWidth": 390,
     "clientWidth": 390,
+    "interaction": {
+      "positionSelected": "true",
+      "before": "6'2\"",
+      "after": "6'1\"",
+      "heightChanged": true
+    },
     "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-1-firstfold-height/planner-mobile-390x844.png"
   },
   {
     "path": "/badge-token-planner",
-    "location": "http://127.0.0.1:3012/badge-token-planner",
+    "location": "https://my2kbuilder.com/badge-token-planner?verify=e1f622b",
     "viewport": [
       1440,
       900
     ],
-    "main": {
-      "top": 65,
-      "bottom": 7877.328125,
-      "left": 0,
-      "right": 1425,
-      "width": 1425,
-      "height": 7812.328125
-    },
     "h1": {
       "top": 113,
       "bottom": 165.796875,
@@ -323,31 +307,23 @@
       }
     ],
     "introCount": 1,
-    "interaction": {
-      "positionSelected": "true",
-      "after": "6'1\"",
-      "before": "6'2\"",
-      "heightChanged": true
-    },
     "scrollWidth": 1425,
     "clientWidth": 1425,
+    "interaction": {
+      "positionSelected": "true",
+      "before": "6'2\"",
+      "after": "6'1\"",
+      "heightChanged": true
+    },
     "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-1-firstfold-height/planner-desktop-1440x900.png"
   },
   {
     "path": "/signature-blueprints",
-    "location": "http://127.0.0.1:3012/signature-blueprints",
+    "location": "https://my2kbuilder.com/signature-blueprints?verify=e1f622b",
     "viewport": [
       390,
       844
     ],
-    "main": {
-      "top": 73,
-      "bottom": 17739.796875,
-      "left": 0,
-      "right": 390,
-      "width": 390,
-      "height": 17666.796875
-    },
     "h1": {
       "top": 97,
       "bottom": 173.78125,
@@ -405,19 +381,11 @@
   },
   {
     "path": "/signature-blueprints",
-    "location": "http://127.0.0.1:3012/signature-blueprints",
+    "location": "https://my2kbuilder.com/signature-blueprints?verify=e1f622b",
     "viewport": [
       1440,
       900
     ],
-    "main": {
-      "top": 65,
-      "bottom": 6790.765625,
-      "left": 0,
-      "right": 1425,
-      "width": 1425,
-      "height": 6725.765625
-    },
     "h1": {
       "top": 113,
       "bottom": 165.796875,
