@@ -174,11 +174,13 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
 
   return (
     <div
-      className="planner-wizard flex flex-col gap-6"
+      className="planner-wizard flex flex-col gap-3 md:gap-6"
       data-step={hydrated ? step : undefined}
       aria-busy={!hydrated}
     >
-      <DataSourceBanner scope="badges" />
+      <div className="mobile-compact-source-banner">
+        <DataSourceBanner scope="badges" />
+      </div>
       {blueprintNote ? (
         <div className="flex items-center gap-2 rounded-lg border border-secondary-container bg-surface-container-low p-3">
           <Icon name="info" size={18} className="text-secondary" />
@@ -201,10 +203,10 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
         </div>
       </div>
 
-      <section className="wizard-step py-8 md:py-14" data-wizard-step="1" aria-labelledby="wizard-position-title">
-        <div className="mb-10 text-center">
-          <h2 id="wizard-position-title" className="font-display text-display-lg font-bold text-on-surface">Choose a position</h2>
-          <p className="mt-3 text-body-lg text-on-surface-variant">Pick a position and height to plan your badge loadout.</p>
+      <section className="wizard-step py-4 md:py-14" data-wizard-step="1" aria-labelledby="wizard-position-title">
+        <div className="mb-4 text-center md:mb-10">
+          <h2 id="wizard-position-title" className="font-display text-headline-lg font-bold text-on-surface md:text-display-lg">Choose a position</h2>
+          <p className="mt-2 text-body-md text-on-surface-variant md:mt-3 md:text-body-lg">Pick a position and height to plan your badge loadout.</p>
         </div>
         <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-5 md:gap-3 md:overflow-visible md:px-0 md:pb-0">
           {POSITIONS.map((abbr, index) => {

@@ -1,0 +1,340 @@
+[
+  {
+    "path": "/badge-token-planner",
+    "viewport": [
+      390,
+      844
+    ],
+    "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-mobile-first-fold/planner-mobile-390x844.png",
+    "location": "http://127.0.0.1:3100/badge-token-planner",
+    "main": {
+      "top": 73,
+      "bottom": 15007,
+      "left": 0,
+      "right": 390,
+      "width": 390,
+      "height": 14934
+    },
+    "mainGap": "24px",
+    "mainPaddingTop": "24px",
+    "h1": {
+      "top": 97,
+      "bottom": 174,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 77
+    },
+    "h1FontSize": "32px",
+    "visibleDescriptions": [
+      {
+        "top": 1135,
+        "bottom": 1231,
+        "left": 16,
+        "right": 374,
+        "width": 358,
+        "height": 96
+      }
+    ],
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "sourceBanner": {
+      "top": 198,
+      "bottom": 236,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 38
+    },
+    "positionTitle": {
+      "top": 336,
+      "bottom": 374,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 38
+    },
+    "positionButtons": [
+      {
+        "top": 419,
+        "bottom": 559,
+        "left": 0,
+        "right": 107,
+        "width": 107,
+        "height": 140,
+        "disabled": false
+      },
+      {
+        "top": 419,
+        "bottom": 559,
+        "left": 119,
+        "right": 227,
+        "width": 107,
+        "height": 140,
+        "disabled": false
+      },
+      {
+        "top": 419,
+        "bottom": 559,
+        "left": 239,
+        "right": 346,
+        "width": 107,
+        "height": 140,
+        "disabled": false
+      },
+      {
+        "top": 419,
+        "bottom": 559,
+        "left": 358,
+        "right": 465,
+        "width": 107,
+        "height": 140,
+        "disabled": false
+      },
+      {
+        "top": 419,
+        "bottom": 559,
+        "left": 477,
+        "right": 585,
+        "width": 107,
+        "height": 140,
+        "disabled": false
+      }
+    ],
+    "firstButtonClickableInViewport": true
+  },
+  {
+    "path": "/signature-blueprints",
+    "viewport": [
+      390,
+      844
+    ],
+    "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-mobile-first-fold/blueprints-mobile-390x844.png",
+    "location": "http://127.0.0.1:3100/signature-blueprints",
+    "main": {
+      "top": 73,
+      "bottom": 17740,
+      "left": 0,
+      "right": 390,
+      "width": 390,
+      "height": 17667
+    },
+    "mainGap": "24px",
+    "mainPaddingTop": "24px",
+    "h1": {
+      "top": 97,
+      "bottom": 174,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 77
+    },
+    "h1FontSize": "32px",
+    "visibleDescriptions": [
+      {
+        "top": 16985,
+        "bottom": 17105,
+        "left": 16,
+        "right": 374,
+        "width": 358,
+        "height": 120
+      }
+    ],
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "sourceBanner": {
+      "top": 261,
+      "bottom": 299,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 38
+    },
+    "filterPanel": {
+      "top": 311,
+      "bottom": 437,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 126
+    },
+    "firstCard": {
+      "top": 449,
+      "bottom": 857,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 409
+    },
+    "firstCardVisiblePixels": 395.421875
+  },
+  {
+    "path": "/badge-token-planner",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-mobile-first-fold/planner-desktop-1440x1000.png",
+    "location": "http://127.0.0.1:3100/badge-token-planner",
+    "main": {
+      "top": 65,
+      "bottom": 7869,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 7804
+    },
+    "mainGap": "48px",
+    "mainPaddingTop": "48px",
+    "h1": {
+      "top": 113,
+      "bottom": 166,
+      "left": 32,
+      "right": 800,
+      "width": 768,
+      "height": 53
+    },
+    "h1FontSize": "48px",
+    "visibleDescriptions": [
+      {
+        "top": 182,
+        "bottom": 230,
+        "left": 32,
+        "right": 800,
+        "width": 768,
+        "height": 48
+      }
+    ],
+    "scrollWidth": 1425,
+    "clientWidth": 1425,
+    "sourceBanner": {
+      "top": 278,
+      "bottom": 337,
+      "left": 32,
+      "right": 1393,
+      "width": 1361,
+      "height": 60
+    },
+    "positionTitle": {
+      "top": 501,
+      "bottom": 554,
+      "left": 32,
+      "right": 1393,
+      "width": 1361,
+      "height": 53
+    },
+    "positionButtons": [
+      {
+        "top": 630,
+        "bottom": 734,
+        "left": 32,
+        "right": 295,
+        "width": 263,
+        "height": 104,
+        "disabled": false
+      },
+      {
+        "top": 630,
+        "bottom": 734,
+        "left": 307,
+        "right": 569,
+        "width": 263,
+        "height": 104,
+        "disabled": false
+      },
+      {
+        "top": 630,
+        "bottom": 734,
+        "left": 581,
+        "right": 844,
+        "width": 263,
+        "height": 104,
+        "disabled": false
+      },
+      {
+        "top": 630,
+        "bottom": 734,
+        "left": 856,
+        "right": 1118,
+        "width": 263,
+        "height": 104,
+        "disabled": false
+      },
+      {
+        "top": 630,
+        "bottom": 734,
+        "left": 1130,
+        "right": 1393,
+        "width": 263,
+        "height": 104,
+        "disabled": false
+      }
+    ],
+    "firstButtonClickableInViewport": true
+  },
+  {
+    "path": "/signature-blueprints",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-mobile-first-fold/blueprints-desktop-1440x1000.png",
+    "location": "http://127.0.0.1:3100/signature-blueprints",
+    "main": {
+      "top": 65,
+      "bottom": 6783,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 6718
+    },
+    "mainGap": "48px",
+    "mainPaddingTop": "48px",
+    "h1": {
+      "top": 113,
+      "bottom": 166,
+      "left": 32,
+      "right": 800,
+      "width": 768,
+      "height": 53
+    },
+    "h1FontSize": "48px",
+    "visibleDescriptions": [
+      {
+        "top": 182,
+        "bottom": 254,
+        "left": 32,
+        "right": 800,
+        "width": 768,
+        "height": 72
+      }
+    ],
+    "scrollWidth": 1425,
+    "clientWidth": 1425,
+    "sourceBanner": {
+      "top": 355,
+      "bottom": 414,
+      "left": 32,
+      "right": 1393,
+      "width": 1361,
+      "height": 60
+    },
+    "filterPanel": {
+      "top": 438,
+      "bottom": 506,
+      "left": 32,
+      "right": 1393,
+      "width": 1361,
+      "height": 68
+    },
+    "firstCard": {
+      "top": 530,
+      "bottom": 897,
+      "left": 32,
+      "right": 470,
+      "width": 438,
+      "height": 367
+    },
+    "firstCardVisiblePixels": 366.984375
+  }
+]

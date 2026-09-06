@@ -85,24 +85,26 @@ export function BlueprintsClient({ bundle }: { bundle: BlueprintsBundle }) {
      renders on the server and there is no loading/error shell here. */
 
   return (
-    <div className="flex flex-col gap-6 pb-28">
-      <DataSourceBanner scope="blueprints" />
+    <div className="flex flex-col gap-3 pb-28 md:gap-6">
+      <div className="mobile-compact-source-banner">
+        <DataSourceBanner scope="blueprints" />
+      </div>
 
       {/* Filters (copy §3.3 microcopy: Filter by position / Clear filters) */}
       <section
         aria-label="Blueprint filters"
-        className="flex flex-col gap-4 rounded border border-border-low bg-surface-card p-4"
+        className="flex flex-col gap-3 rounded border border-border-low bg-surface-card p-3 md:gap-4 md:p-4"
       >
         <div className="flex flex-wrap items-center gap-3">
           <span className="text-label-md uppercase text-on-surface-variant">Filter by position</span>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-nowrap gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:flex-wrap md:overflow-visible md:pb-0">
             {["", ...POSITIONS].map((p) => (
               <button
                 key={p || "all"}
                 type="button"
                 onClick={() => setPosition(p)}
                 aria-pressed={position === p}
-                className={`rounded border px-3 py-1.5 text-label-md font-bold transition-colors ${
+                className={`shrink-0 rounded border px-3 py-1.5 text-label-md font-bold transition-colors ${
                   position === p
                     ? "border-primary-container bg-primary-container text-on-primary"
                     : "border-border-low bg-surface-container-high text-on-surface-variant hover:border-primary-container hover:text-on-surface"
@@ -151,7 +153,7 @@ export function BlueprintsClient({ bundle }: { bundle: BlueprintsBundle }) {
           </button>
         </div>
       ) : (
-        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {filtered.map((bp) => {
             const isSelected = selected.includes(bp.index);
             const p = bp.profile;

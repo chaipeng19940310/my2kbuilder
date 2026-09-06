@@ -81,7 +81,7 @@ function tierRequirementText(req: BadgeTierRequirement): string {
 
 export default function BadgeTokenPlannerPage() {
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 bg-page-bg px-4 py-12 md:px-margin-desktop">
+    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-6 bg-page-bg px-4 py-6 md:gap-12 md:px-margin-desktop md:py-12">
       <JsonLdScript
         schema={[
           softwareApplicationSchema({
@@ -99,10 +99,10 @@ export default function BadgeTokenPlannerPage() {
       />
 
       <header className="flex max-w-3xl flex-col gap-4">
-        <h1 className="font-display text-display-lg text-primary-container">
+        <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">
           NBA 2K27 Badge Token Planner
         </h1>
-        <p className="text-body-lg text-on-surface-variant">
+        <p className="hidden text-body-lg text-on-surface-variant md:block">
           In NBA 2K27, every badge costs tokens — and the price changes with your height and
           position. Build your allocation here first, then spend with confidence in-game.
         </p>
@@ -110,6 +110,11 @@ export default function BadgeTokenPlannerPage() {
 
       {/* Tool body first (copy §3.2 design placement) */}
       <PlannerClient bundle={CLIENT_BUNDLE} costs={tokenCostsBundle as TokenCostBundle} />
+
+      <p className="text-body-lg text-on-surface-variant md:hidden">
+        In NBA 2K27, every badge costs tokens — and the price changes with your height and
+        position. Build your allocation here first, then spend with confidence in-game.
+      </p>
 
       {/* Owner-authorized 2K screenshot below the tool (tool keeps first
           placement per copy §3.2; local static asset, no third-party request). */}

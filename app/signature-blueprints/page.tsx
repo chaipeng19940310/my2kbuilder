@@ -54,7 +54,7 @@ const BLUEPRINTS = blueprintList(blueprintsBundle as BlueprintsBundle);
 
 export default function SignatureBlueprintsPage() {
   return (
-    <main className="r18-page r18-cards r18-shell">
+    <main className="r18-page r18-cards r18-shell r24-tool-shell">
       <JsonLdScript
         schema={[
           itemListSchema({
@@ -73,10 +73,10 @@ export default function SignatureBlueprintsPage() {
       />
 
       <header className="flex max-w-3xl flex-col gap-4">
-        <h1 className="font-display text-display-lg text-primary-container">
+        <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">
           NBA 2K27 Signature Blueprints
         </h1>
-        <p className="text-body-lg text-on-surface-variant">
+        <p className="hidden text-body-lg text-on-surface-variant md:block">
           Signature Blueprints are NBA 2K27&apos;s new starter templates: 40 three-player hybrid
           builds at launch, with more added each season. Filter by position and playstyle,
           shortlist up to three, and see exactly how their attributes and badges differ.
@@ -85,9 +85,9 @@ export default function SignatureBlueprintsPage() {
 
 
       {/* H2 structure (copy §3.3): Browse All 40 Blueprints / Compare Up to 3 Side by Side */}
-      <section className="flex flex-col gap-6">
+      <section className="flex flex-col gap-3 md:gap-6">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="font-display text-headline-md text-on-surface">Browse All 40 Blueprints</h2>
+          <h2 className="font-display text-headline-sm text-on-surface md:text-headline-md">Browse All 40 Blueprints</h2>
           {/* R12J-E mutual link: guided by-position view */}
           <span className="text-body-sm text-text-muted">
             Compare up to 3 side by side ·{" "}
@@ -98,6 +98,12 @@ export default function SignatureBlueprintsPage() {
         </div>
         <BlueprintsClient bundle={stripProvenance(blueprintsBundle as BlueprintsBundle)} />
       </section>
+
+      <p className="text-body-lg text-on-surface-variant md:hidden">
+        Signature Blueprints are NBA 2K27&apos;s new starter templates: 40 three-player hybrid
+        builds at launch, with more added each season. Filter by position and playstyle,
+        shortlist up to three, and see exactly how their attributes and badges differ.
+      </p>
 
       {/* About blueprint data (R12I-A: source annotation for the real bundle) */}
       <section className="flex max-w-3xl flex-col gap-3 rounded border border-border-low bg-surface-card p-6">
