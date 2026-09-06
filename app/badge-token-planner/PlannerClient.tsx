@@ -174,7 +174,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
 
   return (
     <div
-      className="planner-wizard flex flex-col gap-2 md:gap-6"
+      className="planner-wizard flex flex-col gap-2"
       data-step={hydrated ? step : undefined}
       aria-busy={!hydrated}
     >
@@ -188,7 +188,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
         </div>
       ) : null}
 
-      <div className="border-y border-border-low py-2 md:py-4">
+      <div className="border-y border-border-low py-2">
         <div className="mb-2 flex items-center justify-between text-label-md">
           <span className="font-bold uppercase tracking-wider text-on-surface-variant">Step {step} of 4</span>
           <span className="font-bold text-primary-container">{STEP_LABELS[step - 1]}</span>
@@ -267,45 +267,53 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
         </div>
       </section>
 
-      <section className="wizard-step py-8 md:py-14" data-wizard-step="2" aria-labelledby="wizard-priority-title">
-        <div className="mb-10 text-center">
-          <h2 id="wizard-priority-title" className="font-display text-display-lg font-bold text-on-surface">Priorities</h2>
-          <p className="mt-3 text-body-lg text-on-surface-variant">Tier allocation — select disciplines in priority order</p>
+      <section className="wizard-step py-2 md:py-4" data-wizard-step="2" aria-labelledby="wizard-priority-title">
+        <div className="mb-3 text-center md:mb-4">
+          <h2 id="wizard-priority-title" className="font-display text-headline-sm font-bold text-on-surface md:text-headline-md">Priorities</h2>
+          <p className="mt-1 text-body-sm text-on-surface-variant">Tier allocation — select disciplines in priority order</p>
         </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-2 md:grid-cols-2 md:gap-3">
           {DISCIPLINES.map((name, discipline) => {
             const rank = priorityOrder.indexOf(discipline);
             return (
-              <button key={name} type="button" disabled={!hydrated} aria-pressed={rank >= 0} onClick={() => togglePriority(discipline)} className={`relative flex min-h-44 flex-col items-center justify-center gap-4 rounded-xl border p-6 transition-all disabled:cursor-wait ${rank >= 0 ? "border-secondary bg-surface-container-low text-secondary" : "border-border-low bg-surface-card text-on-surface-variant hover:border-on-surface-variant"}`}>
-                {rank >= 0 ? <span className="absolute right-3 top-3 rounded bg-secondary px-2 py-1 text-code-sm font-bold text-on-secondary">P{rank + 1}</span> : null}
-                <DisciplineIcon discipline={name} size={44} />
-                <span className="font-display text-headline-sm font-bold">{name}</span>
+              <button key={name} type="button" disabled={!hydrated} aria-pressed={rank >= 0} onClick={() => togglePriority(discipline)} className={`flex min-h-12 items-center gap-3 rounded-full px-3 py-2 text-left transition-all disabled:cursor-wait ${rank >= 0 ? "bg-secondary/15 text-secondary ring-1 ring-inset ring-secondary/60" : "bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface"}`}>
+                <DisciplineIcon discipline={name} size={24} />
+                <span className="min-w-0 flex-1 font-display text-body-lg font-bold">{name}</span>
+                {rank >= 0 ? (
+                  <span className="min-w-9 rounded bg-secondary px-2 py-1 text-center text-code-sm font-bold text-on-secondary">P{rank + 1}</span>
+                ) : (
+                  <span aria-hidden="true" className="h-6 w-9 rounded bg-surface-container-high" />
+                )}
               </button>
             );
           })}
         </div>
       </section>
 
-      <section className="wizard-step py-6" data-wizard-step="3" aria-labelledby="wizard-loadout-title">
-        <h2 id="wizard-loadout-title" className="mb-8 font-display text-display-lg font-bold text-on-surface">Badge Loadout</h2>
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
+      <section className="wizard-step py-2 md:py-4" data-wizard-step="3" aria-labelledby="wizard-loadout-title">
+        <h2 id="wizard-loadout-title" className="mb-3 font-display text-headline-sm font-bold text-on-surface md:mb-4 md:text-headline-md">Badge Loadout</h2>
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-12 lg:gap-4">
           <aside className="lg:col-span-4">
-            <div className="rounded-xl border border-border-low bg-surface-card p-6 lg:sticky lg:top-24">
-              <h3 className="flex items-center gap-2 font-display text-headline-sm font-bold text-on-surface"><Icon name="data_usage" size={22} className="text-primary-container" />Token Budget</h3>
-              <div className="mt-6 flex items-end justify-between"><span className={`font-display text-display-lg font-black ${overBudget ? "text-error" : "text-primary-container"}`}>{usedSlots}<span className="text-headline-sm text-text-muted">/{MAX_BADGE_SLOTS}</span></span><span className="text-code-sm uppercase tracking-widest text-on-surface-variant">SLOTS USED</span></div>
-              <div className="mt-3 flex gap-1" aria-label={`${usedSlots} of ${MAX_BADGE_SLOTS} slots used`}>
-                {Array.from({ length: MAX_BADGE_SLOTS }, (_, index) => <span key={index} className={`h-6 min-w-0 flex-1 rounded-sm ${index < Math.min(usedSlots, MAX_BADGE_SLOTS) ? (overBudget ? "bg-error" : "bg-primary-container") : "bg-surface-container-high"}`} />)}
+            <div className="rounded-xl border border-border-low bg-surface-card p-3 md:p-4 lg:sticky lg:top-24">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="flex items-center gap-2 font-display text-body-lg font-bold text-on-surface"><Icon name="data_usage" size={18} className="text-primary-container" />Token Budget</h3>
+                <div className="flex items-baseline gap-2"><span className={`font-display text-headline-md font-black ${overBudget ? "text-error" : "text-primary-container"}`}>{usedSlots}<span className="text-body-sm text-text-muted">/{MAX_BADGE_SLOTS}</span></span><span className="text-[10px] uppercase tracking-wider text-on-surface-variant">SLOTS USED</span></div>
               </div>
-              <p role={overBudget ? "alert" : "status"} className={`mt-4 text-body-sm ${overBudget ? "text-error" : complete ? "text-secondary" : "text-on-surface-variant"}`}>{statusLine}</p>
-              <p className="mt-4 text-body-sm text-on-surface-variant">
+              <div className="mt-2 flex gap-1" aria-label={`${usedSlots} of ${MAX_BADGE_SLOTS} slots used`}>
+                {Array.from({ length: MAX_BADGE_SLOTS }, (_, index) => <span key={index} className={`h-2 min-w-0 flex-1 rounded-sm ${index < Math.min(usedSlots, MAX_BADGE_SLOTS) ? (overBudget ? "bg-error" : "bg-primary-container") : "bg-surface-container-high"}`} />)}
+              </div>
+              <div className="mt-2 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+              <p role={overBudget ? "alert" : "status"} className={`text-[11px] leading-tight ${overBudget ? "text-error" : complete ? "text-secondary" : "text-on-surface-variant"}`}>{statusLine}</p>
+              <p className="text-[11px] leading-tight text-on-surface-variant">
                 Estimated token spend: <strong className="text-on-surface">{estimatedTokens}</strong> tokens
                 <span className="text-text-muted"> (reference build)</span>
               </p>
-              <p className="mt-4 flex items-start gap-2 rounded-lg border border-border-low bg-surface-container-low p-3 text-body-sm text-text-muted"><Icon name="info" size={16} className="mt-0.5 shrink-0" />Token costs shown are single-source community reference-build values — Unverified. Actual costs vary with height, position and build size; confirm in the in-game Builder.</p>
+              </div>
+              <p className="mt-2 flex min-w-0 items-center gap-1 truncate text-[10px] leading-tight text-text-muted"><Icon name="info" size={13} className="shrink-0" /><span className="truncate">Token costs shown are single-source community reference-build values — Unverified. Actual costs vary with height, position and build size; confirm in the in-game Builder.</span></p>
             </div>
           </aside>
           <div className="overflow-hidden rounded-xl border border-border-low bg-surface-card lg:col-span-8">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border-low bg-surface-container-low p-4"><span className="text-label-md font-bold uppercase tracking-wider text-on-surface-variant">Available Badges</span><div className="flex gap-2">{TIER_NAMES.map((tier, index) => <span key={tier} className={`tier-chip ${TIER_CLASSES[index]}`}>{tier}</span>)}</div></div>
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border-low bg-surface-container-low px-3 py-2"><span className="text-label-md font-bold uppercase tracking-wider text-on-surface-variant">Available Badges</span><div className="flex gap-1">{TIER_NAMES.map((tier, index) => <span key={tier} className={`tier-chip ${TIER_CLASSES[index]}`}>{tier}</span>)}</div></div>
             {catalog.length === 0 ? <p className="p-8 text-center text-on-surface-variant">No badges in the data bundle.</p> : (
               <ul className="badge-list">
                 {catalog.map((badge) => {
@@ -336,24 +344,24 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
         </div>
       </section>
 
-      <section className="wizard-step py-8 md:py-14" data-wizard-step="4" aria-labelledby="wizard-summary-title">
+      <section className="wizard-step py-2 md:py-4" data-wizard-step="4" aria-labelledby="wizard-summary-title">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-8 text-center"><h2 id="wizard-summary-title" className="font-display text-display-lg font-bold text-on-surface">Summary</h2><p className="mt-3 text-body-lg text-on-surface-variant">A finished plan turns into a single link.</p></div>
-          <div className="rounded-xl border border-border-low bg-surface-card p-6 md:p-8">
-            <div className="flex flex-wrap gap-2"><span className="rounded bg-surface-container-high px-3 py-2 text-label-md text-on-surface">Position: {position >= 0 ? POSITIONS[position] : "—"}</span><span className="rounded bg-surface-container-high px-3 py-2 text-label-md text-on-surface">Height: {heightLabel(heightIn)}</span>{priorityOrder.map((discipline, rank) => <span key={discipline} className="rounded bg-secondary/15 px-3 py-2 text-label-md text-secondary">P{rank + 1} {DISCIPLINES[discipline]}</span>)}</div>
-            <div className="my-8 flex items-end justify-between border-y border-border-low py-6"><span className="font-display text-headline-sm font-bold text-on-surface">Badge Loadout</span><span className={`font-display text-display-lg font-black ${complete ? "text-secondary" : "text-primary-container"}`}>{usedSlots}/{MAX_BADGE_SLOTS}</span></div>
-            <div className="flex flex-wrap gap-2">{allocations.length > 0 ? allocations.map(([index, slots]) => { const badge = catalog.find((item) => item.index === index); const tierIndex = Math.min(slots, 4) - 1; return badge ? <span key={index} className={`tier-chip ${TIER_CLASSES[tierIndex]}`}>{badge.name} · {TIER_NAMES[tierIndex]}</span> : null; }) : <span className="text-body-md text-text-muted">Complete all 20 slots to generate a link</span>}</div>
-            <button type="button" disabled={!hydrated || !complete} onClick={generateShareLink} className="mt-8 flex w-full items-center justify-center gap-2 rounded-lg bg-primary-container px-6 py-4 text-label-md font-bold text-on-primary hover:bg-surface-tint disabled:cursor-not-allowed disabled:bg-surface-container-high disabled:text-text-muted"><Icon name="share" size={18} />Generate Share Link</button>
-            {!complete ? <p className="mt-3 text-center text-body-sm text-text-muted">Complete all 20 slots to generate a link</p> : null}
-            <button type="button" disabled={!overBudget} onClick={() => setStep(3)} className={`mx-auto mt-3 text-label-md text-primary-container hover:underline ${overBudget ? "block" : "invisible block"}`}>Adjust Allocation</button>
+          <div className="mb-3 text-center"><h2 id="wizard-summary-title" className="font-display text-headline-sm font-bold text-on-surface md:text-headline-md">Summary</h2><p className="mt-1 text-body-sm text-on-surface-variant">A finished plan turns into a single link.</p></div>
+          <div className="rounded-xl border border-border-low bg-surface-card p-3 md:p-4">
+            <div className="flex flex-wrap gap-1.5"><span className="rounded bg-surface-container-high px-2 py-1 text-body-sm text-on-surface">Position: {position >= 0 ? POSITIONS[position] : "—"}</span><span className="rounded bg-surface-container-high px-2 py-1 text-body-sm text-on-surface">Height: {heightLabel(heightIn)}</span>{priorityOrder.map((discipline, rank) => <span key={discipline} className="rounded bg-secondary/15 px-2 py-1 text-body-sm text-secondary">P{rank + 1} {DISCIPLINES[discipline]}</span>)}</div>
+            <div className="my-3 flex items-center justify-between border-y border-border-low py-2"><span className="font-display text-body-lg font-bold text-on-surface">Badge Loadout</span><span className={`font-display text-headline-md font-black ${complete ? "text-secondary" : "text-primary-container"}`}>{usedSlots}/{MAX_BADGE_SLOTS}</span></div>
+            <div className="max-h-24 overflow-y-auto"><div className="flex flex-wrap gap-1.5">{allocations.length > 0 ? allocations.map(([index, slots]) => { const badge = catalog.find((item) => item.index === index); const tierIndex = Math.min(slots, 4) - 1; return badge ? <span key={index} className={`tier-chip ${TIER_CLASSES[tierIndex]}`}>{badge.name} · {TIER_NAMES[tierIndex]}</span> : null; }) : <span className="text-body-md text-text-muted">Complete all 20 slots to generate a link</span>}</div></div>
+            <button type="button" disabled={!hydrated || !complete} onClick={generateShareLink} className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg bg-primary-container px-5 py-3 text-label-md font-bold text-on-primary hover:bg-surface-tint disabled:cursor-not-allowed disabled:bg-surface-container-high disabled:text-text-muted"><Icon name="share" size={18} />Generate Share Link</button>
+            {!complete ? <p className="mt-1 text-center text-[11px] text-text-muted">Complete all 20 slots to generate a link</p> : null}
+            <button type="button" disabled={!overBudget} onClick={() => setStep(3)} className={`mx-auto mt-1 text-label-md text-primary-container hover:underline ${overBudget ? "block" : "invisible block"}`}>Adjust Allocation</button>
           </div>
         </div>
       </section>
 
-      <nav aria-label="Planner steps" className="sticky bottom-0 z-30 -mx-4 mt-2 flex items-center justify-between border-t border-border-low bg-page-bg/95 px-4 py-4 backdrop-blur md:-mx-8 md:px-8">
-        <button type="button" disabled={!hydrated} onClick={startOver} className="flex items-center gap-2 text-label-md font-bold uppercase text-on-surface-variant hover:text-on-surface disabled:opacity-50"><Icon name="restart_alt" size={18} /><span className="hidden sm:inline">Start over</span></button>
+      <nav aria-label="Planner steps" className="sticky bottom-0 z-30 -mx-4 mt-2 flex items-center justify-between border-t border-border-low bg-page-bg/95 px-4 py-2 backdrop-blur md:-mx-8 md:px-8">
+        <button type="button" aria-label="Start over" disabled={!hydrated} onClick={startOver} className="flex items-center gap-2 text-label-md font-bold uppercase text-on-surface-variant hover:text-on-surface disabled:opacity-50"><Icon name="restart_alt" size={18} /><span className="hidden sm:inline">Start over</span></button>
         <div className="flex items-center gap-3">
-          <button type="button" disabled={!hydrated || step === 1} onClick={() => setStep((current) => Math.max(1, current - 1))} className="flex items-center gap-2 rounded-lg px-4 py-2 text-label-md font-bold uppercase text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface disabled:cursor-not-allowed disabled:opacity-35"><Icon name="arrow_back" size={18} /><span className="hidden sm:inline">Back</span></button>
+          <button type="button" aria-label="Back" disabled={!hydrated || step === 1} onClick={() => setStep((current) => Math.max(1, current - 1))} className="flex items-center gap-2 rounded-lg px-4 py-2 text-label-md font-bold uppercase text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface disabled:cursor-not-allowed disabled:opacity-35"><Icon name="arrow_back" size={18} /><span className="hidden sm:inline">Back</span></button>
           {step < 4 ? <button type="button" disabled={nextDisabled} onClick={() => setStep((current) => Math.min(4, current + 1))} className="flex items-center gap-2 rounded-lg bg-primary-container px-6 py-3 text-label-md font-bold uppercase text-on-primary hover:bg-surface-tint disabled:cursor-not-allowed disabled:bg-surface-container-high disabled:text-text-muted"><span>Next</span><Icon name="arrow_forward" size={18} /></button> : null}
         </div>
       </nav>

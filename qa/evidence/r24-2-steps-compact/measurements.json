@@ -1,0 +1,450 @@
+[
+  {
+    "label": "mobile-390x844",
+    "interactions": {
+      "positionSelected": true,
+      "prioritySelected": true,
+      "assignedBadge": "Assign a slot to Aerial Wizard",
+      "slotsUsed": "20 of 20 slots used"
+    },
+    "step2": {
+      "viewport": [
+        390,
+        844
+      ],
+      "scrollY": 0,
+      "horizontalOverflow": false,
+      "navigation": {
+        "top": 750.58,
+        "bottom": 809.58,
+        "left": 0,
+        "right": 390,
+        "width": 390,
+        "height": 59
+      },
+      "navigationInFold": true,
+      "title": {
+        "top": 303.78,
+        "bottom": 329.78,
+        "left": 16,
+        "right": 374,
+        "width": 358,
+        "height": 26
+      },
+      "rows": [
+        {
+          "label": "Finishing",
+          "pressed": "false",
+          "top": 362.58,
+          "bottom": 416.58,
+          "left": 16,
+          "right": 374,
+          "width": 358,
+          "height": 54
+        },
+        {
+          "label": "Shooting",
+          "pressed": "false",
+          "top": 424.58,
+          "bottom": 478.58,
+          "left": 16,
+          "right": 374,
+          "width": 358,
+          "height": 54
+        },
+        {
+          "label": "Playmaking",
+          "pressed": "false",
+          "top": 486.58,
+          "bottom": 540.58,
+          "left": 16,
+          "right": 374,
+          "width": 358,
+          "height": 54
+        },
+        {
+          "label": "Defense",
+          "pressed": "false",
+          "top": 548.58,
+          "bottom": 602.58,
+          "left": 16,
+          "right": 374,
+          "width": 358,
+          "height": 54
+        },
+        {
+          "label": "Rebounding",
+          "pressed": "false",
+          "top": 610.58,
+          "bottom": 664.58,
+          "left": 16,
+          "right": 374,
+          "width": 358,
+          "height": 54
+        },
+        {
+          "label": "Physicals",
+          "pressed": "false",
+          "top": 672.58,
+          "bottom": 726.58,
+          "left": 16,
+          "right": 374,
+          "width": 358,
+          "height": 54
+        }
+      ],
+      "allRowsInFold": true,
+      "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-2-steps-compact/mobile-390x844-step2-priorities.png"
+    },
+    "step3": {
+      "viewport": [
+        390,
+        844
+      ],
+      "scrollY": 0,
+      "horizontalOverflow": false,
+      "navigation": {
+        "top": 785,
+        "bottom": 844,
+        "left": 0,
+        "right": 390,
+        "width": 390,
+        "height": 59
+      },
+      "navigationInFold": true,
+      "title": {
+        "top": 303.78,
+        "bottom": 329.78,
+        "left": 16,
+        "right": 374,
+        "width": 358,
+        "height": 26
+      },
+      "budget": {
+        "top": 341.78,
+        "bottom": 473.08,
+        "left": 16,
+        "right": 374,
+        "width": 358,
+        "height": 131.3
+      },
+      "disclaimer": {
+        "top": 447.08,
+        "bottom": 460.08,
+        "left": 29,
+        "right": 361,
+        "width": 332,
+        "height": 13
+      },
+      "availableBadgesHeader": {
+        "top": 486.08,
+        "bottom": 545.08,
+        "left": 17,
+        "right": 373,
+        "width": 356,
+        "height": 59
+      },
+      "firstBadgeRow": {
+        "top": 549.08,
+        "bottom": 621.08,
+        "left": 21,
+        "right": 369,
+        "width": 348,
+        "height": 72
+      },
+      "firstBadgeActions": {
+        "top": 558.08,
+        "bottom": 612.08,
+        "left": 274,
+        "right": 360,
+        "width": 86,
+        "height": 54
+      },
+      "firstAddButton": {
+        "top": 581.08,
+        "bottom": 609.08,
+        "left": 329,
+        "right": 357,
+        "width": 28,
+        "height": 28
+      },
+      "firstAddOperableInFold": true,
+      "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-2-steps-compact/mobile-390x844-step3-loadout.png"
+    },
+    "step4": {
+      "viewport": [
+        390,
+        844
+      ],
+      "scrollY": 0,
+      "horizontalOverflow": false,
+      "navigation": {
+        "top": 600.17,
+        "bottom": 651.17,
+        "left": 0,
+        "right": 390,
+        "width": 390,
+        "height": 51
+      },
+      "navigationInFold": true,
+      "title": {
+        "top": 303.78,
+        "bottom": 329.78,
+        "left": 16,
+        "right": 374,
+        "width": 358,
+        "height": 26
+      },
+      "summaryCard": {
+        "top": 362.58,
+        "bottom": 576.17,
+        "left": 16,
+        "right": 374,
+        "width": 358,
+        "height": 213.59
+      },
+      "loadoutSummary": {
+        "top": 412.38,
+        "bottom": 459.17,
+        "left": 29,
+        "right": 361,
+        "width": 332,
+        "height": 46.8
+      },
+      "shareButton": {
+        "top": 505.17,
+        "bottom": 547.17,
+        "left": 29,
+        "right": 361,
+        "width": 332,
+        "height": 42
+      },
+      "shareOperableInFold": true,
+      "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-2-steps-compact/mobile-390x844-step4-summary.png"
+    }
+  },
+  {
+    "label": "desktop-1440x900",
+    "interactions": {
+      "positionSelected": true,
+      "prioritySelected": true,
+      "assignedBadge": "Assign a slot to Aerial Wizard",
+      "slotsUsed": "20 of 20 slots used"
+    },
+    "step2": {
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollY": 0,
+      "horizontalOverflow": false,
+      "navigation": {
+        "top": 632.98,
+        "bottom": 691.98,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 59
+      },
+      "navigationInFold": true,
+      "title": {
+        "top": 349.39,
+        "bottom": 378.19,
+        "left": 32,
+        "right": 1393,
+        "width": 1361,
+        "height": 28.8
+      },
+      "rows": [
+        {
+          "label": "Finishing",
+          "pressed": "false",
+          "top": 414.98,
+          "bottom": 468.98,
+          "left": 264.5,
+          "right": 706.5,
+          "width": 442,
+          "height": 54
+        },
+        {
+          "label": "Shooting",
+          "pressed": "false",
+          "top": 414.98,
+          "bottom": 468.98,
+          "left": 718.5,
+          "right": 1160.5,
+          "width": 442,
+          "height": 54
+        },
+        {
+          "label": "Playmaking",
+          "pressed": "false",
+          "top": 480.98,
+          "bottom": 534.98,
+          "left": 264.5,
+          "right": 706.5,
+          "width": 442,
+          "height": 54
+        },
+        {
+          "label": "Defense",
+          "pressed": "false",
+          "top": 480.98,
+          "bottom": 534.98,
+          "left": 718.5,
+          "right": 1160.5,
+          "width": 442,
+          "height": 54
+        },
+        {
+          "label": "Rebounding",
+          "pressed": "false",
+          "top": 546.98,
+          "bottom": 600.98,
+          "left": 264.5,
+          "right": 706.5,
+          "width": 442,
+          "height": 54
+        },
+        {
+          "label": "Physicals",
+          "pressed": "false",
+          "top": 546.98,
+          "bottom": 600.98,
+          "left": 718.5,
+          "right": 1160.5,
+          "width": 442,
+          "height": 54
+        }
+      ],
+      "allRowsInFold": true,
+      "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-2-steps-compact/desktop-1440x900-step2-priorities.png"
+    },
+    "step3": {
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollY": 0,
+      "horizontalOverflow": false,
+      "navigation": {
+        "top": 841,
+        "bottom": 900,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 59
+      },
+      "navigationInFold": true,
+      "title": {
+        "top": 349.39,
+        "bottom": 378.19,
+        "left": 32,
+        "right": 1393,
+        "width": 1361,
+        "height": 28.8
+      },
+      "budget": {
+        "top": 394.19,
+        "bottom": 515.73,
+        "left": 32,
+        "right": 475,
+        "width": 443,
+        "height": 121.55
+      },
+      "disclaimer": {
+        "top": 485.73,
+        "bottom": 498.73,
+        "left": 49,
+        "right": 458,
+        "width": 409,
+        "height": 13
+      },
+      "availableBadgesHeader": {
+        "top": 395.19,
+        "bottom": 434.19,
+        "left": 492,
+        "right": 1392,
+        "width": 900,
+        "height": 39
+      },
+      "firstBadgeRow": {
+        "top": 442.19,
+        "bottom": 538.19,
+        "left": 500,
+        "right": 1369,
+        "width": 869,
+        "height": 96
+      },
+      "firstBadgeActions": {
+        "top": 469.19,
+        "bottom": 511.19,
+        "left": 1194.94,
+        "right": 1356,
+        "width": 161.06,
+        "height": 42
+      },
+      "firstAddButton": {
+        "top": 474.19,
+        "bottom": 506.19,
+        "left": 1319,
+        "right": 1351,
+        "width": 32,
+        "height": 32
+      },
+      "firstAddOperableInFold": true,
+      "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-2-steps-compact/desktop-1440x900-step3-loadout.png"
+    },
+    "step4": {
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollY": 0,
+      "horizontalOverflow": false,
+      "navigation": {
+        "top": 664.58,
+        "bottom": 715.58,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 51
+      },
+      "navigationInFold": true,
+      "title": {
+        "top": 349.39,
+        "bottom": 378.19,
+        "left": 264.5,
+        "right": 1160.5,
+        "width": 896,
+        "height": 28.8
+      },
+      "summaryCard": {
+        "top": 410.98,
+        "bottom": 632.58,
+        "left": 264.5,
+        "right": 1160.5,
+        "width": 896,
+        "height": 221.59
+      },
+      "loadoutSummary": {
+        "top": 464.78,
+        "bottom": 511.58,
+        "left": 281.5,
+        "right": 1143.5,
+        "width": 862,
+        "height": 46.8
+      },
+      "shareButton": {
+        "top": 557.58,
+        "bottom": 599.58,
+        "left": 281.5,
+        "right": 1143.5,
+        "width": 862,
+        "height": 42
+      },
+      "shareOperableInFold": true,
+      "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-2-steps-compact/desktop-1440x900-step4-summary.png"
+    }
+  }
+]

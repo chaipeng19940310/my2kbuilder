@@ -234,4 +234,15 @@ body {
 .roster-tier { min-width: 0; justify-content: flex-start; white-space: normal; line-height: 1.4; letter-spacing: 0; text-align: left; }
 @media (max-width: 1023px) { .roster-list { grid-template-columns: 1fr; } }
 @media (max-width: 767px) { .roster-tiers { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-@media (max-width: 640px) { .badge-row { align-items: flex-start; flex-wrap: wrap; } .badge-actions { width: 100%; justify-content: flex-end; } }
+@media (max-width: 640px) {
+  .badge-list { padding: 4px; }
+  .badge-row { display: grid; grid-template-columns: 32px minmax(0,1fr) auto; align-items: center; gap: 8px; margin-bottom: 4px; padding: 8px; }
+  .badge-icon { width: 32px; height: 32px; }
+  .badge-name { font-size: 14px; }
+  .badge-category { display: none; }
+  .badge-req { overflow: hidden; margin-top: 2px; font-size: 10px; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+  .badge-actions { width: auto; flex-direction: column; gap: 4px; }
+  .badge-stepper { padding: 2px; }
+  .badge-stepper button { width: 28px; height: 28px; }
+  .badge-count { width: 24px; }
+}
