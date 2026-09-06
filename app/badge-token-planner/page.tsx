@@ -102,16 +102,12 @@ export default function BadgeTokenPlannerPage() {
         <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">
           NBA 2K27 Badge Token Planner
         </h1>
-        <p className="hidden text-body-lg text-on-surface-variant md:block">
-          In NBA 2K27, every badge costs tokens — and the price changes with your height and
-          position. Build your allocation here first, then spend with confidence in-game.
-        </p>
       </header>
 
       {/* Tool body first (copy §3.2 design placement) */}
       <PlannerClient bundle={CLIENT_BUNDLE} costs={tokenCostsBundle as TokenCostBundle} />
 
-      <p className="text-body-lg text-on-surface-variant md:hidden">
+      <p className="text-body-lg text-on-surface-variant">
         In NBA 2K27, every badge costs tokens — and the price changes with your height and
         position. Build your allocation here first, then spend with confidence in-game.
       </p>

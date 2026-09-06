@@ -1,0 +1,476 @@
+[
+  {
+    "path": "/badge-token-planner",
+    "location": "http://127.0.0.1:3012/badge-token-planner",
+    "viewport": [
+      390,
+      844
+    ],
+    "main": {
+      "top": 73,
+      "bottom": 14732.703125,
+      "left": 0,
+      "right": 390,
+      "width": 390,
+      "height": 14659.703125
+    },
+    "h1": {
+      "top": 97,
+      "bottom": 173.78125,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 76.78125
+    },
+    "sourceBanner": {
+      "top": 197.78125,
+      "bottom": 235.78125,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 38
+    },
+    "progress": {
+      "top": 243.78125,
+      "bottom": 287.78125,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 44
+    },
+    "positionTitle": {
+      "top": 303.78125,
+      "bottom": 329.78125,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 26
+    },
+    "positionButtons": [
+      {
+        "top": 358.578125,
+        "bottom": 430.578125,
+        "left": 0,
+        "right": 120,
+        "width": 120,
+        "height": 72,
+        "disabled": false
+      },
+      {
+        "top": 358.578125,
+        "bottom": 430.578125,
+        "left": 132,
+        "right": 252,
+        "width": 120,
+        "height": 72,
+        "disabled": false
+      },
+      {
+        "top": 358.578125,
+        "bottom": 430.578125,
+        "left": 264,
+        "right": 384,
+        "width": 120,
+        "height": 72,
+        "disabled": false
+      },
+      {
+        "top": 358.578125,
+        "bottom": 430.578125,
+        "left": 396,
+        "right": 516,
+        "width": 120,
+        "height": 72,
+        "disabled": false
+      },
+      {
+        "top": 358.578125,
+        "bottom": 430.578125,
+        "left": 528,
+        "right": 648,
+        "width": 120,
+        "height": 72,
+        "disabled": false
+      }
+    ],
+    "heightTitle": {
+      "top": 450.578125,
+      "bottom": 476.578125,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 26
+    },
+    "decreaseButton": {
+      "top": 535.171875,
+      "bottom": 575.171875,
+      "left": 87,
+      "right": 127,
+      "width": 40,
+      "height": 40,
+      "disabled": false
+    },
+    "increaseButton": {
+      "top": 535.171875,
+      "bottom": 575.171875,
+      "left": 263,
+      "right": 303,
+      "width": 40,
+      "height": 40,
+      "disabled": false
+    },
+    "heightOutput": {
+      "top": 540.765625,
+      "bottom": 569.5625,
+      "left": 139,
+      "right": 251,
+      "width": 112,
+      "height": 28.796875,
+      "text": "6'2\""
+    },
+    "heightRange": {
+      "top": 594.171875,
+      "bottom": 602.171875,
+      "left": 29,
+      "right": 361,
+      "width": 332,
+      "height": 8,
+      "disabled": false
+    },
+    "lockedReadout": {
+      "top": 644.96875,
+      "bottom": 661.765625,
+      "left": 53,
+      "right": 361,
+      "width": 308,
+      "height": 16.796875
+    },
+    "intro": [
+      {
+        "top": 860.15625,
+        "bottom": 956.15625,
+        "left": 16,
+        "right": 374,
+        "width": 358,
+        "height": 96
+      }
+    ],
+    "introCount": 1,
+    "interaction": {
+      "positionSelected": "true",
+      "after": "6'1\"",
+      "before": "6'2\"",
+      "heightChanged": true
+    },
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-1-firstfold-height/planner-mobile-390x844.png"
+  },
+  {
+    "path": "/badge-token-planner",
+    "location": "http://127.0.0.1:3012/badge-token-planner",
+    "viewport": [
+      1440,
+      900
+    ],
+    "main": {
+      "top": 65,
+      "bottom": 7877.328125,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 7812.328125
+    },
+    "h1": {
+      "top": 113,
+      "bottom": 165.796875,
+      "left": 32,
+      "right": 800,
+      "width": 768,
+      "height": 52.796875
+    },
+    "sourceBanner": {
+      "top": 213.796875,
+      "bottom": 273.390625,
+      "left": 32,
+      "right": 1393,
+      "width": 1361,
+      "height": 59.59375
+    },
+    "progress": {
+      "top": 297.390625,
+      "bottom": 357.390625,
+      "left": 32,
+      "right": 1393,
+      "width": 1361,
+      "height": 60
+    },
+    "positionTitle": {
+      "top": 437.390625,
+      "bottom": 490.1875,
+      "left": 32,
+      "right": 1393,
+      "width": 1361,
+      "height": 52.796875
+    },
+    "positionButtons": [
+      {
+        "top": 566.1875,
+        "bottom": 670.1875,
+        "left": 32,
+        "right": 294.59375,
+        "width": 262.59375,
+        "height": 104,
+        "disabled": false
+      },
+      {
+        "top": 566.1875,
+        "bottom": 670.1875,
+        "left": 306.59375,
+        "right": 569.1875,
+        "width": 262.59375,
+        "height": 104,
+        "disabled": false
+      },
+      {
+        "top": 566.1875,
+        "bottom": 670.1875,
+        "left": 581.1875,
+        "right": 843.796875,
+        "width": 262.609375,
+        "height": 104,
+        "disabled": false
+      },
+      {
+        "top": 566.1875,
+        "bottom": 670.1875,
+        "left": 855.796875,
+        "right": 1118.390625,
+        "width": 262.59375,
+        "height": 104,
+        "disabled": false
+      },
+      {
+        "top": 566.1875,
+        "bottom": 670.1875,
+        "left": 1130.390625,
+        "right": 1393,
+        "width": 262.609375,
+        "height": 104,
+        "disabled": false
+      }
+    ],
+    "heightTitle": {
+      "top": 702.1875,
+      "bottom": 754.984375,
+      "left": 264.5,
+      "right": 1160.5,
+      "width": 896,
+      "height": 52.796875
+    },
+    "decreaseButton": {
+      "top": 850.375,
+      "bottom": 898.375,
+      "left": 560.5,
+      "right": 608.5,
+      "width": 48,
+      "height": 48,
+      "disabled": false
+    },
+    "increaseButton": {
+      "top": 850.375,
+      "bottom": 898.375,
+      "left": 816.5,
+      "right": 864.5,
+      "width": 48,
+      "height": 48,
+      "disabled": false
+    },
+    "heightOutput": {
+      "top": 847.984375,
+      "bottom": 900.78125,
+      "left": 632.5,
+      "right": 792.5,
+      "width": 160,
+      "height": 52.796875,
+      "text": "6'2\""
+    },
+    "heightRange": {
+      "top": 931.78125,
+      "bottom": 939.78125,
+      "left": 297.5,
+      "right": 1127.5,
+      "width": 830,
+      "height": 8,
+      "disabled": false
+    },
+    "lockedReadout": {
+      "top": 982.578125,
+      "bottom": 999.375,
+      "left": 321.5,
+      "right": 1060.84375,
+      "width": 739.34375,
+      "height": 16.796875
+    },
+    "intro": [
+      {
+        "top": 1264.171875,
+        "bottom": 1288.171875,
+        "left": 32,
+        "right": 1393,
+        "width": 1361,
+        "height": 24
+      }
+    ],
+    "introCount": 1,
+    "interaction": {
+      "positionSelected": "true",
+      "after": "6'1\"",
+      "before": "6'2\"",
+      "heightChanged": true
+    },
+    "scrollWidth": 1425,
+    "clientWidth": 1425,
+    "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-1-firstfold-height/planner-desktop-1440x900.png"
+  },
+  {
+    "path": "/signature-blueprints",
+    "location": "http://127.0.0.1:3012/signature-blueprints",
+    "viewport": [
+      390,
+      844
+    ],
+    "main": {
+      "top": 73,
+      "bottom": 17739.796875,
+      "left": 0,
+      "right": 390,
+      "width": 390,
+      "height": 17666.796875
+    },
+    "h1": {
+      "top": 97,
+      "bottom": 173.78125,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 76.78125
+    },
+    "browseTitle": {
+      "top": 197.78125,
+      "bottom": 223.78125,
+      "left": 16,
+      "right": 250.390625,
+      "width": 234.390625,
+      "height": 26
+    },
+    "sourceBanner": {
+      "top": 260.578125,
+      "bottom": 298.578125,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 38
+    },
+    "filterPanel": {
+      "top": 310.578125,
+      "bottom": 436.578125,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 126
+    },
+    "firstCard": {
+      "top": 448.578125,
+      "bottom": 857.15625,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 408.578125
+    },
+    "intro": [
+      {
+        "top": 16985,
+        "bottom": 17105,
+        "left": 16,
+        "right": 374,
+        "width": 358,
+        "height": 120
+      }
+    ],
+    "introCount": 1,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-1-firstfold-height/blueprints-mobile-390x844.png"
+  },
+  {
+    "path": "/signature-blueprints",
+    "location": "http://127.0.0.1:3012/signature-blueprints",
+    "viewport": [
+      1440,
+      900
+    ],
+    "main": {
+      "top": 65,
+      "bottom": 6790.765625,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 6725.765625
+    },
+    "h1": {
+      "top": 113,
+      "bottom": 165.796875,
+      "left": 32,
+      "right": 800,
+      "width": 768,
+      "height": 52.796875
+    },
+    "browseTitle": {
+      "top": 213.796875,
+      "bottom": 242.59375,
+      "left": 32,
+      "right": 308.0625,
+      "width": 276.0625,
+      "height": 28.796875
+    },
+    "sourceBanner": {
+      "top": 266.59375,
+      "bottom": 326.1875,
+      "left": 32,
+      "right": 1393,
+      "width": 1361,
+      "height": 59.59375
+    },
+    "filterPanel": {
+      "top": 350.1875,
+      "bottom": 418.1875,
+      "left": 32,
+      "right": 1393,
+      "width": 1361,
+      "height": 68
+    },
+    "firstCard": {
+      "top": 442.1875,
+      "bottom": 809.171875,
+      "left": 32,
+      "right": 469.65625,
+      "width": 437.65625,
+      "height": 366.984375
+    },
+    "intro": [
+      {
+        "top": 6161.96875,
+        "bottom": 6209.96875,
+        "left": 32,
+        "right": 1393,
+        "width": 1361,
+        "height": 48
+      }
+    ],
+    "introCount": 1,
+    "scrollWidth": 1425,
+    "clientWidth": 1425,
+    "screenshot": "/root/.hermes/workspace/opc/my2kbuilder/frontend/site-src/qa/evidence/r24-1-firstfold-height/blueprints-desktop-1440x900.png"
+  }
+]

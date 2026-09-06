@@ -174,7 +174,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
 
   return (
     <div
-      className="planner-wizard flex flex-col gap-3 md:gap-6"
+      className="planner-wizard flex flex-col gap-2 md:gap-6"
       data-step={hydrated ? step : undefined}
       aria-busy={!hydrated}
     >
@@ -188,7 +188,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
         </div>
       ) : null}
 
-      <div className="border-y border-border-low py-4">
+      <div className="border-y border-border-low py-2 md:py-4">
         <div className="mb-2 flex items-center justify-between text-label-md">
           <span className="font-bold uppercase tracking-wider text-on-surface-variant">Step {step} of 4</span>
           <span className="font-bold text-primary-container">{STEP_LABELS[step - 1]}</span>
@@ -203,10 +203,10 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
         </div>
       </div>
 
-      <section className="wizard-step py-4 md:py-14" data-wizard-step="1" aria-labelledby="wizard-position-title">
-        <div className="mb-4 text-center md:mb-10">
-          <h2 id="wizard-position-title" className="font-display text-headline-lg font-bold text-on-surface md:text-display-lg">Choose a position</h2>
-          <p className="mt-2 text-body-md text-on-surface-variant md:mt-3 md:text-body-lg">Pick a position and height to plan your badge loadout.</p>
+      <section className="wizard-step py-2 md:py-14" data-wizard-step="1" aria-labelledby="wizard-position-title">
+        <div className="mb-2 text-center md:mb-10">
+          <h2 id="wizard-position-title" className="font-display text-headline-sm font-bold text-on-surface md:text-display-lg">Choose a position</h2>
+          <p className="mt-1 text-body-sm text-on-surface-variant md:mt-3 md:text-body-lg">Pick a position and height to plan your badge loadout.</p>
         </div>
         <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-5 md:gap-3 md:overflow-visible md:px-0 md:pb-0">
           {POSITIONS.map((abbr, index) => {
@@ -219,7 +219,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
                 disabled={!hydrated}
                 aria-pressed={selected}
                 onClick={() => setPosition(index)}
-                className={`relative flex h-[140px] w-[calc((100vw-68px)/3)] min-w-[104px] max-w-[120px] shrink-0 snap-start flex-col items-center justify-center gap-2 rounded-xl bg-surface-card px-3 text-center transition-all active:scale-[0.98] disabled:cursor-wait md:h-[104px] md:w-auto md:min-w-0 md:max-w-none md:flex-row md:justify-start md:gap-2 md:p-3 md:text-left ${selected ? "border-2 border-primary-container bg-surface-container-low shadow-[0_0_15px_rgba(255,176,58,0.15)]" : "border border-border-low hover:border-on-surface-variant hover:bg-surface-container-low"}`}
+                className={`relative flex h-[72px] w-[120px] min-w-[120px] shrink-0 snap-start flex-row items-center justify-start gap-2 rounded-xl bg-surface-card px-3 text-left transition-all active:scale-[0.98] disabled:cursor-wait md:h-[104px] md:w-auto md:min-w-0 md:max-w-none md:flex-row md:justify-start md:gap-2 md:p-3 md:text-left ${selected ? "border-2 border-primary-container bg-surface-container-low shadow-[0_0_15px_rgba(255,176,58,0.15)]" : "border border-border-low hover:border-on-surface-variant hover:bg-surface-container-low"}`}
               >
                 {selected ? <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary-container text-on-primary"><Icon name="check" size={14} fill /></span> : null}
                 {/* eslint-disable-next-line @next/next/no-img-element -- local position artwork */}
@@ -228,27 +228,27 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
                   alt=""
                   width={64}
                   height={64}
-                  className="h-16 w-16 shrink-0"
+                  className="h-10 w-10 shrink-0 md:h-16 md:w-16"
                 />
                 <span className="min-w-0">
-                  <span className={`block font-display text-headline-sm font-black leading-none ${selected ? "text-on-surface" : "text-on-surface-variant"}`}>{abbr}</span>
-                  <span className={`mt-1 block text-[10px] font-bold uppercase leading-tight tracking-wider md:pr-4 ${selected ? "text-primary-container" : "text-on-surface-variant"}`}>{details.name}</span>
+                  <span className={`block font-display text-body-lg font-black leading-none md:text-headline-sm ${selected ? "text-on-surface" : "text-on-surface-variant"}`}>{abbr}</span>
+                  <span className={`mt-1 block truncate text-[9px] font-bold uppercase leading-tight tracking-wide md:pr-4 md:text-[10px] md:tracking-wider ${selected ? "text-primary-container" : "text-on-surface-variant"}`}>{details.name}</span>
                   <span className="sr-only md:mt-1 md:block md:truncate md:text-[10px] md:leading-tight md:text-text-muted">{details.note}</span>
                 </span>
               </button>
             );
           })}
         </div>
-        <div className="mx-auto mt-8 max-w-4xl">
-          <div className="mb-6 text-center">
-            <h2 id="wizard-height-title" className="font-display text-display-lg font-bold text-on-surface">Height</h2>
-            <p className="mt-3 text-body-lg text-on-surface-variant">Some badges carry height limits — a badge row tells you when your current height locks it.</p>
+        <div className="mx-auto mt-3 max-w-4xl md:mt-8">
+          <div className="mb-2 text-center md:mb-6">
+            <h2 id="wizard-height-title" className="font-display text-headline-sm font-bold text-on-surface md:text-display-lg">Height</h2>
+            <p className="mt-1 text-body-sm text-on-surface-variant md:mt-3 md:text-body-lg">Some badges carry height limits — a badge row tells you when your current height locks it.</p>
           </div>
-          <div className="rounded-xl border border-border-low bg-surface-card p-6 md:p-8">
-            <div className="mb-6 flex items-center justify-center gap-4 md:gap-6">
-              <button type="button" aria-label="Decrease height" disabled={!hydrated || heightIn <= HEIGHT_IN_MIN} onClick={() => setHeightIn((height) => Math.max(HEIGHT_IN_MIN, height - 1))} className="flex h-12 w-12 items-center justify-center rounded-full border border-border-low bg-surface-container-high text-on-surface-variant hover:text-on-surface disabled:opacity-40"><Icon name="remove" size={22} /></button>
-              <output className="min-w-40 text-center font-display text-display-lg font-black text-primary-container">{heightLabel(heightIn)}</output>
-              <button type="button" aria-label="Increase height" disabled={!hydrated || heightIn >= HEIGHT_IN_MAX} onClick={() => setHeightIn((height) => Math.min(HEIGHT_IN_MAX, height + 1))} className="flex h-12 w-12 items-center justify-center rounded-full border border-border-low bg-surface-container-high text-on-surface-variant hover:text-on-surface disabled:opacity-40"><Icon name="add" size={22} /></button>
+          <div className="rounded-xl border border-border-low bg-surface-card p-3 md:p-8">
+            <div className="mb-3 flex items-center justify-center gap-3 md:mb-6 md:gap-6">
+              <button type="button" aria-label="Decrease height" disabled={!hydrated || heightIn <= HEIGHT_IN_MIN} onClick={() => setHeightIn((height) => Math.max(HEIGHT_IN_MIN, height - 1))} className="flex h-10 w-10 items-center justify-center rounded-full border border-border-low bg-surface-container-high text-on-surface-variant hover:text-on-surface disabled:opacity-40 md:h-12 md:w-12"><Icon name="remove" size={22} /></button>
+              <output className="min-w-28 text-center font-display text-headline-md font-black text-primary-container md:min-w-40 md:text-display-lg">{heightLabel(heightIn)}</output>
+              <button type="button" aria-label="Increase height" disabled={!hydrated || heightIn >= HEIGHT_IN_MAX} onClick={() => setHeightIn((height) => Math.min(HEIGHT_IN_MAX, height + 1))} className="flex h-10 w-10 items-center justify-center rounded-full border border-border-low bg-surface-container-high text-on-surface-variant hover:text-on-surface disabled:opacity-40 md:h-12 md:w-12"><Icon name="add" size={22} /></button>
             </div>
             <input aria-label="Height in inches" type="range" min={HEIGHT_IN_MIN} max={HEIGHT_IN_MAX} value={heightIn} disabled={!hydrated} onChange={(event) => setHeightIn(Number(event.target.value))} className="h-2 w-full cursor-pointer accent-primary-container disabled:cursor-wait" />
             <div className="mt-2 flex justify-between text-body-sm text-text-muted"><span>{heightLabel(HEIGHT_IN_MIN)}</span><span>{heightLabel(HEIGHT_IN_MAX)}</span></div>
