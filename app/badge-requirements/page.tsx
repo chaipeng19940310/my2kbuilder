@@ -18,6 +18,7 @@ import {
   type BadgeTierRequirement,
 } from "@/lib/data";
 import { DataSourceBanner } from "@/components/SourceTag";
+import { BadgeHeightView, type HeightBadge } from "@/components/BadgeHeightView";
 import badgeRequirementsBundle from "@/public/data/badge-requirements.v1.json";
 
 // SEO freeze (seo §3 rules: title <=60 chars / meta <=155 chars; banned words
@@ -75,6 +76,15 @@ const FAQS = [
 // R12I-A production bundle: 53 real badges, four-tier unlock requirements,
 // every requirement cell cross_checked across two public reference tables.
 const BADGES = badgeCatalog(badgeRequirementsBundle as BadgeRequirementsBundle);
+
+const HEIGHT_BADGES: HeightBadge[] = BADGES.map((badge) => ({
+  slug: badge.slug,
+  name: badge.name,
+  category: badge.category,
+  tiers: Object.fromEntries(
+    BADGE_TIERS.map((tier) => [tier, badge.requirements[tier].height_restriction]),
+  ) as HeightBadge["tiers"],
+}));
 
 /* Tier color blocks: .tier-chip classes from globals.css (design handoff
    r12i-visual-handoff-v1.md §2 contract, committed by R12I-D). Legend is a
@@ -171,17 +181,22 @@ export default function BadgeRequirementsPage() {
         }}
       />
 
-      <header className="flex max-w-3xl flex-col gap-4">
+      <header className="flex max-w-3xl flex-col gap-2">
         <h1 className="font-display text-display-lg text-primary-container">
           NBA 2K27 Badge Requirements
         </h1>
-        {/* Page intro (copy §1, verbatim). */}
-        <p className="text-body-lg text-on-surface-variant">
-          {
-            "All 53 NBA 2K27 badges, listed with the attribute requirements for Bronze, Silver, Gold, and Hall of Fame tiers. Rows show AND/OR logic and height limits when they apply. Badge names and categories come from 2K's published builder list; requirement cells are marked cross_checked where two public reference tables match. Legend tier is not a direct unlock — it requires Synergy."
-          }
-        </p>
       </header>
+
+      {/* R26.2: first-viewport interactive view, computed only from our own
+          bundled tier restrictions. The existing route and metadata stay put. */}
+      <BadgeHeightView badges={HEIGHT_BADGES} />
+
+      {/* Page intro (copy §1, verbatim). */}
+      <p className="max-w-3xl text-body-lg text-on-surface-variant">
+        {
+          "All 53 NBA 2K27 badges, listed with the attribute requirements for Bronze, Silver, Gold, and Hall of Fame tiers. Rows show AND/OR logic and height limits when they apply. Badge names and categories come from 2K's published builder list; requirement cells are marked cross_checked where two public reference tables match. Legend tier is not a direct unlock — it requires Synergy."
+        }
+      </p>
 
       {/* Owner-authorized 2K builder screenshot at page head (same pattern as
           /takeover-requirements; local static asset, no third-party request). */}
@@ -237,7 +252,7 @@ export default function BadgeRequirementsPage() {
       {/* Discipline filter (置顶 per copy §1 design placement). Pure
           progressive enhancement: all 53 rows are in the SSR HTML; the chips
           only toggle section visibility via the bridge script above. */}
-      <section className="flex flex-col gap-4">
+      <section id="full-requirements" className="flex flex-col gap-4">
         <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Filter badges by discipline">
           <button
             type="button"

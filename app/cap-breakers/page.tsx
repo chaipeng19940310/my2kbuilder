@@ -120,17 +120,22 @@ export default function CapBreakersPage() {
         { href: "#cap-breakers-faq", label: "FAQ" },
       ]} />
 
-      <header className="flex max-w-3xl flex-col gap-4">
+      <header className="flex max-w-3xl flex-col gap-2">
         <h1 className="font-display text-display-lg text-primary-container">
           NBA 2K27 Cap Breakers
         </h1>
-        {/* Page intro (copy §2, verbatim). */}
-        <p className="text-body-lg text-on-surface-variant">
-          {
-            "Cap Breakers return in NBA 2K27, and the builder now previews what each breaker adds to every attribute once you hit 99 OVR. This page explains the mechanics and shows you how to plan breakers backwards from badge thresholds. Exact per-attribute gain values are not listed here — those numbers live in the in-game preview and are pending verification on this site."
-          }
-        </p>
       </header>
+
+      {/* R26.2: the live tool immediately follows the H1 so its controls are
+          visible and operable in the 390×844 and 1440×900 first viewport. */}
+      <CapBreakerCalculator badges={CALC_BADGES} />
+
+      {/* Page intro (copy §2, verbatim). */}
+      <p className="max-w-3xl text-body-lg text-on-surface-variant">
+        {
+          "Cap Breakers return in NBA 2K27, and the builder now previews what each breaker adds to every attribute once you hit 99 OVR. This page explains the mechanics and shows you how to plan breakers backwards from badge thresholds. Exact per-attribute gain values are not listed here — those numbers live in the in-game preview and are pending verification on this site."
+        }
+      </p>
 
       {/* Owner-authorized 2K builder screenshot at page head (same pattern as
           /takeover-requirements; local static asset, no third-party request). */}
@@ -304,22 +309,6 @@ export default function CapBreakersPage() {
           </div>
         </div>
 
-        {/* Interactive calculator (task requirement): current rating + target
-            badge tier in, gap out. Pure client-side arithmetic on the verified
-            bundle; per-breaker gains stay pending-verification verbatim. */}
-        <div className="flex max-w-3xl flex-col gap-3">
-          <h3 className="font-display text-headline-sm text-on-surface">Gap Calculator</h3>
-          <p className="text-body-md text-on-surface-variant">
-            {
-              "Pick a badge and tier, enter your current rating, and see the gap cap breakers would need to cover. Then "
-            }
-            <Link href="/badge-token-planner" className="text-primary-container hover:underline">
-              open the Badge Token Planner
-            </Link>
-            {" to map the rest of the build around it."}
-          </p>
-          <CapBreakerCalculator badges={CALC_BADGES} />
-        </div>
       </section>
 
       {/* 2K Builder Courtside Report — click-to-load facade per design handoff
