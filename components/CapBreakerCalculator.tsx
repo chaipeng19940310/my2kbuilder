@@ -1,9 +1,10 @@
 "use client";
+import { TierBadge } from "@/components/TierBadge";
 
 import { useMemo, useState } from "react";
 import {
   BADGE_TIERS,
-  BADGE_TIER_LABEL,
+
   type BadgeTier,
 } from "@/lib/data";
 
@@ -25,12 +26,7 @@ export interface CapCalcBadge {
   tiers: Record<BadgeTier, CapCalcTierReq>;
 }
 
-const TIER_CHIP_CLASS: Record<BadgeTier, string> = {
-  bronze: "tier-chip tier-bronze",
-  silver: "tier-chip tier-silver",
-  gold: "tier-chip tier-gold",
-  hof: "tier-chip tier-hof",
-};
+
 
 const fieldClass =
   "h-11 w-full rounded border border-border-low bg-surface-container-lowest px-3 text-body-md text-on-surface";
@@ -170,7 +166,7 @@ export function CapBreakerCalculator({ badges }: { badges: CapCalcBadge[] }) {
                 </p>
               </div>
               <div className="flex shrink-0 flex-col items-end gap-1">
-                <span className={TIER_CHIP_CLASS[after.tier]}>{BADGE_TIER_LABEL[after.tier]}</span>
+                <TierBadge tier={after.tier} size={32} />
                 {before?.tier !== after.tier ? <span className="text-[10px] font-semibold text-secondary">NEW</span> : null}
               </div>
             </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TierBadge } from "@/components/TierBadge";
 import Link from "next/link";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { DisciplineIcon } from "@/components/DisciplineIcon";
@@ -19,7 +20,7 @@ import {
   stripProvenance,
   tokenCostMap,
   type BadgeRequirementsBundle,
-  type BadgeTier,
+
   type BadgeTierRequirement,
   type TokenCostBundle,
 } from "@/lib/data";
@@ -67,12 +68,7 @@ const COSTS = tokenCostMap(tokenCostsBundle as TokenCostBundle);
 // key/value/source_type per record.
 const CLIENT_BUNDLE = stripProvenance(badgeRequirementsBundle as BadgeRequirementsBundle);
 
-const TIER_CHIP_CLASS: Record<BadgeTier, string> = {
-  bronze: "tier-chip tier-bronze",
-  silver: "tier-chip tier-silver",
-  gold: "tier-chip tier-gold",
-  hof: "tier-chip tier-hof",
-};
+
 
 function tierRequirementText(req: BadgeTierRequirement): string {
   const connective = req.logic === "AND" ? " and " : req.logic === "OR" ? " or " : "";
@@ -246,9 +242,9 @@ export default function BadgeTokenPlannerPage() {
                       </div>
                       <div className="roster-tiers">
                         {BADGE_TIERS.map((tier) => (
-                          <span key={tier} className={`${TIER_CHIP_CLASS[tier]} roster-tier`}>
+                          <TierBadge key={tier} tier={tier} className="roster-tier">
                             {BADGE_TIER_LABEL[tier]}: {tierRequirementText(badge.requirements[tier])}
-                          </span>
+                          </TierBadge>
                         ))}
                       </div>
                       {COSTS.get(badge.slug) ? (

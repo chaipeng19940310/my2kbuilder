@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TierStrip } from "@/components/TierBadge";
 import Link from "next/link";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { DisciplineIcon } from "@/components/DisciplineIcon";
@@ -228,15 +229,7 @@ export default function CapBreakersPage() {
               "The practical way to use cap breakers is to start from the badge you want, not from the attribute you like."
             }
           </p>
-          {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG asset from the R12I-G pack */}
-          <img
-            src="/assets/r12i/tiers/tier-strip.svg"
-            alt="Badge tier path from Bronze through Silver, Gold, and Hall of Fame, with Legend as a planning marker"
-            width={920}
-            height={180}
-            loading="lazy"
-            className="w-full max-w-2xl rounded border border-border-low object-contain"
-          />
+          <TierStrip />
           <ol className="flex list-decimal flex-col gap-3 pl-5 text-body-md text-on-surface-variant">
             <li>
               <span className="font-semibold text-on-surface">Pick the target badge tier.</span>{" "}

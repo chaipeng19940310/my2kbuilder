@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TierStrip } from "@/components/TierBadge";
 import Link from "next/link";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { VideoFacade } from "@/components/VideoFacade";
@@ -87,9 +88,9 @@ function SectionHeading({ icon, alt, children }: { icon?: string; alt?: string; 
   return (
     <h2 className="flex items-center gap-3 font-display text-headline-md text-on-surface">
       {icon ? (
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border-low bg-surface-container-lowest p-1.5">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border-low bg-surface-container-lowest">
           {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG from the R12I-G design pack */}
-          <img src={icon} alt={alt ?? ""} width={28} height={28} className="h-7 w-7 object-contain" />
+          <img src={icon} alt={alt ?? ""} width={32} height={32} className="h-8 w-8 shrink-0 object-contain" />
         </span>
       ) : null}
       {children}
@@ -230,20 +231,12 @@ export default function BuildPitfallsPage() {
 
       {/* §3 Badge math (copy §3, verbatim + source chips + tier visuals). */}
       <section id="badge-math" className="flex max-w-3xl flex-col gap-4">
-        <SectionHeading icon="/assets/r12i/tiers/tier-gold.svg" alt="Gold tier mark">
+        <SectionHeading icon="/assets/tier-icons/tier-gold.svg" alt="Gold tier mark">
           The Badge Math Changed Under Your Feet
         </SectionHeading>
-        {/* R12I-G tier strip (920x180 SVG): the five badge tiers as a visual
-            breather; Legend stays a planning marker, never a promise. */}
+        {/* Original metal tier icons; Legend stays a planning marker. */}
         <div className="overflow-hidden rounded border border-border-low bg-surface-card p-4">
-          {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG from the R12I-G design pack */}
-          <img
-            src="/assets/r12i/tiers/tier-strip.svg"
-            alt="Badge tier strip: Bronze, Silver, Gold, Hall of Fame, Legend"
-            width={920}
-            height={180}
-            className="h-auto w-full object-contain"
-          />
+          <TierStrip />
         </div>
         <p className="text-body-md text-on-surface-variant">
           {"NBA 2K27 ships 53 badges: 19 new, 6 removed."}

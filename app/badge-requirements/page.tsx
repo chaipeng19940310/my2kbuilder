@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TierBadge } from "@/components/TierBadge";
 import Link from "next/link";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { DisciplineIcon } from "@/components/DisciplineIcon";
@@ -14,7 +15,7 @@ import {
   heightRestrictionLabel,
   type BadgeCatalogEntry,
   type BadgeRequirementsBundle,
-  type BadgeTier,
+
   type BadgeTierRequirement,
 } from "@/lib/data";
 import { DataSourceBanner } from "@/components/SourceTag";
@@ -86,15 +87,8 @@ const HEIGHT_BADGES: HeightBadge[] = BADGES.map((badge) => ({
   ) as HeightBadge["tiers"],
 }));
 
-/* Tier color blocks: .tier-chip classes from globals.css (design handoff
-   r12i-visual-handoff-v1.md §2 contract, committed by R12I-D). Legend is a
-   planning marker only, never a direct-unlock tier. */
-const TIER_CHIP_CLASS: Record<BadgeTier, string> = {
-  bronze: "tier-chip tier-bronze",
-  silver: "tier-chip tier-silver",
-  gold: "tier-chip tier-gold",
-  hof: "tier-chip tier-hof",
-};
+
+
 
 /** One tier cell: attribute + minimum rating lines joined by the AND/OR logic. */
 function TierCell({ req }: { req: BadgeTierRequirement }) {
@@ -139,6 +133,7 @@ function BadgeRow({ badge }: { badge: BadgeCatalogEntry }) {
       </td>
       {BADGE_TIERS.map((t) => (
         <td key={t} data-label={BADGE_TIER_LABEL[t]} className="r18-t">
+          <TierBadge tier={t} className="mobile-tier-label" />
           <TierCell req={badge.requirements[t]} />
         </td>
       ))}
@@ -223,11 +218,9 @@ export default function BadgeRequirementsPage() {
         <h2 className="font-display text-headline-sm text-on-surface">How to Read This Table</h2>
         <div className="flex flex-wrap items-center gap-2">
           {BADGE_TIERS.map((t) => (
-            <span key={t} className={TIER_CHIP_CLASS[t]}>
-              {BADGE_TIER_LABEL[t]}
-            </span>
+            <TierBadge key={t} tier={t} size={32} />
           ))}
-          <span className="tier-chip tier-legend">Legend</span>
+          <TierBadge tier="legend" size={32} />
         </div>
         <ul className="flex list-disc flex-col gap-2 pl-5 text-body-md text-on-surface-variant">
           <li>AND — every listed attribute must meet the requirement.</li>
@@ -329,7 +322,7 @@ export default function BadgeRequirementsPage() {
                       </th>
                       {BADGE_TIERS.map((t) => (
                         <th key={t} scope="col" className="p-3">
-                          <span className={TIER_CHIP_CLASS[t]}>{BADGE_TIER_LABEL[t]}</span>
+                          <TierBadge tier={t} />
                         </th>
                       ))}
                       <th scope="col" className="p-3 text-label-md text-text-muted">

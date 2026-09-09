@@ -1,9 +1,10 @@
 "use client";
+import { TierBadge } from "@/components/TierBadge";
 
 import { useMemo, useState } from "react";
 import {
   BADGE_TIERS,
-  BADGE_TIER_LABEL,
+
   DISCIPLINES,
   type BadgeTier,
   type DisciplineName,
@@ -21,12 +22,7 @@ export interface HeightBadge {
   tiers: Record<BadgeTier, HeightTierRequirement | null>;
 }
 
-const TIER_CHIP_CLASS: Record<BadgeTier, string> = {
-  bronze: "tier-chip tier-bronze",
-  silver: "tier-chip tier-silver",
-  gold: "tier-chip tier-gold",
-  hof: "tier-chip tier-hof",
-};
+
 
 function heightLabel(inches: number): string {
   return `${Math.floor(inches / 12)}'${inches % 12}\"`;
@@ -99,7 +95,7 @@ export function BadgeHeightView({ badges }: { badges: HeightBadge[] }) {
                 <p className="truncate text-label-md text-on-surface">{badge.name}</p>
                 <p className="text-body-sm text-text-muted">{badge.category}</p>
               </div>
-              {tier ? <span className={TIER_CHIP_CLASS[tier]}>{BADGE_TIER_LABEL[tier]}</span> : <span className="rounded border border-border-low px-2 py-1 text-label-sm text-text-muted">Unavailable</span>}
+              {tier ? <TierBadge tier={tier} size={32} /> : <span className="rounded border border-border-low px-2 py-1 text-label-sm text-text-muted">Unavailable</span>}
             </div>
           ))}
         </div>

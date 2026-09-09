@@ -1,4 +1,5 @@
 "use client";
+import { TierBadge } from "@/components/TierBadge";
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -36,7 +37,7 @@ const POSITION_DETAILS = [
   { name: "Center", note: "Paint protector, interior anchor" },
 ] as const;
 const TIER_NAMES = ["BRZ", "SLV", "GLD", "HOF"] as const;
-const TIER_CLASSES = ["tier-bronze", "tier-silver", "tier-gold", "tier-hof"] as const;
+const TIER_KEYS = ["bronze", "silver", "gold", "hof"] as const;
 
 function heightLabel(inches: number): string {
   return `${Math.floor(inches / 12)}'${inches % 12}\"`;
@@ -313,7 +314,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
             </div>
           </aside>
           <div className="overflow-hidden rounded-xl border border-border-low bg-surface-card lg:col-span-8">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border-low bg-surface-container-low px-3 py-2"><span className="text-label-md font-bold uppercase tracking-wider text-on-surface-variant">Available Badges</span><div className="flex gap-1">{TIER_NAMES.map((tier, index) => <span key={tier} className={`tier-chip ${TIER_CLASSES[index]}`}>{tier}</span>)}</div></div>
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border-low bg-surface-container-low px-3 py-2"><span className="text-label-md font-bold uppercase tracking-wider text-on-surface-variant">Available Badges</span><div className="flex flex-wrap gap-2">{TIER_KEYS.map((tier) => <TierBadge key={tier} tier={tier} />)}</div></div>
             {catalog.length === 0 ? <p className="p-8 text-center text-on-surface-variant">No badges in the data bundle.</p> : (
               <ul className="badge-list">
                 {catalog.map((badge) => {
@@ -332,7 +333,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
                         {locked ? <p className="badge-locked">Not unlockable at {heightLabel(heightIn)}.</p> : null}
                       </div>
                       <div className="badge-actions">
-                        {assigned > 0 ? <span className={`tier-chip ${TIER_CLASSES[tierIndex]}`}>{TIER_NAMES[tierIndex]}</span> : <span className="badge-none">NONE</span>}
+                        {assigned > 0 ? <TierBadge tier={TIER_KEYS[tierIndex]}>{TIER_NAMES[tierIndex]}</TierBadge> : <span className="badge-none">NONE</span>}
                         <div className="badge-stepper"><button type="button" aria-label={`Remove a slot from ${badge.name}`} disabled={!hydrated || assigned === 0 || locked} onClick={() => removeSlot(badge.index)}><Icon name="remove" size={16} /></button><span className="badge-count">{assigned}</span><button type="button" aria-label={`Assign a slot to ${badge.name}`} disabled={!hydrated || locked} onClick={() => assignSlot(badge.index)}><Icon name="add" size={16} /></button></div>
                       </div>
                     </li>
@@ -350,7 +351,7 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
           <div className="rounded-xl border border-border-low bg-surface-card p-3 md:p-4">
             <div className="flex flex-wrap gap-1.5"><span className="rounded bg-surface-container-high px-2 py-1 text-body-sm text-on-surface">Position: {position >= 0 ? POSITIONS[position] : "—"}</span><span className="rounded bg-surface-container-high px-2 py-1 text-body-sm text-on-surface">Height: {heightLabel(heightIn)}</span>{priorityOrder.map((discipline, rank) => <span key={discipline} className="rounded bg-secondary/15 px-2 py-1 text-body-sm text-secondary">P{rank + 1} {DISCIPLINES[discipline]}</span>)}</div>
             <div className="my-3 flex items-center justify-between border-y border-border-low py-2"><span className="font-display text-body-lg font-bold text-on-surface">Badge Loadout</span><span className={`font-display text-headline-md font-black ${complete ? "text-secondary" : "text-primary-container"}`}>{usedSlots}/{MAX_BADGE_SLOTS}</span></div>
-            <div className="max-h-24 overflow-y-auto"><div className="flex flex-wrap gap-1.5">{allocations.length > 0 ? allocations.map(([index, slots]) => { const badge = catalog.find((item) => item.index === index); const tierIndex = Math.min(slots, 4) - 1; return badge ? <span key={index} className={`tier-chip ${TIER_CLASSES[tierIndex]}`}>{badge.name} · {TIER_NAMES[tierIndex]}</span> : null; }) : <span className="text-body-md text-text-muted">Complete all 20 slots to generate a link</span>}</div></div>
+            <div className="max-h-24 overflow-y-auto"><div className="flex flex-wrap gap-1.5">{allocations.length > 0 ? allocations.map(([index, slots]) => { const badge = catalog.find((item) => item.index === index); const tierIndex = Math.min(slots, 4) - 1; return badge ? <TierBadge key={index} tier={TIER_KEYS[tierIndex]}>{badge.name} · {TIER_NAMES[tierIndex]}</TierBadge> : null; }) : <span className="text-body-md text-text-muted">Complete all 20 slots to generate a link</span>}</div></div>
             <button type="button" disabled={!hydrated || !complete} onClick={generateShareLink} className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg bg-primary-container px-5 py-3 text-label-md font-bold text-on-primary hover:bg-surface-tint disabled:cursor-not-allowed disabled:bg-surface-container-high disabled:text-text-muted"><Icon name="share" size={18} />Generate Share Link</button>
             {!complete ? <p className="mt-1 text-center text-[11px] text-text-muted">Complete all 20 slots to generate a link</p> : null}
             <button type="button" disabled={!overBudget} onClick={() => setStep(3)} className={`mx-auto mt-1 text-label-md text-primary-container hover:underline ${overBudget ? "block" : "invisible block"}`}>Adjust Allocation</button>

@@ -9,7 +9,7 @@
   .mobile-compact-source-banner > div { align-items: flex-start; padding: .75rem; }
   .mobile-compact-source-banner > div > p { overflow: visible; white-space: normal; }
 }
-.r18-table thead .tier-chip { min-width: 92px; padding: 6px 10px; border-radius: 8px; font-size: 12px; box-shadow: inset 0 0 0 1px currentColor; }
+.r18-table .mobile-tier-label { display: none; }
 .r18-table thead th { vertical-align: bottom; }
 .r18-table tbody tr { transition: background-color .15s ease; }
 .r18-table tbody tr:hover { background: rgba(18, 33, 49, .55); }
@@ -103,10 +103,8 @@
   .r18-table th[scope="row"] { position: static !important; grid-column: 1 / -1; margin-bottom: 10px; padding: 0 0 10px !important; border-bottom: 1px solid #1e293b; background: transparent !important; font-size: 16px; }
   .r18-table td { padding: 6px 0 !important; }
   .r18-table td::before { content: attr(data-label); display: block; margin-bottom: 4px; color: #64748b; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-  .r18-table td[data-label="Bronze"]::before { color: #b87333; }
-  .r18-table td[data-label="Silver"]::before { color: #c0c7d1; }
-  .r18-table td[data-label="Gold"]::before { color: #f6c453; }
-  .r18-table td[data-label="Hall of Fame"]::before { color: #b794f6; }
+  .r18-table .r18-t::before { content: none; }
+  .r18-table .mobile-tier-label { display: inline-flex; margin-bottom: 4px; font-size: 10px; }
   .r18-table td[data-label="Category"], .r18-table td[data-label="Height limit"], .r18-table td[data-label="Source"] { grid-column: 1 / -1; }
   .r18-table [role="group"][aria-label="Filter badges by discipline"] { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
 }

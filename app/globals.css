@@ -161,28 +161,14 @@ body {
   }
 }
 
-/* R12I visual system (design/r12i-visual-handoff-v1.md §2): badge tier chips.
-   Metallic color steps from the design pack; Legend is a planning marker only
-   (never a direct-unlock promise in copy). */
-.tier-chip {
-  display: inline-flex;
-  align-items: center;
-  min-width: 76px;
-  justify-content: center;
-  border-radius: 6px;
-  padding: 4px 8px;
-  border: 1px solid currentColor;
-  font-family: var(--font-body);
-  font-size: 12px;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-.tier-bronze { color: #b87333; background: rgba(184, 115, 51, 0.16); }
-.tier-silver { color: #c0c7d1; background: rgba(192, 199, 209, 0.14); }
-.tier-gold { color: #f6c453; background: rgba(246, 196, 83, 0.15); }
-.tier-hof { color: #b794f6; background: rgba(183, 148, 246, 0.16); }
-.tier-legend { color: #67e8f9; background: rgba(103, 232, 249, 0.14); }
+/* Owner-approved original metal tier SVGs: compact 20, result 32, strip 40px.
+   Legend remains a Synergy planning marker, not an attribute unlock. */
+.tier-badge { display: inline-flex; align-items: center; gap: 6px; min-width: 0; color: #d4e4fa; font: 600 12px/1.4 var(--font-body); }
+.tier-badge-icon { display: block; flex: none; max-width: none; object-fit: contain; }
+.tier-badge > span { min-width: 0; }
+.metal-tier-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 16px; border: 1px solid #1e293b; border-radius: 8px; background: #010f1f; }
+.metal-tier-strip .tier-badge { flex-direction: column; text-align: center; }
+.r18-table thead .tier-badge { white-space: nowrap; }
 
 /* R12I discipline icon wrapper (design handoff §2): 6 original discipline
    glyphs on #0E1628 with 1px #1E293B border. */

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<defs>
+<linearGradient id="slv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.28" stop-color="#dfe7ee"/><stop offset="0.5" stop-color="#f4f8fb"/><stop offset="0.72" stop-color="#9aa7b4"/><stop offset="1" stop-color="#6b7683"/></linearGradient><linearGradient id="slvD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8eef4"/><stop offset="1" stop-color="#7d8a97"/></linearGradient>
+</defs>
+<path d="M32 6 L50 11 L54 15 L54 33 C54 45 44 53 32 58 C20 53 10 45 10 33 L10 15 L14 11 Z" fill="url(#slv)" stroke="#39424c" stroke-width="3" stroke-linejoin="round"/><path d="M32 10.5 L47 15 L50.5 18.5 L50.5 32.5 C50.5 42.5 42.5 49.5 32 54 C21.5 49.5 13.5 42.5 13.5 32.5 L13.5 18.5 L17 15 Z" fill="none" stroke="#ffffff" stroke-width="1.6" opacity="0.6"/><polygon points="32.0,22.0 35.1,29.9 43.0,33.0 35.1,36.1 32.0,44.0 28.9,36.1 21.0,33.0 28.9,29.9" fill="url(#slvD)" stroke="#4a555f" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="24" cy="16" rx="9" ry="5" fill="#ffffff" opacity="0.5"/>
+</svg>
