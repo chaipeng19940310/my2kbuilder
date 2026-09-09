@@ -177,7 +177,7 @@ export default function BadgeRequirementsPage() {
           stateless in React), so there is nothing to hydrate. */}
       <script
         dangerouslySetInnerHTML={{
-          __html: `(function(){if(window.__m2kBadgeReqBoot)return;window.__m2kBadgeReqBoot=true;document.addEventListener("click",function(e){var t=e.target;if(!t||!t.closest)return;var btn=t.closest("[data-m2k-filter]");if(!btn)return;var f=btn.getAttribute("data-m2k-filter");var all=document.querySelectorAll("[data-m2k-filter]");for(var i=0;i<all.length;i++)all[i].setAttribute("aria-pressed",all[i]===btn?"true":"false");var secs=document.querySelectorAll("[data-m2k-discipline]");var shown=0;for(var j=0;j<secs.length;j++){var hide=f!=="all"&&secs[j].getAttribute("data-m2k-discipline")!==f;secs[j].hidden=hide;if(!hide)shown+=parseInt(secs[j].getAttribute("data-m2k-count")||"0",10);}var n=document.getElementById("badge-requirements-shown");if(n)n.textContent=String(shown);},true);})();`,
+          __html: `(function(){if(window.__m2kBadgeReqBoot)return;window.__m2kBadgeReqBoot=true;document.addEventListener("click",function(e){var t=e.target;if(!t||!t.closest)return;var btn=t.closest("[data-m2k-filter]");if(!btn)return;var f=btn.getAttribute("data-m2k-filter");var all=document.querySelectorAll("[data-m2k-filter]");for(var i=0;i<all.length;i++)all[i].setAttribute("aria-pressed",all[i]===btn?"true":"false");var secs=document.querySelectorAll("[data-m2k-discipline]");var shown=0;for(var j=0;j<secs.length;j++){var hide=f!=="all"&&secs[j].getAttribute("data-m2k-discipline")!==f;secs[j].hidden=hide;if(!hide)shown+=parseInt(secs[j].getAttribute("data-m2k-count")||"0",10);}var n=document.getElementById("badge-requirements-shown");if(n)n.textContent=String(shown);var label=document.getElementById("badge-requirements-filter-label");if(label)label.textContent=f==="all"?"All disciplines":f;var feedback=document.getElementById("badge-requirements-feedback");if(feedback&&window.matchMedia("(max-width: 767px)").matches){requestAnimationFrame(function(){feedback.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth",block:"start"});});}},true);})();`,
         }}
       />
 
@@ -278,8 +278,8 @@ export default function BadgeRequirementsPage() {
             );
           })}
         </div>
-        <p className="text-body-sm text-text-muted">
-          Showing <span id="badge-requirements-shown">{BADGES.length}</span> of {BADGES.length} badges
+        <p id="badge-requirements-feedback" role="status" aria-live="polite" aria-atomic="true" className="text-body-sm">
+          <strong id="badge-requirements-filter-label">All disciplines</strong> · Showing <span id="badge-requirements-shown">{BADGES.length}</span> of {BADGES.length} badges
         </p>
 
         {/* Above-table helper (copy §1, verbatim; planner link = bidirectional

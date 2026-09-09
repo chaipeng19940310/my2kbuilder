@@ -59,7 +59,7 @@ export function BadgeHeightView({ badges }: { badges: HeightBadge[] }) {
     <section
       id="by-height"
       aria-labelledby="height-view-title"
-      className="flex max-w-5xl flex-col gap-3 rounded border border-primary-container/60 bg-surface-card p-4 shadow-sm md:p-5"
+      className="flex w-full flex-col gap-3 rounded border border-primary-container/60 bg-surface-card p-4 shadow-sm md:p-5"
     >
       <div className="flex flex-col gap-1 md:flex-row md:items-end md:justify-between">
         <div>
@@ -75,13 +75,13 @@ export function BadgeHeightView({ badges }: { badges: HeightBadge[] }) {
       <div className="grid grid-cols-2 gap-3 md:max-w-xl">
         <label className="flex flex-col gap-1 text-label-md text-text-muted">
           MyPLAYER height
-          <select className="h-11 rounded border border-border-low bg-surface-container-lowest px-3 text-body-md text-on-surface" value={height} onChange={(event) => setHeight(Number(event.target.value))}>
+          <select className="tool-select h-11 rounded border border-border-low bg-surface-container-lowest px-3 text-body-md text-on-surface" value={height} onChange={(event) => setHeight(Number(event.target.value))}>
             {heights.map((value) => <option key={value} value={value}>{heightLabel(value)}</option>)}
           </select>
         </label>
         <label className="flex flex-col gap-1 text-label-md text-text-muted">
           Discipline
-          <select className="h-11 rounded border border-border-low bg-surface-container-lowest px-3 text-body-md text-on-surface" value={discipline} onChange={(event) => setDiscipline(event.target.value as "All" | DisciplineName)}>
+          <select className="tool-select h-11 rounded border border-border-low bg-surface-container-lowest px-3 text-body-md text-on-surface" value={discipline} onChange={(event) => setDiscipline(event.target.value as "All" | DisciplineName)}>
             <option value="All">All</option>
             {DISCIPLINES.map((name) => <option key={name} value={name}>{name}</option>)}
           </select>

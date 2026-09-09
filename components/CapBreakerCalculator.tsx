@@ -92,7 +92,7 @@ export function CapBreakerCalculator({ badges }: { badges: CapCalcBadge[] }) {
   return (
     <section
       aria-labelledby="cap-breaker-tool-title"
-      className="flex max-w-5xl flex-col gap-3 rounded border border-primary-container/60 bg-surface-card p-4 shadow-sm md:p-5"
+      className="cap-preview flex w-full flex-col gap-4 rounded border border-primary-container/60 bg-surface-card p-4 shadow-sm md:p-5"
     >
       <div className="flex flex-col gap-1 md:flex-row md:items-end md:justify-between">
         <div>
@@ -108,16 +108,17 @@ export function CapBreakerCalculator({ badges }: { badges: CapCalcBadge[] }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-[minmax(220px,1fr)_150px_190px]">
-        <label className="col-span-2 flex flex-col gap-1 text-label-md text-text-muted md:col-span-1">
+      <div className="cap-preview-layout">
+      <div className="cap-preview-controls">
+        <label className="flex flex-col gap-1 text-label-md text-text-muted">
           Attribute
-          <select className={fieldClass} value={attribute} onChange={(event) => setAttribute(event.target.value)}>
+          <select className={`${fieldClass} tool-select`} value={attribute} onChange={(event) => setAttribute(event.target.value)}>
             {attributes.map((name) => (
               <option key={name} value={name}>{name}</option>
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-1 text-label-md text-text-muted">
+        <label className="cap-current flex flex-col gap-1 text-label-md text-text-muted">
           Current value
           <input
             aria-label="Current attribute value"
@@ -132,7 +133,7 @@ export function CapBreakerCalculator({ badges }: { badges: CapCalcBadge[] }) {
         </label>
         <div className="flex flex-col gap-1 text-label-md text-text-muted">
           Cap Breakers: {breakers} / 5
-          <div className="grid h-11 grid-cols-6 overflow-hidden rounded border border-border-low" role="group" aria-label="Cap Breakers to add">
+          <div className="cap-breaker-buttons" role="group" aria-label="Cap Breakers to add">
             {[0, 1, 2, 3, 4, 5].map((count) => (
               <button
                 key={count}
@@ -148,17 +149,17 @@ export function CapBreakerCalculator({ badges }: { badges: CapCalcBadge[] }) {
         </div>
       </div>
 
-      <div aria-live="polite" className="rounded border border-border-low bg-surface-container-low p-3">
+      <div aria-live="polite" className="cap-preview-results rounded border border-border-low bg-surface-container-low p-3">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <p className="text-body-md text-on-surface">
-            <strong>{attribute}: {current} → {projected}</strong>
-            <span className="text-on-surface-variant"> ({breakers} added, hard limit 5)</span>
+            <strong>{projected - current} added · hard limit 5</strong>
+            {projected - current < breakers ? <span className="text-on-surface-variant"> · rating capped at 99</span> : null}
           </p>
           <p className="text-body-sm text-text-muted">
             {rows.length} badge paths in reach · {newlyRaised} raised by this plan
           </p>
         </div>
-        <div className="mt-3 grid max-h-52 grid-cols-1 gap-2 overflow-y-auto pr-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="cap-preview-rows mt-3 grid grid-cols-1 gap-2 overflow-y-auto pr-1">
           {rows.length ? rows.map(({ badge, before, after }) => (
             <div key={badge.slug} className="flex min-h-14 items-center justify-between gap-2 rounded border border-border-low bg-surface-card px-3 py-2">
               <div className="min-w-0">
@@ -180,6 +181,7 @@ export function CapBreakerCalculator({ badges }: { badges: CapCalcBadge[] }) {
         <p className="mt-2 text-body-sm text-text-muted">
           Each selected breaker previews one added rating point, capped at 99. AND badges also show the companion threshold you must meet.
         </p>
+      </div>
       </div>
     </section>
   );
