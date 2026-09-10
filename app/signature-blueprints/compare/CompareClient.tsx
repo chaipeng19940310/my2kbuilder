@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { PositionIcon } from "@/components/PositionIcon";
 import { Icon } from "@/components/Icon";
 import { DataSourceBanner, SourceTag } from "@/components/SourceTag";
 import {
@@ -178,7 +179,7 @@ export function CompareClient() {
                     ) : null}
                     <span className="font-display text-headline-sm text-on-surface">{bp.name}</span>
                     <span className="text-body-sm text-text-muted">
-                      {bp.profile?.position ?? "—"}
+                      {bp.profile?.position ? <PositionIcon position={bp.profile.position} /> : "—"}
                       {bp.profile?.height ? ` · ${bp.profile.height}` : ""}
                       {bp.profile?.weight_lb ? ` · ${bp.profile.weight_lb} lbs` : ""}
                     </span>
@@ -201,7 +202,7 @@ export function CompareClient() {
                 </th>
                 {picked.map((bp) => (
                   <td key={bp.index} className="p-4 align-top text-body-md text-on-surface">
-                    {row.render(bp)}
+                    {row.label === "Position" && bp.profile?.position ? <PositionIcon position={bp.profile.position} /> : row.render(bp)}
                   </td>
                 ))}
               </tr>

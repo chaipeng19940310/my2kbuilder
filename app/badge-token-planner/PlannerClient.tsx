@@ -3,6 +3,7 @@ import { TierBadge } from "@/components/TierBadge";
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import { PositionIcon } from "@/components/PositionIcon";
 import { Icon } from "@/components/Icon";
 import { DataSourceBanner } from "@/components/SourceTag";
 import { DisciplineIcon } from "@/components/DisciplineIcon";
@@ -209,36 +210,15 @@ export function PlannerClient({ bundle, costs }: { bundle: BadgeRequirementsBund
           <h2 id="wizard-position-title" className="font-display text-headline-sm font-bold text-on-surface md:text-display-lg">Choose a position</h2>
           <p className="mt-1 text-body-sm text-on-surface-variant md:mt-3 md:text-body-lg">Pick a position and height to plan your badge loadout.</p>
         </div>
-        <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-5 md:gap-3 md:overflow-visible md:px-0 md:pb-0">
-          {POSITIONS.map((abbr, index) => {
-            const selected = position === index;
-            const details = POSITION_DETAILS[index];
-            return (
-              <button
-                key={abbr}
-                type="button"
-                disabled={!hydrated}
-                aria-pressed={selected}
-                onClick={() => setPosition(index)}
-                className={`relative flex h-[72px] w-[120px] min-w-[120px] shrink-0 snap-start flex-row items-center justify-start gap-2 rounded-xl bg-surface-card px-3 text-left transition-all active:scale-[0.98] disabled:cursor-wait md:h-[104px] md:w-auto md:min-w-0 md:max-w-none md:flex-row md:justify-start md:gap-2 md:p-3 md:text-left ${selected ? "border-2 border-primary-container bg-surface-container-low shadow-[0_0_15px_rgba(255,176,58,0.15)]" : "border border-border-low hover:border-on-surface-variant hover:bg-surface-container-low"}`}
-              >
-                {selected ? <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary-container text-on-primary"><Icon name="check" size={14} fill /></span> : null}
-                {/* eslint-disable-next-line @next/next/no-img-element -- local position artwork */}
-                <img
-                  src={`/assets/r12i/positions/pos-${abbr.toLowerCase()}.svg`}
-                  alt=""
-                  width={64}
-                  height={64}
-                  className="h-10 w-10 shrink-0 md:h-16 md:w-16"
-                />
-                <span className="min-w-0">
-                  <span className={`block font-display text-body-lg font-black leading-none md:text-headline-sm ${selected ? "text-on-surface" : "text-on-surface-variant"}`}>{abbr}</span>
-                  <span className={`mt-1 block truncate text-[9px] font-bold uppercase leading-tight tracking-wide md:pr-4 md:text-[10px] md:tracking-wider ${selected ? "text-primary-container" : "text-on-surface-variant"}`}>{details.name}</span>
-                  <span className="sr-only md:mt-1 md:block md:truncate md:text-[10px] md:leading-tight md:text-text-muted">{details.note}</span>
-                </span>
-              </button>
-            );
-          })}
+        <div className="position-options justify-center" role="group" aria-label="Choose a position">
+          {POSITIONS.map((abbr, index) => (
+            <button key={abbr} type="button" disabled={!hydrated}
+              aria-label={`${abbr} — ${POSITION_DETAILS[index].name}`}
+              title={`${POSITION_DETAILS[index].name}: ${POSITION_DETAILS[index].note}`}
+              aria-pressed={position === index} onClick={() => setPosition(index)} className="position-option">
+              <PositionIcon position={abbr} />
+            </button>
+          ))}
         </div>
         <div className="mx-auto mt-3 max-w-4xl md:mt-8">
           <div className="mb-2 text-center md:mb-6">

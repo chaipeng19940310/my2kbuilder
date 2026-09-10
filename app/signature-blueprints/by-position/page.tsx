@@ -1,3 +1,5 @@
+import { PositionIcon } from "@/components/PositionIcon";
+import { PositionGroupNav } from "@/components/PositionGroupNav";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLdScript } from "@/components/JsonLdScript";
@@ -108,7 +110,7 @@ function BlueprintCard({ bp }: { bp: Blueprint }) {
       <div className="flex flex-col gap-1 px-6">
         <h4 className="font-display text-headline-sm text-on-surface">{bp.name}</h4>
         <p className="text-body-sm text-text-muted">
-          {p?.position ?? "—"}
+          {p?.position ? <PositionIcon position={p.position} /> : "—"}
           {p?.height ? ` · ${p.height}` : ""}
           {p?.weight_lb ? ` · ${p.weight_lb} lbs` : ""}
         </p>
@@ -200,20 +202,7 @@ export default function BlueprintsByPositionPage() {
       </header>
 
       {/* Position group nav (copy §4 design placement: 置顶). */}
-      <nav
-        aria-label="Jump to position group"
-        className="flex flex-wrap gap-2 rounded border border-border-low bg-surface-card p-4"
-      >
-        {byPosition.map(({ pos, list }) => (
-          <a
-            key={pos}
-            href={`#position-${pos.toLowerCase()}`}
-            className="rounded border border-border-low bg-surface-container-high px-3 py-1.5 text-label-md font-bold text-on-surface-variant transition-colors hover:border-primary-container hover:text-on-surface"
-          >
-            {pos} · {POSITION_LABEL[pos]} ({list.length})
-          </a>
-        ))}
-      </nav>
+      <PositionGroupNav />
 
       {/* H2: How to Pick a Blueprint (copy §4, verbatim). */}
       <section className="flex max-w-3xl flex-col gap-4 rounded border border-border-low bg-surface-card p-6">
@@ -262,14 +251,7 @@ export default function BlueprintsByPositionPage() {
             className="flex scroll-mt-24 flex-col gap-6"
           >
             <h3 className="flex flex-wrap items-center gap-3 font-display text-headline-md text-on-surface">
-              {/* Position group icons: playstyle discipline glyphs present in
-                  this group (R12I-G pack has no per-position icon; discipline
-                  icons are the approved position/playstyle visual markers). */}
-              <span className="flex items-center gap-1" aria-hidden="true">
-                {byPlaystyle.map(({ skill }) => (
-                  <DisciplineIcon key={skill} discipline={skill} size={28} />
-                ))}
-              </span>
+              <PositionIcon position={pos} />
               {POSITION_LABEL[pos]}
               <span className="text-body-sm font-normal text-text-muted">
                 {pos} · {list.length} blueprints

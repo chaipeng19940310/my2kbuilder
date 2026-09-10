@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
-import Image from "next/image";
+import { useMemo, useState } from "react";
+import { PositionIcon } from "@/components/PositionIcon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
@@ -47,8 +47,6 @@ export function BlueprintsClient({ bundle }: { bundle: BlueprintsBundle }) {
 
   const [position, setPosition] = useState<string>("");
   const [query, setQuery] = useState<string>("");
-  const [searchOpen, setSearchOpen] = useState(false);
-  const searchToggle = useRef<HTMLButtonElement>(null);
   const [selected, setSelected] = useState<number[]>([]);
 
   const blueprints = useMemo(() => blueprintList(bundle), [bundle]);
@@ -67,13 +65,6 @@ export function BlueprintsClient({ bundle }: { bundle: BlueprintsBundle }) {
   function clearFilters() {
     setPosition("");
     setQuery("");
-    setSearchOpen(false);
-  }
-
-  function closeSearch() {
-    setQuery("");
-    setSearchOpen(false);
-    searchToggle.current?.focus();
   }
 
   function toggleSelect(index: number) {
@@ -104,40 +95,24 @@ export function BlueprintsClient({ bundle }: { bundle: BlueprintsBundle }) {
       >
         <div className="flex flex-wrap items-center gap-3">
           <span className="text-label-md uppercase text-on-surface-variant">Filter by position</span>
-          <div className="flex flex-wrap gap-2">
+          <div className="position-options" role="group" aria-label="Filter by position">
             {["", ...POSITIONS].map((p) => (
-              <button
-                key={p || "all"}
-                type="button"
-                onClick={() => setPosition(p)}
-                aria-pressed={position === p}
-                className={`inline-flex min-h-11 min-w-11 shrink-0 cursor-pointer items-center justify-center gap-1 rounded border px-2 py-1 text-label-md font-bold transition-colors ${
-                  position === p
-                    ? "border-primary-container bg-primary-container text-on-primary"
-                    : "border-border-low bg-surface-container-high text-on-surface-variant hover:border-primary-container hover:text-on-surface"
-                }`}
-              >
-                {p ? <Image src={`/assets/r12i/positions/pos-${p.toLowerCase()}.svg`} alt="" width={32} height={32} unoptimized /> : <Icon name="view_cozy" fill size={24} />}
-                {p || "All"}
+              <button key={p || "all"} type="button" onClick={() => setPosition(p)}
+                aria-label={p || "All"} aria-pressed={position === p} className="position-option">
+                <PositionIcon position={p} />
               </button>
             ))}
           </div>
-          <div className={`flex min-w-0 items-center rounded border border-border-low bg-surface-container-high ${searchOpen ? "w-full" : ""}`}>
-            <button ref={searchToggle} type="button" aria-label={searchOpen ? "Close blueprint search" : "Open blueprint search"} aria-expanded={searchOpen} aria-controls="blueprint-search" onClick={() => searchOpen ? closeSearch() : setSearchOpen(true)} className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-on-surface-variant hover:text-primary-container">
-              <Icon name="search" size={22} />
-            </button>
-            {searchOpen ? <><input
-              id="blueprint-search"
-              autoFocus
-              type="search"
-              value={query}
-              onChange={(e) => e.target.value ? setQuery(e.target.value) : closeSearch()}
-              onKeyDown={(e) => { if (e.key === "Escape") closeSearch(); }}
-              placeholder="Search blueprint name (Example: Anomaly, Bulldozer)"
-              aria-label="Search blueprints by name"
-              className="min-w-0 flex-1 bg-transparent py-3 text-label-md text-on-surface placeholder:text-text-muted focus:outline-none"
-            /><button type="button" onClick={closeSearch} aria-label="Clear and close blueprint search" className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-on-surface-variant hover:text-primary-container"><Icon name="close" size={20} /></button></> : null}
-          </div>
+          <input
+            id="blueprint-search"
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Escape") setQuery(""); }}
+            placeholder="Search blueprint name (Example: Anomaly, Bulldozer)"
+            aria-label="Search blueprints by name"
+            className="min-h-11 w-full min-w-0 rounded border border-border-low bg-surface-container-high px-3 py-3 text-label-md text-on-surface placeholder:text-text-muted focus:outline-primary-container"
+          />
           {hasActiveFilter ? (
             <button
               type="button"
@@ -185,10 +160,7 @@ export function BlueprintsClient({ bundle }: { bundle: BlueprintsBundle }) {
                 <div className="flex flex-grow flex-col p-5">
                   <div className="mb-3 flex items-start justify-between gap-2">
                     <div className="flex min-w-0 flex-wrap items-center gap-3">
-                      <span className="inline-flex items-center gap-1 rounded bg-primary-container/10 px-2.5 py-1 font-display text-code-sm font-bold uppercase text-primary-container">
-                        {p?.position ? <Image src={`/assets/r12i/positions/pos-${p.position.toLowerCase()}.svg`} alt="" width={36} height={36} unoptimized /> : null}
-                        {p?.position ?? "—"}
-                      </span>
+                      {p?.position ? <PositionIcon position={p.position} /> : <span>—</span>}
                       <span className="text-body-sm text-on-surface-variant">
                         {p?.height ?? "—"}
                         {p?.weight_lb ? ` · ${p.weight_lb} lbs` : ""}
