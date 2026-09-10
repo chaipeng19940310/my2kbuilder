@@ -75,8 +75,15 @@
 [data-m2k-filter]:focus-visible { outline: 2px solid #e8eef7; outline-offset: 3px; }
 .cap-preview-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
 .cap-preview-controls { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
-.cap-current { width: 112px; }
-.cap-current input { font-size: 16px; }
+.cap-current { width: 100%; }
+.cap-current-stepper { display: grid; grid-template-columns: 48px minmax(0, 112px) 48px; gap: 8px; }
+.cap-current-stepper input { width: 100%; min-width: 0; height: 48px; border: 2px solid #94a3b8; border-radius: 8px; background: #1e293b; color: #f8fafc; font-size: 20px; font-weight: 700; text-align: center; padding: 0 8px; appearance: textfield; }
+.cap-current-stepper input::-webkit-inner-spin-button, .cap-current-stepper input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+.cap-current-stepper button { width: 48px; height: 48px; border: 1px solid #94a3b8; border-radius: 8px; background: #1e293b; color: #ffb03a; font-size: 26px; font-weight: 700; cursor: pointer; touch-action: manipulation; }
+.cap-current-stepper button:hover:not(:disabled) { background: #334155; border-color: #ffb03a; }
+.cap-current-stepper button:disabled { opacity: .4; cursor: not-allowed; }
+.cap-current-stepper input:focus { border-color: #ffb03a; outline: 2px solid #ffb03a; outline-offset: 3px; }
+.cap-current-stepper button:focus-visible { outline: 2px solid #ffb03a; outline-offset: 3px; }
 .cap-breaker-buttons { display: grid; grid-template-columns: repeat(6, minmax(44px, 1fr)); gap: 4px; }
 .cap-breaker-buttons button { min-height: 48px; min-width: 44px; cursor: pointer; border: 1px solid #475569; border-radius: 6px; font-weight: 700; }
 .cap-breaker-buttons button[aria-pressed="true"] { background: #ffb03a; color: #070d1a; border-color: #ffb03a; }

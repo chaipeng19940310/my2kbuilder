@@ -67,7 +67,17 @@ export function CapBreakerCalculator({ badges }: { badges: CapCalcBadge[] }) {
     [badges],
   );
   const [attribute, setAttribute] = useState("Driving Dunk");
+  // This standalone preview retains the existing 1–99 rating range;
+  // badge thresholds are not attribute/build-specific rating limits.
+  const minRating = 1;
+  const maxRating = 99;
   const [current, setCurrent] = useState(85);
+  const [currentDraft, setCurrentDraft] = useState("85");
+  function updateCurrent(value: number) {
+    const next = Math.min(maxRating, Math.max(minRating, Math.trunc(value)));
+    setCurrent(next);
+    setCurrentDraft(String(next));
+  }
   const [breakers, setBreakers] = useState(0);
   const projected = Math.min(99, current + breakers);
 
@@ -114,19 +124,34 @@ export function CapBreakerCalculator({ badges }: { badges: CapCalcBadge[] }) {
             ))}
           </select>
         </label>
-        <label className="cap-current flex flex-col gap-1 text-label-md text-text-muted">
-          Current value
-          <input
-            aria-label="Current attribute value"
-            className={fieldClass}
-            inputMode="numeric"
-            max={99}
-            min={1}
-            onChange={(event) => setCurrent(Math.min(99, Math.max(1, Number(event.target.value) || 1)))}
-            type="number"
-            value={current}
-          />
-        </label>
+        <div className="cap-current flex flex-col gap-1 text-label-md text-text-muted">
+          <label htmlFor="cap-current-value">Current value</label>
+          <div className="cap-current-stepper" role="group" aria-label="Adjust current attribute value">
+            <button type="button" aria-label="Decrease current value by 1" disabled={current <= minRating} onClick={() => updateCurrent(current - 1)}>−</button>
+            <input
+              id="cap-current-value"
+              aria-label="Current attribute value"
+              aria-describedby="cap-current-hint"
+              inputMode="numeric"
+              max={maxRating}
+              min={minRating}
+              step={1}
+              onChange={(event) => {
+                const raw = event.target.value;
+                if (raw === "") {
+                  setCurrentDraft("");
+                  return;
+                }
+                if (Number.isFinite(event.target.valueAsNumber)) updateCurrent(event.target.valueAsNumber);
+              }}
+              onBlur={() => setCurrentDraft(String(current))}
+              type="number"
+              value={currentDraft}
+            />
+            <button type="button" aria-label="Increase current value by 1" disabled={current >= maxRating} onClick={() => updateCurrent(current + 1)}>+</button>
+          </div>
+          <p id="cap-current-hint" className="text-body-sm">Type a value or tap − / + · {minRating}–{maxRating}</p>
+        </div>
         <div className="flex flex-col gap-1 text-label-md text-text-muted">
           Cap Breakers: {breakers} / 5
           <div className="cap-breaker-buttons" role="group" aria-label="Cap Breakers to add">
