@@ -149,7 +149,7 @@ function BadgeRow({ badge }: { badge: BadgeCatalogEntry }) {
 
 export default function BadgeRequirementsPage() {
   return (
-    <main className="r18-page r18-table relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-table relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-6 md:py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
           webPageSchema({
@@ -176,7 +176,7 @@ export default function BadgeRequirementsPage() {
         }}
       />
 
-      <header className="flex max-w-3xl flex-col gap-2">
+      <header className="-mb-6 md:mb-0 flex max-w-3xl flex-col gap-4">
         <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">
           NBA 2K27 Badge Requirements
         </h1>

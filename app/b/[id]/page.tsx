@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 export default async function SharedBuildPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-3xl flex-grow flex-col gap-8 px-4 py-12 md:px-margin-desktop">
-      <header className="flex flex-col gap-3">
-        <h1 className="font-display text-display-lg text-primary-container">
+    <main className="relative z-10 mx-auto flex w-full max-w-3xl flex-grow flex-col gap-8 px-4 py-6 md:py-12 md:px-margin-desktop">
+      <header className="flex flex-col gap-4">
+        <h1 className="mb-2 md:mb-8 font-display text-headline-lg text-primary-container md:text-display-lg">
           Shared NBA 2K27 Build
         </h1>
         <p className="text-body-lg text-on-surface-variant">

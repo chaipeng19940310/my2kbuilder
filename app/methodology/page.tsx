@@ -113,7 +113,7 @@ export default function MethodologyPage() {
   const nullCostRecords = badgeTokenCost.filter((r) => r.value === null).length;
 
   return (
-    <main className="r18-page r18-methodology relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-methodology relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-12 px-4 py-6 md:py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
           aboutPageSchema({
@@ -128,12 +128,12 @@ export default function MethodologyPage() {
         ]}
       />
 
-      <section className="flex flex-col items-center gap-4 border-b border-dashed border-border-low py-8 text-center">
-        <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">Data Methodology</h1>
+      <header className="flex max-w-3xl flex-col gap-4">
+        <h1 className="mb-2 md:mb-8 font-display text-headline-lg text-primary-container md:text-display-lg">Data Methodology</h1>
         <p className="max-w-2xl text-body-lg text-on-surface-variant">
           How we verify every number on this site, and when it was last checked.
         </p>
-      </section>
+      </header>
 
       <section>
         <h2 className="mb-6 font-display text-headline-md text-on-surface">Source Tiers</h2>

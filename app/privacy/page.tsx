@@ -74,15 +74,16 @@ const SECTIONS = [
 
 export default function PrivacyPage() {
   return (
-    <main className="r18-page r18-legal relative z-10 mx-auto flex w-full max-w-3xl flex-grow flex-col gap-8 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-legal relative z-10 mx-auto flex w-full max-w-3xl flex-grow flex-col gap-8 px-4 py-6 md:py-12 md:px-margin-desktop">
       <JsonLdScript schema={webPageSchema({ name: "Privacy Policy" })} />
 
       {/* R12K-J: unified dark panel (site card spec) around all content. */}
-      <ContentPanel>
-      <header className="flex flex-col gap-3">
-        <h1 className="font-display text-display-lg text-primary-container">Privacy Policy</h1>
+      <header className="flex flex-col gap-4">
+        <h1 className="mb-2 md:mb-8 font-display text-headline-lg text-primary-container md:text-display-lg">Privacy Policy</h1>
         <p className="text-body-sm text-text-muted">Last Updated: August 28, 2026</p>
       </header>
+
+      <ContentPanel>
 
       <div className="flex flex-col gap-6">
         {SECTIONS.map((s) => (

@@ -71,7 +71,7 @@ const linkClass = "font-semibold text-primary-container hover:underline";
 
 export default function CapBreakerGuidePage() {
   return (
-    <main className="r18-page r18-guide-page relative z-10 mx-auto w-full max-w-site flex-grow gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-guide-page relative z-10 mx-auto w-full max-w-site flex-grow gap-12 px-4 py-6 md:py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
           articleSchema({
@@ -99,11 +99,8 @@ export default function CapBreakerGuidePage() {
         ]}
       />
 
-      <header className="flex max-w-3xl flex-col gap-5">
-        <span className="w-fit rounded-full border border-primary-container/40 bg-surface-card px-3 py-1 text-code-sm uppercase tracking-widest text-primary-container">
-          Badge-first planning
-        </span>
-        <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">{PAGE_H1}</h1>
+      <header className="flex max-w-3xl flex-col gap-4">
+        <h1 className="mb-2 md:mb-8 font-display text-headline-lg text-primary-container md:text-display-lg">{PAGE_H1}</h1>
         <div className="rounded border border-primary-container/40 bg-surface-card p-5">
           <p className="mb-3 text-body-lg text-on-surface">
             Cap breakers are permanent, capped at five per attribute, and too scarce to improvise. Plan them in this order:

@@ -161,7 +161,7 @@ export default function BlueprintsByPositionPage() {
   });
 
   return (
-    <main className="r18-page r18-bypos r18-shell">
+    <main className="r18-page r18-bypos r18-shell r24-tool-shell">
       <JsonLdScript
         schema={[
           // ItemList: real blueprint roster, guard lifted per owner decision
@@ -183,14 +183,7 @@ export default function BlueprintsByPositionPage() {
       />
 
       <header className="flex max-w-3xl flex-col gap-4">
-        <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-body-sm text-text-muted">
-          <Link href="/signature-blueprints" className="hover:text-on-surface">
-            Blueprints
-          </Link>
-          <span aria-hidden="true">/</span>
-          <span className="text-on-surface-variant">By Position</span>
-        </nav>
-        <h1 className="font-display text-display-lg text-primary-container">
+        <h1 className="mb-2 md:mb-8 font-display text-headline-lg text-primary-container md:text-display-lg">
           NBA 2K27 Signature Blueprints by Position
         </h1>
         {/* Page intro (copy §4, verbatim). */}
@@ -199,6 +192,13 @@ export default function BlueprintsByPositionPage() {
             "All 40 launch Signature Blueprints, organized by position and playstyle so you can find a starting point fast. Pick your position, pick how you like to play, compare up to three side by side, then open one in the planner and make it yours."
           }
         </p>
+        <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-body-sm text-text-muted">
+          <Link href="/signature-blueprints" className="hover:text-on-surface">
+            Blueprints
+          </Link>
+          <span aria-hidden="true">/</span>
+          <span className="text-on-surface-variant">By Position</span>
+        </nav>
       </header>
 
       {/* Position group nav (copy §4 design placement: 置顶). */}

@@ -98,7 +98,7 @@ const SPECIALIZATION_TRACKS: Array<{ name: string; isNew: boolean }> = DISCIPLIN
 
 export default function CapBreakersPage() {
   return (
-    <main className="r18-page r18-guide-page relative z-10 mx-auto w-full max-w-site flex-grow gap-12 px-4 py-12 md:px-margin-desktop">
+    <main className="r18-page r18-guide-page relative z-10 mx-auto w-full max-w-site flex-grow gap-12 px-4 py-6 md:py-12 md:px-margin-desktop">
       <JsonLdScript
         schema={[
           webPageSchema({
@@ -121,7 +121,7 @@ export default function CapBreakersPage() {
         { href: "#cap-breakers-faq", label: "FAQ" },
       ]} />
 
-      <header className="flex max-w-3xl flex-col gap-2">
+      <header className="-mb-2 md:mb-4 flex max-w-3xl flex-col gap-4">
         <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">
           NBA 2K27 Cap Breakers
         </h1>

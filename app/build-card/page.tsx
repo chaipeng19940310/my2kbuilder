@@ -20,12 +20,11 @@ export const metadata: Metadata = {
 
 export default function BuildCardPage() {
   return (
-    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-8 px-4 py-12 md:px-margin-desktop">
+    <main className="relative z-10 mx-auto flex w-full max-w-site flex-grow flex-col gap-8 px-4 py-6 md:py-12 md:px-margin-desktop">
       {/* R12K-J: unified dark panel lifts the content off the background
           image with a clear frame boundary (Owner pain point). */}
-      <ContentPanel>
       <header className="flex max-w-3xl flex-col gap-4">
-        <h1 className="font-display text-display-lg text-primary-container">
+        <h1 className="mb-2 md:mb-8 font-display text-headline-lg text-primary-container md:text-display-lg">
           Create a Shareable Build Card
         </h1>
         {/* Steps strip (copy §3.5): Review, Copy, Share */}
@@ -48,6 +47,8 @@ export default function BuildCardPage() {
           photos. Anyone with the link sees the same build you see.
         </p>
       </header>
+
+      <ContentPanel>
 
       <BuildCardClient />
       </ContentPanel>
