@@ -126,7 +126,7 @@ export default function BuildPitfallsPage() {
       ]} />
 
       <header className="flex max-w-3xl flex-col gap-4">
-        <h1 className="font-display text-display-lg text-primary-container">{PAGE_H1}</h1>
+        <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">{PAGE_H1}</h1>
         {/* Article lead (copy §3 正文 paragraph 1, verbatim). */}
         <p className="text-body-lg text-on-surface-variant">
           {
@@ -138,19 +138,44 @@ export default function BuildPitfallsPage() {
           }
         </p>
         <p className="text-body-sm text-text-muted">Last verified: {LAST_VERIFIED}</p>
-        {/* R12I-G original hero visual (design handoff §1): 1600x900 SVG,
-            dark-first, readable over the page background. */}
-        <div className="overflow-hidden rounded border border-border-low bg-surface-card">
-          {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG from the R12I-G design pack */}
-          <img
-            src="/assets/r12i/hero/hero-home-visual.svg"
-            alt="Abstract My2KBuilder court visual with build-planning accents"
-            width={1600}
-            height={900}
-            className="h-auto w-full object-cover"
-          />
-        </div>
       </header>
+
+      {/* 2K Builder Courtside Report — click-to-load facade per design
+          handoff §5: initial HTML is a self-hosted real cover image + play button
+          only; the youtube-nocookie iframe is created after a click. Same
+          video asset as the sibling wave-2 pages (the other thumbnail's
+          filename trips the banned-word grep on production HTML). R32: moved
+          up directly after the header so the page's only operable control
+          sits in the first viewport instead of ~5.4k px deep. */}
+      <section className="flex max-w-3xl flex-col gap-4">
+        <h2 className="font-display text-headline-md text-on-surface">
+          Watch the 2K Builder Courtside Report
+        </h2>
+        <VideoFacade
+          videoId="MSZre4MBSBA"
+          title="2K Builder Courtside Report"
+          thumbnail="/assets/video/courtside-report.jpg"
+        />
+        <p className="text-body-sm text-text-muted">
+          {
+            "Video hosted on YouTube by 2K. My2KBuilder is an independent, fan-made planning tool and is not affiliated with 2K."
+          }
+        </p>
+      </section>
+
+      {/* R12I-G original hero visual (design handoff §1): 1600x900 SVG,
+          dark-first, readable over the page background. R32: moved below the
+          TOC + video control so operable items own the first viewport. */}
+      <div className="overflow-hidden rounded border border-border-low bg-surface-card">
+        {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG from the R12I-G design pack */}
+        <img
+          src="/assets/r12i/hero/hero-home-visual.svg"
+          alt="Abstract My2KBuilder court visual with build-planning accents"
+          width={1600}
+          height={900}
+          className="h-auto w-full object-cover"
+        />
+      </div>
 
       {/* §1 Body penalties (copy §3, verbatim + source chips). */}
       <section id="body-penalties" className="flex max-w-3xl flex-col gap-4">
@@ -374,27 +399,6 @@ export default function BuildPitfallsPage() {
         <p className="text-body-md text-on-surface-variant">
           {
             "Your 2K26 build isn't worthless — it's a hypothesis. Test it against 2K27's numbers before you commit, and it becomes a plan."
-          }
-        </p>
-      </section>
-
-      {/* 2K Builder Courtside Report — click-to-load facade per design
-          handoff §5: initial HTML is a self-hosted real cover image + play button
-          only; the youtube-nocookie iframe is created after a click. Same
-          video asset as the sibling wave-2 pages (the other thumbnail's
-          filename trips the banned-word grep on production HTML). */}
-      <section className="flex max-w-3xl flex-col gap-4">
-        <h2 className="font-display text-headline-md text-on-surface">
-          Watch the 2K Builder Courtside Report
-        </h2>
-        <VideoFacade
-          videoId="MSZre4MBSBA"
-          title="2K Builder Courtside Report"
-          thumbnail="/assets/video/courtside-report.jpg"
-        />
-        <p className="text-body-sm text-text-muted">
-          {
-            "Video hosted on YouTube by 2K. My2KBuilder is an independent, fan-made planning tool and is not affiliated with 2K."
           }
         </p>
       </section>

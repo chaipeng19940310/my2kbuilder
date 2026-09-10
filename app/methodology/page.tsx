@@ -129,7 +129,7 @@ export default function MethodologyPage() {
       />
 
       <section className="flex flex-col items-center gap-4 border-b border-dashed border-border-low py-8 text-center">
-        <h1 className="font-display text-display-lg text-primary-container">Data Methodology</h1>
+        <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">Data Methodology</h1>
         <p className="max-w-2xl text-body-lg text-on-surface-variant">
           How we verify every number on this site, and when it was last checked.
         </p>

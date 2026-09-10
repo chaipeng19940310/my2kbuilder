@@ -97,7 +97,7 @@ export default function LaunchDayBuildGuidePage() {
         <span className="w-fit rounded-full border border-primary-container/40 bg-surface-card px-3 py-1 text-code-sm uppercase tracking-widest text-primary-container">
           Launch day checklist
         </span>
-        <h1 className="font-display text-display-lg text-primary-container">{PAGE_H1}</h1>
+        <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">{PAGE_H1}</h1>
         <div className="rounded border border-primary-container/40 bg-surface-card p-5">
           <p className="mb-3 text-body-lg text-on-surface">Launch day is not the time to freestyle a build. Run this checklist before you spend:</p>
           <ol className="flex list-decimal flex-col gap-2 pl-5 text-body-md text-on-surface-variant">

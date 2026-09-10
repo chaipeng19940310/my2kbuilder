@@ -177,7 +177,7 @@ export default function BadgeRequirementsPage() {
       />
 
       <header className="flex max-w-3xl flex-col gap-2">
-        <h1 className="font-display text-display-lg text-primary-container">
+        <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">
           NBA 2K27 Badge Requirements
         </h1>
       </header>

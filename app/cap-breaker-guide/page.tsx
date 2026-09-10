@@ -103,7 +103,7 @@ export default function CapBreakerGuidePage() {
         <span className="w-fit rounded-full border border-primary-container/40 bg-surface-card px-3 py-1 text-code-sm uppercase tracking-widest text-primary-container">
           Badge-first planning
         </span>
-        <h1 className="font-display text-display-lg text-primary-container">{PAGE_H1}</h1>
+        <h1 className="font-display text-headline-lg text-primary-container md:text-display-lg">{PAGE_H1}</h1>
         <div className="rounded border border-primary-container/40 bg-surface-card p-5">
           <p className="mb-3 text-body-lg text-on-surface">
             Cap breakers are permanent, capped at five per attribute, and too scarce to improvise. Plan them in this order:
