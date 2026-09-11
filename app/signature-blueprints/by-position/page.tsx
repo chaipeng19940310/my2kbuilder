@@ -96,18 +96,7 @@ function BlueprintCard({ bp }: { bp: Blueprint }) {
       id={`bp-${bp.slug}`}
       className="flex flex-col gap-4 overflow-hidden rounded border border-border-low bg-surface-card transition-colors hover:border-primary-container"
     >
-      {/* R12I-G card visual: original abstract court/position/playstyle art,
-          local static asset (same pack as the main blueprints browser). */}
-      {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG asset */}
-      <img
-        src={`/assets/r12i/blueprints/blueprint-${bp.slug}.svg`}
-        alt={`${bp.name} blueprint visual`}
-        width={640}
-        height={400}
-        loading="lazy"
-        className="aspect-[8/5] w-full border-b border-border-low object-cover"
-      />
-      <div className="flex flex-col gap-1 px-6">
+      <div className="flex flex-col gap-1 px-6 pt-6">
         <h4 className="font-display text-headline-sm text-on-surface">{bp.name}</h4>
         <p className="text-body-sm text-text-muted">
           {p?.position ? <PositionIcon position={p.position} /> : "—"}

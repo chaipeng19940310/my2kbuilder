@@ -114,13 +114,6 @@ const VIDEOS = [
   },
 ] as const;
 
-const BLUEPRINT_PREVIEWS = [
-  ["Splash", "/assets/r12i/blueprints/blueprint-splash.svg"],
-  ["Conductor", "/assets/r12i/blueprints/blueprint-conductor.svg"],
-  ["Clamps", "/assets/r12i/blueprints/blueprint-clamps.svg"],
-  ["Paint Beast", "/assets/r12i/blueprints/blueprint-paint-beast.svg"],
-] as const;
-
 const WHATS_NEW_ICONS = ["physicals", "shooting", "playmaking", "finishing", "rebounding"] as const;
 
 export default function HomePage() {
@@ -209,13 +202,6 @@ export default function HomePage() {
           ))}
         </section>
       </div>
-
-      <section aria-label="Signature Blueprints preview strip" className="r18-blueprints">
-        {BLUEPRINT_PREVIEWS.map(([name, image]) => (
-          // eslint-disable-next-line @next/next/no-img-element -- local static SVG asset
-          <img key={name} src={image} alt={`Signature Blueprint: ${name}`} width={800} height={500} loading="lazy" />
-        ))}
-      </section>
 
       <figure className="r19-blueprint-showcase">
         <div>
