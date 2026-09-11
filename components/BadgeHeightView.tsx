@@ -95,7 +95,7 @@ export function BadgeHeightView({ badges }: { badges: HeightBadge[] }) {
                 <p className="truncate text-label-md text-on-surface">{badge.name}</p>
                 <p className="text-body-sm text-text-muted">{badge.category}</p>
               </div>
-              {tier ? <TierBadge tier={tier} size={32} /> : <span className="rounded border border-border-low px-2 py-1 text-label-sm text-text-muted">Unavailable</span>}
+              {tier ? <TierBadge tier={tier} size={40} /> : <span className="rounded border border-border-low px-2 py-1 text-label-sm text-text-muted">Unavailable</span>}
             </div>
           ))}
         </div>

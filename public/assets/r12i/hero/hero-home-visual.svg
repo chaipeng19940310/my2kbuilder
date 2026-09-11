@@ -59,8 +59,6 @@
     <g transform="translate(42,470)">
       <rect x="0" y="0" width="86" height="28" rx="6" fill="#B87333" fill-opacity="0.22" stroke="#B87333"/><text x="43" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Bronze</text><rect x="100" y="0" width="86" height="28" rx="6" fill="#C0C7D1" fill-opacity="0.22" stroke="#C0C7D1"/><text x="143" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Silver</text><rect x="200" y="0" width="86" height="28" rx="6" fill="#F6C453" fill-opacity="0.22" stroke="#F6C453"/><text x="243" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Gold</text><rect x="300" y="0" width="86" height="28" rx="6" fill="#B794F6" fill-opacity="0.22" stroke="#B794F6"/><text x="343" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Hall of Fame</text><rect x="400" y="0" width="86" height="28" rx="6" fill="#67E8F9" fill-opacity="0.22" stroke="#67E8F9"/><text x="443" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#D4E4FA">Legend</text>
     </g>
-    <rect x="42" y="532" width="476" height="76" rx="16" fill="#FFB03A"/>
-    <text x="280" y="580" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" fill="#070D1A">Start planning →</text>
   </g>
   <text x="120" y="150" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" letter-spacing="3" fill="#FFB03A">MY2KBUILDER</text>
   <text x="120" y="230" font-family="DejaVu Sans, Arial, sans-serif" font-size="64" font-weight="700" fill="#D4E4FA">Plan builds before</text>

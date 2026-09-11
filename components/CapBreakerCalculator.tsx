@@ -191,7 +191,7 @@ export function CapBreakerCalculator({ badges }: { badges: CapCalcBadge[] }) {
                 </p>
               </div>
               <div className="flex shrink-0 flex-col items-end gap-1">
-                <TierBadge tier={after.tier} size={32} />
+                <TierBadge tier={after.tier} size={40} />
                 {before?.tier !== after.tier ? <span className="text-[10px] font-semibold text-secondary">NEW</span> : null}
               </div>
             </div>

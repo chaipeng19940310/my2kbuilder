@@ -140,33 +140,14 @@ export default function BuildPitfallsPage() {
         <p className="text-body-sm text-text-muted">Last verified: {LAST_VERIFIED}</p>
       </header>
 
-      {/* 2K Builder Courtside Report — click-to-load facade per design
-          handoff §5: initial HTML is a self-hosted real cover image + play button
-          only; the youtube-nocookie iframe is created after a click. Same
-          video asset as the sibling wave-2 pages (the other thumbnail's
-          filename trips the banned-word grep on production HTML). R32: moved
-          up directly after the header so the page's only operable control
-          sits in the first viewport instead of ~5.4k px deep. */}
-      <section className="flex max-w-3xl flex-col gap-4">
-        <h2 className="font-display text-headline-md text-on-surface">
-          Watch the 2K Builder Courtside Report
-        </h2>
-        <VideoFacade
-          videoId="MSZre4MBSBA"
-          title="2K Builder Courtside Report"
-          thumbnail="/assets/video/courtside-report.jpg"
-        />
-        <p className="text-body-sm text-text-muted">
-          {
-            "Video hosted on YouTube by 2K. My2KBuilder is an independent, fan-made planning tool and is not affiliated with 2K."
-          }
-        </p>
-      </section>
-
       {/* R12I-G original hero visual (design handoff §1): 1600x900 SVG,
-          dark-first, readable over the page background. R32: moved below the
-          TOC + video control so operable items own the first viewport. */}
-      <div className="overflow-hidden rounded border border-border-low bg-surface-card">
+          dark-first, readable over the page background. R35: the fake
+          'Start planning →' text button baked into the SVG was removed; a
+          real link button now overlays the same spot (only the button is
+          clickable — the artwork itself stays inert, per Owner). R35: the
+          banner sits right after the header/TOC so the first viewport runs
+          H1 → TOC → CTA → body; the video facade moved to the page bottom. */}
+      <div className="relative overflow-hidden rounded border border-border-low bg-surface-card">
         {/* eslint-disable-next-line @next/next/no-img-element -- local static SVG from the R12I-G design pack */}
         <img
           src="/assets/r12i/hero/hero-home-visual.svg"
@@ -175,6 +156,12 @@ export default function BuildPitfallsPage() {
           height={900}
           className="h-auto w-full object-cover"
         />
+        <Link
+          href="/badge-token-planner"
+          className="absolute left-[72.5%] top-[77.5%] inline-flex -translate-x-1/2 -translate-y-1/2 items-center justify-center whitespace-nowrap rounded-[clamp(8px,1.2vw,16px)] bg-[#ffb03a] px-[clamp(12px,3vw,44px)] py-[clamp(8px,1.4vw,20px)] font-display text-[clamp(12px,1.9vw,26px)] font-bold text-[#070d1a] shadow-[0_4px_14px_rgba(0,0,0,0.45)] transition-colors hover:bg-[#ffc566] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e8eef7]"
+        >
+          Start planning →
+        </Link>
       </div>
 
       {/* §1 Body penalties (copy §3, verbatim + source chips). */}
@@ -259,10 +246,9 @@ export default function BuildPitfallsPage() {
         <SectionHeading icon="/assets/tier-icons/tier-gold.svg" alt="Gold tier mark">
           The Badge Math Changed Under Your Feet
         </SectionHeading>
-        {/* Original metal tier icons; Legend stays a planning marker. */}
-        <div className="overflow-hidden rounded border border-border-low bg-surface-card p-4">
-          <TierStrip />
-        </div>
+        {/* Original metal tier icons; Legend stays a planning marker. R35:
+            the framed card wrapper is gone — the strip renders borderless. */}
+        <TierStrip />
         <p className="text-body-md text-on-surface-variant">
           {"NBA 2K27 ships 53 badges: 19 new, 6 removed."}
           <PublishedChip />
@@ -444,6 +430,29 @@ export default function BuildPitfallsPage() {
           ))}
         </div>
         <p className="text-body-sm text-text-muted">Last verified: {LAST_VERIFIED}</p>
+      </section>
+
+      {/* 2K Builder Courtside Report — click-to-load facade per design
+          handoff §5: initial HTML is a self-hosted real cover image + play button
+          only; the youtube-nocookie iframe is created after a click. Same
+          video asset as the sibling wave-2 pages (the other thumbnail's
+          filename trips the banned-word grep on production HTML). R35 (Owner):
+          the video block sinks to the very bottom of the page so visitors
+          first see the Start planning guidance, not the video. */}
+      <section className="flex max-w-3xl flex-col gap-4">
+        <h2 className="font-display text-headline-md text-on-surface">
+          Watch the 2K Builder Courtside Report
+        </h2>
+        <VideoFacade
+          videoId="MSZre4MBSBA"
+          title="2K Builder Courtside Report"
+          thumbnail="/assets/video/courtside-report.jpg"
+        />
+        <p className="text-body-sm text-text-muted">
+          {
+            "Video hosted on YouTube by 2K. My2KBuilder is an independent, fan-made planning tool and is not affiliated with 2K."
+          }
+        </p>
       </section>
     </main>
   );

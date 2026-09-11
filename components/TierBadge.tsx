@@ -6,9 +6,11 @@ const LABELS: Record<MetalTier, string> = {
   bronze: "Bronze", silver: "Silver", gold: "Gold", hof: "Hall of Fame", legend: "Legend",
 };
 
-/** Approved original SVGs; separate images keep gradient IDs isolated. */
-export function TierBadge({ tier, size = 20, children, className = "" }: {
-  tier: MetalTier; size?: 20 | 32 | 40; children?: ReactNode; className?: string;
+/** Approved original SVGs; separate images keep gradient IDs isolated.
+    R35 (Owner): default icon 20→24px so the metal mark reads clean without
+    a chip frame. */
+export function TierBadge({ tier, size = 24, children, className = "" }: {
+  tier: MetalTier; size?: 20 | 24 | 32 | 40 | 48; children?: ReactNode; className?: string;
 }) {
   return (
     <span className={`tier-badge ${className}`} data-tier={tier}>
@@ -21,6 +23,6 @@ export function TierBadge({ tier, size = 20, children, className = "" }: {
 
 export function TierStrip() {
   return <div className="metal-tier-strip" aria-label="Badge tiers; Legend requires Synergy">
-    {METAL_TIERS.map((tier) => <TierBadge key={tier} tier={tier} size={40} />)}
+    {METAL_TIERS.map((tier) => <TierBadge key={tier} tier={tier} size={48} />)}
   </div>;
 }

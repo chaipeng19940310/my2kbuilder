@@ -218,9 +218,9 @@ export default function BadgeRequirementsPage() {
         <h2 className="font-display text-headline-sm text-on-surface">How to Read This Table</h2>
         <div className="flex flex-wrap items-center gap-2">
           {BADGE_TIERS.map((t) => (
-            <TierBadge key={t} tier={t} size={32} />
+            <TierBadge key={t} tier={t} size={40} />
           ))}
-          <TierBadge tier="legend" size={32} />
+          <TierBadge tier="legend" size={40} />
         </div>
         <ul className="flex list-disc flex-col gap-2 pl-5 text-body-md text-on-surface-variant">
           <li>AND — every listed attribute must meet the requirement.</li>

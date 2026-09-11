@@ -166,7 +166,9 @@ body {
 .tier-badge { display: inline-flex; align-items: center; gap: 6px; min-width: 0; color: #d4e4fa; font: 600 12px/1.4 var(--font-body); }
 .tier-badge-icon { display: block; flex: none; max-width: none; object-fit: contain; }
 .tier-badge > span { min-width: 0; }
-.metal-tier-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 16px; border: 1px solid #1e293b; border-radius: 8px; background: #010f1f; }
+/* R35 (Owner): the strip's pill frame (rounded border + dark backing) is
+   removed so the metal icons present clean; icons themselves are larger. */
+.metal-tier-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
 .metal-tier-strip .tier-badge { flex-direction: column; text-align: center; }
 .r18-table thead .tier-badge { white-space: nowrap; }
 

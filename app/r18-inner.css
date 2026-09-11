@@ -115,21 +115,23 @@
   .r18-table td[data-label="Category"], .r18-table td[data-label="Height limit"], .r18-table td[data-label="Source"] { grid-column: 1 / -1; }
   .r18-table [role="group"][aria-label="Filter badges by discipline"] { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
 }
-/* Shared position selectors: large tap targets with an obvious button feel
-   (filled base, visible border, shadow); the selected ring stays amber. */
+/* Shared position selectors: borderless clean icons (visual match with the
+   homepage Build Guides icon band). R35 (Owner): the R34 button box (filled
+   base, visible border, shadow) is removed; the icon itself carries the row.
+   Kept affordances: pointer cursor, amber selected ring, hover tint. */
 .position-options { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.position-option { display: inline-flex; flex: 0 0 56px; width: 56px; height: 56px; padding: 2px; align-items: center; justify-content: center; border: 2px solid #334155; border-radius: 999px; background: #16223a; box-shadow: 0 2px 6px #00000066, inset 0 1px 0 #e8eef70f; cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s, transform .15s; }
+.position-option { display: inline-flex; flex: 0 0 56px; width: 56px; height: 56px; padding: 0; align-items: center; justify-content: center; border: 2px solid transparent; border-radius: 999px; background: transparent; cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
 .position-icon { display: inline-block; width: 36px; height: 36px; flex-shrink: 0; vertical-align: middle; }
 .position-all { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; color: #e8eef7; background: #1e293b; font-size: 12px; font-weight: 700; }
-.position-option .position-icon { width: 46px; height: 46px; }
-.position-option .position-all { width: 46px; height: 46px; font-size: 14px; }
-.position-option:hover { background: #253047; border-color: #64748b; box-shadow: 0 4px 10px #00000073; transform: translateY(-1px); }
+.position-option .position-icon { width: 52px; height: 52px; }
+.position-option .position-all { width: 52px; height: 52px; font-size: 15px; }
+.position-option:hover { background: #25304780; }
 .position-option[aria-pressed="true"], .position-option[aria-current="location"] { border-color: #ffb03a; background: #ffb03a26; box-shadow: 0 0 0 2px #ffb03a33; }
 .position-option[aria-pressed="true"]:hover, .position-option[aria-current="location"]:hover { background: #ffb03a33; }
 .position-option:focus-visible { outline: 2px solid #e8eef7; outline-offset: 3px; }
 .position-option:disabled { cursor: wait; opacity: .5; }
 @media (min-width: 768px) {
   .position-option { flex-basis: 64px; width: 64px; height: 64px; }
-  .position-option .position-icon { width: 54px; height: 54px; }
-  .position-option .position-all { width: 54px; height: 54px; font-size: 15px; }
+  .position-option .position-icon { width: 60px; height: 60px; }
+  .position-option .position-all { width: 60px; height: 60px; font-size: 16px; }
 }
